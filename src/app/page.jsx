@@ -79,9 +79,6 @@ function CaseStudies({caseStudies}) {
                     and seamless product launches, we prioritise productive hours with minimal waste.
                 </p>
                 <br/>
-                <p className="text-2xl text-neutral-600">
-                    See what others say below!
-                </p>
             </SectionIntro>
             {/*<Container className="mt-16">*/}
             {/*    <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">*/}
@@ -188,9 +185,9 @@ export default async function Home() {
                         Modern software solutions, for less.
                     </h1>
                     <p className="mt-6 text-2xl text-neutral-600">
-                        “Get the best for less. By building with Next.js, we cut dev hours without cutting
+                        Get the best for less. By building with Next.js, we cut dev hours without cutting
                         corners—delivering high-performance, scalable solutions in record time. That means lower costs,
-                        faster launches, and zero compromise on quality.” </p>
+                        faster launches, and zero compromise on quality. </p>
                 </FadeIn>
             </Container>
 
