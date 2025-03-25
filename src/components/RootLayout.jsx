@@ -18,7 +18,7 @@ import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { GridPattern } from '@/components/GridPattern'
 import Image from 'next/image';
-import logo from '@/images/nextpad/android-chrome-512x512.png'
+import logo from '@/images/superstack/android-chrome-512x512.png'
 import { Offices } from '@/components/Offices'
 import { SocialMedia } from '@/components/SocialMedia'
 
@@ -62,7 +62,7 @@ function Header({
           >
             <Image
                 src={logo}
-                alt="Epic Dev Team Logo"
+                alt="Logo"
                 width={130}
                 height={60}
                 className="h-auto w-auto"

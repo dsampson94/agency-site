@@ -40,13 +40,13 @@ export function Testimonial({ children, className }) {
 // import { GridPattern } from '@/components/GridPattern';
 //
 // // Tech Logos (Import these or replace with the correct paths)
-// import nextjsLogo from '@/public/logos/nextjs.svg';
-// import vercelLogo from '@/public/logos/vercel.svg';
-// import tailwindLogo from '@/public/logos/tailwind.svg';
-// import mongodbLogo from '@/public/logos/mongodb.svg';
-// import awsLogo from '@/public/logos/aws.svg';
+// import nextjsLogo from '@/public/superstack/nextjs.svg';
+// import vercelLogo from '@/public/superstack/vercel.svg';
+// import tailwindLogo from '@/public/superstack/tailwind.svg';
+// import mongodbLogo from '@/public/superstack/mongodb.svg';
+// import awsLogo from '@/public/superstack/aws.svg';
 //
-// // Mapping tech names to logos
+// // Mapping tech names to superstack
 // const techLogos = {
 //   'Next.js': nextjsLogo,
 //   'Vercel': vercelLogo,

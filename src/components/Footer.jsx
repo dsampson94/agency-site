@@ -2,8 +2,9 @@ import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
-import { Logo } from '@/components/Logo'
 import { socialMediaProfiles } from '@/components/SocialMedia'
+import Image from 'next/image';
+import logo from '@/images/superstack/android-chrome-512x512.png'
 
 const navigation = [
   {
@@ -122,10 +123,16 @@ export function Footer() {
         </div>
         <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
           <Link href="/" aria-label="Home">
-            <Logo className="h-8" fillOnHover />
+            <Image
+                src={logo}
+                alt="Logo"
+                width={80}
+                height={60}
+                className="h-auto w-auto"
+            />
           </Link>
-          <p className="text-sm text-neutral-700">
-            © Studio Agency Inc. {new Date().getFullYear()}
+          <p className="text-sm mb-10 text-neutral-700">
+            © SuperStack Solutions. {new Date().getFullYear()}
           </p>
         </div>
       </FadeIn>

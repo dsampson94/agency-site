@@ -18,7 +18,6 @@ export default function Contact() {
     return (
         <div className="mt-64">
             <PageIntro eyebrow="Contact us" title="Let’s work together">
-                <p>We hope to hear from you.</p>
             </PageIntro>
 
             <Container className="mt-12">
