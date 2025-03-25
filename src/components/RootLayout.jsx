@@ -17,7 +17,8 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { GridPattern } from '@/components/GridPattern'
-import { Logo, Logomark } from '@/components/Logo'
+import Image from 'next/image';
+import logo from '@/images/nextpad/android-chrome-512x512.png'
 import { Offices } from '@/components/Offices'
 import { SocialMedia } from '@/components/SocialMedia'
 
@@ -41,64 +42,61 @@ function MenuIcon(props) {
 }
 
 function Header({
-  panelId,
-  icon: Icon,
-  expanded,
-  onToggle,
-  toggleRef,
-  invert = false,
-}) {
-  let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)
+                  panelId,
+                  icon: Icon,
+                  expanded,
+                  onToggle,
+                  toggleRef,
+                  invert = false,
+                }) {
+  let { logoHovered, setLogoHovered } = useContext(RootLayoutContext);
 
   return (
-    <Container>
-      <div className="flex items-center justify-between">
-        <Link
-          href="/"
-          aria-label="Home"
-          onMouseEnter={() => setLogoHovered(true)}
-          onMouseLeave={() => setLogoHovered(false)}
-        >
-          <Logomark
-            className="h-8 sm:hidden"
-            invert={invert}
-            filled={logoHovered}
-          />
-          <Logo
-            className="hidden h-8 sm:block"
-            invert={invert}
-            filled={logoHovered}
-          />
-        </Link>
-        <div className="flex items-center gap-x-8">
-          <Button href="/contact" invert={invert}>
-            Contact us
-          </Button>
-          <button
-            ref={toggleRef}
-            type="button"
-            onClick={onToggle}
-            aria-expanded={expanded ? 'true' : 'false'}
-            aria-controls={panelId}
-            className={clsx(
-              'group -m-2.5 rounded-full p-2.5 transition',
-              invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
-            )}
-            aria-label="Toggle navigation"
+      <Container>
+        <div className="flex items-center justify-between">
+          <Link
+              href="/"
+              aria-label="Home"
+              onMouseEnter={() => setLogoHovered(true)}
+              onMouseLeave={() => setLogoHovered(false)}
           >
-            <Icon
-              className={clsx(
-                'h-6 w-6',
-                invert
-                  ? 'fill-white group-hover:fill-neutral-200'
-                  : 'fill-neutral-950 group-hover:fill-neutral-700',
-              )}
+            <Image
+                src={logo}
+                alt="Epic Dev Team Logo"
+                width={130}
+                height={60}
+                className="h-auto w-auto"
             />
-          </button>
+          </Link>
+          <div className="flex items-center gap-x-8">
+            <Button href="/contact" invert={invert}>
+              Contact us
+            </Button>
+            <button
+                ref={toggleRef}
+                type="button"
+                onClick={onToggle}
+                aria-expanded={expanded ? 'true' : 'false'}
+                aria-controls={panelId}
+                className={clsx(
+                    'group -m-2.5 rounded-full p-2.5 transition',
+                    invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
+                )}
+                aria-label="Toggle navigation"
+            >
+              <Icon
+                  className={clsx(
+                      'h-6 w-6',
+                      invert
+                          ? 'fill-white group-hover:fill-neutral-200'
+                          : 'fill-neutral-950 group-hover:fill-neutral-700',
+                  )}
+              />
+            </button>
+          </div>
         </div>
-      </div>
-    </Container>
-  )
+      </Container>
+  );
 }
 
 function NavigationRow({ children }) {
@@ -238,7 +236,7 @@ function RootLayoutInner({ children }) {
       <motion.div
         layout
         style={{ borderTopLeftRadius: 40, borderTopRightRadius: 40 }}
-        className="relative flex flex-auto overflow-hidden bg-white pt-14"
+        className="relative flex flex-auto overflow-hidden bg-gray-200 pt-14"
       >
         <motion.div
           layout
