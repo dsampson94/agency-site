@@ -131,7 +131,7 @@ function CaseStudies({caseStudies}) {
 
 function Services() {
     return (
-        <>
+        <div className="mt-32">
             <SectionIntro
                 eyebrow="Services"
                 className="flex"
@@ -170,7 +170,7 @@ function Services() {
                     </List>
                 </div>
             </Container>
-        </>
+        </div>
     );
 }
 
@@ -201,6 +201,8 @@ export default async function Home() {
             <MeetTheTeam/>
 
             <ContactSection/>
+
+            <Services/>
 
             <h1 className="font-display mt-32 text-4xl flex justify-center font-medium tracking-tight text-neutral-950 [text-wrap:balance]">
                 Innovation should be shared
@@ -238,8 +240,6 @@ export default async function Home() {
                 {`“AWS gives builders the most powerful and scalable cloud infrastructure in the world. 
   From startups to enterprises, AWS is the foundation of modern software.” – Werner Vogels, CTO of Amazon`}
             </Testimonial>
-
-            <Services/>
         </>
     );
 }

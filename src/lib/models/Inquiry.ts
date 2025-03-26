@@ -15,7 +15,17 @@ export interface IInquiry extends Document {
 const InquirySchema: Schema<IInquiry> = new Schema(
     {
         name: { type: String, required: true },
-        email: { type: String, required: true },
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            validate: {
+                validator: function(v) {
+                    return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(v);
+                },
+                message: 'Invalid email format. Please provide a valid email address.'
+            }
+        },
         company: { type: String },
         phone: { type: String },
         message: { type: String, required: true },

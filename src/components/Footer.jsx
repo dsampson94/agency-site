@@ -5,6 +5,7 @@ import { FadeIn } from '@/components/FadeIn'
 import { socialMediaProfiles } from '@/components/SocialMedia'
 import Image from 'next/image';
 import logo from '@/images/superstack/android-chrome-512x512.png'
+import {useState} from "react";
 
 const navigation = [
   {
@@ -80,35 +81,82 @@ function ArrowIcon(props) {
 }
 
 function NewsletterForm() {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState(null);
+
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus(null);
+
+    // Simple email validation
+    if (!email || !/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email)) {
+      setStatus({ type: 'error', message: 'Please enter a valid email address.' });
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus({ type: 'success', message: 'You have successfully subscribed to the newsletter!' });
+      } else {
+        setStatus({ type: 'error', message: data.error || 'Something went wrong. Please try again.' });
+      }
+    } catch (error) {
+      console.error('Newsletter submission error:', error);
+      setStatus({ type: 'error', message: 'An error occurred while submitting your email. Please try again.' });
+    }
+  };
+
   return (
-    <form className="max-w-sm">
-      <h2 className="font-display text-sm font-semibold tracking-wider text-neutral-950">
-        Sign up for our newsletter
-      </h2>
-      <p className="mt-4 text-sm text-neutral-700">
-        Subscribe to get the latest design news, articles, resources and
-        inspiration.
-      </p>
-      <div className="relative mt-6">
-        <input
-          type="email"
-          placeholder="Email address"
-          autoComplete="email"
-          aria-label="Email address"
-          className="block w-full rounded-2xl border border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/6 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"
-        />
-        <div className="absolute inset-y-1 right-1 flex justify-end">
-          <button
-            type="submit"
-            aria-label="Submit"
-            className="flex aspect-square h-full items-center justify-center rounded-xl bg-neutral-950 text-white transition hover:bg-neutral-800"
-          >
-            <ArrowIcon className="w-4" />
-          </button>
+      <form onSubmit={handleSubmit} className="max-w-sm">
+        <h2 className="font-display text-sm font-semibold tracking-wider text-neutral-950">
+          Sign up for our newsletter
+        </h2>
+        <p className="mt-4 text-sm text-neutral-700">
+          Subscribe to get the latest design news, articles, resources and inspiration.
+        </p>
+        <div className="relative mt-6">
+          <input
+              type="email"
+              placeholder="Email address"
+              autoComplete="email"
+              aria-label="Email address"
+              className="block w-full rounded-2xl border border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/6 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"
+              value={email}
+              onChange={handleChange}
+          />
+          <div className="absolute inset-y-1 right-1 flex justify-end">
+            <button
+                type="submit"
+                aria-label="Submit"
+                className="flex aspect-square h-full items-center justify-center rounded-xl bg-neutral-950 text-white transition hover:bg-neutral-800"
+            >
+              <ArrowIcon className="w-4" />
+            </button>
+          </div>
         </div>
-      </div>
-    </form>
-  )
+
+        {status && status.type === 'success' && (
+            <p className="mt-4 text-green-600">{status.message}</p>
+        )}
+        {status && status.type === 'error' && (
+            <p className="mt-4 text-red-600">{status.message}</p>
+        )}
+      </form>
+  );
 }
 
 export function Footer() {

@@ -16,7 +16,7 @@ export const metadata = {
 // ✔ No "use client" here, so we can use metadata
 export default function Contact() {
     return (
-        <div className="mt-32">
+        <div className="mt-48">
             <PageIntro eyebrow="Contact us" title="Let’s work together">
             </PageIntro>
 

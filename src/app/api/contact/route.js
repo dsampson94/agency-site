@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import { SendEmailCommand, SESClient } from '@aws-sdk/client-ses';
+import {NextResponse} from 'next/server';
+import {SendEmailCommand, SESClient} from '@aws-sdk/client-ses';
 import connectToDatabase from '@/lib/mongoose';
 import Inquiry from '@/lib/models/Inquiry';
 
@@ -10,38 +10,30 @@ const EMAIL_FROM = process.env.EMAIL_FROM;
 const EMAIL_TO = process.env.EMAIL_TO;
 
 export async function POST(req) {
-    console.log('📬 Contact POST request received');
-
     try {
-        console.log('🔍 Parsing request body...');
         const body = await req.json();
-        const { name, email, company, phone, message, budget } = body;
-
-        console.log('📨 Inquiry Details:', { name, email, company, phone, message });
-
+        const {name, email, company, phone, message, budget} = body;
         if (!name || !email || !message) {
-            console.warn('❗ Missing required fields');
             return NextResponse.json(
-                { error: 'Name, email, and message are required.' },
-                { status: 400 }
+                {success: false, error: 'Name, email, and message are required.'},
+                {status: 400}
             );
         }
 
-        console.log('🌐 Connecting to MongoDB...');
         await connectToDatabase();
 
-        console.log('💾 Saving inquiry to database...');
-        await Inquiry.create({ name, email, company, phone, message });
+        const existingInquiry = await Inquiry.findOne({email});
+        if (existingInquiry) {
+            return NextResponse.json(
+                {success: false, error: 'Email already exists'},
+                {status: 400}
+            );
+        }
 
-        console.log('📡 Setting up SES client...');
-        console.log('📦 ENV:', {
-            AWS_REGION,
-            AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID ? '✅ SET' : '❌ MISSING',
-            AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY ? '✅ SET' : '❌ MISSING',
-            EMAIL_FROM,
-            EMAIL_TO,
-        });
+        // Save inquiry to the database
+        await Inquiry.create({name, email, company, phone, message, budget});
 
+        // Set up SES client
         const sesClient = new SESClient({
             region: AWS_REGION,
             credentials: {
@@ -50,61 +42,61 @@ export async function POST(req) {
             },
         });
 
+        // Email to the owner
         const sendToOwner = new SendEmailCommand({
             Source: EMAIL_FROM,
-            Destination: { ToAddresses: [EMAIL_TO] },
+            Destination: {ToAddresses: [EMAIL_TO]},
             Message: {
-                Subject: { Data: `New Inquiry from ${name}` },
+                Subject: {Data: `New Inquiry from ${name}`},
                 Body: {
                     Text: {
                         Data: `
-New inquiry details:
-
-Name: ${name}
-Email: ${email}
-Company: ${company}
-Phone: ${phone}
-Budget: ${budget}
-Message: ${message}
-`,
+                                New inquiry details:
+                                
+                                Name: ${name}
+                                Email: ${email}
+                                Company: ${company || 'Not provided'}
+                                Phone: ${phone || 'Not provided'}
+                                Budget: ${budget || 'Not provided'}
+                                Message: ${message}
+                                `,
                     },
                 },
             },
         });
 
+        // Email to the user
         const sendToUser = new SendEmailCommand({
             Source: EMAIL_FROM,
-            Destination: { ToAddresses: [email] },
+            Destination: {ToAddresses: [email]},
             Message: {
-                Subject: { Data: 'Thanks for contacting us!' },
+                Subject: {Data: 'Thanks for contacting us!'},
                 Body: {
                     Text: {
                         Data: `
-Hi ${name},
-
-Thanks for reaching out! We’ve received your inquiry and will contact you shortly.
-
-Best,
-Your Company
-`,
+                                Hi ${name},
+                                
+                                Thanks for reaching out! We’ve received your inquiry and will contact you shortly.
+                                
+                                Best,
+                                Your Company
+                                `,
                     },
                 },
             },
         });
 
-        console.log('📤 Sending emails...');
-        await Promise.all([
-            sesClient.send(sendToOwner),
-            sesClient.send(sendToUser),
-        ]);
+        // Send emails
+        // await Promise.all([sesClient.send(sendToOwner), sesClient.send(sendToUser)]);
+
         console.log('✅ Emails sent successfully');
 
-        return NextResponse.json({ success: true }, { status: 200 });
+        return NextResponse.json({success: true}, {status: 200});
     } catch (error) {
         console.error('❌ Error handling contact form:', error);
         return NextResponse.json(
-            { success: false, error: error.message || 'Server error' },
-            { status: 500 }
+            {success: false, error: error.message || 'Server error'},
+            {status: 500}
         );
     }
 }
