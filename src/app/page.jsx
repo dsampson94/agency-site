@@ -69,14 +69,18 @@ function CaseStudies({caseStudies}) {
                 <p className="text-2xl text-neutral-600">
                     At SuperStack Development Studio, we deliver fast, scalable, and cost-effective solutions using the
                     greatest web and mobile frameworks like Next.js and React Native for applications of all kinds. By
-                    prioritising DevEx (developer experience) and technical efficiency, we help businesses launch faster, reduce
+                    prioritising DevEx (developer experience) and technical efficiency, we help businesses launch
+                    faster, reduce
                     risks, and stay on budget.
                 </p>
                 <br/>
                 <p className="text-2xl text-neutral-600">
-                    We harness AI-driven automation — integrating generative AI, advanced cloud services, and productivity tools to
-                    slash work hours, boost accuracy, and eliminate delays. Saving our clients money. As an agile studio focused on efficiency
-                    and seamless product launches, we prioritise productive hours and minimal waste. While still guaranteeing
+                    We harness AI-driven automation — integrating generative AI, advanced cloud services, and
+                    productivity tools to
+                    slash work hours, boost accuracy, and eliminate delays. Saving our clients money. As an agile studio
+                    focused on efficiency
+                    and seamless product launches, we prioritise productive hours and minimal waste. While still
+                    guaranteeing
                     delivery of best-in-class, modern, scalable, maintainable full stack web applications.
                 </p>
                 <br/>
@@ -194,10 +198,16 @@ export default async function Home() {
 
             <CaseStudies caseStudies={caseStudies}/>
 
+            <MeetTheTeam/>
+
             <ContactSection/>
 
+            <h1 className="font-display mt-32 text-4xl flex justify-center font-medium tracking-tight text-neutral-950 [text-wrap:balance]">
+                Innovation should be shared
+            </h1>
+
             <Testimonial
-                className="mt-24 sm:mt-32 lg:mt-40"
+                className="mt-32 mb-32"
                 client={{name: '', logo: ''}}
             >
                 {`“Next.js has redefined how modern applications are built. With its hybrid static & server rendering, 
@@ -228,8 +238,6 @@ export default async function Home() {
                 {`“AWS gives builders the most powerful and scalable cloud infrastructure in the world. 
   From startups to enterprises, AWS is the foundation of modern software.” – Werner Vogels, CTO of Amazon`}
             </Testimonial>
-
-            <MeetTheTeam/>
 
             <Services/>
         </>

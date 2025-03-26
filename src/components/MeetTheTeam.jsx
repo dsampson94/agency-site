@@ -47,7 +47,7 @@ export function MeetTheTeam() {
     ]
 
     return (
-        <section className="my-16 flex flex-col items-center text-center">
+        <section className="my-32 flex flex-col items-center text-center">
             <h2 className="text-3xl font-semibold text-neutral-950">
                 Meet the Team
             </h2>

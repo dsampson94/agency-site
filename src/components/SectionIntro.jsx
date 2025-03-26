@@ -19,7 +19,7 @@ export function SectionIntro({
             <>
               <span
                 className={clsx(
-                  'mb-6 block font-display text-base font-semibold',
+                  'mb-6 block text-4xl font-display font-semibold',
                   invert ? 'text-white' : 'text-neutral-950',
                 )}
               >

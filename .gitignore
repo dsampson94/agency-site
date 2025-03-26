@@ -19,6 +19,8 @@
 .DS_Store
 *.pem
 .env
+.idea
+.next
 
 # debug
 npm-debug.log*
