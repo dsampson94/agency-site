@@ -67,16 +67,17 @@ function CaseStudies({caseStudies}) {
                 className="mt-6 sm:mt-6 lg:mt-6"
             >
                 <p className="text-2xl text-neutral-600">
-                    At NextPad Development Studio, we deliver fast, scalable, and cost-effective solutions using the
-                    latest web and mobile frameworks like Next.js and React Native for applications of all kinds. By
-                    streamlining development cycles and cutting overhead, we help businesses launch faster, reduce
+                    At SuperStack Development Studio, we deliver fast, scalable, and cost-effective solutions using the
+                    greatest web and mobile frameworks like Next.js and React Native for applications of all kinds. By
+                    prioritising DevEx (developer experience) and technical efficiency, we help businesses launch faster, reduce
                     risks, and stay on budget.
                 </p>
                 <br/>
                 <p className="text-2xl text-neutral-600">
-                    We harness AI-driven automation—integrating generative AI, cloud services, and productivity tools to
-                    slash manual work, boost accuracy, and eliminate delays. As an agile studio focused on efficiency
-                    and seamless product launches, we prioritise productive hours with minimal waste.
+                    We harness AI-driven automation — integrating generative AI, advanced cloud services, and productivity tools to
+                    slash work hours, boost accuracy, and eliminate delays. Saving our clients money. As an agile studio focused on efficiency
+                    and seamless product launches, we prioritise productive hours and minimal waste. While still guaranteeing
+                    delivery of best-in-class, modern, scalable, maintainable full stack web applications.
                 </p>
                 <br/>
             </SectionIntro>
@@ -179,7 +180,7 @@ export default async function Home() {
 
     return (
         <>
-            <Container className="mt-32">
+            <Container className="mt-64">
                 <FadeIn className="max-w-3xl">
                     <h1 className="font-display text-3xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
                         Modern software, <br/> for less.
