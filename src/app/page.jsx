@@ -179,10 +179,10 @@ export default async function Home() {
 
     return (
         <>
-            <Container className="mt-64">
+            <Container className="mt-32">
                 <FadeIn className="max-w-3xl">
-                    <h1 className="font-display text-6xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
-                        Modern software solutions, for less.
+                    <h1 className="font-display text-3xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
+                        Modern software, <br/> for less.
                     </h1>
                     <p className="mt-6 text-2xl text-neutral-600">
                         Get the best for less. By building with Next.js, we cut dev hours without cutting
@@ -197,7 +197,7 @@ export default async function Home() {
 
             <Testimonial
                 className="mt-24 sm:mt-32 lg:mt-40"
-                client={{name: 'Guillermo Rauch, CEO of Vercel', logo: ''}}
+                client={{name: '', logo: ''}}
             >
                 {`“Next.js has redefined how modern applications are built. With its hybrid static & server rendering, 
   developers can build faster, deploy seamlessly, and scale effortlessly. It’s not just a framework—it’s the future of web development.” - Guillermo Rauch, CEO of Vercel`}
@@ -231,8 +231,6 @@ export default async function Home() {
             <MeetTheTeam/>
 
             <Services/>
-
-            <ContactSection/>
         </>
     );
 }
