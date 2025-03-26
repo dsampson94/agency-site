@@ -1,4 +1,3 @@
-// app/contact/ContactForm.jsx
 'use client'
 import { useState, useId } from 'react'
 import { FadeIn } from '@/components/FadeIn'
@@ -41,25 +40,6 @@ function TextInput({ label, ...props }) {
     )
 }
 
-function RadioInput({ label, ...props }) {
-    return (
-        <label className="flex gap-x-3">
-            <input
-                type="radio"
-                className="
-          h-6 w-6 flex-none appearance-none rounded-full
-          border border-neutral-950/20 outline-none
-          checked:border-[0.5rem] checked:border-neutral-950
-          focus-visible:ring-1 focus-visible:ring-neutral-950
-          focus-visible:ring-offset-2
-        "
-                {...props}
-            />
-            <span className="text-base/6 text-neutral-950">{label}</span>
-        </label>
-    )
-}
-
 export function ContactForm() {
     const [form, setForm] = useState({
         name: '',
@@ -68,7 +48,10 @@ export function ContactForm() {
         phone: '',
         message: '',
         budget: '',
+        website: '',
+        nickname: '',
     })
+
     const [status, setStatus] = useState(null)
 
     function handleChange(e) {
@@ -79,6 +62,12 @@ export function ContactForm() {
     async function handleSubmit(e) {
         e.preventDefault()
         setStatus(null)
+
+        // 🛡️ Simple bot protection
+        if (form.website.trim() !== '' || form.nickname.trim() !== '') {
+            console.warn('Bot submission blocked ❌')
+            return
+        }
 
         try {
             const res = await fetch('/api/contact', {
@@ -100,6 +89,27 @@ export function ContactForm() {
                 <h2 className="font-display text-base font-semibold text-neutral-950">
                     Enquiries
                 </h2>
+
+                {/* 🔒 Honeypot field (invisible to users) */}
+                <input
+                    type="text"
+                    name="website"
+                    value={form.website}
+                    onChange={handleChange}
+                    style={{ display: 'none' }}
+                    autoComplete="off"
+                    tabIndex={-1}
+                />
+
+                <input
+                    type="text"
+                    name="nickname"
+                    value={form.nickname}
+                    onChange={handleChange}
+                    style={{ display: 'none' }}
+                    autoComplete="off"
+                    tabIndex={-1}
+                />
 
                 <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
                     <TextInput

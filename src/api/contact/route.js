@@ -17,7 +17,7 @@ export async function POST(req) {
         const body = await req.json();
         const { name, email, company, phone, message, budget } = body;
 
-        console.log('📨 Inquiry Details:', { name, email, company, phone, message, budget });
+        console.log('📨 Inquiry Details:', { name, email, company, phone, message });
 
         if (!name || !email || !message) {
             console.warn('❗ Missing required fields');
@@ -31,7 +31,7 @@ export async function POST(req) {
         await connectToDatabase();
 
         console.log('💾 Saving inquiry to database...');
-        await Inquiry.create({ name, email, company, phone, message, budget });
+        await Inquiry.create({ name, email, company, phone, message });
 
         console.log('📡 Setting up SES client...');
         console.log('📦 ENV:', {
