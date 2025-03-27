@@ -10,10 +10,18 @@ import { remarkRehypeWrap } from 'remark-rehype-wrap'
 import remarkUnwrapImages from 'remark-unwrap-images'
 import shiki from 'shiki'
 import { unifiedConditional } from 'unified-conditional'
+import { fileURLToPath } from 'url'
+
+/** @type {import('next').NextConfig} */
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  webpack: (config) => {
+    config.resolve.alias['@'] = path.join(__dirname, 'src')
+    return config
+  },
 }
 
 function remarkMDXLayout(source, metaName) {
