@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
-import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
-import { fromEnv } from "@aws-sdk/credential-providers";
+import {NextRequest, NextResponse} from "next/server";
+import {SendEmailCommand, SESClient} from "@aws-sdk/client-ses";
+import {fromEnv} from "@aws-sdk/credential-providers";
 import jwt from "jsonwebtoken";
 import connectToDatabase from "../../../../lib/mongoose";
 import User from "../../../../lib/models/User";
@@ -15,17 +15,17 @@ export async function POST(req: NextRequest) {
     try {
         await connectToDatabase();
 
-        const { email } = await req.json();
+        const {email} = await req.json();
         if (!email) {
-            return NextResponse.json({ error: "Email is required" }, { status: 400 });
+            return NextResponse.json({error: "Email is required"}, {status: 400});
         }
 
         // Check if user exists
-        let user = await User.findOne({ email });
+        let user = await User.findOne({email});
 
-        // If user doesn't exist, create and assign the admin role if it's deltaalphavids
+        // If user doesn't exist, create and assign the admin role if it's your admin email
         if (!user) {
-            const isAdmin = email.toLowerCase() === "deltaalphavids@gmail.com";
+            const isAdmin = email.toLowerCase() === "davesampson15@gmail.com";
             user = await User.create({
                 email,
                 role: isAdmin ? "ADMIN" : "USER",
@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
         }
 
         // Create a magic link token (expires in 15 min)
-        const token = jwt.sign({ email: user.email, role: user.role }, process.env.JWT_SECRET!, {
+        const token = jwt.sign({email: user.email, role: user.role}, process.env.JWT_SECRET!, {
             expiresIn: "15m",
         });
 
@@ -43,20 +43,20 @@ export async function POST(req: NextRequest) {
         // Send email via SES
         const params = {
             Source: process.env.EMAIL_FROM!,
-            Destination: { ToAddresses: [user.email] },
+            Destination: {ToAddresses: [user.email]},
             Message: {
-                Subject: { Data: "Your Magic Link to Scoop Tool Ai" },
+                Subject: {Data: "Your Magic Link to SuperStack"},
                 Body: {
                     Html: {
                         Data: `
-              <h1>Log In to Scoop Tool Ai</h1>
-              <p>Click below to sign in:</p>
-              <a href="${magicLink}"
-                 style="padding:10px 20px; background:#16a34a; color:#fff; text-decoration:none; border-radius:5px;">
-                 Log In
-              </a>
-              <p>If you didn't request this link, ignore this email.</p>
-            `,
+                      <h1>Log In to SuperStack</h1>
+                      <p>Click below to sign in:</p>
+                      <a href="${magicLink}"
+                         style="padding:10px 20px; background:#16a34a; color:#fff; text-decoration:none; border-radius:5px;">
+                         Access SuperStack
+                      </a>
+                      <p>If you didn't request this link, ignore this email.</p>
+                    `,
                     },
                 },
             },
@@ -64,9 +64,9 @@ export async function POST(req: NextRequest) {
 
         await ses.send(new SendEmailCommand(params));
 
-        return NextResponse.json({ message: "Magic link sent to your email!" });
+        return NextResponse.json({message: "Magic link sent to your email!"});
     } catch (error) {
         console.error("Send Magic Link Error:", error);
-        return NextResponse.json({ error: "Failed to send magic link" }, { status: 500 });
+        return NextResponse.json({error: "Failed to send magic link"}, {status: 500});
     }
 }

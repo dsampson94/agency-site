@@ -201,10 +201,6 @@ export default async function Home() {
 
             <MeetTheTeam/>
 
-            <TellTheTeam/>
-
-            <ContactSection/>
-
             <Services/>
 
             <h1 className="font-display mt-32 text-4xl flex justify-center font-medium tracking-tight text-neutral-950 [text-wrap:balance]">

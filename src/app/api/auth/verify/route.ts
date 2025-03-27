@@ -35,15 +35,18 @@ export async function GET(req: NextRequest) {
             { expiresIn: "7d" }
         );
 
+        // Redirect to root ('/') after successful login
+        const response = NextResponse.redirect(new URL("/", req.url));
+
         // Set the httpOnly cookie with the session token
-        const response = NextResponse.redirect(new URL("/dashboard", req.url));
-        response.cookies.set("sportsbet_token", sessionToken, {
+        response.cookies.set("superstack_token", sessionToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
             sameSite: "strict",
-            maxAge: 60 * 60 * 24 * 7, // 7 days in seconds
+            maxAge: 60 * 60 * 24 * 7, // 7 days
             path: "/",
         });
+
         return response;
     } catch (error) {
         return NextResponse.json({ error: "Invalid or expired token" }, { status: 401 });

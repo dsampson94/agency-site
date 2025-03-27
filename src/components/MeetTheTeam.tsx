@@ -6,55 +6,52 @@ import Link from 'next/link'
 import axios from 'axios'
 import meImage from '/src/images/ds.jpg'
 import donImage from '/src/images/don.png'
-import {Button} from "./Button";
+import {Button} from './Button'
+import useAuth from "../lib/hooks/useAuth";
 
 export function MeetTheTeam() {
+    // Local state for email and magic link message
     const [email, setEmail] = useState('')
-    const [emailSubmitted, setEmailSubmitted] = useState(false)
+    const [loginMessage, setLoginMessage] = useState('')
 
-    // Voice note recorder states
+    // Voice note states
     const [isRecording, setIsRecording] = useState(false)
     const [audioURL, setAudioURL] = useState<string | null>(null)
     const [transcript, setTranscript] = useState<string | null>(null)
-    const [voiceNotes, setVoiceNotes] = useState<Array<{ audioURL: string; transcript: string }>>([])
+    const [voiceNotes, setVoiceNotes] = useState<
+        Array<{ audioURL: string; transcript: string }>
+    >([])
 
     const mediaRecorderRef = useRef<MediaRecorder | null>(null)
     const audioChunksRef = useRef<Blob[]>([])
 
-    const teamMembers = [
-        {
-            name: 'David Sampson',
-            role: 'Senior Developer & Problem Solver',
-            image: meImage,
-            links: [
-                {label: 'Website', href: 'https://www.davidsampson.tech/'},
-                {label: 'LinkedIn', href: 'https://linkedin.com/in/dsampsondev'},
-                {label: 'Upwork', href: 'https://www.upwork.com/freelancers/~01cbe753e4aabd2627'},
-            ],
-        },
-        {
-            name: 'Monwabisi Ndlovu',
-            role: 'Junior Developer & Problem Solver',
-            image: donImage,
-            links: [
-                {label: 'Website', href: 'https://monwabisi16.netlify.app/'},
-                {label: 'LinkedIn', href: 'https://linkedin.com/in/monwabisi-ndlovu-3270a020b'},
-            ],
-        },
-    ]
+    // Use your auth hook to check if the user is logged in
+    const {isAuthenticated, profileLoading} = useAuth()
 
+    // Function to send magic link for authentication
+    const sendMagicLink = async (e: React.FormEvent) => {
+        e.preventDefault()
+        if (!email) return
+        try {
+            const response = await axios.post('/api/auth/send-magic-link', {email})
+            setLoginMessage('Magic link sent to your email. Please check your inbox.')
+        } catch (err) {
+            console.error('Error sending magic link', err)
+            setLoginMessage('Failed to send magic link. Please try again.')
+        }
+    }
+
+    // Recording function; only allowed when authenticated
     const startOrStopRecording = async () => {
-        if (!email) {
-            alert('Please enter your email first.')
+        if (!isAuthenticated) {
+            alert('You need to be logged in to record a voice note.')
             return
         }
 
         if (isRecording) {
-            // Stop recording
             mediaRecorderRef.current?.stop()
             setIsRecording(false)
         } else {
-            // Start recording
             const stream = await navigator.mediaDevices.getUserMedia({audio: true})
             const mediaRecorder = new MediaRecorder(stream)
             mediaRecorderRef.current = mediaRecorder
@@ -65,12 +62,12 @@ export function MeetTheTeam() {
             }
 
             mediaRecorder.onstop = async () => {
-                // Convert audio chunks to a Blob
+                // Create a Blob from the recorded audio
                 const audioBlob = new Blob(audioChunksRef.current, {type: 'audio/wav'})
                 const blobURL = URL.createObjectURL(audioBlob)
                 setAudioURL(blobURL)
 
-                // Prepare POST data
+                // Prepare form data for backend
                 const formData = new FormData()
                 formData.append('audio', audioBlob, 'recording.wav')
                 formData.append('email', email.toLowerCase())
@@ -78,16 +75,14 @@ export function MeetTheTeam() {
                 try {
                     const response = await axios.post('/api/voice-note', formData)
                     if (response.data.error) {
-                        // e.g. "3 voice notes max"
                         alert(response.data.error)
                         return
                     }
 
-                    // Extract the newly added note from the updated user doc
+                    // Get latest voice note info from the returned user document
                     const {user} = response.data
                     const latestEnquiry = user.enquiries[user.enquiries.length - 1]
-                    const latestNote =
-                        latestEnquiry.voiceNotes[latestEnquiry.voiceNotes.length - 1]
+                    const latestNote = latestEnquiry.voiceNotes[latestEnquiry.voiceNotes.length - 1]
 
                     setTranscript(latestNote?.transcript || '')
                     setVoiceNotes((prev) => [
@@ -108,9 +103,37 @@ export function MeetTheTeam() {
         }
     }
 
+    // Simple team data to display
+    const teamMembers = [
+        {
+            name: 'David Sampson',
+            role: 'Senior Developer & Problem Solver',
+            image: meImage,
+            links: [
+                {label: 'Website', href: 'https://www.davidsampson.tech/'},
+                {label: 'LinkedIn', href: 'https://linkedin.com/in/dsampsondev'},
+                {
+                    label: 'Upwork',
+                    href: 'https://www.upwork.com/freelancers/~01cbe753e4aabd2627',
+                },
+            ],
+        },
+        {
+            name: 'Monwabisi Ndlovu',
+            role: 'Junior Developer & Problem Solver',
+            image: donImage,
+            links: [
+                {label: 'Website', href: 'https://monwabisi16.netlify.app/'},
+                {label: 'LinkedIn', href: 'https://linkedin.com/in/monwabisi-ndlovu-3270a020b'},
+            ],
+        },
+    ]
+
     return (
         <section className="my-32 px-4 text-center">
-            <h2 className="text-4xl font-bold text-neutral-900 mb-12">Meet the Team</h2>
+            <h2 className="text-4xl font-bold text-neutral-900 mb-12">
+                Meet the Team
+            </h2>
 
             {/* Team Grid */}
             <div className="grid gap-12 sm:grid-cols-2 max-w-5xl mx-auto">
@@ -123,7 +146,9 @@ export function MeetTheTeam() {
                             <Image src={image} alt={name} fill className="object-cover"/>
                         </div>
 
-                        <h3 className="mt-4 text-xl font-semibold text-neutral-900">{name}</h3>
+                        <h3 className="mt-4 text-xl font-semibold text-neutral-900">
+                            {name}
+                        </h3>
                         <p className="mt-1 text-sm text-neutral-600">{role}</p>
 
                         <div className="mt-5 flex flex-wrap justify-center gap-3">
@@ -144,32 +169,11 @@ export function MeetTheTeam() {
 
             {/* Voice Note Section */}
             <div className="mt-20 max-w-xl mx-auto bg-white p-6 rounded-xl shadow-lg">
-                <h3 className="text-xl font-semibold text-neutral-900 mb-4">
-                    Want to speak to us directly?
-                </h3>
-
-                {!emailSubmitted ? (
-                    <form
-                        onSubmit={(e) => {
-                            e.preventDefault()
-                            if (email) {
-                                setEmailSubmitted(true)
-                            }
-                        }}
-                        className="flex flex-col gap-4"
-                    >
-                        <input
-                            type="email"
-                            required
-                            placeholder="Enter your email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            className="border px-4 py-2 rounded-md"
-                        />
-                        <Button type="submit" className={undefined}>Continue to Record</Button>
-                    </form>
-                ) : (
-                    <div className="text-center">
+                {isAuthenticated ? (
+                    <>
+                        <h3 className="text-xl font-semibold text-neutral-900 mb-4">
+                            Record your voice note
+                        </h3>
                         <button
                             onClick={startOrStopRecording}
                             className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
@@ -187,12 +191,14 @@ export function MeetTheTeam() {
                         {/* Latest Transcript */}
                         {transcript && (
                             <div className="mt-8 bg-white p-4 rounded shadow">
-                                <h4 className="text-lg font-semibold mb-2">Latest Transcript</h4>
+                                <h4 className="text-lg font-semibold mb-2">
+                                    Latest Transcript
+                                </h4>
                                 <p className="text-sm text-gray-700">{transcript}</p>
                             </div>
                         )}
 
-                        {/* All Voice Notes */}
+                        {/* List of All Voice Notes */}
                         {voiceNotes.length > 0 && (
                             <div className="mt-6">
                                 <h4 className="text-lg font-semibold mb-2">
@@ -208,7 +214,27 @@ export function MeetTheTeam() {
                                 </ul>
                             </div>
                         )}
-                    </div>
+                    </>
+                ) : (
+                    <>
+                        <h3 className="text-xl font-semibold text-neutral-900 mb-4">
+                            Log in to record your voice note
+                        </h3>
+                        <form onSubmit={sendMagicLink} className="flex flex-col gap-4">
+                            <input
+                                type="email"
+                                required
+                                placeholder="Enter your email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                className="border px-4 py-2 rounded-md"
+                            />
+                            <Button type="submit" className={undefined}>Send Magic Link</Button>
+                        </form>
+                        {loginMessage && (
+                            <p className="mt-4 text-sm text-neutral-600">{loginMessage}</p>
+                        )}
+                    </>
                 )}
             </div>
         </section>
