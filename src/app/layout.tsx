@@ -1,6 +1,10 @@
-import {Analytics} from '@vercel/analytics/react'
 import '@/styles/tailwind.css'
+
 import type {Metadata} from 'next'
+
+import {Analytics} from '@vercel/analytics/react'
+import {SpeedInsights} from "@vercel/speed-insights/next";
+
 import {RootLayout} from '../components/RootLayout'
 
 export const metadata: Metadata = {
@@ -80,6 +84,8 @@ export default function Layout({children}: { children: React.ReactNode }) {
     return (
         <html lang="en" className="h-full bg-neutral-950 text-base antialiased">
         <head>
+            <meta charSet="UTF-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
@@ -88,6 +94,10 @@ export default function Layout({children}: { children: React.ReactNode }) {
                         '@type': 'Organization',
                         name: 'SuperStack Solutions',
                         url: 'https://www.superstacksolutions.co.za',
+                        founder: {
+                            "@type": "Person",
+                            "name": "David Sampson"
+                        },
                         sameAs: [
                             'https://www.facebook.com/profile.php?id=61574483712042',
                             'https://www.linkedin.com/company/106934470/',
@@ -99,6 +109,7 @@ export default function Layout({children}: { children: React.ReactNode }) {
         <body className="flex min-h-full flex-col">
         <RootLayout>{children}</RootLayout>
         <Analytics/>
+        <SpeedInsights/>
         </body>
         </html>
     )
