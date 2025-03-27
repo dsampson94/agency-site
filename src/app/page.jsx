@@ -18,6 +18,7 @@ import logoUnseal from '@/images/clients/unseal/logo-light.svg';
 import imageLaptop from '@/images/laptop.jpg';
 import {loadCaseStudies} from '@/lib/mdx';
 import {MeetTheTeam} from '@/components/MeetTheTeam';
+import TellTheTeam from "@/components/TellTheTeam";
 
 const clients = [
     ['Phobia', logoPhobiaLight],
@@ -199,6 +200,8 @@ export default async function Home() {
             <CaseStudies caseStudies={caseStudies}/>
 
             <MeetTheTeam/>
+
+            <TellTheTeam/>
 
             <ContactSection/>
 

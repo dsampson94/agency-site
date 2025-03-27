@@ -1,7 +1,7 @@
 import {NextResponse} from 'next/server';
 import {SendEmailCommand, SESClient} from '@aws-sdk/client-ses';
 import connectToDatabase from '@/lib/mongoose';
-import Inquiry from '@/lib/models/Inquiry';
+import Enquiry from '@/lib/models/Enquiry';
 
 const AWS_REGION = process.env.AWS_REGION;
 const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
@@ -22,7 +22,7 @@ export async function POST(req) {
 
         await connectToDatabase();
 
-        const existingInquiry = await Inquiry.findOne({email});
+        const existingInquiry = await Enquiry.findOne({email});
         if (existingInquiry) {
             return NextResponse.json(
                 {success: false, error: 'Email already exists'},
@@ -31,7 +31,7 @@ export async function POST(req) {
         }
 
         // Save inquiry to the database
-        await Inquiry.create({name, email, company, phone, message, budget});
+        await Enquiry.create({name, email, company, phone, message, budget});
 
         // Set up SES client
         const sesClient = new SESClient({

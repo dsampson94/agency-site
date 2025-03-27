@@ -1,20 +1,41 @@
-import mongoose, { Schema, Document, Model, model, models } from 'mongoose';
+import {Schema} from 'mongoose'
 
-interface IVoiceNote extends Document {
-    audioURL: string;
-    transcription: string;
-    temporaryUserId?: string;
-    userId?: mongoose.Types.ObjectId;
+export interface IVoiceNote {
+    audioURL: string
+    transcript: string
+    createdAt: Date
 }
 
-const VoiceNoteSchema: Schema<IVoiceNote> = new Schema({
-    audioURL: { type: String, required: true },
-    transcription: { type: String, required: true },
-    temporaryUserId: { type: String },
-    userId: { type: Schema.Types.ObjectId, ref: 'User' }
-}, { timestamps: true });
+export const VoiceNoteSchema = new Schema<IVoiceNote>(
+    {
+        audioURL: {type: String, required: true},
+        transcript: {type: String, required: true},
+        createdAt: {type: Date, default: Date.now},
+    },
+    {
+        _id: false,
+        timestamps: false,
+    }
+)
 
-const VoiceNote: Model<IVoiceNote> = models.VoiceNote || model<IVoiceNote>('VoiceNote', VoiceNoteSchema);
-
-export type { IVoiceNote };
-export default VoiceNote;
+// import mongoose, {Document, Model, model, models, Schema} from 'mongoose';
+//
+// export interface IVoiceNote extends Document {
+//     userId?: mongoose.Types.ObjectId;
+//     audioURL: string;
+//     transcript: string;
+//     createdAt: Date
+//     temporaryUserId?: string;
+// }
+//
+// export const VoiceNoteSchema: Schema<IVoiceNote> = new Schema({
+//         audioURL: {type: String, required: true},
+//         transcript: {type: String, required: true},
+//         createdAt: { type: Date, default: Date.now },
+//     },
+//     {timestamps: true}
+// );
+//
+// const VoiceNote: Model<IVoiceNote> = models.VoiceNote || model<IVoiceNote>('VoiceNote', VoiceNoteSchema);
+//
+// export default VoiceNote;
