@@ -3,11 +3,10 @@ import connectToDatabase from "../../../../lib/mongoose";
 import User from "../../../../lib/models/User";
 import {verifyToken} from "../../../../lib/auth";
 
-interface Params {
-    id: string
-}
-
-export async function GET(req: NextRequest, {params}: { params: Params }) {
+export async function GET(
+    req: NextRequest,
+    {params}: { params: { id: string } }
+) {
     try {
         await connectToDatabase()
 
@@ -23,7 +22,6 @@ export async function GET(req: NextRequest, {params}: { params: Params }) {
             return NextResponse.json({error: 'Not Found'}, {status: 404})
         }
 
-        // If you want only ADMIN or the user themselves to view, check:
         if (payload.role !== 'ADMIN' && payload.id !== user._id.toString()) {
             return NextResponse.json({error: 'Forbidden'}, {status: 403})
         }
@@ -35,7 +33,10 @@ export async function GET(req: NextRequest, {params}: { params: Params }) {
     }
 }
 
-export async function PATCH(req: NextRequest, {params}: { params: { id: string } }) {
+export async function PATCH(
+    req: NextRequest,
+    {params}: { params: { id: string } }
+) {
     try {
         await connectToDatabase()
 
@@ -69,7 +70,10 @@ export async function PATCH(req: NextRequest, {params}: { params: { id: string }
     }
 }
 
-export async function DELETE(req: NextRequest, {params}: { params: { id: string } }) {
+export async function DELETE(
+    req: NextRequest,
+    {params}: { params: { id: string } }
+) {
     try {
         await connectToDatabase()
 
