@@ -8,7 +8,6 @@ export async function GET(req: NextRequest) {
     try {
         await connectToDatabase()
 
-        // Check token & role from header or cookies
         const token = req.headers.get('Authorization')?.replace('Bearer ', '')
         const payload = await verifyToken(token)
         if (!payload || payload.role !== 'ADMIN') {
@@ -35,7 +34,6 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'Email is required' }, { status: 400 })
         }
 
-        // Basic creation logic
         let user = await User.findOne({ email })
         if (user) {
             return NextResponse.json({ error: 'User already exists' }, { status: 409 })
