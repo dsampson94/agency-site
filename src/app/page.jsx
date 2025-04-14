@@ -199,7 +199,7 @@ export default async function Home() {
 
             <CaseStudies caseStudies={caseStudies}/>
 
-            <MeetTheTeam/>
+            {/*<MeetTheTeam/>*/}
 
             <Services/>
 
