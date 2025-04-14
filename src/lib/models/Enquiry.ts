@@ -1,4 +1,4 @@
-import {Schema} from 'mongoose'
+import {model, Model, models, Schema} from 'mongoose'
 import {IVoiceNote, VoiceNoteSchema} from './VoiceNote'
 
 export interface IEnquiry {
@@ -51,6 +51,9 @@ export const EnquirySchema = new Schema<IEnquiry>(
         timestamps: true,
     }
 )
+
+const Enquiry: Model<IEnquiry> = models.Enquiry || model<IEnquiry>('Enquiry', EnquirySchema)
+export default Enquiry
 
 // import mongoose, {Document, Model, model, models, Schema} from 'mongoose'
 // import {IVoiceNote, VoiceNoteSchema} from './VoiceNote'
@@ -107,5 +110,4 @@ export const EnquirySchema = new Schema<IEnquiry>(
 //     }
 // )
 //
-// const Enquiry: Model<IEnquiry> = models.Enquiry || model<IEnquiry>('Enquiry', EnquirySchema)
-// export default Enquiry
+
