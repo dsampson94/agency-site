@@ -10,18 +10,6 @@ import imageLaptop from '@/images/laptop.jpg';
 import {loadCaseStudies} from '@/lib/mdx';
 import TellTheTeam from "@/components/TellTheTeam";
 
-// Hero Badge Component
-function HeroBadge() {
-    return (
-        <FadeIn>
-            <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-5 py-2 text-sm font-medium text-gray-700 border border-gray-200">
-                <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                <span>Available for new projects</span>
-            </div>
-        </FadeIn>
-    );
-}
-
 // Hero CTA Buttons Component
 function HeroCTAs() {
     return (
@@ -466,7 +454,6 @@ export default async function Home() {
                 <Container className="relative mt-24 sm:mt-32 lg:mt-40">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
                         <div className="flex flex-col justify-center">
-                            <HeroBadge />
                             <FadeIn className="mt-8">
                                 <h1 className="font-display text-5xl font-bold tracking-tight text-gray-900 [text-wrap:balance] sm:text-6xl lg:text-7xl xl:text-8xl">
                                     <span className="block">Build</span>
