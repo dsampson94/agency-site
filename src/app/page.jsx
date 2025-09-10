@@ -1,6 +1,5 @@
 import Image from 'next/image';
 
-import {ContactSection} from '@/components/ContactSection';
 import {Container} from '@/components/Container';
 import {FadeIn, FadeInStagger} from '@/components/FadeIn';
 import {List, ListItem} from '@/components/List';
@@ -88,44 +87,6 @@ function CaseStudies({caseStudies}) {
             </SectionIntro>
             {/*<Container className="mt-16">*/}
             {/*    <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">*/}
-            {/*        {caseStudies.map((caseStudy) => (*/}
-            {/*            <FadeIn key={caseStudy.href} className="flex">*/}
-            {/*                <article*/}
-            {/*                    className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">*/}
-            {/*                    <h3>*/}
-            {/*                        <Link href={caseStudy.href}>*/}
-            {/*                            <span className="absolute inset-0 rounded-3xl"/>*/}
-            {/*                            <Image*/}
-            {/*                                src={caseStudy.logo}*/}
-            {/*                                alt={caseStudy.client}*/}
-            {/*                                className="h-16 w-16"*/}
-            {/*                                unoptimized*/}
-            {/*                            />*/}
-            {/*                        </Link>*/}
-            {/*                    </h3>*/}
-            {/*                    <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">*/}
-            {/*                        <time*/}
-            {/*                            dateTime={caseStudy.date.split('-')[0]}*/}
-            {/*                            className="font-semibold"*/}
-            {/*                        >*/}
-            {/*                            {caseStudy.date.split('-')[0]}*/}
-            {/*                        </time>*/}
-            {/*                        <span className="text-neutral-300" aria-hidden="true">*/}
-            {/*        /*/}
-            {/*      </span>*/}
-            {/*                        <span>Case study</span>*/}
-            {/*                    </p>*/}
-            {/*                    <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">*/}
-            {/*                        {caseStudy.title}*/}
-            {/*                    </p>*/}
-            {/*                    <p className="mt-4 text-base text-neutral-600">*/}
-            {/*                        {caseStudy.description}*/}
-            {/*                    </p>*/}
-            {/*                </article>*/}
-            {/*            </FadeIn>*/}
-            {/*        ))}*/}
-            {/*    </FadeInStagger>*/}
-            {/*</Container>*/}
         </>
     );
 }
@@ -186,20 +147,26 @@ export default async function Home() {
     return (
         <>
             <Container className="mt-64">
-                <FadeIn className="max-w-3xl">
-                    <h1 className="font-display text-3xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
-                        Modern software, <br/> for less.
-                    </h1>
-                    <p className="mt-6 text-2xl text-neutral-600">
-                        Get the best for less. By building with Next.js, we cut dev hours without cutting
-                        corners—delivering high-performance, scalable solutions in record time. That means lower costs,
-                        faster launches, and zero compromise on quality. </p>
-                </FadeIn>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+                    <div className="flex flex-col justify-center">
+                        <FadeIn className="max-w-3xl">
+                            <h1 className="font-display text-3xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
+                                Modern software, <br/> delivered right.
+                            </h1>
+                            <p className="mt-6 text-2xl text-neutral-600">
+                                We build with Next.js because it's simply the best—delivering high-performance, scalable solutions that launch fast and scale beautifully. Expert development with a laid-back approach, because great software shouldn't be stressful to create.
+                            </p>
+                        </FadeIn>
+                    </div>
+                    <div className="flex justify-center lg:justify-end">
+                        <TellTheTeam />
+                    </div>
+                </div>
             </Container>
 
             <CaseStudies caseStudies={caseStudies}/>
 
-            {/*<MeetTheTeam/>*/}
+            <MeetTheTeam/>
 
             <Services/>
 

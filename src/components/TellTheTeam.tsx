@@ -14,25 +14,22 @@ export default function TellTheTeam() {
     const [isRecording, setIsRecording] = useState(false)
     const [audioURL, setAudioURL] = useState<string | null>(null)
     const [transcript, setTranscript] = useState<string | null>(null)
-    const [voiceNotes, setVoiceNotes] = useState<VoiceNote[]>([])
     const [userEmail, setUserEmail] = useState('')
+    const [userMessage, setUserMessage] = useState('')
+    const [submissionStatus, setSubmissionStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+    const [recordingPhase, setRecordingPhase] = useState<'ready' | 'recorded' | 'submitted'>('ready')
 
     const mediaRecorderRef = useRef<MediaRecorder | null>(null)
     const audioChunksRef = useRef<Blob[]>([])
 
-    // 1) Start or stop recording
+    // Start or stop recording
     const handleRecord = async () => {
-        if (!userEmail) {
-            alert('Please enter your email first.')
-            return
-        }
-
         if (isRecording) {
-            // Stop
+            // Stop recording
             mediaRecorderRef.current?.stop()
             setIsRecording(false)
         } else {
-            // Start
+            // Start recording
             const stream = await navigator.mediaDevices.getUserMedia({audio: true})
             const mediaRecorder = new MediaRecorder(stream)
             mediaRecorderRef.current = mediaRecorder
@@ -43,39 +40,35 @@ export default function TellTheTeam() {
             }
 
             mediaRecorder.onstop = async () => {
-                // Convert to Blob
                 const audioBlob = new Blob(audioChunksRef.current, {type: 'audio/wav'})
                 const blobURL = URL.createObjectURL(audioBlob)
                 setAudioURL(blobURL)
+                setRecordingPhase('recorded')
 
-                // Send to backend
+                // Send to API for transcription
                 const formData = new FormData()
-                formData.append('audio', audioBlob, 'recording.wav')
+                formData.append('audio', audioBlob, 'voice-note.wav')
                 formData.append('email', userEmail.toLowerCase())
 
                 try {
-                    const response = await axios.post('/api/voice-note', formData)
-                    if (response.data.error) {
-                        alert(response.data.error)
-                        return
-                    }
-                    const {message, user} = response.data
-                    const latestEnquiry = user.enquiries[user.enquiries.length - 1]
-                    const latestVoiceNote =
-                        latestEnquiry.voiceNotes[latestEnquiry.voiceNotes.length - 1] || null
+                    const response = await axios.post('/api/voice-note', formData, {
+                        headers: {'Content-Type': 'multipart/form-data'},
+                    })
 
-                    setTranscript(latestVoiceNote?.transcript || '')
-                    setVoiceNotes((prev) => [
-                        ...prev,
-                        {
-                            audioURL: latestVoiceNote?.audioURL,
-                            transcript: latestVoiceNote?.transcript,
-                            createdAt: latestVoiceNote?.createdAt,
-                        },
-                    ])
+                    console.log('Voice transcription response:', response.data)
+
+                    if (response.data?.success) {
+                        const {user} = response.data
+                        const latestEnquiry = user.enquiries[user.enquiries.length - 1]
+                        const latestVoiceNote = latestEnquiry.voiceNotes[latestEnquiry.voiceNotes.length - 1] || null
+                        const transcriptText = latestVoiceNote?.transcript || ''
+                        console.log('Setting transcript:', transcriptText)
+                        setTranscript(transcriptText)
+                    } else {
+                        console.error('Voice transcription failed:', response.data)
+                    }
                 } catch (err) {
-                    console.error('Error saving voice note:', err)
-                    alert('Failed to save voice note.')
+                    console.error('Error transcribing voice note:', err)
                 }
             }
 
@@ -84,59 +77,159 @@ export default function TellTheTeam() {
         }
     }
 
+    const handleReRecord = () => {
+        setAudioURL(null)
+        setTranscript(null)
+        setRecordingPhase('ready')
+    }
+
+    const handleSubmit = async () => {
+        if (!userEmail) {
+            alert('Please enter your email.')
+            return
+        }
+
+        if (!transcript && !audioURL) {
+            alert('Please record a voice note first.')
+            return
+        }
+
+        setSubmissionStatus('submitting')
+
+        try {
+            console.log('Submitting enquiry with:', { 
+                email: userEmail.toLowerCase(),
+                message: transcript || 'Voice note submitted (transcription pending)',
+                hasVoiceNote: true,
+                transcript: transcript
+            })
+
+            const response = await axios.post('/api/enquiry', {
+                email: userEmail.toLowerCase(),
+                message: transcript || 'Voice note submitted (transcription pending)',
+                hasVoiceNote: true,
+                transcript: transcript
+            })
+
+            console.log('Response:', response.data)
+
+            if (response.data?.success) {
+                setSubmissionStatus('success')
+                setRecordingPhase('submitted')
+                // Reset form after success
+                setTimeout(() => {
+                    setUserEmail('')
+                    setUserMessage('')
+                    setAudioURL(null)
+                    setTranscript(null)
+                    setSubmissionStatus('idle')
+                    setRecordingPhase('ready')
+                }, 3000)
+            } else {
+                console.error('API returned error:', response.data)
+                setSubmissionStatus('error')
+            }
+        } catch (err) {
+            console.error('Error submitting enquiry:', err)
+            setSubmissionStatus('error')
+        }
+    }
+
     return (
-        <div className="max-w-xl mx-auto p-4">
-            <h1 className="text-2xl font-bold mb-4 text-center">Tell The Team</h1>
-            <p className="text-gray-600 mb-6 text-center">
-                Record a quick voice note to share your thoughts with our team.
+        <div className="bg-neutral-950 rounded-3xl p-8 text-white shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-neutral-800/50 transform hover:shadow-[0_25px_60px_rgba(0,0,0,0.9)] transition-all duration-300">
+            <h2 className="font-display text-2xl font-semibold mb-2 text-center">Share Your Vision</h2>
+            <p className="text-neutral-300 mb-6 text-center">
+                Record a quick voice note to share your vision.
             </p>
 
-            <div className="flex flex-col items-center gap-4">
-                {/* Email input */}
-                <input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={userEmail}
-                    onChange={(e) => setUserEmail(e.target.value)}
-                    className="border border-gray-300 rounded px-3 py-2 w-full max-w-sm"
-                />
-
-                {/* Start/stop recording button */}
-                <button
-                    onClick={handleRecord}
-                    className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-                >
-                    {isRecording ? 'Stop Recording' : 'Record Voice Note'}
-                </button>
-
-                {/* Playback (if needed) */}
-                {audioURL && (
-                    <audio controls src={audioURL} className="w-full mt-2"/>
-                )}
-            </div>
-
-            {/* Show transcript of the most recent voice note */}
-            {transcript && (
-                <div className="mt-6 p-4 bg-white rounded shadow">
-                    <h2 className="text-xl font-semibold mb-2">Latest Transcript</h2>
-                    <p className="text-gray-700 whitespace-pre-line">{transcript}</p>
+            {recordingPhase === 'submitted' && submissionStatus === 'success' ? (
+                <div className="text-center">
+                    <div className="bg-green-600 rounded-2xl p-4 mb-4">
+                        <p className="font-semibold">Message Sent Successfully!</p>
+                        <p className="text-sm text-green-100">We'll get back to you soon.</p>
+                    </div>
                 </div>
-            )}
+            ) : (
+                <div className="space-y-4">
+                    {/* Email input */}
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        value={userEmail}
+                        onChange={(e) => setUserEmail(e.target.value)}
+                        className="w-full rounded-2xl border border-neutral-600 bg-neutral-800 py-3 px-4 text-white placeholder:text-neutral-400 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/20 transition"
+                        disabled={submissionStatus === 'submitting'}
+                    />
 
-            {/* Show all voice notes in an optional list */}
-            {voiceNotes.length > 0 && (
-                <div className="mt-8">
-                    <h2 className="text-lg font-semibold mb-2">Your Voice Notes</h2>
-                    <ul className="space-y-4">
-                        {voiceNotes.map((note, idx) => (
-                            <li key={idx} className="p-4 bg-white rounded shadow">
-                                <audio controls src={note.audioURL} className="w-full mb-2"/>
-                                <p className="text-gray-700">
-                                    {note.transcript || '(No transcript)'}
-                                </p>
-                            </li>
-                        ))}
-                    </ul>
+                    {/* Voice Recording Section */}
+                    {recordingPhase === 'ready' && (
+                        <button
+                            onClick={handleRecord}
+                            disabled={submissionStatus === 'submitting' || !userEmail.trim()}
+                            className={`w-full rounded-2xl py-3 px-6 font-semibold transition ${
+                                isRecording 
+                                    ? 'bg-red-600 hover:bg-red-700 text-white' 
+                                    : !userEmail.trim()
+                                    ? 'bg-neutral-700 text-neutral-400 cursor-not-allowed'
+                                    : 'bg-white text-neutral-950 hover:bg-neutral-100'
+                            }`}
+                        >
+                            {isRecording ? 'Stop Recording' : 'Record Voice Note'}
+                        </button>
+                    )}
+
+                    {/* Recorded Audio Controls */}
+                    {recordingPhase === 'recorded' && audioURL && (
+                        <div className="space-y-4">
+                            <div className="flex items-center gap-3">
+                                <audio controls src={audioURL} className="flex-1 rounded-lg"/>
+                                <button
+                                    onClick={handleReRecord}
+                                    className="py-2 px-4 rounded-xl bg-neutral-700 hover:bg-neutral-600 text-white transition text-sm whitespace-nowrap"
+                                    disabled={submissionStatus === 'submitting'}
+                                >
+                                    Rerecord
+                                </button>
+                            </div>
+                            
+                            {transcript && (
+                                <div className="p-4 bg-neutral-800 rounded-2xl border border-neutral-700">
+                                    <h3 className="font-semibold mb-2 text-white">Transcript:</h3>
+                                    <p className="text-neutral-300 text-sm">{transcript}</p>
+                                </div>
+                            )}
+                        </div>
+                    )}
+
+                    {/* Submit Buttons */}
+                    <div className="grid grid-cols-2 gap-3">
+                        <button
+                            onClick={handleSubmit}
+                            disabled={submissionStatus === 'submitting' || (!transcript && !audioURL)}
+                            className={`rounded-2xl py-3 px-6 font-semibold transition ${
+                                submissionStatus === 'submitting' || (!transcript && !audioURL)
+                                    ? 'bg-neutral-700 text-neutral-400 cursor-not-allowed'
+                                    : 'bg-blue-600 hover:bg-blue-700 text-white'
+                            }`}
+                            title={(!transcript && !audioURL) ? 'Please record a voice note first' : ''}
+                        >
+                            {submissionStatus === 'submitting' ? 'Sending...' : 'Send Voice Note'}
+                        </button>
+                        
+                        <a
+                            href="mailto:hello@superstacksolutions.com?subject=Project Inquiry&body=Hi, I'd like to discuss a project with you."
+                            className="rounded-2xl py-3 px-6 font-semibold transition bg-neutral-700 hover:bg-neutral-600 text-white text-center flex items-center justify-center"
+                        >
+                            Just Email Us
+                        </a>
+                    </div>
+
+                    {/* Error state */}
+                    {submissionStatus === 'error' && (
+                        <div className="p-3 bg-red-600/20 border border-red-600 rounded-xl text-red-200 text-sm text-center">
+                            Something went wrong. Please try again.
+                        </div>
+                    )}
                 </div>
             )}
         </div>
