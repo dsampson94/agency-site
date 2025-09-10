@@ -149,7 +149,7 @@ export default function TellTheTeam() {
                     <h2 className="font-display text-2xl font-bold text-gray-800 mb-2">Share Your Vision</h2>
                     <p className="text-gray-600 text-sm leading-relaxed">
                         Record a quick voice note to share your project vision.<br/>
-                        <span className="text-purple-600 font-medium">We'll turn your ideas into reality.</span>
+                        <span className="text-purple-600 font-medium">We&apos;ll turn your ideas into reality.</span>
                     </p>
                 </div>
 
@@ -162,7 +162,7 @@ export default function TellTheTeam() {
                                 </svg>
                             </div>
                             <h3 className="font-bold text-green-800 mb-2">Vision Received! 🚀</h3>
-                            <p className="text-green-700 text-sm">We'll analyze your vision and get back to you within 24 hours.</p>
+                            <p className="text-green-700 text-sm">We&apos;ll analyze your vision and get back to you within 24 hours.</p>
                         </div>
                     </div>
                 ) : (

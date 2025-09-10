@@ -377,7 +377,7 @@ function SuperStackJourney() {
                                 </span>
                             </h2>
                             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                                We build with Next.js because it's simply the best—delivering high-performance, scalable solutions that launch fast and scale beautifully. Expert development with a laid-back approach, because great software shouldn't be stressful to create.
+                                We build with Next.js because it&apos;s simply the best—delivering high-performance, scalable solutions that launch fast and scale beautifully. Expert development with a laid-back approach, because great software shouldn&apos;t be stressful to create.
                             </p>
                         </FadeIn>
                     </div>
