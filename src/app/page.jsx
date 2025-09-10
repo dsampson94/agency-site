@@ -6,130 +6,438 @@ import {List, ListItem} from '@/components/List';
 import {SectionIntro} from '@/components/SectionIntro';
 import {StylizedImage} from '@/components/StylizedImage';
 import {Testimonial} from '@/components/Testimonial';
-import logoBrightPath from '@/images/clients/bright-path/logo-light.svg';
-import logoFamilyFund from '@/images/clients/family-fund/logo-light.svg';
-import logoGreenLife from '@/images/clients/green-life/logo-light.svg';
-import logoHomeWork from '@/images/clients/home-work/logo-light.svg';
-import logoMailSmirk from '@/images/clients/mail-smirk/logo-light.svg';
-import logoNorthAdventures from '@/images/clients/north-adventures/logo-light.svg';
-import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg';
-import logoUnseal from '@/images/clients/unseal/logo-light.svg';
 import imageLaptop from '@/images/laptop.jpg';
 import {loadCaseStudies} from '@/lib/mdx';
-import {MeetTheTeam} from '@/components/MeetTheTeam';
 import TellTheTeam from "@/components/TellTheTeam";
 
-const clients = [
-    ['Phobia', logoPhobiaLight],
-    ['Family Fund', logoFamilyFund],
-    ['Unseal', logoUnseal],
-    ['Mail Smirk', logoMailSmirk],
-    ['Home Work', logoHomeWork],
-    ['Green Life', logoGreenLife],
-    ['Bright Path', logoBrightPath],
-    ['North Adventures', logoNorthAdventures],
-];
-
-function Clients() {
+// Hero Badge Component
+function HeroBadge() {
     return (
-        <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
-            <Container>
-                <FadeIn className="flex items-center gap-x-8">
-                    <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
-                        We’ve worked with hundreds of amazing people
-                    </h2>
-                    <div className="h-px flex-auto bg-neutral-800"/>
-                </FadeIn>
-                <FadeInStagger faster>
-                    <ul
-                        role="list"
-                        className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4"
-                    >
-                        {clients.map(([client, logo]) => (
-                            <li key={client}>
-                                <FadeIn>
-                                    <Image src={logo} alt={client} unoptimized/>
-                                </FadeIn>
-                            </li>
-                        ))}
-                    </ul>
-                </FadeInStagger>
-            </Container>
-        </div>
+        <FadeIn>
+            <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-5 py-2 text-sm font-medium text-gray-700 border border-gray-200">
+                <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                <span>Available for new projects</span>
+            </div>
+        </FadeIn>
+    );
+}
+
+// Hero CTA Buttons Component
+function HeroCTAs() {
+    return (
+        <FadeIn className="mt-10 flex flex-col sm:flex-row gap-4">
+            <a
+                href="#contact"
+                className="group relative inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-4 font-bold text-white transition-all duration-300 hover:shadow-[0_20px_40px_rgba(139,69,255,0.3)] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 overflow-hidden"
+            >
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative flex items-center gap-3">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    Book Free Consultation
+                    <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </a>
+            <a
+                href="/work"
+                className="group inline-flex items-center justify-center rounded-2xl border-2 border-gray-200 bg-white/80 px-8 py-4 font-semibold text-gray-700 backdrop-blur-sm transition-all duration-300 hover:border-purple-300 hover:bg-purple-50 hover:text-purple-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+            >
+                <span className="flex items-center gap-3">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                    View Our Work
+                </span>
+            </a>
+        </FadeIn>
+    );
+}
+
+// Trust Indicators Component
+function TrustIndicators() {
+    return (
+        <FadeIn className="mt-12">
+            <div className="flex flex-wrap items-center gap-8 text-sm">
+                <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 shadow-sm">
+                    <div className="h-2 w-2 rounded-full bg-green-500 shadow-lg shadow-green-500/50"></div>
+                    <span className="font-medium text-gray-700">Biweekly Delivery</span>
+                </div>
+                <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 shadow-sm">
+                    <div className="h-2 w-2 rounded-full bg-blue-500 shadow-lg shadow-blue-500/50"></div>
+                    <span className="font-medium text-gray-700">Weekly Updates</span>
+                </div>
+                <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 shadow-sm">
+                    <div className="h-2 w-2 rounded-full bg-purple-500 shadow-lg shadow-purple-500/50"></div>
+                    <span className="font-medium text-gray-700">Dedicated AI Team</span>
+                </div>
+            </div>
+        </FadeIn>
     );
 }
 
 function CaseStudies({caseStudies}) {
     return (
-        <>
-            <SectionIntro
-                title="Innovative Technology That Translates into Real Cost Savings"
-                className="mt-6 sm:mt-6 lg:mt-6"
-            >
-                <p className="text-2xl text-neutral-600">
-                    At SuperStack Development Studio, we deliver fast, scalable, and cost-effective solutions using the
-                    greatest web and mobile frameworks like Next.js and React Native for applications of all kinds. By
-                    prioritising DevEx (developer experience) and technical efficiency, we help businesses launch
-                    faster, reduce
-                    risks, and stay on budget.
-                </p>
-                <br/>
-                <p className="text-2xl text-neutral-600">
-                    We harness AI-driven automation — integrating generative AI, advanced cloud services, and
-                    productivity tools to
-                    slash work hours, boost accuracy, and eliminate delays. Saving our clients money. As an agile studio
-                    focused on efficiency
-                    and seamless product launches, we prioritise productive hours and minimal waste. While still
-                    guaranteeing
-                    delivery of best-in-class, modern, scalable, maintainable full stack web applications.
-                </p>
-                <br/>
-            </SectionIntro>
-            {/*<Container className="mt-16">*/}
-            {/*    <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">*/}
-        </>
+        <div className="mt-32 sm:mt-40 lg:mt-48">
+            <Container>
+                <div className="text-center mb-16">
+                    <FadeIn>
+                        <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-green-50 to-emerald-50 px-6 py-2 text-sm font-semibold text-green-700 ring-1 ring-green-200/50 mb-6">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                            Cost Savings & Innovation
+                        </span>
+                        <h2 className="font-display text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6">
+                            Technology That{" "}
+                            <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                                Translates into Real Results
+                            </span>
+                        </h2>
+                    </FadeIn>
+                </div>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <FadeIn>
+                        <div className="space-y-6">
+                            <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                        </svg>
+                                    </div>
+                                    <h3 className="font-bold text-gray-900">Lightning Fast Development</h3>
+                                </div>
+                                <p className="text-gray-600 leading-relaxed">
+                                    At SuperStack Development Studio, we deliver fast, scalable, and cost-effective solutions using the
+                                    greatest web and mobile frameworks like Next.js and React Native for applications of all kinds.
+                                </p>
+                            </div>
+                            
+                            <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                                        </svg>
+                                    </div>
+                                    <h3 className="font-bold text-gray-900">AI-Driven Cost Savings</h3>
+                                </div>
+                                <p className="text-gray-600 leading-relaxed">
+                                    We harness AI-driven automation — integrating generative AI, advanced cloud services, and
+                                    productivity tools to slash work hours, boost accuracy, and eliminate delays.{" "}
+                                    <span className="font-bold text-green-600">Saving our clients money.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </FadeIn>
+                    
+                    <FadeIn>
+                        <div className="relative">
+                            <div className="bg-gradient-to-br from-purple-100 via-blue-100 to-pink-100 rounded-3xl p-8 shadow-xl">
+                                <div className="grid grid-cols-2 gap-6">
+                                    <div className="bg-white rounded-2xl p-6 shadow-lg">
+                                        <div className="text-3xl font-bold text-purple-600 mb-2">60%</div>
+                                        <div className="text-sm text-gray-600">Faster Development</div>
+                                    </div>
+                                    <div className="bg-white rounded-2xl p-6 shadow-lg">
+                                        <div className="text-3xl font-bold text-green-600 mb-2">40%</div>
+                                        <div className="text-sm text-gray-600">Cost Reduction</div>
+                                    </div>
+                                    <div className="bg-white rounded-2xl p-6 shadow-lg">
+                                        <div className="text-3xl font-bold text-blue-600 mb-2">2-3x</div>
+                                        <div className="text-sm text-gray-600">ROI Improvement</div>
+                                    </div>
+                                    <div className="bg-white rounded-2xl p-6 shadow-lg">
+                                        <div className="text-3xl font-bold text-orange-600 mb-2">24/7</div>
+                                        <div className="text-sm text-gray-600">AI Automation</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </FadeIn>
+                </div>
+            </Container>
+        </div>
     );
 }
 
 function Services() {
     return (
-        <div className="mt-32">
-            <SectionIntro
-                eyebrow="Services"
-                className="flex"
-            >
-            </SectionIntro>
-            <Container className="mt-16">
-                <div className="lg:flex lg:items-center lg:justify-end">
-                    <div className="flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
-                        <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
-                            <StylizedImage
-                                src={imageLaptop}
-                                sizes="(min-width: 1024px) 41rem, 31rem"
-                                className="justify-center lg:justify-end"
-                            />
+        <div className="mt-32 sm:mt-40 lg:mt-48">
+            <Container>
+                {/* Section Header */}
+                <div className="text-center mb-16">
+                    <FadeIn>
+                        <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-5 py-2 text-sm font-medium text-gray-700 border border-gray-200 mb-6">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                            What We Do
+                        </span>
+                        <h2 className="font-display text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6">
+                            Our{" "}
+                            <span className="text-blue-600">
+                                Services
+                            </span>
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                            We build reliable web applications and business tools that help companies operate more efficiently and grow sustainably.
+                        </p>
+                    </FadeIn>
+                </div>
+
+                {/* Services Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                    {/* AI Agent Development */}
+                    <FadeIn>
+                        <div className="group relative bg-gradient-to-br from-white to-purple-50/30 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-[0_20px_60px_rgba(139,69,255,0.15)] transition-all duration-500 hover:-translate-y-2">
+                            {/* Icon */}
+                            <div className="relative mb-8">
+                                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:shadow-purple-500/40 transition-all duration-300">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                            </div>
+
+                            <h3 className="font-display text-2xl font-bold text-gray-900 mb-4">
+                                Custom Software
+                            </h3>
+                            <p className="text-gray-600 leading-relaxed mb-8">
+                                Business automation tools and custom applications that streamline your workflows,
+                                improve efficiency, and integrate with your existing systems.
+                            </p>
+
+                            {/* Features List */}
+                            <ul className="space-y-3 mb-8">
+                                <li className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <span className="text-sm font-medium text-gray-700">Business Automation</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <span className="text-sm font-medium text-gray-700">Custom Applications</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <span className="text-sm font-medium text-gray-700">System Integration</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <span className="text-sm font-medium text-gray-700">Process Optimization</span>
+                                </li>
+                            </ul>
+
+                            <a
+                                href="/services/ai-development"
+                                className="inline-flex items-center gap-2 text-purple-600 font-semibold hover:text-purple-700 transition-colors group/link"
+                            >
+                                Learn More
+                                <svg className="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </FadeIn>
+
+                    {/* Website Development */}
+                    <FadeIn>
+                        <div className="group relative bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-[0_20px_60px_rgba(59,130,246,0.15)] transition-all duration-500 hover:-translate-y-2">
+                            {/* Icon */}
+                            <div className="relative mb-8">
+                                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40 transition-all duration-300">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9-9a9 9 0 00-9 9m9 9v-9" />
+                                    </svg>
+                                </div>
+                                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                            </div>
+
+                            <h3 className="font-display text-2xl font-bold text-gray-900 mb-4">
+                                Website Development
+                            </h3>
+                            <p className="text-gray-600 leading-relaxed mb-8">
+                                Modern, responsive websites and web applications built with cutting-edge
+                                technologies. From sleek landing pages to complex business management platforms.
+                            </p>
+
+                            {/* Features List */}
+                            <ul className="space-y-3 mb-8">
+                                <li className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                                    <span className="text-sm font-medium text-gray-700">Responsive Web Design</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                                    <span className="text-sm font-medium text-gray-700">WordPress Development</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                                    <span className="text-sm font-medium text-gray-700">E-commerce Solutions</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                                    <span className="text-sm font-medium text-gray-700">Business Dashboards</span>
+                                </li>
+                            </ul>
+
+                            <a
+                                href="/services/web-development"
+                                className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors group/link"
+                            >
+                                Learn More
+                                <svg className="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </FadeIn>
+
+                    {/* App Development */}
+                    <FadeIn>
+                        <div className="group relative bg-gradient-to-br from-white to-violet-50/30 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-[0_20px_60px_rgba(168,85,247,0.15)] transition-all duration-500 hover:-translate-y-2">
+                            {/* Icon */}
+                            <div className="relative mb-8">
+                                <div className="w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg shadow-violet-500/25 group-hover:shadow-violet-500/40 transition-all duration-300">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-violet-400 to-purple-400 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                            </div>
+
+                            <h3 className="font-display text-2xl font-bold text-gray-900 mb-4">
+                                App Development
+                            </h3>
+                            <p className="text-gray-600 leading-relaxed mb-8">
+                                Native and cross-platform mobile applications, desktop software, and SaaS
+                                platforms. From MVP development to enterprise-grade solutions.
+                            </p>
+
+                            {/* Features List */}
+                            <ul className="space-y-3 mb-8">
+                                <li className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-violet-500"></div>
+                                    <span className="text-sm font-medium text-gray-700">Mobile & Web Applications</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-violet-500"></div>
+                                    <span className="text-sm font-medium text-gray-700">Desktop Software</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-violet-500"></div>
+                                    <span className="text-sm font-medium text-gray-700">SaaS Development</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-violet-500"></div>
+                                    <span className="text-sm font-medium text-gray-700">Custom CRM Systems</span>
+                                </li>
+                            </ul>
+
+                            <a
+                                href="/services/app-development"
+                                className="inline-flex items-center gap-2 text-violet-600 font-semibold hover:text-violet-700 transition-colors group/link"
+                            >
+                                Learn More
+                                <svg className="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </FadeIn>
+                </div>
+            </Container>
+        </div>
+    );
+}
+
+function SuperStackJourney() {
+    return (
+        <div className="mt-32 sm:mt-40 lg:mt-48 bg-gradient-to-br from-gray-50 to-white">
+            <Container>
+                <div className="py-24">
+                    {/* Section Header */}
+                    <div className="text-center mb-16">
+                        <FadeIn>
+                            <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-50 to-blue-50 px-6 py-2 text-sm font-semibold text-emerald-700 ring-1 ring-emerald-200/50 mb-6">
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                                Modern Architecture
+                            </span>
+                            <h2 className="font-display text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6">
+                                Modern software,{" "}
+                                <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
+                                    delivered right.
+                                </span>
+                            </h2>
+                            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                                We build with Next.js because it's simply the best—delivering high-performance, scalable solutions that launch fast and scale beautifully. Expert development with a laid-back approach, because great software shouldn't be stressful to create.
+                            </p>
                         </FadeIn>
                     </div>
-                    <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
-                        <ListItem title="Full Stack Web Development (Next.js & TypeScript)">
-                            We build modern, high-performance web applications using Next.js
-                            for server-side rendering, TypeScript for reliability, and Tailwind CSS
-                            for scalable UI design. Our expertise ensures fast, SEO-optimized, and scalable
-                            applications tailored to your business goals.
-                        </ListItem>
-                        <ListItem title="Mobile App Development (React Native & Expo)">
-                            We develop cross-platform mobile applications using React Native & Expo,
-                            delivering native-like performance on iOS and Android. From AI-powered apps
-                            to real-time communication tools, we ensure seamless functionality, scalability,
-                            and user engagement.
-                        </ListItem>
-                        <ListItem title="Managed Services (Cloud, DevOps, Support)">
-                            We provide comprehensive cloud infrastructure management, DevOps, ongoing project
-                            maintenance, and technical support to keep your applications running efficiently.
-                            Our team handles system optimization, security, and scalability, allowing you to
-                            focus on innovation while we take care of operational complexities.
-                        </ListItem>
-                    </List>
+
+                    {/* The Stack - Simplified */}
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                        {/* Next.js */}
+                        <FadeIn>
+                            <div className="group bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 text-center">
+                                <div className="w-16 h-16 bg-gradient-to-br from-black to-gray-800 rounded-xl flex items-center justify-center shadow-lg mx-auto mb-6">
+                                    <span className="text-white font-bold text-xl">N</span>
+                                </div>
+                                <h3 className="font-display text-xl font-bold text-gray-900 mb-3">Next.js</h3>
+                                <p className="text-gray-600 leading-relaxed">
+                                    The foundation of everything we build. Server-side rendering, automatic optimization, 
+                                    and lightning-fast performance out of the box.
+                                </p>
+                            </div>
+                        </FadeIn>
+
+                        {/* TypeScript */}
+                        <FadeIn>
+                            <div className="group bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 text-center">
+                                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg mx-auto mb-6">
+                                    <span className="text-white font-bold text-lg">TS</span>
+                                </div>
+                                <h3 className="font-display text-xl font-bold text-gray-900 mb-3">TypeScript</h3>
+                                <p className="text-gray-600 leading-relaxed">
+                                    Type safety that catches bugs before they happen. Clean, maintainable code that scales 
+                                    with your business.
+                                </p>
+                            </div>
+                        </FadeIn>
+
+                        {/* AI Integration */}
+                        <FadeIn>
+                            <div className="group bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 text-center">
+                                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg mx-auto mb-6">
+                                    <span className="text-white font-bold text-lg">AI</span>
+                                </div>
+                                <h3 className="font-display text-xl font-bold text-gray-900 mb-3">AI Integration</h3>
+                                <p className="text-gray-600 leading-relaxed">
+                                    Seamless AI workflows that actually work. From chatbots to automation, 
+                                    we integrate intelligence that feels natural.
+                                </p>
+                            </div>
+                        </FadeIn>
+                    </div>
+
+                    {/* Simple Bottom Message */}
+                    <div className="text-center">
+                        <FadeIn>
+                            <div className="inline-flex items-center gap-4 bg-gradient-to-r from-emerald-50 to-blue-50 rounded-2xl px-8 py-4 border border-emerald-200/50">
+                                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                                <span className="font-semibold text-emerald-700">
+                                    The SuperStack: Next.js + TypeScript + AI = Results that matter
+                                </span>
+                            </div>
+                        </FadeIn>
+                    </div>
                 </div>
             </Container>
         </div>
@@ -138,7 +446,7 @@ function Services() {
 
 export const metadata = {
     description:
-        'We are a development studio working at the intersection of design and technology.',
+        'SuperStack Development Studio - AI-powered solutions, web development, and automation that transforms your business. From idea to deployment in weeks, not months.',
 };
 
 export default async function Home() {
@@ -146,66 +454,53 @@ export default async function Home() {
 
     return (
         <>
-            <Container className="mt-64">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-                    <div className="flex flex-col justify-center">
-                        <FadeIn className="max-w-3xl">
-                            <h1 className="font-display text-3xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
-                                Modern software, <br/> delivered right.
-                            </h1>
-                            <p className="mt-6 text-2xl text-neutral-600">
-                                We build with Next.js because it's simply the best—delivering high-performance, scalable solutions that launch fast and scale beautifully. Expert development with a laid-back approach, because great software shouldn't be stressful to create.
-                            </p>
-                        </FadeIn>
-                    </div>
-                    <div className="flex justify-center lg:justify-end">
-                        <TellTheTeam />
-                    </div>
+            {/* Hero Section */}
+            <div className="relative overflow-hidden">
+                {/* Background Elements */}
+                <div className="absolute inset-0 -z-10">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-to-r from-purple-200/40 via-blue-200/40 to-pink-200/40 rounded-full blur-3xl"></div>
+                    <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-purple-300/30 to-blue-300/30 rounded-full blur-2xl"></div>
+                    <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-pink-300/30 to-purple-300/30 rounded-full blur-2xl"></div>
                 </div>
-            </Container>
-
-            <CaseStudies caseStudies={caseStudies}/>
-
-            <MeetTheTeam/>
+                
+                <Container className="relative mt-24 sm:mt-32 lg:mt-40">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
+                        <div className="flex flex-col justify-center">
+                            <HeroBadge />
+                            <FadeIn className="mt-8">
+                                <h1 className="font-display text-5xl font-bold tracking-tight text-gray-900 [text-wrap:balance] sm:text-6xl lg:text-7xl xl:text-8xl">
+                                    <span className="block">Build</span>
+                                    <span className="block">
+                                        <span className="text-blue-600">&</span>
+                                        {" "}Scale
+                                    </span>
+                                    <span className="block text-gray-600 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium">
+                                        Your Business
+                                    </span>
+                                </h1>
+                                <p className="mt-8 text-xl text-gray-600 leading-relaxed max-w-2xl">
+                                    We create reliable web applications and business automation tools that help companies grow. 
+                                    <span className="block mt-2 font-semibold text-blue-600">
+                                        Professional development. Real results.
+                                    </span>
+                                </p>
+                            </FadeIn>
+                            <HeroCTAs />
+                            <TrustIndicators />
+                        </div>
+                        <div className="relative flex justify-center lg:justify-end">
+                            {/* Additional decorative elements */}
+                            <div className="absolute -top-8 -right-8 w-16 h-16 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full blur-xl opacity-60"></div>
+                            <div className="absolute -bottom-8 -left-8 w-20 h-20 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full blur-xl opacity-60"></div>
+                            <TellTheTeam />
+                        </div>
+                    </div>
+                </Container>
+            </div>
 
             <Services/>
-
-            <h1 className="font-display mt-32 text-4xl flex justify-center font-medium tracking-tight text-neutral-950 [text-wrap:balance]">
-                Innovation should be shared
-            </h1>
-
-            <Testimonial
-                className="mt-32 mb-32"
-                client={{name: '', logo: ''}}
-            >
-                {`“Next.js has redefined how modern applications are built. With its hybrid static & server rendering, 
-  developers can build faster, deploy seamlessly, and scale effortlessly. It’s not just a framework—it’s the future of web development.” - Guillermo Rauch, CEO of Vercel`}
-
-                <br/><br/>
-
-                {`“Vercel makes the entire development-to-deployment pipeline effortless, enabling teams to ship products 
-  at speeds never seen before. It’s the best-in-class platform for modern web applications.” – Kent C. Dodds`}
-
-                <br/><br/>
-
-                {`“With Vercel and Next.js, performance is no longer an afterthought—it’s built-in. From the developer experience to global edge deployments, 
-  everything just works.” – Lee Robinson, VP of Developer Experience at Vercel`}
-
-                <br/><br/>
-
-                {`“Tailwind CSS is like a design system for your code. It lets you build beautiful, responsive UIs without ever leaving your HTML. 
-  It completely changed the way I write CSS.” – Adam Wathan, Creator of Tailwind CSS`}
-
-                <br/><br/>
-
-                {`“MongoDB enables developers to build applications faster, with flexibility and scalability at the core. 
-  Its document model is a game-changer for modern applications.” – Eliot Horowitz, Co-Founder of MongoDB`}
-
-                <br/><br/>
-
-                {`“AWS gives builders the most powerful and scalable cloud infrastructure in the world. 
-  From startups to enterprises, AWS is the foundation of modern software.” – Werner Vogels, CTO of Amazon`}
-            </Testimonial>
+            <CaseStudies caseStudies={caseStudies}/>
+            <SuperStackJourney />
         </>
     );
 }

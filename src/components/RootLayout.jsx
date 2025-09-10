@@ -8,10 +8,8 @@ import {motion, MotionConfig, useReducedMotion} from 'framer-motion'
 
 import {Button} from '@/components/Button'
 import {Container} from '@/components/Container'
-import {Footer} from '@/components/Footer'
+import Footer from '@/components/Footer'
 import {GridPattern} from '@/components/GridPattern'
-import Image from 'next/image';
-import logo from '@/images/superstack/android-chrome-512x512.png'
 import {SocialMedia} from '@/components/SocialMedia'
 
 const RootLayoutContext = createContext(null)
@@ -51,14 +49,27 @@ function Header({
                     aria-label="Home"
                     onMouseEnter={() => setLogoHovered(true)}
                     onMouseLeave={() => setLogoHovered(false)}
+                    className="group"
                 >
-                    <Image
-                        src={logo}
-                        alt="Logo"
-                        width={130}
-                        height={60}
-                        className="h-auto w-auto -ml-4 -mt-8"
-                    />
+                    <div className="flex items-center gap-3">
+                        {/* Logo Icon */}
+                        <div className="relative">
+                            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-purple-500/25 transition-all duration-300">
+                                <span className="text-white font-bold text-lg">S</span>
+                            </div>
+                            <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                        </div>
+                        
+                        {/* Logo Text */}
+                        <div className="flex flex-col">
+                            <span className="font-display text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                                SuperStack
+                            </span>
+                            <span className="text-xs text-gray-500 font-medium -mt-1">
+                                Development Studio
+                            </span>
+                        </div>
+                    </div>
                 </Link>
                 <div className="flex items-center gap-x-8 -mt-8">
                     <Button href="/contact" invert={invert}>
