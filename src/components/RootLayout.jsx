@@ -54,15 +54,15 @@ function Header({
                     <div className="flex items-center gap-3">
                         {/* Logo Icon */}
                         <div className="relative">
-                            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-purple-500/25 transition-all duration-300">
+                            <div className="w-10 h-10 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl flex items-center justify-center shadow-lg border border-gray-700 group-hover:border-gray-600 transition-all duration-300">
                                 <span className="text-white font-bold text-lg">S</span>
                             </div>
-                            <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                            <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity"></div>
                         </div>
                         
                         {/* Logo Text */}
                         <div className="flex flex-col">
-                            <span className="font-display text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                            <span className="font-display text-xl font-bold text-gray-900">
                                 SuperStack
                             </span>
                             <span className="text-xs text-gray-500 font-medium -mt-1">
@@ -83,7 +83,7 @@ function Header({
                         aria-controls={panelId}
                         className={clsx(
                             'group -m-2.5 rounded-full p-2.5 transition',
-                            invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
+                            invert ? 'hover:bg-white/10' : 'hover:bg-purple-950/10',
                         )}
                         aria-label="Toggle navigation"
                     >
@@ -92,7 +92,7 @@ function Header({
                                 'h-6 w-6',
                                 invert
                                     ? 'fill-white group-hover:fill-neutral-200'
-                                    : 'fill-neutral-950 group-hover:fill-neutral-700',
+                                    : 'fill-gray-900 group-hover:fill-purple-700',
                             )}
                         />
                     </button>

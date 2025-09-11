@@ -168,7 +168,7 @@ export function ContactForm() {
                     </p>
                 )}
                 {status.type === 'error' && (
-                    <p className="mt-4 text-red-600">
+                    <p className="mt-4 text-gray-500">
                         {status.message}
                     </p>
                 )}

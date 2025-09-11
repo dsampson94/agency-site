@@ -136,7 +136,7 @@ export default function TellTheTeam() {
     }
 
     return (
-        <div className="relative w-full max-w-lg">
+        <div className="relative w-full max-w-lg -mt-16">
             {/* Neumorphic Container */}
             <div className="bg-gradient-to-br from-white to-gray-50 rounded-[2rem] p-8 shadow-[20px_20px_60px_#d1d9e6,-20px_-20px_60px_#ffffff] border border-white/20 backdrop-blur-sm">
                 {/* Header Section */}
@@ -188,7 +188,7 @@ export default function TellTheTeam() {
                                     disabled={submissionStatus === 'submitting' || !userEmail.trim()}
                                     className={`relative group w-full rounded-2xl py-4 px-6 font-semibold transition-all duration-300 ${
                                         isRecording 
-                                            ? 'bg-gradient-to-br from-red-500 to-red-600 text-white shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] hover:shadow-[12px_12px_24px_#d1d9e6,-12px_-12px_24px_#ffffff]' 
+                                            ? 'bg-gradient-to-br from-purple-500 to-purple-600 text-white shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] hover:shadow-[12px_12px_24px_#d1d9e6,-12px_-12px_24px_#ffffff]' 
                                             : !userEmail.trim()
                                             ? 'bg-gradient-to-br from-gray-200 to-gray-300 text-gray-400 cursor-not-allowed shadow-[inset_8px_8px_16px_#e3e9f0,inset_-8px_-8px_16px_#ffffff]'
                                             : 'bg-gradient-to-br from-purple-500 to-purple-600 text-white shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] hover:shadow-[12px_12px_24px_#d1d9e6,-12px_-12px_24px_#ffffff] active:shadow-[inset_8px_8px_16px_#d1d9e6,inset_-8px_-8px_16px_#ffffff]'
@@ -277,8 +277,8 @@ export default function TellTheTeam() {
 
                         {/* Error state */}
                         {submissionStatus === 'error' && (
-                            <div className="bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl p-4 shadow-[inset_8px_8px_16px_#f8e8e8,inset_-8px_-8px_16px_#ffffff] border border-red-200/50 text-center">
-                                <div className="flex items-center justify-center gap-2 text-red-700">
+                            <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-4 shadow-[inset_8px_8px_16px_#f8e8e8,inset_-8px_-8px_16px_#ffffff] border border-purple-200/50 text-center">
+                                <div className="flex items-center justify-center gap-2 text-purple-700">
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
