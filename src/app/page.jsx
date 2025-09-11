@@ -12,10 +12,14 @@ import TellTheTeam from "@/components/TellTheTeam";
 
 // Hero CTA Buttons Component
 function HeroCTAs() {
+    const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL || "https://cal.com/superstack/consultation";
+    
     return (
         <FadeIn className="mt-10 flex flex-row gap-3">
             <a
-                href="#contact"
+                href={bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-purple-600 to-purple-700 px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-[0_20px_40px_rgba(147,51,234,0.3)] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 overflow-hidden"
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-purple-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -45,18 +49,18 @@ function HeroCTAs() {
 function TrustIndicators() {
     return (
         <FadeIn className="mt-8">
-            <div className="flex flex-wrap items-center gap-3 text-xs">
-                <div className="flex items-center gap-2 bg-gray-900/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-sm">
-                    <div className="h-1.5 w-1.5 rounded-full bg-purple-500 shadow-sm shadow-purple-500/50"></div>
-                    <span className="font-medium text-white">Biweekly Delivery</span>
+            <div className="flex items-center gap-2 text-xs justify-center sm:justify-start">
+                <div className="flex items-center gap-1.5 bg-gray-900/90 backdrop-blur-sm rounded-full px-2.5 py-1 shadow-sm">
+                    <div className="h-1 w-1 rounded-full bg-purple-500 shadow-sm shadow-purple-500/50"></div>
+                    <span className="font-medium text-white whitespace-nowrap">Biweekly Delivery</span>
                 </div>
-                <div className="flex items-center gap-2 bg-gray-900/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-sm">
-                    <div className="h-1.5 w-1.5 rounded-full bg-purple-500 shadow-sm shadow-purple-500/50"></div>
-                    <span className="font-medium text-white">Weekly Updates</span>
+                <div className="flex items-center gap-1.5 bg-gray-900/90 backdrop-blur-sm rounded-full px-2.5 py-1 shadow-sm">
+                    <div className="h-1 w-1 rounded-full bg-purple-500 shadow-sm shadow-purple-500/50"></div>
+                    <span className="font-medium text-white whitespace-nowrap">Weekly Updates</span>
                 </div>
-                <div className="flex items-center gap-2 bg-gray-900/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-sm">
-                    <div className="h-1.5 w-1.5 rounded-full bg-purple-500 shadow-sm shadow-purple-500/50"></div>
-                    <span className="font-medium text-white">Dedicated Team</span>
+                <div className="flex items-center gap-1.5 bg-gray-900/90 backdrop-blur-sm rounded-full px-2.5 py-1 shadow-sm">
+                    <div className="h-1 w-1 rounded-full bg-purple-500 shadow-sm shadow-purple-500/50"></div>
+                    <span className="font-medium text-white whitespace-nowrap">Dedicated Team</span>
                 </div>
             </div>
         </FadeIn>
@@ -191,35 +195,88 @@ function Services() {
                             </div>
 
                             <h3 className="font-display text-2xl font-bold text-white mb-4">
-                                Custom Software
+                                AI Agent Development
                             </h3>
                             <p className="text-gray-300 leading-relaxed mb-8">
-                                Business automation tools and custom applications that streamline your workflows,
-                                improve efficiency, and integrate with your existing systems.
+                                Custom AI agents and intelligent chatbot assistants that automate workflows,
+                                provide 24/7 customer support, and integrate seamlessly with your existing systems.
                             </p>
 
                             {/* Features List */}
                             <ul className="space-y-3 mb-8">
                                 <li className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">Business Automation</span>
+                                    <span className="text-sm font-medium text-gray-300">Custom AI Chatbots</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">Custom Applications</span>
+                                    <span className="text-sm font-medium text-gray-300">Intelligent Automation</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">System Integration</span>
+                                    <span className="text-sm font-medium text-gray-300">Customer Support Bots</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">Process Optimization</span>
+                                    <span className="text-sm font-medium text-gray-300">Workflow Automation</span>
                                 </li>
                             </ul>
 
                             <a
                                 href="/services/ai-development"
+                                className="inline-flex items-center gap-2 text-purple-400 font-semibold hover:text-purple-300 transition-colors group/link"
+                            >
+                                Learn More
+                                <svg className="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </FadeIn>
+
+                    {/* App Development - Now in the middle */}
+                    <FadeIn>
+                        <div className="group relative bg-gray-900 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-gray-800 hover:shadow-[0_20px_60px_rgba(168,85,247,0.3)] transition-all duration-500 hover:-translate-y-2">
+                            {/* Icon */}
+                            <div className="relative mb-8">
+                                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:shadow-purple-500/40 transition-all duration-300">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                            </div>
+
+                            <h3 className="font-display text-2xl font-bold text-white mb-4">
+                                App Development
+                            </h3>
+                            <p className="text-gray-300 leading-relaxed mb-8">
+                                Native and cross-platform mobile applications, desktop software, and SaaS
+                                platforms. From MVP development to enterprise-grade solutions.
+                            </p>
+
+                            {/* Features List */}
+                            <ul className="space-y-3 mb-8">
+                                <li className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <span className="text-sm font-medium text-gray-300">Mobile & Web Applications</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <span className="text-sm font-medium text-gray-300">Desktop Software</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <span className="text-sm font-medium text-gray-300">SaaS Development</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <span className="text-sm font-medium text-gray-300">Custom CRM Systems</span>
+                                </li>
+                            </ul>
+
+                            <a
+                                href="/services/app-development"
                                 className="inline-flex items-center gap-2 text-purple-400 font-semibold hover:text-purple-300 transition-colors group/link"
                             >
                                 Learn More
@@ -273,59 +330,6 @@ function Services() {
 
                             <a
                                 href="/services/web-development"
-                                className="inline-flex items-center gap-2 text-purple-400 font-semibold hover:text-purple-300 transition-colors group/link"
-                            >
-                                Learn More
-                                <svg className="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
-                            </a>
-                        </div>
-                    </FadeIn>
-
-                    {/* App Development */}
-                    <FadeIn>
-                        <div className="group relative bg-gray-900 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-gray-800 hover:shadow-[0_20px_60px_rgba(168,85,247,0.3)] transition-all duration-500 hover:-translate-y-2">
-                            {/* Icon */}
-                            <div className="relative mb-8">
-                                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:shadow-purple-500/40 transition-all duration-300">
-                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                                    </svg>
-                                </div>
-                                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity"></div>
-                            </div>
-
-                            <h3 className="font-display text-2xl font-bold text-white mb-4">
-                                App Development
-                            </h3>
-                            <p className="text-gray-300 leading-relaxed mb-8">
-                                Native and cross-platform mobile applications, desktop software, and SaaS
-                                platforms. From MVP development to enterprise-grade solutions.
-                            </p>
-
-                            {/* Features List */}
-                            <ul className="space-y-3 mb-8">
-                                <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">Mobile & Web Applications</span>
-                                </li>
-                                <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">Desktop Software</span>
-                                </li>
-                                <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">SaaS Development</span>
-                                </li>
-                                <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">Custom CRM Systems</span>
-                                </li>
-                            </ul>
-
-                            <a
-                                href="/services/app-development"
                                 className="inline-flex items-center gap-2 text-purple-400 font-semibold hover:text-purple-300 transition-colors group/link"
                             >
                                 Learn More
@@ -450,7 +454,7 @@ export default async function Home() {
                 
                 <Container className="relative mt-16 sm:mt-20 lg:mt-24">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
-                        <div className="flex flex-col justify-center">
+                        <div className="flex flex-col justify-center px-4 lg:px-8">
                             <FadeIn className="-mt-8">
                                 <h1 className="font-display text-5xl font-bold tracking-tight text-gray-900 [text-wrap:balance] sm:text-6xl lg:text-7xl xl:text-8xl">
                                     <span className="block">Build</span>

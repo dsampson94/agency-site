@@ -9,44 +9,45 @@ import {RootLayout} from '../components/RootLayout'
 
 export const metadata: Metadata = {
     title: {
-        template: '%s - SuperStack Solutions Development Studio',
-        default: 'SuperStack Solutions Development Studio',
+        template: '%s - SuperStack Development Studio',
+        default: 'SuperStack Development Studio',
     },
     description:
         'A high-performance React & Next.js development studio based in South Africa. Build fast, scalable, and beautiful apps with the experts.',
-    metadataBase: new URL('https://www.superstacksolutions.co.za'),
+    metadataBase: new URL('https://www.superstack.co.za'),
     keywords: [
         'React Development',
         'Next.js Studio',
         'South Africa',
-        'SuperStack Solutions',
+        'SuperStack',
         'Full Stack JavaScript',
         'Web App Development',
+        'AI Agent Development',
     ],
     openGraph: {
-        title: 'SuperStack Solutions Development Studio',
+        title: 'SuperStack Development Studio',
         description:
             'A high-performance React & Next.js development studio based in South Africa.',
-        url: 'https://www.superstacksolutions.co.za',
-        siteName: 'SuperStack Solutions',
+        url: 'https://www.superstack.co.za',
+        siteName: 'SuperStack',
         locale: 'en_ZA',
         type: 'website',
         images: [
             {
-                url: 'https://www.superstacksolutions.co.za/og-image.jpg',
+                url: 'https://www.superstack.co.za/og-image.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'SuperStack Solutions Website Preview',
+                alt: 'SuperStack Website Preview',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'SuperStack Solutions Development Studio',
+        title: 'SuperStack Development Studio',
         description:
             'A high-performance React & Next.js development studio based in South Africa.',
         site: '@superstacksa',
-        images: ['https://www.superstacksolutions.co.za/og-image.jpg'],
+        images: ['https://www.superstack.co.za/og-image.jpg'],
     },
     authors: [
         {
@@ -67,12 +68,13 @@ export const metadata: Metadata = {
         },
     },
     alternates: {
-        canonical: 'https://www.superstacksolutions.co.za',
+        canonical: 'https://www.superstack.co.za',
     },
     manifest: '/manifest.json',
     icons: {
-        icon: '/favicon.ico',
-        apple: '/apple-touch-icon.png',
+        icon: '/icon.svg',
+        apple: '/icon.svg',
+        shortcut: '/icon.svg',
     },
     other: {
         facebook: 'https://www.facebook.com/profile.php?id=61574483712042',
@@ -92,8 +94,8 @@ export default function Layout({children}: { children: React.ReactNode }) {
                     __html: JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'Organization',
-                        name: 'SuperStack Solutions',
-                        url: 'https://www.superstacksolutions.co.za',
+                        name: 'SuperStack',
+                        url: 'https://www.superstack.co.za',
                         founder: {
                             "@type": "Person",
                             "name": "David Sampson"

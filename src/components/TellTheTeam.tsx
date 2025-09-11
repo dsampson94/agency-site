@@ -136,18 +136,18 @@ export default function TellTheTeam() {
     }
 
     return (
-        <div className="relative w-full max-w-lg -mt-16">
+        <div className="relative w-full max-w-md -mt-16 mx-auto px-4 lg:px-8">
             {/* Neumorphic Container */}
-            <div className="bg-gradient-to-br from-white to-gray-50 rounded-[2rem] p-8 shadow-[20px_20px_60px_#d1d9e6,-20px_-20px_60px_#ffffff] border border-white/20 backdrop-blur-sm">
+            <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-6 shadow-[16px_16px_40px_#d1d9e6,-16px_-16px_40px_#ffffff] border border-white/20 backdrop-blur-sm">
                 {/* Header Section */}
-                <div className="text-center mb-8">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl shadow-[inset_8px_8px_16px_#e3e9f0,inset_-8px_-8px_16px_#ffffff] mb-4">
-                        <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="text-center mb-6">
+                    <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff] mb-3">
+                        <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                         </svg>
                     </div>
-                    <h2 className="font-display text-2xl font-bold text-gray-800 mb-2">Share Your Vision</h2>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <h2 className="font-display text-xl font-bold text-gray-800 mb-2">Share Your Vision</h2>
+                    <p className="text-gray-600 text-xs leading-relaxed">
                         Record a quick voice note to share your project vision.<br/>
                         <span className="text-purple-600 font-medium">We&apos;ll turn your ideas into reality.</span>
                     </p>
@@ -155,27 +155,27 @@ export default function TellTheTeam() {
 
                 {recordingPhase === 'submitted' && submissionStatus === 'success' ? (
                     <div className="text-center">
-                        <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 shadow-[inset_8px_8px_16px_#e8f5e8,inset_-8px_-8px_16px_#ffffff] border border-green-200/50">
-                            <div className="inline-flex items-center justify-center w-12 h-12 bg-green-500 rounded-full mb-4">
-                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-xl p-4 shadow-[inset_6px_6px_12px_#e8f5e8,inset_-6px_-6px_12px_#ffffff] border border-green-200/50">
+                            <div className="inline-flex items-center justify-center w-10 h-10 bg-green-500 rounded-full mb-3">
+                                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                 </svg>
                             </div>
-                            <h3 className="font-bold text-green-800 mb-2">Vision Received! 🚀</h3>
-                            <p className="text-green-700 text-sm">We&apos;ll analyze your vision and get back to you within 24 hours.</p>
+                            <h3 className="font-bold text-green-800 mb-1 text-sm">Vision Received! 🚀</h3>
+                            <p className="text-green-700 text-xs">We&apos;ll analyze your vision and get back to you within 24 hours.</p>
                         </div>
                     </div>
                 ) : (
-                    <div className="space-y-6">
+                    <div className="space-y-4">
                         {/* Email Input - Neumorphic */}
                         <div className="relative">
-                            <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <label className="block text-xs font-medium text-gray-700 mb-1.5">Email Address</label>
                             <input
                                 type="email"
                                 placeholder="your@email.com"
                                 value={userEmail}
                                 onChange={(e) => setUserEmail(e.target.value)}
-                                className="w-full rounded-2xl bg-gradient-to-br from-gray-50 to-white py-4 px-6 text-gray-800 placeholder:text-gray-400 shadow-[inset_8px_8px_16px_#e3e9f0,inset_-8px_-8px_16px_#ffffff] border border-gray-200/50 focus:outline-none focus:ring-2 focus:ring-purple-400/30 focus:border-purple-300 transition-all duration-300"
+                                className="w-full rounded-xl bg-gradient-to-br from-gray-50 to-white py-3 px-4 text-sm text-gray-800 placeholder:text-gray-400 shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff] border border-gray-200/50 focus:outline-none focus:ring-2 focus:ring-purple-400/30 focus:border-purple-300 transition-all duration-300"
                                 disabled={submissionStatus === 'submitting'}
                             />
                         </div>
@@ -186,23 +186,23 @@ export default function TellTheTeam() {
                                 <button
                                     onClick={handleRecord}
                                     disabled={submissionStatus === 'submitting' || !userEmail.trim()}
-                                    className={`relative group w-full rounded-2xl py-4 px-6 font-semibold transition-all duration-300 ${
+                                    className={`relative group w-full rounded-xl py-3 px-4 text-sm font-semibold transition-all duration-300 ${
                                         isRecording 
-                                            ? 'bg-gradient-to-br from-purple-500 to-purple-600 text-white shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] hover:shadow-[12px_12px_24px_#d1d9e6,-12px_-12px_24px_#ffffff]' 
+                                            ? 'bg-gradient-to-br from-purple-500 to-purple-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff]' 
                                             : !userEmail.trim()
-                                            ? 'bg-gradient-to-br from-gray-200 to-gray-300 text-gray-400 cursor-not-allowed shadow-[inset_8px_8px_16px_#e3e9f0,inset_-8px_-8px_16px_#ffffff]'
-                                            : 'bg-gradient-to-br from-purple-500 to-purple-600 text-white shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] hover:shadow-[12px_12px_24px_#d1d9e6,-12px_-12px_24px_#ffffff] active:shadow-[inset_8px_8px_16px_#d1d9e6,inset_-8px_-8px_16px_#ffffff]'
+                                            ? 'bg-gradient-to-br from-gray-200 to-gray-300 text-gray-400 cursor-not-allowed shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff]'
+                                            : 'bg-gradient-to-br from-purple-500 to-purple-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] active:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff]'
                                     }`}
                                 >
-                                    <div className="flex items-center justify-center gap-3">
+                                    <div className="flex items-center justify-center gap-2">
                                         {isRecording ? (
                                             <>
-                                                <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                                                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                                                 <span>Recording... Click to Stop</span>
                                             </>
                                         ) : (
                                             <>
-                                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                                                 </svg>
                                                 <span>🎤 Record Your Vision</span>
@@ -246,43 +246,45 @@ export default function TellTheTeam() {
                         )}
 
                         {/* Submit Buttons */}
-                        <div className="grid grid-cols-2 gap-4">
-                            <button
-                                onClick={handleSubmit}
-                                disabled={submissionStatus === 'submitting' || (!transcript && !audioURL)}
-                                className={`rounded-2xl py-3 px-6 font-semibold transition-all duration-300 ${
-                                    submissionStatus === 'submitting' || (!transcript && !audioURL)
-                                        ? 'bg-gradient-to-br from-gray-200 to-gray-300 text-gray-400 cursor-not-allowed shadow-[inset_8px_8px_16px_#e3e9f0,inset_-8px_-8px_16px_#ffffff]'
-                                        : 'bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] hover:shadow-[12px_12px_24px_#d1d9e6,-12px_-12px_24px_#ffffff] active:shadow-[inset_8px_8px_16px_#d1d9e6,inset_-8px_-8px_16px_#ffffff]'
-                                }`}
-                                title={(!transcript && !audioURL) ? 'Please record a voice note first' : ''}
-                            >
-                                {submissionStatus === 'submitting' ? (
-                                    <div className="flex items-center justify-center gap-2">
-                                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                                        <span>Sending...</span>
-                                    </div>
-                                ) : (
-                                    '🚀 Send Vision'
-                                )}
-                            </button>
-                            
-                            <a
-                                href="mailto:hello@superstack.dev?subject=Project Vision Discussion&body=Hi SuperStack team,%0A%0AI'd like to discuss my project vision with you.%0A%0AProject Details:%0A-%20%0A-%20%0A-%20%0A%0AThanks!"
-                                className="rounded-2xl py-3 px-6 font-semibold transition-all duration-300 bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-700 text-center flex items-center justify-center shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] hover:shadow-[12px_12px_24px_#d1d9e6,-12px_-12px_24px_#ffffff]"
-                            >
-                                📧 Just Email Us
-                            </a>
+                        <div className="flex justify-center">
+                            <div className="grid grid-cols-2 gap-3 max-w-sm w-full px-4">
+                                <button
+                                    onClick={handleSubmit}
+                                    disabled={submissionStatus === 'submitting' || (!transcript && !audioURL)}
+                                    className={`rounded-xl py-2 px-4 text-sm font-semibold transition-all duration-300 ${
+                                        submissionStatus === 'submitting' || (!transcript && !audioURL)
+                                            ? 'bg-gradient-to-br from-gray-200 to-gray-300 text-gray-400 cursor-not-allowed shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff]'
+                                            : 'bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] active:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff]'
+                                    }`}
+                                    title={(!transcript && !audioURL) ? 'Please record a voice note first' : ''}
+                                >
+                                    {submissionStatus === 'submitting' ? (
+                                        <div className="flex items-center justify-center gap-1">
+                                            <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                            <span className="text-xs">Sending...</span>
+                                        </div>
+                                    ) : (
+                                        '🚀 Send Vision'
+                                    )}
+                                </button>
+                                
+                                <a
+                                    href="mailto:hello@superstack.dev?subject=Project Vision Discussion&body=Hi SuperStack team,%0A%0AI'd like to discuss my project vision with you.%0A%0AProject Details:%0A-%20%0A-%20%0A-%20%0A%0AThanks!"
+                                    className="rounded-xl py-2 px-4 text-sm font-semibold transition-all duration-300 bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-700 text-center flex items-center justify-center shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff]"
+                                >
+                                    📧 Just Email Us
+                                </a>
+                            </div>
                         </div>
 
                         {/* Error state */}
                         {submissionStatus === 'error' && (
-                            <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-4 shadow-[inset_8px_8px_16px_#f8e8e8,inset_-8px_-8px_16px_#ffffff] border border-purple-200/50 text-center">
+                            <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl p-3 shadow-[inset_6px_6px_12px_#f8e8e8,inset_-6px_-6px_12px_#ffffff] border border-purple-200/50 text-center">
                                 <div className="flex items-center justify-center gap-2 text-purple-700">
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-                                    <span className="text-sm font-medium">Oops! Something went wrong. Please try again.</span>
+                                    <span className="text-xs font-medium">Oops! Something went wrong. Please try again.</span>
                                 </div>
                             </div>
                         )}
