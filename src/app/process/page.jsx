@@ -45,27 +45,25 @@ function Section({ title, image, children }) {
 
 function Discover() {
   return (
-    <Section title="Discover" image={{ src: imageWhiteboard }}>
+    <Section title="Discovery" image={{ src: imageWhiteboard }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          We work closely with our clients to understand their{' '}
-          <strong className="font-semibold text-neutral-950">needs</strong> and
-          goals, embedding ourselves in their every day operations to understand
-          what makes their business tick.
+          Every successful project begins with a deep understanding of your{' '}
+          <strong className="font-semibold text-neutral-950">business goals</strong> and
+          technical requirements. We work closely with your team to uncover the core challenges
+          and opportunities that will drive the solution design.
         </p>
         <p>
-          Our team of private investigators shadow the company director’s for
-          several weeks while our account managers focus on going through their
-          trash. Our senior security experts then perform social engineering
-          hacks to gain access to their{' '}
-          <strong className="font-semibold text-neutral-950">business</strong>{' '}
-          accounts — handing that information over to our forensic accounting
-          team.
+          Our discovery process includes stakeholder interviews, technical assessments, and 
+          user research to ensure we build exactly what you need. We analyze your existing 
+          systems, identify integration requirements, and map out{' '}
+          <strong className="font-semibold text-neutral-950">user journeys</strong> to 
+          create a comprehensive understanding of the project scope.
         </p>
         <p>
-          Once the full audit is complete, we report back with a comprehensive{' '}
-          <strong className="font-semibold text-neutral-950">plan</strong> and,
-          more importantly, a budget.
+          The result is a detailed{' '}
+          <strong className="font-semibold text-neutral-950">project roadmap</strong> with 
+          clear deliverables, timelines, and success metrics that align with your business objectives.
         </p>
       </div>
 
@@ -73,12 +71,50 @@ function Discover() {
         Included in this phase
       </h3>
       <TagList className="mt-4">
-        <TagListItem>In-depth questionnaires</TagListItem>
-        <TagListItem>Feasibility studies</TagListItem>
-        <TagListItem>Blood samples</TagListItem>
-        <TagListItem>Employee surveys</TagListItem>
-        <TagListItem>Proofs-of-concept</TagListItem>
-        <TagListItem>Forensic audit</TagListItem>
+        <TagListItem>Stakeholder interviews</TagListItem>
+        <TagListItem>Technical assessment</TagListItem>
+        <TagListItem>User research</TagListItem>
+        <TagListItem>Requirements analysis</TagListItem>
+        <TagListItem>Architecture planning</TagListItem>
+        <TagListItem>Project roadmap</TagListItem>
+      </TagList>
+    </Section>
+  )
+}
+
+function Design() {
+  return (
+    <Section title="Design & Planning" image={{ src: imageMeeting, shape: 2 }}>
+      <div className="space-y-6 text-base text-neutral-600">
+        <p>
+          With a clear understanding of your requirements, we design a solution that balances{' '}
+          <strong className="font-semibold text-neutral-950">user experience</strong> with
+          technical excellence. Our design process focuses on creating intuitive interfaces
+          and robust system architectures.
+        </p>
+        <p>
+          We create detailed wireframes, user interface designs, and technical specifications
+          that serve as the blueprint for development. Our iterative design process includes
+          regular feedback sessions to ensure the solution meets your expectations before
+          development begins.
+        </p>
+        <p>
+          This phase culminates in a comprehensive{' '}
+          <strong className="font-semibold text-neutral-950">technical specification</strong> and
+          design system that guides the entire development process.
+        </p>
+      </div>
+
+      <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
+        Included in this phase
+      </h3>
+      <TagList className="mt-4">
+        <TagListItem>User interface design</TagListItem>
+        <TagListItem>System architecture</TagListItem>
+        <TagListItem>Database design</TagListItem>
+        <TagListItem>API specifications</TagListItem>
+        <TagListItem>Security planning</TagListItem>
+        <TagListItem>Performance optimization</TagListItem>
       </TagList>
     </Section>
   )
@@ -86,90 +122,75 @@ function Discover() {
 
 function Build() {
   return (
-    <Section title="Build" image={{ src: imageLaptop, shape: 1 }}>
+    <Section title="Development" image={{ src: imageLaptop, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          Based off of the discovery phase, we develop a comprehensive roadmap
-          for each product and start working towards delivery. The roadmap is an
-          intricately tangled mess of technical nonsense designed to drag the
-          project out as long as possible.
+          Our development process follows agile methodologies with regular sprints and
+          continuous integration. We build solutions using{' '}
+          <strong className="font-semibold text-neutral-950">modern technologies</strong> and
+          best practices to ensure scalability, maintainability, and performance.
         </p>
         <p>
-          Each client is assigned a key account manager to keep lines of
-          communication open and obscure the actual progress of the project.
-          They act as a buffer between the client’s incessant nagging and the
-          development team who are hard at work scouring open source projects
-          for code to re-purpose.
+          Throughout development, we maintain transparent communication with regular demos
+          and progress updates. Our code undergoes rigorous testing and review processes
+          to ensure quality and reliability. We implement{' '}
+          <strong className="font-semibold text-neutral-950">automated testing</strong> and
+          continuous deployment pipelines for efficient delivery.
         </p>
         <p>
-          Our account managers are trained to only reply to client emails after
-          9pm, several days after the initial email. This reinforces the general
-          aura that we are very busy and dissuades clients from asking for
-          changes.
-        </p>
-      </div>
-
-      <Blockquote
-        author={{ name: 'Debra Fiscal', role: 'CEO of Unseal' }}
-        className="mt-12"
-      >
-        Studio were so regular with their progress updates we almost began to
-        think they were automated!
-      </Blockquote>
-    </Section>
-  )
-}
-
-function Deliver() {
-  return (
-    <Section title="Deliver" image={{ src: imageMeeting, shape: 2 }}>
-      <div className="space-y-6 text-base text-neutral-600">
-        <p>
-          About halfway through the Build phase, we push each project out by 6
-          weeks due to a change in{' '}
-          <strong className="font-semibold text-neutral-950">
-            requirements
-          </strong>
-          . This allows us to increase the budget a final time before launch.
-        </p>
-        <p>
-          Despite largely using pre-built components, most of the{' '}
-          <strong className="font-semibold text-neutral-950">progress</strong>{' '}
-          on each project takes place in the final 24 hours. The development
-          time allocated to each client is actually spent making augmented
-          reality demos that go viral on social media.
-        </p>
-        <p>
-          We ensure that the main pages of the site are{' '}
-          <strong className="font-semibold text-neutral-950">
-            fully functional
-          </strong>{' '}
-          at launch — the auxiliary pages will, of course, be lorem ipusm shells
-          which get updated as part of our exorbitant{' '}
-          <strong className="font-semibold text-neutral-950">
-            maintenance
-          </strong>{' '}
-          retainer.
+          Each feature is thoroughly tested and documented before deployment, ensuring a
+          smooth transition to production with minimal disruption to your operations.
         </p>
       </div>
 
       <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
         Included in this phase
       </h3>
-      <List className="mt-8">
-        <ListItem title="Testing">
-          Our projects always have 100% test coverage, which would be impressive
-          if our tests weren’t as porous as a sieve.
-        </ListItem>
-        <ListItem title="Infrastructure">
-          To ensure reliability we only use the best Digital Ocean droplets that
-          $4 a month can buy.
-        </ListItem>
-        <ListItem title="Support">
-          Because we hold the API keys for every critical service your business
-          uses, you can expect a lifetime of support, and invoices, from us.
-        </ListItem>
-      </List>
+      <TagList className="mt-4">
+        <TagListItem>Agile development</TagListItem>
+        <TagListItem>Code review process</TagListItem>
+        <TagListItem>Automated testing</TagListItem>
+        <TagListItem>Regular demos</TagListItem>
+        <TagListItem>Documentation</TagListItem>
+        <TagListItem>Security auditing</TagListItem>
+      </TagList>
+    </Section>
+  )
+}
+
+function Deploy() {
+  return (
+    <Section title="Launch & Support" image={{ src: imageMeeting, shape: 2 }}>
+      <div className="space-y-6 text-base text-neutral-600">
+        <p>
+          We handle the complete deployment process, ensuring your solution goes live
+          smoothly with minimal downtime. Our deployment includes{' '}
+          <strong className="font-semibold text-neutral-950">infrastructure setup</strong>,
+          data migration, and comprehensive testing in the production environment.
+        </p>
+        <p>
+          Post-launch, we provide ongoing support and monitoring to ensure optimal
+          performance. We offer training for your team and comprehensive documentation
+          to help you get the most out of your new solution.
+        </p>
+        <p>
+          Our{' '}
+          <strong className="font-semibold text-neutral-950">maintenance and support</strong> services
+          ensure your solution continues to perform excellently as your business grows and evolves.
+        </p>
+      </div>
+
+      <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
+        Included in this phase
+      </h3>
+      <TagList className="mt-4">
+        <TagListItem>Production deployment</TagListItem>
+        <TagListItem>Performance monitoring</TagListItem>
+        <TagListItem>User training</TagListItem>
+        <TagListItem>Documentation</TagListItem>
+        <TagListItem>Ongoing support</TagListItem>
+        <TagListItem>Feature enhancements</TagListItem>
+      </TagList>
     </Section>
   )
 }
@@ -186,42 +207,31 @@ function Values() {
 
       <SectionIntro
         eyebrow="Our values"
-        title="Balancing reliability and innovation"
+        title="Delivering excellence through proven processes"
       >
         <p>
-          We strive to stay at the forefront of emerging trends and
-          technologies, while completely ignoring them and forking that old
-          Rails project we feel comfortable using. We stand by our core values
-          to justify that decision.
+          Our structured approach ensures consistent, high-quality results while maintaining
+          flexibility to adapt to your unique requirements and business goals.
         </p>
       </SectionIntro>
 
       <Container className="mt-24">
         <GridList>
-          <GridListItem title="Meticulous">
-            The first part of any partnership is getting our designer to put
-            your logo in our template. The second step is getting them to do the
-            colors.
+          <GridListItem title="Transparency">
+            We believe in open communication throughout the project lifecycle. You'll always
+            know what we're working on, what challenges we're facing, and how we're solving them.
           </GridListItem>
-          <GridListItem title="Efficient">
-            We pride ourselves on never missing a deadline which is easy because
-            most of the work was done years ago.
+          <GridListItem title="Quality">
+            Every line of code is written with maintainability and scalability in mind. We follow
+            industry best practices and conduct thorough testing to ensure reliable solutions.
           </GridListItem>
-          <GridListItem title="Adaptable">
-            Every business has unique needs and our greatest challenge is
-            shoe-horning those needs into something we already built.
+          <GridListItem title="Collaboration">
+            Your success is our success. We work as an extension of your team, incorporating
+            your feedback and expertise throughout the development process.
           </GridListItem>
-          <GridListItem title="Honest">
-            We are transparent about all of our processes, banking on the simple
-            fact our clients never actually read anything.
-          </GridListItem>
-          <GridListItem title="Loyal">
-            We foster long-term relationships with our clients that go beyond
-            just delivering a product, allowing us to invoice them for decades.
-          </GridListItem>
-          <GridListItem title="Innovative">
-            The technological landscape is always evolving and so are we. We are
-            constantly on the lookout for new open source projects to clone.
+          <GridListItem title="Innovation">
+            We stay current with the latest technologies and methodologies to deliver
+            cutting-edge solutions that give you a competitive advantage.
           </GridListItem>
         </GridList>
       </Container>
@@ -232,7 +242,7 @@ function Values() {
 export const metadata = {
   title: 'Our Process',
   description:
-    'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
+    'Our proven development process ensures we deliver exceptional results on time and within budget.',
 }
 
 export default function Process() {
@@ -240,16 +250,16 @@ export default function Process() {
     <>
       <PageIntro eyebrow="Our process" title="How we work">
         <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+          We follow a proven, collaborative approach that ensures successful project delivery
+          while maintaining the flexibility to adapt to your unique requirements.
         </p>
       </PageIntro>
 
       <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">
         <Discover />
+        <Design />
         <Build />
-        <Deliver />
+        <Deploy />
       </div>
 
       <Values />

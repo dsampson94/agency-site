@@ -1,171 +1,319 @@
-import Image from 'next/image'
+﻿import Image from 'next/image'
 import Link from 'next/link'
 
-import { Blockquote } from '@/components/Blockquote'
 import { Border } from '@/components/Border'
 import { Button } from '@/components/Button'
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
-import { Testimonial } from '@/components/Testimonial'
-import logoBrightPath from '@/images/clients/bright-path/logo-dark.svg'
-import logoFamilyFund from '@/images/clients/family-fund/logo-dark.svg'
-import logoGreenLife from '@/images/clients/green-life/logo-dark.svg'
-import logoHomeWork from '@/images/clients/home-work/logo-dark.svg'
-import logoMailSmirk from '@/images/clients/mail-smirk/logo-dark.svg'
-import logoNorthAdventures from '@/images/clients/north-adventures/logo-dark.svg'
-import logoPhobia from '@/images/clients/phobia/logo-dark.svg'
-import logoUnseal from '@/images/clients/unseal/logo-dark.svg'
-import { formatDate } from '@/lib/formatDate'
-import { loadCaseStudies } from '@/lib/mdx'
-
-function CaseStudies({ caseStudies }) {
-  return (
-    <Container className="mt-40">
-      <FadeIn>
-        <h2 className="font-display text-2xl font-semibold text-neutral-950">
-          Case studies
-        </h2>
-      </FadeIn>
-      <div className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
-        {caseStudies.map((caseStudy) => (
-          <FadeIn key={caseStudy.client}>
-            <article>
-              <Border className="grid grid-cols-3 gap-x-8 gap-y-8 pt-16">
-                <div className="col-span-full sm:flex sm:items-center sm:justify-between sm:gap-x-8 lg:col-span-1 lg:block">
-                  <div className="sm:flex sm:items-center sm:gap-x-6 lg:block">
-                    <Image
-                      src={caseStudy.logo}
-                      alt=""
-                      className="h-16 w-16 flex-none"
-                      unoptimized
-                    />
-                    <h3 className="mt-6 text-sm font-semibold text-neutral-950 sm:mt-0 lg:mt-8">
-                      {caseStudy.client}
-                    </h3>
-                  </div>
-                  <div className="mt-1 flex gap-x-4 sm:mt-0 lg:block">
-                    <p className="text-sm tracking-tight text-neutral-950 after:ml-4 after:font-semibold after:text-neutral-300 after:content-['/'] lg:mt-2 lg:after:hidden">
-                      {caseStudy.service}
-                    </p>
-                    <p className="text-sm text-neutral-950 lg:mt-2">
-                      <time dateTime={caseStudy.date}>
-                        {formatDate(caseStudy.date)}
-                      </time>
-                    </p>
-                  </div>
-                </div>
-                <div className="col-span-full lg:col-span-2 lg:max-w-2xl">
-                  <p className="font-display text-4xl font-medium text-neutral-950">
-                    <Link href={caseStudy.href}>{caseStudy.title}</Link>
-                  </p>
-                  <div className="mt-6 space-y-6 text-base text-neutral-600">
-                    {caseStudy.summary.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ))}
-                  </div>
-                  <div className="mt-8 flex">
-                    <Button
-                      href={caseStudy.href}
-                      aria-label={`Read case study: ${caseStudy.client}`}
-                    >
-                      Read case study
-                    </Button>
-                  </div>
-                  {caseStudy.testimonial && (
-                    <Blockquote
-                      author={caseStudy.testimonial.author}
-                      className="mt-12"
-                    >
-                      {caseStudy.testimonial.content}
-                    </Blockquote>
-                  )}
-                </div>
-              </Border>
-            </article>
-          </FadeIn>
-        ))}
-      </div>
-    </Container>
-  )
-}
-
-const clients = [
-  ['Phobia', logoPhobia],
-  ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
-  ['North Adventures', logoNorthAdventures],
-]
-
-function Clients() {
-  return (
-    <Container className="mt-24 sm:mt-32 lg:mt-40">
-      <FadeIn>
-        <h2 className="font-display text-2xl font-semibold text-neutral-950">
-          You’re in good company
-        </h2>
-      </FadeIn>
-      <FadeInStagger className="mt-10" faster>
-        <Border as={FadeIn} />
-        <ul
-          role="list"
-          className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4"
-        >
-          {clients.map(([client, logo]) => (
-            <li key={client} className="group">
-              <FadeIn className="overflow-hidden">
-                <Border className="pt-12 group-[&:nth-child(-n+2)]:-mt-px sm:group-[&:nth-child(3)]:-mt-px lg:group-[&:nth-child(4)]:-mt-px">
-                  <Image src={logo} alt={client} unoptimized />
-                </Border>
-              </FadeIn>
-            </li>
-          ))}
-        </ul>
-      </FadeInStagger>
-    </Container>
-  )
-}
 
 export const metadata = {
   title: 'Our Work',
-  description:
-    'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
+  description: 'Discover our portfolio of successful projects across AI development, web applications, and enterprise solutions.',
 }
 
-export default async function Work() {
-  let caseStudies = await loadCaseStudies()
+// Client logos (you'll need to add these to your public/images/clients folder)
+const clients = [
+  { name: 'MultiChoice', logo: '/images/clients/multichoice-logo.svg', sector: 'Media & Entertainment' },
+  { name: 'ABSA', logo: '/images/clients/absa-logo.svg', sector: 'Financial Services' },
+  { name: 'ZKTeco', logo: '/images/clients/zkteco-logo.svg', sector: 'Security Solutions' },
+  { name: 'AVIS', logo: '/images/clients/avis-logo.svg', sector: 'Car Rental' },
+  { name: 'Italtile', logo: '/images/clients/italtile-logo.svg', sector: 'Retail' },
+  { name: 'Mediacom', logo: '/images/clients/mediacom-logo.svg', sector: 'Technology' },
+  { name: '123Tutors', logo: '/images/clients/123tutors-logo.svg', sector: 'Education' },
+  { name: 'ConvoFreaks', logo: '/images/clients/convofreaks-logo.svg', sector: 'Education SaaS' },
+]
+
+const featuredProjects = [
+  {
+    id: 'multichoice-ai',
+    title: 'MultiChoice AI Automation',
+    client: 'MultiChoice',
+    description: 'AI-powered subtitle automation system delivering real-time content processing and multi-language subtitle generation for South Africa\'s largest media company.',
+    services: ['AI Development', 'Process Automation', 'API Integration'],
+    technologies: ['Python', 'Machine Learning', 'Real-time APIs'],
+    results: ['Automated subtitle workflow', 'Multi-language support', 'Reduced processing time'],
+    image: '/images/work/multichoice-preview.jpg',
+    category: 'AI & Automation'
+  },
+  {
+    id: 'absa-lms',
+    title: 'ABSA ReadyToWork LMS',
+    client: 'ABSA',
+    description: 'Enterprise Learning Management System enabling skills development and training for thousands of employees across mobile and web platforms.',
+    services: ['Full-Stack Development', 'Mobile App', 'Cloud Infrastructure'],
+    technologies: ['React.js', 'Django', 'AWS', 'React Native'],
+    results: ['10,000+ active users', 'Cross-platform access', 'Scalable architecture'],
+    image: '/images/work/absa-preview.jpg',
+    category: 'Enterprise Solutions'
+  },
+  {
+    id: 'zkteco-platform',
+    title: 'ZKTeco Digital Platform',
+    client: 'ZKTeco',
+    description: 'Modern corporate website with dynamic product catalog and AI-powered WhatsApp support bot for enhanced customer experience.',
+    services: ['Web Development', 'AI Chatbot', 'CMS Integration'],
+    technologies: ['WordPress', 'WhatsApp API', 'AI Integration'],
+    results: ['24/7 automated support', 'Dynamic product showcase', 'Improved user engagement'],
+    image: '/images/work/zkteco-preview.jpg',
+    category: 'Web Development'
+  },
+  {
+    id: 'labourteq-system',
+    title: 'LabourTeq Workforce Management',
+    client: 'AVIS & Partners',
+    description: 'Enterprise workforce management system handling complex employee operations for major South African companies including AVIS car rentals.',
+    services: ['System Development', 'Mobile App', 'Integration'],
+    technologies: ['React.js', 'React Native', 'Django', 'AWS'],
+    results: ['Enterprise deployment', 'Multi-company support', 'High system availability'],
+    image: '/images/work/labourteq-preview.jpg',
+    category: 'Enterprise Solutions'
+  },
+  {
+    id: '123tutors-platform',
+    title: '123Tutors AI Platform',
+    client: '123Tutors',
+    description: 'AI-powered educational platform with intelligent tutor matching, automated scheduling, and progress tracking for personalized learning experiences.',
+    services: ['AI Development', 'Platform Build', 'Payment Systems'],
+    technologies: ['Machine Learning', 'React.js', 'Payment APIs'],
+    results: ['Smart tutor matching', 'Automated scheduling', 'Learning analytics'],
+    image: '/images/work/123tutors-preview.jpg',
+    category: 'AI & Education'
+  },
+  {
+    id: 'mediacom-survey',
+    title: 'Mediacom Survey Platform',
+    client: 'Mediacom Data & Tech',
+    description: 'Complex survey and data visualization platform delivered on tight deadline using modern React architecture and real-time analytics.',
+    services: ['Project Rescue', 'System Architecture', 'Data Analytics'],
+    technologies: ['React.js', 'GraphQL', 'AWS', 'Node.js'],
+    results: ['On-time delivery', 'Modern architecture', 'Real-time analytics'],
+    image: '/images/work/mediacom-preview.jpg',
+    category: 'Data & Analytics'
+  }
+]
+
+const technologies = [
+  { name: 'React.js', category: 'Frontend' },
+  { name: 'Next.js', category: 'Frontend' },
+  { name: 'Python', category: 'Backend' },
+  { name: 'Django', category: 'Backend' },
+  { name: 'Node.js', category: 'Backend' },
+  { name: 'AWS', category: 'Cloud' },
+  { name: 'AI/ML', category: 'AI' },
+  { name: 'React Native', category: 'Mobile' },
+  { name: 'TypeScript', category: 'Language' },
+  { name: 'PostgreSQL', category: 'Database' }
+]
+
+const stats = [
+  { label: 'Projects Delivered', value: '20+' },
+  { label: 'Enterprise Clients', value: '6+' },
+  { label: 'Years of Experience', value: '5+' },
+  { label: 'Technologies Used', value: '12+' }
+]
+
+function ClientShowcase() {
+  return (
+    <div className="mt-24 sm:mt-32">
+      <FadeIn>
+        <h2 className="font-display text-2xl font-semibold text-neutral-950 text-center mb-16">
+          Trusted by Leading Companies
+        </h2>
+      </FadeIn>
+      <FadeInStagger>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+          {clients.map((client) => (
+            <FadeIn key={client.name} className="text-center">
+              <div className="bg-white rounded-2xl p-8 shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
+                <div className="h-12 flex items-center justify-center mb-4">
+                  <span className="text-neutral-600 font-semibold">{client.name}</span>
+                </div>
+                <p className="text-xs text-neutral-500">{client.sector}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </FadeInStagger>
+    </div>
+  )
+}
+
+function StatsSection() {
+  return (
+    <div className="mt-24 sm:mt-32">
+      <FadeIn>
+        <div className="bg-neutral-950 rounded-3xl p-12">
+          <h2 className="font-display text-2xl font-semibold text-white text-center mb-12">
+            Our Track Record
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <div className="text-3xl font-bold text-purple-400 mb-2">{stat.value}</div>
+                <div className="text-neutral-300 text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </FadeIn>
+    </div>
+  )
+}
+
+function ProjectCard({ project }) {
+  return (
+    <FadeIn>
+      <article className="bg-white rounded-2xl shadow-sm border border-neutral-100 overflow-hidden hover:shadow-lg transition-all duration-300">
+        <div className="aspect-video bg-gradient-to-br from-neutral-50 to-neutral-100 flex items-center justify-center">
+          <div className="text-neutral-400 text-center p-8">
+            <h3 className="font-semibold text-neutral-900 mb-2">{project.title}</h3>
+            <span className="text-sm bg-purple-100 text-purple-700 px-3 py-1 rounded-full">
+              {project.category}
+            </span>
+          </div>
+        </div>
+        
+        <div className="p-8">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="font-display text-xl font-semibold text-neutral-950">
+              {project.title}
+            </h3>
+            <span className="text-sm text-neutral-500">{project.client}</span>
+          </div>
+          
+          <p className="text-neutral-600 mb-6">
+            {project.description}
+          </p>
+          
+          <div className="space-y-4">
+            <div>
+              <h4 className="text-sm font-semibold text-neutral-950 mb-2">Services</h4>
+              <div className="flex flex-wrap gap-2">
+                {project.services.map((service) => (
+                  <span key={service} className="text-xs bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full">
+                    {service}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="text-sm font-semibold text-neutral-950 mb-2">Key Results</h4>
+              <ul className="text-sm text-neutral-600 space-y-1">
+                {project.results.map((result, index) => (
+                  <li key={index} className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></div>
+                    {result}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+    </FadeIn>
+  )
+}
+
+function TechStack() {
+  const groupedTech = technologies.reduce((acc, tech) => {
+    if (!acc[tech.category]) {
+      acc[tech.category] = []
+    }
+    acc[tech.category].push(tech.name)
+    return acc
+  }, {})
 
   return (
+    <div className="mt-24 sm:mt-32">
+      <FadeIn>
+        <h2 className="font-display text-2xl font-semibold text-neutral-950 text-center mb-16">
+          Our Technology Stack
+        </h2>
+      </FadeIn>
+      <FadeInStagger>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {Object.entries(groupedTech).map(([category, techs]) => (
+            <FadeIn key={category}>
+              <div className="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100">
+                <h3 className="font-semibold text-neutral-950 mb-4">{category}</h3>
+                <div className="space-y-2">
+                  {techs.map((tech) => (
+                    <div key={tech} className="flex items-center">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                      <span className="text-neutral-600">{tech}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </FadeInStagger>
+    </div>
+  )
+}
+
+export default function Work() {
+  return (
     <>
-      <PageIntro
-        eyebrow="Our work"
-        title="Proven solutions for real-world problems."
-      >
+      <PageIntro eyebrow="Portfolio" title="Our Work">
         <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+          We partner with industry leaders to deliver cutting-edge solutions that drive real results. 
+          From AI automation to enterprise platforms, our track record speaks for itself.
         </p>
       </PageIntro>
 
-      <CaseStudies caseStudies={caseStudies} />
+      <Container className="mt-24 sm:mt-32">
+        <ClientShowcase />
+        <StatsSection />
+        
+        <div className="mt-24 sm:mt-32">
+          <FadeIn>
+            <h2 className="font-display text-2xl font-semibold text-neutral-950 mb-16">
+              Featured Projects
+            </h2>
+          </FadeIn>
+          <FadeInStagger>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {featuredProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+          </FadeInStagger>
+        </div>
 
-      <Testimonial
-        className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
-      >
-        We approached <em>Studio</em> because we loved their past work. They
-        delivered something remarkably similar in record time.
-      </Testimonial>
+        <TechStack />
 
-      <Clients />
+        <div className="mt-24 mb-24 sm:mt-32">
+          <FadeIn>
+            <div className="bg-gray-50 rounded-3xl p-12 text-center">
+              <h2 className="font-display text-2xl font-semibold text-neutral-950 mb-4">
+                Ready to Start Your Project?
+              </h2>
+              <p className="text-neutral-600 mb-8 max-w-2xl mx-auto">
+                From startups to enterprise clients, we deliver exceptional results. 
+                Let&apos;s discuss how we can help transform your business with modern technology.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  href="https://calendly.com/davesampson15/30min"
+                  className="bg-purple-600 hover:bg-purple-700"
+                >
+                  Book Free Consultation
+                </Button>
+                <Button href="/contact" variant="outline">
+                  View All Services
+                </Button>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </Container>
 
-      <ContactSection />
+      {/* <ContactSection /> */}
     </>
   )
 }

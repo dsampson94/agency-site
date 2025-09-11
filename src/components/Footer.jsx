@@ -11,13 +11,13 @@ const socialLinks = [
 
 export default function Footer() {
     return (
-        <footer className="mt-24 w-full sm:mt-32 lg:mt-40">
+        <footer className="w-full">
             <FadeIn className="w-full bg-gradient-to-br from-gray-50 to-white shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05),0_1px_0_0_rgba(255,255,255,0.05),0_0_0_1px_rgba(0,0,0,0.08),0_2px_2px_0_rgba(0,0,0,0.1),0_4px_4px_0_rgba(0,0,0,0.1),0_8px_8px_0_rgba(0,0,0,0.1)] px-8 py-12 sm:px-12 sm:py-16 md:px-16">
                 <div className="mx-auto max-w-7xl">
                     {/* Single Row Footer */}
                     <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
                         {/* Contact Info */}
-                        <div className="flex flex-col gap-3">
+                        {/* <div className="flex flex-col gap-3">
                             <a 
                                 href="mailto:hello@superstack.dev" 
                                 className="text-gray-900 hover:text-blue-600 transition-colors font-semibold text-lg"
@@ -25,7 +25,7 @@ export default function Footer() {
                                 hello@superstack.dev
                             </a>
                             <span className="text-gray-600 text-sm font-medium">Cape Town, South Africa</span>
-                        </div>
+                        </div> */}
 
                         {/* Quick Links */}
                         <div className="flex flex-wrap gap-8 text-sm font-medium">

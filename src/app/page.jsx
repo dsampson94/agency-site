@@ -156,7 +156,7 @@ function CaseStudies({caseStudies}) {
 
 function Services() {
     return (
-        <div className="mt-32 sm:mt-40 lg:mt-48">
+        <div className="mt-24 sm:mt-32 lg:mt-40">
             <Container>
                 {/* Section Header */}
                 <div className="text-center mb-16">
@@ -373,20 +373,7 @@ function SuperStackJourney() {
 
                     {/* The Stack - Simplified */}
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-                        {/* Next.js */}
-                        <FadeIn>
-                            <div className="group bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-800 hover:shadow-purple-500/20 transition-all duration-300 text-center">
-                                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg mx-auto mb-6">
-                                    <span className="text-white font-bold text-xl">N</span>
-                                </div>
-                                <h3 className="font-display text-xl font-bold text-white mb-3">Next.js</h3>
-                                <p className="text-gray-300 leading-relaxed">
-                                    The foundation of everything we build. Server-side rendering, automatic optimization, 
-                                    and lightning-fast performance out of the box.
-                                </p>
-                            </div>
-                        </FadeIn>
-
+                        
                         {/* TypeScript */}
                         <FadeIn>
                             <div className="group bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-800 hover:shadow-purple-500/20 transition-all duration-300 text-center">
@@ -397,6 +384,20 @@ function SuperStackJourney() {
                                 <p className="text-gray-300 leading-relaxed">
                                     Type safety that catches bugs before they happen. Clean, maintainable code that scales 
                                     with your business.
+                                </p>
+                            </div>
+                        </FadeIn>
+
+                        {/* Next.js */}
+                        <FadeIn>
+                            <div className="group bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-800 hover:shadow-purple-500/20 transition-all duration-300 text-center">
+                                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg mx-auto mb-6">
+                                    <span className="text-white font-bold text-xl flex items-center justify-center w-full h-full">N</span>
+                                </div>
+                                <h3 className="font-display text-xl font-bold text-white mb-3">Next.js</h3>
+                                <p className="text-gray-300 leading-relaxed">
+                                    The foundation of everything we build. Server-side rendering, automatic optimization, 
+                                    and lightning-fast performance out of the box.
                                 </p>
                             </div>
                         </FadeIn>
@@ -417,16 +418,6 @@ function SuperStackJourney() {
                     </div>
 
                     {/* Simple Bottom Message */}
-                    <div className="text-center">
-                        <FadeIn>
-                            <div className="inline-flex items-center gap-4 bg-gray-900 rounded-2xl px-8 py-4 border border-gray-800">
-                                <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
-                                <span className="font-semibold text-purple-400">
-                                    The SuperStack: Next.js + TypeScript + Modern Tools = Results that matter
-                                </span>
-                            </div>
-                        </FadeIn>
-                    </div>
                 </div>
             </Container>
         </div>

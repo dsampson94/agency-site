@@ -16,6 +16,11 @@ const withMDX = nextMDX({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'mdx'],
+  
+  eslint: {
+    ignoreDuringBuilds: false,
+    dirs: ['src'],
+  },
 
   webpack: (config) => {
     config.resolve.alias['@'] = path.join(__dirname, 'src')

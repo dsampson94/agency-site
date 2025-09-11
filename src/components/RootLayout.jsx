@@ -57,7 +57,6 @@ function Header({
                             <div className="w-10 h-10 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl flex items-center justify-center shadow-lg border border-gray-700 group-hover:border-gray-600 transition-all duration-300">
                                 <span className="text-white font-bold text-lg">S</span>
                             </div>
-                            <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity"></div>
                         </div>
                         
                         {/* Logo Text */}
