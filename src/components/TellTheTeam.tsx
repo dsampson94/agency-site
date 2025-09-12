@@ -163,7 +163,7 @@ export default function TellTheTeam() {
     }
 
     return (
-        <div className="relative w-full max-w-md mt-12 sm:mt-8 lg:-mt-16 mx-auto px-4 lg:px-8 mb-8 sm:mb-12 lg:mb-0">
+        <div className="relative w-full max-w-md mt-4 sm:mt-2 md:mt-0 lg:-mt-16 mx-auto px-4 lg:px-8 mb-4 sm:mb-2 md:mb-0 lg:mb-0">
             {/* Soft background extension for mobile */}
             <div className="absolute -inset-x-8 -inset-y-8 bg-gradient-to-b from-purple-50/30 via-white/40 to-transparent rounded-3xl blur-xl sm:hidden"></div>
             
@@ -248,9 +248,6 @@ export default function TellTheTeam() {
                                             </>
                                         ) : (
                                             <>
-                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                                                </svg>
                                                 <span>🎤 Record Your Vision</span>
                                             </>
                                         )}

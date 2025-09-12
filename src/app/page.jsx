@@ -45,27 +45,7 @@ function HeroCTAs() {
     );
 }
 
-// Trust Indicators Component
-function TrustIndicators() {
-    return (
-        <FadeIn className="mt-8">
-            <div className="flex items-center gap-2 text-xs justify-center sm:justify-start">
-                <div className="flex items-center gap-1.5 bg-gray-900/90 backdrop-blur-sm rounded-full px-2.5 py-1 shadow-sm">
-                    <div className="h-1 w-1 rounded-full bg-purple-500 shadow-sm shadow-purple-500/50"></div>
-                    <span className="font-medium text-white whitespace-nowrap">Biweekly Delivery</span>
-                </div>
-                <div className="flex items-center gap-1.5 bg-gray-900/90 backdrop-blur-sm rounded-full px-2.5 py-1 shadow-sm">
-                    <div className="h-1 w-1 rounded-full bg-purple-500 shadow-sm shadow-purple-500/50"></div>
-                    <span className="font-medium text-white whitespace-nowrap">Weekly Updates</span>
-                </div>
-                <div className="flex items-center gap-1.5 bg-gray-900/90 backdrop-blur-sm rounded-full px-2.5 py-1 shadow-sm">
-                    <div className="h-1 w-1 rounded-full bg-purple-500 shadow-sm shadow-purple-500/50"></div>
-                    <span className="font-medium text-white whitespace-nowrap">Dedicated Team</span>
-                </div>
-            </div>
-        </FadeIn>
-    );
-}
+// Trust Indicators Component - Removed
 
 function CaseStudies({caseStudies}) {
     return (
@@ -588,7 +568,7 @@ export default async function Home() {
                                 
                                 <div className="mt-6 mb-2">
                                     <span className="inline-block text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 tracking-wide">
-                                        WITH THE SUPERSTACK
+                                        With SuperStack
                                     </span>
                                 </div>
                                 
@@ -600,7 +580,6 @@ export default async function Home() {
                                 </p>
                             </FadeIn>
                             <HeroCTAs />
-                            <TrustIndicators />
                         </div>
                         <div className="relative flex justify-center lg:justify-end pt-4 sm:pt-8 lg:pt-0">
                             {/* Additional decorative elements */}
