@@ -156,7 +156,10 @@ function CaseStudies({caseStudies}) {
 
 function Services() {
     return (
-        <div className="mt-24 sm:mt-32 lg:mt-40">
+        <div className="mt-16 sm:mt-24 lg:mt-40 relative">
+            {/* Smooth transition background */}
+            <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-purple-50/20 to-transparent"></div>
+            
             <Container>
                 {/* Section Header */}
                 <div className="text-center mb-16">
@@ -435,18 +438,20 @@ export default async function Home() {
     return (
         <>
             {/* Hero Section */}
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden pb-16 sm:pb-20 lg:pb-8">
                 {/* Background Elements */}
                 <div className="absolute inset-0 -z-10">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-to-r from-gray-200/40 via-gray-100/40 to-gray-200/40 rounded-full blur-3xl"></div>
                     <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-purple-200/30 to-purple-300/30 rounded-full blur-2xl"></div>
                     <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-purple-300/20 to-purple-400/20 rounded-full blur-2xl"></div>
+                    {/* Additional mobile background extension */}
+                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-purple-100/20 to-transparent sm:hidden"></div>
                 </div>
                 
-                <Container className="relative mt-16 sm:mt-20 lg:mt-24">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
-                        <div className="flex flex-col justify-center px-4 lg:px-8">
-                            <FadeIn className="-mt-8">
+                <Container className="relative mt-20 sm:mt-24 lg:mt-24">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh]">
+                        <div className="flex flex-col justify-center px-4 lg:px-8 pb-8 sm:pb-12 lg:pb-0">
+                            <FadeIn className="mt-4 sm:mt-0 lg:-mt-8">
                                 <h1 className="font-display text-5xl font-bold tracking-tight text-gray-900 [text-wrap:balance] sm:text-6xl lg:text-7xl xl:text-8xl">
                                     <span className="block">Build</span>
                                     <span className="block">
@@ -467,7 +472,7 @@ export default async function Home() {
                             <HeroCTAs />
                             <TrustIndicators />
                         </div>
-                        <div className="relative flex justify-center lg:justify-end">
+                        <div className="relative flex justify-center lg:justify-end pt-4 sm:pt-8 lg:pt-0">
                             {/* Additional decorative elements */}
                             <div className="absolute -top-8 -right-8 w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full blur-xl opacity-60"></div>
                             <div className="absolute -bottom-8 -left-8 w-20 h-20 bg-gradient-to-br from-purple-300 to-purple-400 rounded-full blur-xl opacity-60"></div>

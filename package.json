@@ -4,9 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "prisma generate && next dev",
+    "dev:clean": "rimraf .next && prisma generate && next dev",
     "build": "prisma generate && next build",
+    "build:clean": "rimraf .next && prisma generate && next build",
     "start": "prisma generate && next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "rimraf .next .turbo node_modules/.cache",
+    "reset": "npm run clean && npm install && npm run dev"
   },
   "type": "module",
   "browserslist": "defaults, not ie <= 11",
@@ -18,6 +22,7 @@
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.0.4",
     "@prisma/client": "^6.15.0",
+    "@types/bcryptjs": "^2.4.6",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "acorn": "^8.10.0",
@@ -49,11 +54,15 @@
     "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "@types/jsonwebtoken": "^9.0.9",
+    "@types/jsonwebtoken": "^9.0.10",
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.0.4",
     "prettier": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.5",
+    "rimraf": "^6.0.1",
     "sharp": "0.33.1"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.cjs"
   }
 }
