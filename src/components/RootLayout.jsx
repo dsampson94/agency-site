@@ -61,16 +61,22 @@ function Header({
                         
                         {/* Logo Text */}
                         <div className="flex flex-col">
-                            <span className="font-display text-xl font-bold text-gray-900">
+                            <span className={clsx(
+                                "font-display text-xl font-bold transition-colors duration-300",
+                                invert ? "text-white" : "text-gray-900"
+                            )}>
                                 SuperStack
                             </span>
-                            <span className="text-xs text-gray-500 font-medium -mt-1">
+                            <span className={clsx(
+                                "text-xs font-medium -mt-1 transition-colors duration-300",
+                                invert ? "text-gray-300" : "text-gray-500"
+                            )}>
                                 Development Studio
                             </span>
                         </div>
                     </div>
                 </Link>
-                <div className="flex items-center gap-x-8 -mt-8">
+                <div className="flex items-center gap-x-8">
                     <Button href="/contact" invert={invert} className="hidden sm:block">
                         Contact us
                     </Button>

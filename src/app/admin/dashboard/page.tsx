@@ -32,6 +32,7 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true)
   const [enquiries, setEnquiries] = useState<Enquiry[]>([])
   const [users, setUsers] = useState<User[]>([])
+  const [expandedTranscripts, setExpandedTranscripts] = useState<Set<string>>(new Set())
   const [stats, setStats] = useState<Stats>({
     totalEnquiries: 0,
     totalUsers: 0,
@@ -116,6 +117,25 @@ export default function AdminDashboard() {
     router.push('/admin')
   }
 
+  const toggleTranscript = (enquiryId: string) => {
+    const newExpanded = new Set(expandedTranscripts)
+    if (newExpanded.has(enquiryId)) {
+      newExpanded.delete(enquiryId)
+    } else {
+      newExpanded.add(enquiryId)
+    }
+    setExpandedTranscripts(newExpanded)
+  }
+
+  const copyTranscript = async (transcript: string) => {
+    try {
+      await navigator.clipboard.writeText(transcript)
+      // You could add a toast notification here
+    } catch (err) {
+      console.error('Failed to copy transcript:', err)
+    }
+  }
+
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -142,11 +162,11 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-8">
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <Container>
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-between items-center py-6">
             <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
             <button
               onClick={handleLogout}
@@ -158,7 +178,7 @@ export default function AdminDashboard() {
         </Container>
       </div>
 
-      <Container className="py-8">
+      <Container className="py-6">
         {/* Stats Cards */}
         <FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
@@ -195,7 +215,7 @@ export default function AdminDashboard() {
                       Email
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Message
+                      Message / Transcript
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Voice Note
@@ -211,8 +231,96 @@ export default function AdminDashboard() {
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         {enquiry.email}
                       </td>
-                      <td className="px-6 py-4 text-sm text-gray-900 max-w-xs truncate">
-                        {enquiry.message || enquiry.transcript || 'No message'}
+                      <td className="px-6 py-4 text-sm text-gray-900">
+                        {enquiry.hasVoiceNote && enquiry.transcript ? (
+                          <div className="space-y-2">
+                            <div className="bg-blue-50 p-3 rounded-lg border-l-4 border-blue-400">
+                              <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center">
+                                  <svg className="w-4 h-4 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                                  </svg>
+                                  <span className="text-sm font-medium text-blue-700">Voice Note Transcript</span>
+                                  <span className="text-xs text-blue-500 ml-2">({enquiry.transcript.length} chars)</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                  <button
+                                    onClick={() => copyTranscript(enquiry.transcript)}
+                                    className="text-blue-600 hover:text-blue-800 text-xs font-medium flex items-center"
+                                    title="Copy transcript"
+                                  >
+                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                    </svg>
+                                  </button>
+                                  {enquiry.transcript.length > 200 && (
+                                    <button
+                                      onClick={() => toggleTranscript(enquiry._id)}
+                                      className="text-blue-600 hover:text-blue-800 text-xs font-medium flex items-center"
+                                    >
+                                      {expandedTranscripts.has(enquiry._id) ? (
+                                        <>
+                                          <span>Show Less</span>
+                                          <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                                          </svg>
+                                        </>
+                                      ) : (
+                                        <>
+                                          <span>Show More</span>
+                                          <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                          </svg>
+                                        </>
+                                      )}
+                                    </button>
+                                  )}
+                                </div>
+                              </div>
+                              <p className="text-sm text-blue-800 leading-relaxed whitespace-pre-wrap">
+                                {enquiry.transcript.length > 200 && !expandedTranscripts.has(enquiry._id)
+                                  ? `${enquiry.transcript.substring(0, 200)}...`
+                                  : enquiry.transcript
+                                }
+                              </p>
+                            </div>
+                          </div>
+                        ) : enquiry.transcript ? (
+                          <div className="bg-gray-50 p-3 rounded-lg">
+                            <p className="text-sm text-gray-800 leading-relaxed whitespace-pre-wrap">
+                              {enquiry.transcript.length > 200 && !expandedTranscripts.has(enquiry._id)
+                                ? `${enquiry.transcript.substring(0, 200)}...`
+                                : enquiry.transcript
+                              }
+                            </p>
+                            {enquiry.transcript.length > 200 && (
+                              <button
+                                onClick={() => toggleTranscript(enquiry._id)}
+                                className="text-blue-600 hover:text-blue-800 text-xs font-medium mt-2 flex items-center"
+                              >
+                                {expandedTranscripts.has(enquiry._id) ? (
+                                  <>
+                                    <span>Show Less</span>
+                                    <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                                    </svg>
+                                  </>
+                                ) : (
+                                  <>
+                                    <span>Show More</span>
+                                    <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                  </>
+                                )}
+                              </button>
+                            )}
+                          </div>
+                        ) : (
+                          <div className="text-sm text-gray-500 italic">
+                            {enquiry.message || 'No message'}
+                          </div>
+                        )}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm">
                         {enquiry.hasVoiceNote ? (

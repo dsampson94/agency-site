@@ -16,11 +16,19 @@ export default function TellTheTeam() {
     const [transcript, setTranscript] = useState<string | null>(null)
     const [userEmail, setUserEmail] = useState('')
     const [userMessage, setUserMessage] = useState('')
+    const [honeypot, setHoneypot] = useState('') // Bot trap
     const [submissionStatus, setSubmissionStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
     const [recordingPhase, setRecordingPhase] = useState<'ready' | 'recorded' | 'submitted'>('ready')
+    const [errorMessage, setErrorMessage] = useState('')
 
     const mediaRecorderRef = useRef<MediaRecorder | null>(null)
     const audioChunksRef = useRef<Blob[]>([])
+
+    // Email validation
+    const isValidEmail = (email: string) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        return emailRegex.test(email)
+    }
 
     // Start or stop recording
     const handleRecord = async () => {
@@ -57,18 +65,16 @@ export default function TellTheTeam() {
 
                     console.log('Voice transcription response:', response.data)
 
-                    if (response.data?.success) {
-                        const {user} = response.data
-                        const latestEnquiry = user.enquiries[user.enquiries.length - 1]
-                        const latestVoiceNote = latestEnquiry.voiceNotes[latestEnquiry.voiceNotes.length - 1] || null
-                        const transcriptText = latestVoiceNote?.transcript || ''
-                        console.log('Setting transcript:', transcriptText)
-                        setTranscript(transcriptText)
+                    if (response.data?.success && response.data?.transcript) {
+                        setTranscript(response.data.transcript)
+                        console.log('Setting transcript:', response.data.transcript)
                     } else {
                         console.error('Voice transcription failed:', response.data)
+                        setTranscript('Transcription failed - please try again')
                     }
                 } catch (err) {
                     console.error('Error transcribing voice note:', err)
+                    setTranscript('Transcription failed - please try again')
                 }
             }
 
@@ -84,54 +90,75 @@ export default function TellTheTeam() {
     }
 
     const handleSubmit = async () => {
+        // Client-side validation
         if (!userEmail) {
-            alert('Please enter your email.')
+            setErrorMessage('Please enter your email.')
+            return
+        }
+
+        if (!isValidEmail(userEmail)) {
+            setErrorMessage('Please enter a valid email address.')
             return
         }
 
         if (!transcript && !audioURL) {
-            alert('Please record a voice note first.')
+            setErrorMessage('Please record a voice note first.')
+            return
+        }
+
+        // Check honeypot (if filled, it's likely a bot)
+        if (honeypot) {
+            console.log('Bot detected via honeypot')
+            setErrorMessage('Submission failed. Please try again.')
             return
         }
 
         setSubmissionStatus('submitting')
+        setErrorMessage('')
 
         try {
-            console.log('Submitting enquiry with:', { 
-                email: userEmail.toLowerCase(),
-                message: transcript || 'Voice note submitted (transcription pending)',
-                hasVoiceNote: true,
-                transcript: transcript
-            })
-
-            const response = await axios.post('/api/enquiry', {
-                email: userEmail.toLowerCase(),
-                message: transcript || 'Voice note submitted (transcription pending)',
-                hasVoiceNote: true,
-                transcript: transcript
-            })
-
-            console.log('Response:', response.data)
-
-            if (response.data?.success) {
-                setSubmissionStatus('success')
-                setRecordingPhase('submitted')
-                // Reset form after success
-                setTimeout(() => {
-                    setUserEmail('')
-                    setUserMessage('')
-                    setAudioURL(null)
-                    setTranscript(null)
-                    setSubmissionStatus('idle')
-                    setRecordingPhase('ready')
-                }, 3000)
-            } else {
-                console.error('API returned error:', response.data)
-                setSubmissionStatus('error')
+            // Create form data to send to the API
+            const formData = new FormData()
+            formData.append('email', userEmail)
+            formData.append('message', userMessage || 'Voice note submission')
+            formData.append('honeypot', honeypot)
+            
+            if (audioURL) {
+                // Convert audio URL back to blob for submission
+                const response = await fetch(audioURL)
+                const audioBlob = await response.blob()
+                formData.append('audio', audioBlob, 'voice-note.webm')
             }
+
+            const response = await fetch('/api/voice-note', {
+                method: 'POST',
+                body: formData,
+            })
+
+            const result = await response.json()
+
+            if (!response.ok) {
+                throw new Error(result.error || 'Submission failed')
+            }
+
+            setSubmissionStatus('success')
+            setRecordingPhase('submitted')
+            
+            // Reset form after success
+            setTimeout(() => {
+                setUserEmail('')
+                setUserMessage('')
+                setHoneypot('')
+                setAudioURL(null)
+                setTranscript(null)
+                setSubmissionStatus('idle')
+                setRecordingPhase('ready')
+            }, 3000)
+            
         } catch (err) {
             console.error('Error submitting enquiry:', err)
             setSubmissionStatus('error')
+            setErrorMessage(err instanceof Error ? err.message : 'Submission failed. Please try again.')
         }
     }
 
@@ -170,6 +197,17 @@ export default function TellTheTeam() {
                     </div>
                 ) : (
                     <div className="space-y-3 sm:space-y-4">
+                        {/* Honeypot field - hidden from users but visible to bots */}
+                        <input
+                            type="text"
+                            name="website"
+                            value={honeypot}
+                            onChange={(e) => setHoneypot(e.target.value)}
+                            style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
+                            tabIndex={-1}
+                            autoComplete="off"
+                        />
+
                         {/* Email Input - Neumorphic */}
                         <div className="relative">
                             <label className="block text-xs font-medium text-gray-700 mb-1.5">Email Address</label>
@@ -178,9 +216,14 @@ export default function TellTheTeam() {
                                 placeholder="your@email.com"
                                 value={userEmail}
                                 onChange={(e) => setUserEmail(e.target.value)}
-                                className="w-full rounded-xl bg-gradient-to-br from-gray-50 to-white py-2.5 sm:py-3 px-3 sm:px-4 text-sm text-gray-800 placeholder:text-gray-400 shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff] border border-gray-200/50 focus:outline-none focus:ring-2 focus:ring-purple-400/30 focus:border-purple-300 transition-all duration-300"
+                                className={`w-full rounded-xl bg-gradient-to-br from-gray-50 to-white py-2.5 sm:py-3 px-3 sm:px-4 text-sm text-gray-800 placeholder:text-gray-400 shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff] border border-gray-200/50 focus:outline-none focus:ring-2 focus:ring-purple-400/30 focus:border-purple-300 transition-all duration-300 ${
+                                    userEmail && !isValidEmail(userEmail) ? 'border-red-300 ring-red-200/50' : ''
+                                }`}
                                 disabled={submissionStatus === 'submitting'}
                             />
+                            {userEmail && !isValidEmail(userEmail) && (
+                                <p className="text-red-500 text-xs mt-1">Please enter a valid email address</p>
+                            )}
                         </div>
 
                         {/* Voice Recording Section */}
@@ -188,11 +231,11 @@ export default function TellTheTeam() {
                             <div className="text-center">
                                 <button
                                     onClick={handleRecord}
-                                    disabled={submissionStatus === 'submitting' || !userEmail.trim()}
+                                    disabled={submissionStatus === 'submitting' || !userEmail.trim() || !isValidEmail(userEmail)}
                                     className={`relative group w-full rounded-xl py-2.5 sm:py-3 px-3 sm:px-4 text-sm font-semibold transition-all duration-300 ${
                                         isRecording 
                                             ? 'bg-gradient-to-br from-purple-500 to-purple-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff]' 
-                                            : !userEmail.trim()
+                                            : !userEmail.trim() || !isValidEmail(userEmail)
                                             ? 'bg-gradient-to-br from-gray-200 to-gray-300 text-gray-400 cursor-not-allowed shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff]'
                                             : 'bg-gradient-to-br from-purple-500 to-purple-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] active:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff]'
                                     }`}
@@ -245,6 +288,18 @@ export default function TellTheTeam() {
                                         <p className="text-blue-700 text-sm leading-relaxed">{transcript}</p>
                                     </div>
                                 )}
+                            </div>
+                        )}
+
+                        {/* Error Message */}
+                        {errorMessage && (
+                            <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-3 shadow-[inset_6px_6px_12px_#f5e8e8,inset_-6px_-6px_12px_#ffffff] border border-red-200/50">
+                                <div className="flex items-center gap-2">
+                                    <svg className="w-4 h-4 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <p className="text-red-700 text-xs">{errorMessage}</p>
+                                </div>
                             </div>
                         )}
 
