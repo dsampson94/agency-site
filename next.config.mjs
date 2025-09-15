@@ -13,9 +13,6 @@ const withMDX = nextMDX({
 const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'mdx'],
   
-  // Disable telemetry to avoid trace file issues
-  telemetry: false,
-  
   async redirects() {
     return [
       {

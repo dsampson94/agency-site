@@ -1,9 +1,9 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
-import { Container } from '@/components/Container'
-import { FadeIn } from '@/components/FadeIn'
+import { Container } from '@/components/Container.jsx'
+import { FadeIn } from '@/components/FadeIn.jsx'
 
 interface Enquiry {
   _id: string
@@ -50,7 +50,7 @@ export default function AdminDashboard() {
 
     // Verify token and load data
     verifyTokenAndLoadData(token)
-  }, [router])
+  }, [router]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const verifyTokenAndLoadData = async (token: string) => {
     try {
@@ -165,7 +165,7 @@ export default function AdminDashboard() {
     <div className="min-h-screen bg-gray-50 pt-8">
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
-        <Container>
+        <Container as="div" className="">
           <div className="flex justify-between items-center py-6">
             <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
             <button
@@ -178,7 +178,7 @@ export default function AdminDashboard() {
         </Container>
       </div>
 
-      <Container className="py-6">
+      <Container as="div" className="py-6">
         {/* Stats Cards */}
         <FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
