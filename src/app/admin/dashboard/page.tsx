@@ -2,8 +2,8 @@
 
 import { useEffect, useState, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
-import { Container } from '@/components/Container.jsx'
-import { FadeIn } from '@/components/FadeIn.jsx'
+import { Container } from '@/components/Container'
+import { FadeIn } from '@/components/FadeIn'
 
 interface Enquiry {
   _id: string
