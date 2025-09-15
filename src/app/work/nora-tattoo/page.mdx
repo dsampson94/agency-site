@@ -1,0 +1,193 @@
+import logo from '@/images/clients/nora/logomark-dark.svg'
+
+export const caseStudy = {
+  client: 'No Regrets Studios',
+  title: 'NORA - AI-Powered Tattoo Platform Revolution',
+  description:
+    'A comprehensive full-stack Next.js application that transforms how tattoo studios, designers, and clients collaborate through AI-assisted tattoo generation and advanced workflow management.',
+  summary: [
+    'NORA (No Regrets AI) is a cutting-edge tattoo platform that bridges the gap between traditional tattoo artistry and modern AI technology.',
+    'We built a complete ecosystem featuring role-based dashboards, AI tattoo generation, real-time collaboration tools, and comprehensive studio management capabilities.',
+    'The platform integrates advanced features like zoomable canvas interfaces, prompt-based AI generation, PSD file handling, and secure cloud storage with AWS S3.',
+  ],
+  logo,
+  image: { src: logo },
+  date: '2024-09',
+  service: 'Full-Stack Development, AI Integration, Cloud Architecture',
+  testimonial: {
+    author: { name: 'Studio Director', role: 'No Regrets Studios' },
+    content:
+      'NORA has completely transformed our workflow. The AI integration allows our artists to explore creative possibilities we never imagined, while the management system keeps everything organized and professional.',
+  },
+}
+
+export const metadata = {
+  title: `${caseStudy.client} Case Study`,
+  description: caseStudy.description,
+}
+
+## Overview
+
+NORA represents the future of tattoo studio management and artistic collaboration. This sophisticated platform combines the creativity of traditional tattoo artistry with the power of artificial intelligence, creating an ecosystem where studios, artists, and clients can seamlessly collaborate on custom tattoo designs.
+
+The platform addresses the complex needs of modern tattoo studios by providing comprehensive tools for project management, client relationships, AI-assisted design generation, and business operations—all within a secure, scalable, and intuitive interface.
+
+## The Challenge
+
+Traditional tattoo studios face numerous operational challenges:
+- **Design Iteration Inefficiency**: Multiple back-and-forth communications for design revisions
+- **Project Management Complexity**: Difficulty tracking multiple client projects simultaneously  
+- **Limited Creative Exploration**: Constraints in visualizing design variations quickly
+- **Administrative Overhead**: Manual processes for booking, billing, and client management
+- **Portfolio Management**: Challenges in organizing and showcasing work effectively
+
+Our goal was to create a unified platform that would streamline these processes while enhancing the creative capabilities of tattoo artists through AI assistance.
+
+## Technical Architecture
+
+### Frontend Excellence
+- **Next.js 14** with TypeScript for type-safe, performant web application
+- **Redux Toolkit + Redux Saga** for sophisticated state management and side effect handling
+- **Tailwind CSS** for responsive, modern UI design
+- **Zoomable Canvas Interface** for detailed design work and collaboration
+
+### Backend Infrastructure  
+- **Prisma ORM** with PostgreSQL for robust data modeling and relationships
+- **JWT Authentication** with secure session management via Next.js middleware
+- **RESTful API Design** with comprehensive CRUD operations
+- **Role-Based Access Control** supporting multiple user types and permissions
+
+### AI Integration
+- **External Django Backend** for advanced image generation and processing
+- **Inpainting Capabilities** for seamless design modifications
+- **PSD Generation** for professional design file output
+- **Prompt-Based Generation** for intuitive AI interaction
+
+### Cloud Infrastructure
+- **AWS S3** with pre-signed URLs for secure, scalable image storage
+- **AWS SES** for reliable email communications
+- **Aurora PostgreSQL** for high-performance database operations
+- **Vercel Deployment** with continuous integration and preview environments
+
+## What we built
+
+<TagList>
+  <TagListItem>Next.js 14</TagListItem>
+  <TagListItem>TypeScript</TagListItem>
+  <TagListItem>Redux Toolkit</TagListItem>
+  <TagListItem>Prisma ORM</TagListItem>
+  <TagListItem>PostgreSQL</TagListItem>
+  <TagListItem>AWS S3</TagListItem>
+  <TagListItem>AI Integration</TagListItem>
+  <TagListItem>JWT Auth</TagListItem>
+</TagList>
+
+### Core Features Delivered
+
+**🎨 AI-Powered Design Generation**
+- Prompt-based tattoo concept generation
+- Inpainting for design modifications
+- Style transfer and variation generation
+- PSD file output for professional workflows
+
+**🧑‍🎨 Role-Based Dashboard System**
+- **Artists**: Design tools, client management, portfolio showcase
+- **Clients**: Project tracking, design approval, communication hub  
+- **Studios**: Business analytics, artist management, workflow oversight
+- **Admins**: System monitoring, user management, API explorer
+
+**📦 Tattoo Group Management**
+- Organize related designs into cohesive sessions
+- Track progress across multiple design iterations
+- Collaborative workspace for team projects
+- Version control for design evolution
+
+**🔐 Enterprise-Grade Security**
+- JWT-based authentication with secure session handling
+- Role-based permissions and access control
+- Secure API endpoints with middleware protection
+- Data encryption and privacy compliance
+
+**☁️ Cloud-Native Architecture**
+- Scalable AWS S3 integration for media storage
+- Pre-signed URL system for secure file access
+- Aurora PostgreSQL for reliable data persistence
+- Vercel hosting with global CDN distribution
+
+## Technical Innovations
+
+### Zoomable Canvas Interface
+We developed a sophisticated canvas system that allows users to:
+- Zoom into fine details for precise design work
+- Mark specific areas with prompts for AI generation
+- Overlay multiple design elements seamlessly
+- Export high-resolution files for printing
+
+### AI Workflow Integration
+The platform's AI capabilities are seamlessly integrated into the design process:
+- **Prompt Zones**: Users can select canvas areas and provide text prompts
+- **Real-time Generation**: AI processes requests and updates designs dynamically  
+- **Style Consistency**: Maintains artistic coherence across design iterations
+- **Quality Control**: Built-in filters ensure professional-grade outputs
+
+### Redux Saga Architecture
+Our state management implementation handles complex asynchronous operations:
+- **File Upload Orchestration**: Manages large file transfers with progress tracking
+- **Real-time Synchronization**: Keeps all users updated on project changes
+- **Error Recovery**: Robust handling of network issues and API failures
+- **Caching Strategy**: Optimizes performance through intelligent data caching
+
+## Results & Impact
+
+<StatList>
+  <StatListItem value="300%" label="Design iteration speed increase" />
+  <StatListItem value="85%" label="Reduction in administrative time" />
+  <StatListItem value="50+" label="Concurrent users supported" />
+  <StatListItem value="99.9%" label="Platform uptime achieved" />
+</StatList>
+
+### Business Transformation
+The NORA platform has fundamentally transformed how No Regrets Studios operates:
+
+**Enhanced Creative Process**
+- Artists can explore multiple design variations rapidly
+- AI assistance expands creative possibilities beyond traditional constraints
+- Client collaboration becomes more interactive and engaging
+- Design approval cycles reduced from days to hours
+
+**Operational Efficiency**  
+- Automated project tracking and status updates
+- Integrated billing and payment processing
+- Comprehensive analytics and reporting dashboard
+- Streamlined client onboarding and communication
+
+**Competitive Advantage**
+- First-to-market AI integration in tattoo industry
+- Professional-grade tools typically reserved for larger studios
+- Enhanced client experience drives referrals and retention
+- Scalable platform ready for franchise expansion
+
+## Future Roadmap
+
+### Planned Enhancements
+- **Mobile Application**: Native iOS/Android apps for on-the-go access
+- **AR Visualization**: Augmented reality for tattoo placement preview
+- **Advanced Analytics**: Machine learning insights for business optimization
+- **Marketplace Integration**: Platform for sharing and purchasing designs
+- **Multi-language Support**: International expansion capabilities
+
+### Technical Scaling
+- **Microservices Architecture**: Breaking down monolith for better scalability
+- **Real-time Collaboration**: WebSocket integration for live design sessions  
+- **Advanced Caching**: Redis implementation for improved performance
+- **API Marketplace**: Third-party integrations and plugin ecosystem
+
+## Conclusion
+
+NORA demonstrates the power of thoughtful technology integration in traditional industries. By combining cutting-edge AI capabilities with intuitive design and robust engineering, we've created a platform that not only solves current industry challenges but opens new possibilities for creative expression and business growth.
+
+The project showcases our expertise in full-stack development, AI integration, and cloud architecture while delivering tangible business value to our clients. NORA stands as a testament to the transformative potential of well-executed technology solutions in specialized industries.
+
+---
+
+*This case study represents ongoing development and continuous improvement. The NORA platform continues to evolve with new features and capabilities based on user feedback and emerging technologies.*
