@@ -1,4 +1,9 @@
 import nextMDX from '@next/mdx'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const withMDX = nextMDX({
   extension: /\.mdx$/,
@@ -8,6 +13,9 @@ const withMDX = nextMDX({
 const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'mdx'],
   
+  // Disable telemetry to avoid trace file issues
+  telemetry: false,
+  
   async redirects() {
     return [
       {
@@ -16,6 +24,11 @@ const nextConfig = {
         permanent: true,
       },
     ]
+  },
+
+  webpack: (config) => {
+    config.resolve.alias['@'] = path.join(__dirname, 'src')
+    return config
   },
 }
 
