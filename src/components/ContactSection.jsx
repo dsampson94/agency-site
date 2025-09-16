@@ -13,7 +13,12 @@ export function ContactSection() {
               Tell us about your project
             </h2>
             <div className="mt-6 flex">
-              <Button href="/contact" invert>
+              <Button 
+                href="https://cal.com/superstack/consultation" 
+                invert
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <p>Let&apos;s build it</p>
               </Button>
             </div>

@@ -228,7 +228,9 @@ function CallToAction() {
                             📅 Book Free Consultation
                         </a>
                         <a
-                            href="/contact"
+                            href="https://cal.com/superstack/consultation"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-8 py-4 font-semibold text-neutral-900 transition-colors hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
                         >
                             💬 Start a Conversation

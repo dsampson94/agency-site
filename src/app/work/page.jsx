@@ -107,12 +107,7 @@ const technologies = [
   { name: 'PostgreSQL', category: 'Database' }
 ]
 
-const stats = [
-  { label: 'Projects Delivered', value: '20+' },
-  { label: 'Enterprise Clients', value: '6+' },
-  { label: 'Years of Experience', value: '5+' },
-  { label: 'Technologies Used', value: '12+' }
-]
+
 
 function ClientShowcase() {
   return (
@@ -140,27 +135,7 @@ function ClientShowcase() {
   )
 }
 
-function StatsSection() {
-  return (
-    <div className="mt-24 sm:mt-32">
-      <FadeIn>
-        <div className="bg-neutral-950 rounded-3xl p-12">
-          <h2 className="font-display text-2xl font-semibold text-white text-center mb-12">
-            Our Track Record
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <div className="text-3xl font-bold text-purple-400 mb-2">{stat.value}</div>
-                <div className="text-neutral-300 text-sm">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </FadeIn>
-    </div>
-  )
-}
+
 
 function ProjectCard({ project }) {
   return (
@@ -268,7 +243,6 @@ export default function Work() {
 
       <Container className="mt-24 sm:mt-32">
         <ClientShowcase />
-        <StatsSection />
         
         <div className="mt-24 sm:mt-32">
           <FadeIn>
@@ -304,7 +278,7 @@ export default function Work() {
                 >
                   Book Free Consultation
                 </Button>
-                <Button href="/contact" variant="outline">
+                <Button href="/work" variant="outline">
                   View All Services
                 </Button>
               </div>

@@ -77,8 +77,14 @@ function Header({
                     </div>
                 </Link>
                 <div className="flex items-center gap-x-8">
-                    <Button href="/contact" invert={invert} className="hidden sm:block">
-                        Contact us
+                    <Button 
+                        href="https://cal.com/superstack/consultation" 
+                        invert={invert} 
+                        className="hidden sm:block"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Book Consultation
                     </Button>
                     <button
                         ref={toggleRef}
