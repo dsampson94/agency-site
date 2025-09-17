@@ -1,4 +1,4 @@
-﻿import Image from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { Border } from '@/components/Border'
@@ -144,7 +144,7 @@ function ProjectCard({ project }) {
         <div className="aspect-video bg-gradient-to-br from-neutral-50 to-neutral-100 flex items-center justify-center">
           <div className="text-neutral-400 text-center p-8">
             <h3 className="font-semibold text-neutral-900 mb-2">{project.title}</h3>
-            <span className="text-sm bg-purple-100 text-purple-700 px-3 py-1 rounded-full">
+            <span className="text-sm bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">
               {project.category}
             </span>
           </div>
@@ -179,7 +179,7 @@ function ProjectCard({ project }) {
               <ul className="text-sm text-neutral-600 space-y-1">
                 {project.results.map((result, index) => (
                   <li key={index} className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-3"></div>
                     {result}
                   </li>
                 ))}
@@ -217,7 +217,7 @@ function TechStack() {
                 <div className="space-y-2">
                   {techs.map((tech) => (
                     <div key={tech} className="flex items-center">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
                       <span className="text-neutral-600">{tech}</span>
                     </div>
                   ))}
@@ -274,7 +274,7 @@ export default function Work() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   href="https://calendly.com/davesampson15/30min"
-                  className="bg-purple-600 hover:bg-purple-700"
+                  className="bg-indigo-600 hover:bg-indigo-700"
                 >
                   Book Free Consultation
                 </Button>

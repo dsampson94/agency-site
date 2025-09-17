@@ -20,9 +20,9 @@ function HeroCTAs() {
                 href={bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-purple-600 to-purple-700 px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-[0_20px_40px_rgba(147,51,234,0.3)] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 overflow-hidden"
+                className="group relative inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-indigo-600 to-blue-700 px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-[0_20px_40px_rgba(79,70,229,0.3)] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 overflow-hidden"
             >
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-purple-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-700 to-blue-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative flex items-center gap-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -51,7 +51,7 @@ function Services() {
     return (
         <div className="mt-16 sm:mt-24 lg:mt-40 relative">
             {/* Smooth transition background */}
-            <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-purple-50/20 to-transparent"></div>
+            <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-indigo-50/20 to-transparent"></div>
             
             <Container>
                 {/* Section Header */}
@@ -65,7 +65,7 @@ function Services() {
                         </span>
                         <h2 className="font-display text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6">
                             Our{" "}
-                            <span className="text-purple-600">
+                            <span className="text-indigo-600">
                                 Services
                             </span>
                         </h2>
@@ -79,15 +79,15 @@ function Services() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
                     {/* AI Agent Development */}
                     <FadeIn>
-                        <div className="group relative bg-gray-900 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-gray-800 hover:shadow-[0_20px_60px_rgba(147,51,234,0.3)] transition-all duration-500 hover:-translate-y-2">
+                        <div className="group relative bg-gray-900 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-gray-800 hover:shadow-[0_20px_60px_rgba(79,70,229,0.3)] transition-all duration-500 hover:-translate-y-2">
                             {/* Icon */}
                             <div className="relative mb-8">
-                                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:shadow-purple-500/40 transition-all duration-300">
+                                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/25 group-hover:shadow-indigo-500/40 transition-all duration-300">
                                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
                                 </div>
-                                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-blue-900/60 to-slate-800/60 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity"></div>
                             </div>
 
                             <h3 className="font-display text-2xl font-bold text-white mb-4">
@@ -101,26 +101,26 @@ function Services() {
                             {/* Features List */}
                             <ul className="space-y-3 mb-8">
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
                                     <span className="text-sm font-medium text-gray-300">Custom AI Chatbots</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
                                     <span className="text-sm font-medium text-gray-300">Intelligent Automation</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
                                     <span className="text-sm font-medium text-gray-300">Customer Support Bots</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
                                     <span className="text-sm font-medium text-gray-300">Workflow Automation</span>
                                 </li>
                             </ul>
 
                             <a
                                 href="/services/ai-development"
-                                className="inline-flex items-center gap-2 text-purple-400 font-semibold hover:text-purple-300 transition-colors group/link"
+                                className="inline-flex items-center gap-2 text-indigo-400 font-semibold hover:text-indigo-300 transition-colors group/link"
                             >
                                 Learn More
                                 <svg className="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,10 +132,10 @@ function Services() {
 
                     {/* App Development - Now in the middle */}
                     <FadeIn>
-                        <div className="group relative bg-gray-900 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-gray-800 hover:shadow-[0_20px_60px_rgba(168,85,247,0.3)] transition-all duration-500 hover:-translate-y-2">
+                        <div className="group relative bg-gray-900 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-gray-800 hover:shadow-[0_20px_60px_rgba(79,70,229,0.3)] transition-all duration-500 hover:-translate-y-2">
                             {/* Icon */}
                             <div className="relative mb-8">
-                                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:shadow-purple-500/40 transition-all duration-300">
+                                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/25 group-hover:shadow-indigo-500/40 transition-all duration-300">
                                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z M16 4h3a2 2 0 012 2v3" />
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 4H5a2 2 0 00-2 2v3" />
@@ -146,7 +146,7 @@ function Services() {
 
                             <h3 className="font-display text-2xl font-bold text-white mb-4">
                                 App Development
-                                <span className="ml-2 text-sm bg-purple-500/20 text-purple-300 px-2 py-1 rounded-full">Popular</span>
+                                <span className="ml-2 text-sm bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded-full">Popular</span>
                             </h3>
                             <p className="text-gray-300 leading-relaxed mb-8">
                                 Transform your ideas into powerful applications. We build native iOS & Android apps, 
@@ -156,26 +156,26 @@ function Services() {
                             {/* Features List */}
                             <ul className="space-y-3 mb-8">
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
                                     <span className="text-sm font-medium text-gray-300">📱 iOS & Android Native Apps</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
                                     <span className="text-sm font-medium text-gray-300">💻 Cross-Platform Solutions</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
                                     <span className="text-sm font-medium text-gray-300">🖥️ Desktop Software</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
                                     <span className="text-sm font-medium text-gray-300">☁️ SaaS Platform Development</span>
                                 </li>
                             </ul>
 
                             <a
                                 href="/services/app-development"
-                                className="inline-flex items-center gap-2 text-purple-400 font-semibold hover:text-purple-300 transition-colors group/link"
+                                className="inline-flex items-center gap-2 text-indigo-400 font-semibold hover:text-indigo-300 transition-colors group/link"
                             >
                                 Learn More
                                 <svg className="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -190,12 +190,12 @@ function Services() {
                         <div className="group relative bg-gray-900 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-gray-800 hover:shadow-[0_20px_60px_rgba(168,85,247,0.3)] transition-all duration-500 hover:-translate-y-2">
                             {/* Icon */}
                             <div className="relative mb-8">
-                                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:shadow-purple-500/40 transition-all duration-300">
+                                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/25 group-hover:shadow-indigo-500/40 transition-all duration-300">
                                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9-9a9 9 0 00-9 9m9 9v-9" />
                                     </svg>
                                 </div>
-                                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-indigo-400 to-indigo-500 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity"></div>
                             </div>
 
                             <h3 className="font-display text-2xl font-bold text-white mb-4">
@@ -209,26 +209,26 @@ function Services() {
                             {/* Features List */}
                             <ul className="space-y-3 mb-8">
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
                                     <span className="text-sm font-medium text-gray-300">Responsive Web Design</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
                                     <span className="text-sm font-medium text-gray-300">WordPress Development</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
                                     <span className="text-sm font-medium text-gray-300">E-commerce Solutions</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
                                     <span className="text-sm font-medium text-gray-300">Business Dashboards</span>
                                 </li>
                             </ul>
 
                             <a
                                 href="/services/web-development"
-                                className="inline-flex items-center gap-2 text-purple-400 font-semibold hover:text-purple-300 transition-colors group/link"
+                                className="inline-flex items-center gap-2 text-indigo-400 font-semibold hover:text-indigo-300 transition-colors group/link"
                             >
                                 Learn More
                                 <svg className="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -297,16 +297,16 @@ function FeaturedProjects() {
             description: 'Comprehensive AI-powered tutoring platform with intelligent matching algorithms and automated scheduling systems for enhanced learning experiences.',
             features: ['AI Matching Algorithms', 'Automated Scheduling', 'Progress Tracking', 'Payment Integration'],
             link: '/work/123tutors',
-            bgColor: 'bg-purple-600',
+            bgColor: 'bg-indigo-600',
             textColor: 'text-white',
             image: '/images/work/123tutors-hero.jpg'
         },
         {
             id: 'nora-tattoo-platform',
-            title: 'Nora Tattoo',
-            subtitle: 'Booking & Portfolio Platform',
-            description: 'Modern tattoo studio booking platform with portfolio showcase, appointment scheduling, and client management system for professional tattoo artists.',
-            features: ['Online Booking System', 'Portfolio Gallery', 'Client Management', 'Appointment Scheduling'],
+            title: 'NORA Platform',
+            subtitle: 'AI-Powered Tattoo Studio Revolution',
+            description: 'Full-stack Next.js application that transforms tattoo studios through AI-assisted tattoo generation, role-based dashboards, and comprehensive workflow management with JWT auth and cloud integration.',
+            features: ['AI Tattoo Generation', 'Role-Based Dashboards', 'Zoomable Canvas UI', 'AWS S3 Integration'],
             link: '/work/nora-tattoo',
             bgColor: 'bg-pink-600',
             textColor: 'text-white',
@@ -320,18 +320,18 @@ function FeaturedProjects() {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <FadeIn>
-                        <span className="inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-2 text-sm font-semibold text-purple-700 mb-6">
+                        <span className="inline-flex items-center gap-2 rounded-full bg-indigo-100 px-4 py-2 text-sm font-semibold text-indigo-700 mb-6">
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                             </svg>
                             Our Work
                         </span>
                         <h2 className="font-display text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6">
-                            Featured <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Projects</span>
+                            Featured <span className="bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">Projects</span>
                         </h2>
                         <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
                             Take a look at some of our recent AI and software development projects that have{" "}
-                            <span className="font-semibold text-purple-600">transformed businesses</span> and{" "}
+                            <span className="font-semibold text-indigo-600">transformed businesses</span> and{" "}
                             <span className="font-semibold text-blue-600">delivered real results.</span>
                         </p>
                     </FadeIn>
@@ -365,7 +365,7 @@ function FeaturedProjects() {
                                     <div className="space-y-2 mb-6">
                                         {project.features.map((feature, index) => (
                                             <div key={index} className="flex items-center gap-3">
-                                                <div className="w-1.5 h-1.5 bg-purple-500 rounded-full flex-shrink-0"></div>
+                                                <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full flex-shrink-0"></div>
                                                 <span className="text-gray-700 text-sm font-medium">{feature}</span>
                                             </div>
                                         ))}
@@ -409,14 +409,14 @@ function WhatIsSuperStackSection() {
     return (
         <div className="relative">
             {/* Seamless background transition */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-50/50 to-gray-50"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-50/50 to-gray-50"></div>
             
             <Container className="relative">
                 {/* Main Header */}
                 <div className="text-center mb-16 pt-16 sm:pt-20">
                     <FadeIn>
                         <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                            What is <span className="text-purple-600">SuperStack</span>?
+                            What is <span className="text-indigo-600">SuperStack</span>?
                         </h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                             Your technology partner that transforms business challenges into digital opportunities.
@@ -432,7 +432,7 @@ function WhatIsSuperStackSection() {
                         <FadeIn>
                             <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
                                 <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
+                                    <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center">
                                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                         </svg>
@@ -481,7 +481,7 @@ function WhatIsSuperStackSection() {
 
                         {/* Why Choose Us */}
                         <FadeIn>
-                            <div className="bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl p-8 text-white">
+                            <div className="bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-xl p-8 text-white">
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
                                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -490,7 +490,7 @@ function WhatIsSuperStackSection() {
                                     </div>
                                     <h3 className="text-xl font-bold text-white">Why SuperStack</h3>
                                 </div>
-                                <p className="text-purple-100 leading-relaxed">
+                                <p className="text-indigo-100 leading-relaxed">
                                     We don't just build software - we build success stories. Proven track record, modern tech stack, and ongoing support that scales with your growth.
                                 </p>
                             </div>
@@ -509,12 +509,12 @@ function WhatIsSuperStackSection() {
 // AI Assistants Section
 function AIAssistantsSection() {
     return (
-        <div className="relative bg-gradient-to-b from-transparent via-purple-50/30 to-indigo-50/50 py-20 sm:py-24 mt-16 sm:mt-20">
+        <div className="relative bg-gradient-to-b from-transparent via-indigo-50/30 to-indigo-50/50 py-20 sm:py-24 mt-16 sm:mt-20">
             <Container>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <FadeIn>
-                            <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium mb-6">
+                            <div className="inline-flex items-center gap-2 bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium mb-6">
                                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
@@ -531,7 +531,7 @@ function AIAssistantsSection() {
                         <FadeInStagger className="space-y-6">
                             <FadeIn>
                                 <div className="flex items-start gap-4">
-                                    <div className="flex-shrink-0 w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
+                                    <div className="flex-shrink-0 w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
                                         <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                                         </svg>
@@ -545,7 +545,7 @@ function AIAssistantsSection() {
                             
                             <FadeIn>
                                 <div className="flex items-start gap-4">
-                                    <div className="flex-shrink-0 w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
+                                    <div className="flex-shrink-0 w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
                                         <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                         </svg>
@@ -559,7 +559,7 @@ function AIAssistantsSection() {
                             
                             <FadeIn>
                                 <div className="flex items-start gap-4">
-                                    <div className="flex-shrink-0 w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
+                                    <div className="flex-shrink-0 w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
                                         <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                                         </svg>
@@ -577,7 +577,7 @@ function AIAssistantsSection() {
                                 href="https://cal.com/superstack/consultation"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+                                className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
                             >
                                 Request AI Solutions
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -653,7 +653,7 @@ function ModernWebSection() {
                                         <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                                         <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                                     </div>
-                                    <div className="bg-gradient-to-br from-blue-400 to-purple-500 h-32 rounded-lg"></div>
+                                    <div className="bg-gradient-to-br from-blue-400 to-indigo-500 h-32 rounded-lg"></div>
                                 </div>
                                 
                                 <div className="grid grid-cols-3 gap-4">
@@ -676,7 +676,7 @@ function ModernWebSection() {
                                     </div>
                                     
                                     <div className="bg-white rounded-lg p-4 shadow-sm">
-                                        <div className="w-8 h-8 bg-purple-500 rounded-lg mb-2 flex items-center justify-center">
+                                        <div className="w-8 h-8 bg-indigo-500 rounded-lg mb-2 flex items-center justify-center">
                                             <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                             </svg>
@@ -869,9 +869,9 @@ function MobileWebSection() {
                                         </div>
                                         
                                         {/* App Content */}
-                                        <div className="bg-gradient-to-br from-purple-500 to-blue-600 p-6 text-white">
+                                        <div className="bg-gradient-to-br from-indigo-500 to-blue-600 p-6 text-white">
                                             <h3 className="font-bold text-lg mb-2">Project Dashboard</h3>
-                                            <p className="text-purple-100 text-sm">Welcome back! Here's your progress overview.</p>
+                                            <p className="text-indigo-100 text-sm">Welcome back! Here's your progress overview.</p>
                                         </div>
                                         
                                         <div className="p-6 space-y-4">
@@ -939,10 +939,10 @@ export default async function Home() {
                 {/* Background Elements */}
                 <div className="absolute inset-0 -z-10">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-to-r from-gray-200/40 via-gray-100/40 to-gray-200/40 rounded-full blur-3xl"></div>
-                    <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-purple-200/30 to-purple-300/30 rounded-full blur-2xl"></div>
-                    <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-purple-300/20 to-purple-400/20 rounded-full blur-2xl"></div>
+                    <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-indigo-200/30 to-indigo-300/30 rounded-full blur-2xl"></div>
+                    <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-indigo-300/20 to-indigo-400/20 rounded-full blur-2xl"></div>
                     {/* Additional mobile background extension */}
-                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-purple-100/20 to-transparent sm:hidden"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-indigo-100/20 to-transparent sm:hidden"></div>
                 </div>
                 
                 <Container className="relative mt-20 sm:mt-24 lg:mt-24">
@@ -952,7 +952,7 @@ export default async function Home() {
                                 <h1 className="font-display text-5xl font-bold tracking-tight text-gray-900 [text-wrap:balance] sm:text-6xl lg:text-7xl xl:text-8xl">
                                     <span className="block">Build</span>
                                     <span className="block">
-                                        <span className="text-purple-600">&</span>
+                                        <span className="text-indigo-600">&</span>
                                         {" "}Scale
                                     </span>
                                     <span className="block text-gray-600 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium">
@@ -968,7 +968,7 @@ export default async function Home() {
                                 
                                 <p className="mt-8 text-xl text-gray-600 leading-relaxed max-w-2xl">
                                     We create reliable web applications and business automation tools that help companies grow. 
-                                    <span className="block mt-2 font-semibold text-purple-600">
+                                    <span className="block mt-2 font-semibold text-indigo-600">
                                         Professional development. Real results.
                                     </span>
                                 </p>
@@ -977,8 +977,8 @@ export default async function Home() {
                         </div>
                         <div className="relative flex justify-center lg:justify-end pt-4 sm:pt-8 lg:pt-0">
                             {/* Additional decorative elements */}
-                            <div className="absolute -top-8 -right-8 w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full blur-xl opacity-60"></div>
-                            <div className="absolute -bottom-8 -left-8 w-20 h-20 bg-gradient-to-br from-purple-300 to-purple-400 rounded-full blur-xl opacity-60"></div>
+                            <div className="absolute -top-8 -right-8 w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-500 rounded-full blur-xl opacity-60"></div>
+                            <div className="absolute -bottom-8 -left-8 w-20 h-20 bg-gradient-to-br from-indigo-300 to-indigo-400 rounded-full blur-xl opacity-60"></div>
                             <TellTheTeam />
                         </div>
                     </div>

@@ -208,21 +208,21 @@ export default function TellTheTeam() {
     return (
         <div className="relative w-full max-w-md mt-4 sm:mt-2 md:mt-0 lg:-mt-16 mx-auto px-4 lg:px-8 mb-4 sm:mb-2 md:mb-0 lg:mb-0">
             {/* Soft background extension for mobile */}
-            <div className="absolute -inset-x-8 -inset-y-8 bg-gradient-to-b from-purple-50/30 via-white/40 to-transparent rounded-3xl blur-xl sm:hidden"></div>
+            <div className="absolute -inset-x-8 -inset-y-8 bg-gradient-to-b from-indigo-50/30 via-white/40 to-transparent rounded-3xl blur-xl sm:hidden"></div>
             
             {/* Neumorphic Container */}
             <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-4 sm:p-6 shadow-[16px_16px_40px_#d1d9e6,-16px_-16px_40px_#ffffff] border border-white/20 backdrop-blur-sm">
                 {/* Header Section */}
                 <div className="text-center mb-4 sm:mb-6">
-                    <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff] mb-2 sm:mb-3">
-                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-xl shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff] mb-2 sm:mb-3">
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                         </svg>
                     </div>
                     <h2 className="font-display text-lg sm:text-xl font-bold text-gray-800 mb-1 sm:mb-2">Share Your Vision</h2>
                     <p className="text-gray-600 text-xs leading-relaxed px-2 sm:px-0">
                         Record a quick voice note to share your project vision.<br/>
-                        <span className="text-purple-600 font-medium">We&apos;ll turn your ideas into reality.</span>
+                        <span className="text-indigo-600 font-medium">We&apos;ll turn your ideas into reality.</span>
                     </p>
                 </div>
 
@@ -259,7 +259,7 @@ export default function TellTheTeam() {
                                 placeholder="your@email.com"
                                 value={userEmail}
                                 onChange={(e) => setUserEmail(e.target.value)}
-                                className={`w-full rounded-xl bg-gradient-to-br from-gray-50 to-white py-2.5 sm:py-3 px-3 sm:px-4 text-sm text-gray-800 placeholder:text-gray-400 shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff] border border-gray-200/50 focus:outline-none focus:ring-2 focus:ring-purple-400/30 focus:border-purple-300 transition-all duration-300 ${
+                                className={`w-full rounded-xl bg-gradient-to-br from-gray-50 to-white py-2.5 sm:py-3 px-3 sm:px-4 text-sm text-gray-800 placeholder:text-gray-400 shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff] border border-gray-200/50 focus:outline-none focus:ring-2 focus:ring-indigo-400/30 focus:border-indigo-300 transition-all duration-300 ${
                                     userEmail && !isValidEmail(userEmail) ? 'border-red-300 ring-red-200/50' : ''
                                 }`}
                                 disabled={submissionStatus === 'submitting'}
@@ -277,10 +277,10 @@ export default function TellTheTeam() {
                                     disabled={submissionStatus === 'submitting' || !userEmail.trim() || !isValidEmail(userEmail)}
                                     className={`relative group w-full rounded-xl py-2.5 sm:py-3 px-3 sm:px-4 text-sm font-semibold transition-all duration-300 ${
                                         isRecording 
-                                            ? 'bg-gradient-to-br from-purple-500 to-purple-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff]' 
+                                            ? 'bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff]' 
                                             : !userEmail.trim() || !isValidEmail(userEmail)
                                             ? 'bg-gradient-to-br from-gray-200 to-gray-300 text-gray-400 cursor-not-allowed shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff]'
-                                            : 'bg-gradient-to-br from-purple-500 to-purple-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] active:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff]'
+                                            : 'bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] active:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff]'
                                     }`}
                                 >
                                     <div className="flex items-center justify-center gap-2">
@@ -369,8 +369,8 @@ export default function TellTheTeam() {
             </div>
 
             {/* Subtle background decoration */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-purple-200/30 to-blue-200/30 rounded-full blur-2xl -z-10"></div>
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-pink-200/30 to-purple-200/30 rounded-full blur-2xl -z-10"></div>
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-indigo-200/30 to-blue-200/30 rounded-full blur-2xl -z-10"></div>
+            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-pink-200/30 to-indigo-200/30 rounded-full blur-2xl -z-10"></div>
         </div>
     )
 }

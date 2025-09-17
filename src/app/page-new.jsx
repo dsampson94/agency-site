@@ -34,8 +34,8 @@ const clients = [
 function HeroBadge() {
     return (
         <FadeIn>
-            <div className="inline-flex items-center gap-2 rounded-full bg-purple-50 px-4 py-2 text-sm font-medium text-purple-700 ring-1 ring-purple-200">
-                <div className="h-2 w-2 rounded-full bg-purple-500"></div>
+            <div className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-2 text-sm font-medium text-indigo-700 ring-1 ring-indigo-200">
+                <div className="h-2 w-2 rounded-full bg-indigo-500"></div>
                 AI-Powered Solutions
             </div>
         </FadeIn>
@@ -48,13 +48,13 @@ function HeroCTAs() {
         <FadeIn className="mt-8 flex flex-col sm:flex-row gap-4">
             <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-lg bg-purple-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                className="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
                 📅 Book Free Consultation →
             </a>
             <a
                 href="/work"
-                className="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-6 py-3 font-semibold text-neutral-900 transition-colors hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                className="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-6 py-3 font-semibold text-neutral-900 transition-colors hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
                 ▶ View Our Work
             </a>
@@ -75,7 +75,7 @@ function TrustIndicators() {
                 <span>Weekly Updates</span>
             </div>
             <div className="flex items-center gap-2">
-                <div className="h-2 w-2 rounded-full bg-purple-500"></div>
+                <div className="h-2 w-2 rounded-full bg-indigo-500"></div>
                 <span>Dedicated AI Team</span>
             </div>
         </FadeIn>
@@ -147,7 +147,7 @@ function CaseStudies({caseStudies}) {
                     <br/>
                     <p className="text-xl text-neutral-600 leading-relaxed">
                         We harness AI-driven automation — integrating generative AI, advanced cloud services, and
-                        productivity tools to slash work hours, boost accuracy, and eliminate delays. <span className="font-semibold text-purple-600">Saving our clients money.</span>
+                        productivity tools to slash work hours, boost accuracy, and eliminate delays. <span className="font-semibold text-indigo-600">Saving our clients money.</span>
                     </p>
                 </SectionIntro>
             </Container>
@@ -223,7 +223,7 @@ function CallToAction() {
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                         <a
                             href="#contact"
-                            className="inline-flex items-center justify-center rounded-lg bg-purple-600 px-8 py-4 font-semibold text-white transition-colors hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                            className="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-8 py-4 font-semibold text-white transition-colors hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         >
                             📅 Book Free Consultation
                         </a>
@@ -231,7 +231,7 @@ function CallToAction() {
                             href="https://cal.com/superstack/consultation"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-8 py-4 font-semibold text-neutral-900 transition-colors hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                            className="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-8 py-4 font-semibold text-neutral-900 transition-colors hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         >
                             💬 Start a Conversation
                         </a>
@@ -259,12 +259,12 @@ export default async function Home() {
                         <HeroBadge />
                         <FadeIn className="mt-6">
                             <h1 className="font-display text-4xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-6xl lg:text-7xl">
-                                Innovate <span className="text-purple-600">&</span> Automate
+                                Innovate <span className="text-indigo-600">&</span> Automate
                                 <br />
                                 <span className="text-neutral-700">Your Business</span>
                             </h1>
                             <p className="mt-6 text-xl text-neutral-600 leading-relaxed">
-                                Transform your business with intelligent chatbots, AI automation, and custom software solutions. <span className="font-semibold text-purple-600">From idea to deployment in weeks, not months.</span>
+                                Transform your business with intelligent chatbots, AI automation, and custom software solutions. <span className="font-semibold text-indigo-600">From idea to deployment in weeks, not months.</span>
                             </p>
                         </FadeIn>
                         <HeroCTAs />

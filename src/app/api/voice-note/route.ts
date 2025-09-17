@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
         if (buffer.length < 100) {
             return NextResponse.json({error: 'Audio file is too small'}, {status: 400})
         }
-        
+                                                                
         if (buffer.length > 25 * 1024 * 1024) { // 25MB max
             return NextResponse.json({error: 'Audio file is too large'}, {status: 400})
         }

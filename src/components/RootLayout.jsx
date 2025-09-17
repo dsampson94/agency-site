@@ -94,7 +94,7 @@ function Header({
                         aria-controls={panelId}
                         className={clsx(
                             'group -m-2.5 rounded-full p-2.5 transition',
-                            invert ? 'hover:bg-white/10' : 'hover:bg-purple-950/10',
+                            invert ? 'hover:bg-white/10' : 'hover:bg-indigo-950/10',
                         )}
                         aria-label="Toggle navigation"
                     >
@@ -103,7 +103,7 @@ function Header({
                                 'h-6 w-6',
                                 invert
                                     ? 'fill-white group-hover:fill-neutral-200'
-                                    : 'fill-gray-900 group-hover:fill-purple-700',
+                                    : 'fill-gray-900 group-hover:fill-indigo-700',
                             )}
                         />
                     </button>
