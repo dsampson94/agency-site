@@ -1039,7 +1039,214 @@ export default async function Home() {
             {/* Featured Projects */}
             <FeaturedProjects />
 
+            {/* Specialized Industry Solutions */}
+            <IndustryExpertiseSection />
+
             <SuperStackJourney />
         </>
+    );
+}
+
+// Industry Expertise Section with Internal Linking
+function IndustryExpertiseSection() {
+    return (
+        <div className="bg-gradient-to-b from-gray-50 to-white py-24 sm:py-32">
+            <Container>
+                <FadeIn>
+                    <div className="text-center mb-16">
+                        <h2 className="font-display text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                            Specialized Solutions Across Industries
+                        </h2>
+                        <p className="mt-6 text-lg leading-8 text-gray-600 max-w-3xl mx-auto">
+                            Beyond general web development, we deliver industry-specific solutions that understand 
+                            the unique challenges and opportunities facing South African businesses.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                        <div className="group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-200 hover:shadow-lg hover:border-indigo-300 transition-all duration-300">
+                            <div className="absolute -top-4 left-8">
+                                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
+                                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div className="pt-4">
+                                <h3 className="text-xl font-bold text-gray-900 mb-4">FinTech Development</h3>
+                                <p className="text-gray-600 mb-6">
+                                    SARB-compliant banking apps, payment systems, and digital wallets. Professional 
+                                    financial software built for South African financial institutions.
+                                </p>
+                                <a 
+                                    href="/fintech-development-south-africa"
+                                    className="inline-flex items-center text-emerald-600 font-semibold hover:text-emerald-700 transition-colors group-hover:translate-x-1 transform duration-200"
+                                >
+                                    Explore FinTech Solutions →
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-200 hover:shadow-lg hover:border-indigo-300 transition-all duration-300">
+                            <div className="absolute -top-4 left-8">
+                                <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
+                                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div className="pt-4">
+                                <h3 className="text-xl font-bold text-gray-900 mb-4">Mining Software Solutions</h3>
+                                <p className="text-gray-600 mb-6">
+                                    Specialized software for South Africa's mining industry. Safety management, 
+                                    fleet tracking, and operations optimization systems.
+                                </p>
+                                <a 
+                                    href="/mining-software-solutions-south-africa"
+                                    className="inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors group-hover:translate-x-1 transform duration-200"
+                                >
+                                    Discover Mining Solutions →
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-200 hover:shadow-lg hover:border-indigo-300 transition-all duration-300">
+                            <div className="absolute -top-4 left-8">
+                                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div className="pt-4">
+                                <h3 className="text-xl font-bold text-gray-900 mb-4">Government Digital Solutions</h3>
+                                <p className="text-gray-600 mb-6">
+                                    Transform government services with modern digital platforms. Municipal systems, 
+                                    citizen portals, and e-government applications.
+                                </p>
+                                <a 
+                                    href="/government-digital-transformation-south-africa"
+                                    className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors group-hover:translate-x-1 transform duration-200"
+                                >
+                                    View Government Solutions →
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-200 hover:shadow-lg hover:border-indigo-300 transition-all duration-300">
+                            <div className="absolute -top-4 left-8">
+                                <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center shadow-lg">
+                                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div className="pt-4">
+                                <h3 className="text-xl font-bold text-gray-900 mb-4">Retail POS Systems</h3>
+                                <p className="text-gray-600 mb-6">
+                                    Complete point-of-sale solutions for South African retailers. Inventory management, 
+                                    payment processing, and multi-store operations.
+                                </p>
+                                <a 
+                                    href="/retail-pos-systems-south-africa"
+                                    className="inline-flex items-center text-pink-600 font-semibold hover:text-pink-700 transition-colors group-hover:translate-x-1 transform duration-200"
+                                >
+                                    Explore Retail Solutions →
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-200 hover:shadow-lg hover:border-indigo-300 transition-all duration-300">
+                            <div className="absolute -top-4 left-8">
+                                <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div className="pt-4">
+                                <h3 className="text-xl font-bold text-gray-900 mb-4">E-commerce Platforms</h3>
+                                <p className="text-gray-600 mb-6">
+                                    Custom e-commerce solutions that outperform Shopify. Built for South African businesses 
+                                    with local payments and no monthly fees.
+                                </p>
+                                <a 
+                                    href="/shopify-alternative-south-africa"
+                                    className="inline-flex items-center text-violet-600 font-semibold hover:text-violet-700 transition-colors group-hover:translate-x-1 transform duration-200"
+                                >
+                                    See E-commerce Solutions →
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-200 hover:shadow-lg hover:border-indigo-300 transition-all duration-300">
+                            <div className="absolute -top-4 left-8">
+                                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg">
+                                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div className="pt-4">
+                                <h3 className="text-xl font-bold text-gray-900 mb-4">Mobile App Development</h3>
+                                <p className="text-gray-600 mb-6">
+                                    Native iOS and Android applications for South African businesses. From concept to 
+                                    app store deployment with ongoing support.
+                                </p>
+                                <a 
+                                    href="/app-development-south-africa"
+                                    className="inline-flex items-center text-teal-600 font-semibold hover:text-teal-700 transition-colors group-hover:translate-x-1 transform duration-200"
+                                >
+                                    Explore App Development →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Regional Services CTA */}
+                    <div className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl p-8 border border-indigo-200">
+                        <div className="text-center">
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                                Professional Development Services Across South Africa
+                            </h3>
+                            <p className="text-gray-700 mb-8 max-w-3xl mx-auto">
+                                Our expert development teams serve businesses across all major South African cities. 
+                                Local expertise, global standards, and solutions built specifically for the South African market.
+                            </p>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <a 
+                                    href="/web-development-cape-town"
+                                    className="bg-white rounded-lg p-4 shadow-sm border border-gray-200 hover:shadow-md hover:border-indigo-300 transition-all group"
+                                >
+                                    <div className="font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">Cape Town</div>
+                                    <div className="text-sm text-gray-600">Web Development</div>
+                                </a>
+                                <a 
+                                    href="/software-development-johannesburg"
+                                    className="bg-white rounded-lg p-4 shadow-sm border border-gray-200 hover:shadow-md hover:border-indigo-300 transition-all group"
+                                >
+                                    <div className="font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">Johannesburg</div>
+                                    <div className="text-sm text-gray-600">Software Development</div>
+                                </a>
+                                <a 
+                                    href="/web-development-durban"
+                                    className="bg-white rounded-lg p-4 shadow-sm border border-gray-200 hover:shadow-md hover:border-indigo-300 transition-all group"
+                                >
+                                    <div className="font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">Durban</div>
+                                    <div className="text-sm text-gray-600">Web Development</div>
+                                </a>
+                                <a 
+                                    href="/software-development-pretoria"
+                                    className="bg-white rounded-lg p-4 shadow-sm border border-gray-200 hover:shadow-md hover:border-indigo-300 transition-all group"
+                                >
+                                    <div className="font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">Pretoria</div>
+                                    <div className="text-sm text-gray-600">Software Development</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </FadeIn>
+            </Container>
+        </div>
     );
 }
