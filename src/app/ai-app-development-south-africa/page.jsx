@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
@@ -1305,12 +1306,12 @@ function RelatedAIServices() {
               Combine custom AI with SARB-compliant financial applications. AI-powered fraud detection, 
               automated trading systems, and intelligent financial advisory platforms.
             </p>
-            <a 
+            <Link 
               href="/fintech-development-south-africa" 
               className="inline-flex items-center text-emerald-600 font-semibold hover:text-emerald-700 transition-colors"
             >
               Explore AI FinTech Solutions →
-            </a>
+            </Link>
           </div>
 
           <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 border border-blue-200 hover:shadow-lg transition-shadow">
@@ -1324,12 +1325,12 @@ function RelatedAIServices() {
               Modern React interfaces powered by your custom AI. Intelligent dashboards, 
               AI-assisted user interfaces, and smart web applications that learn from user behavior.
             </p>
-            <a 
+            <Link 
               href="/react-developer-cape-town" 
               className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors"
             >
               Explore AI-Powered React Development →
-            </a>
+            </Link>
           </div>
 
           <div className="bg-gradient-to-br from-purple-50 to-violet-100 rounded-2xl p-8 border border-purple-200 hover:shadow-lg transition-shadow">
