@@ -517,7 +517,7 @@ export default function RetailPOSPage() {
     "provider": {
       "@type": "Organization",
       "name": "SuperStack",
-      "url": "https://superstack.dev",
+      "url": "https://www.superstack.co.za",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "ZA",

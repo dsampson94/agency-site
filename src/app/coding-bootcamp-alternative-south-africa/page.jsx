@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: 'Coding Bootcamp Alternative South Africa | Custom Software Training',
     description: 'Skip expensive coding bootcamps. Get custom software development training with real projects and guaranteed results.',
-    url: 'https://yoursite.com/coding-bootcamp-alternative-south-africa',
+    url: 'https://www.superstack.co.za/coding-bootcamp-alternative-south-africa',
     type: 'website',
     locale: 'en_ZA',
   },
@@ -23,7 +23,7 @@ export const metadata = {
     description: 'Skip expensive coding bootcamps. Get custom software development training with real projects and guaranteed results.',
   },
   alternates: {
-    canonical: 'https://yoursite.com/coding-bootcamp-alternative-south-africa',
+    canonical: 'https://www.superstack.co.za/coding-bootcamp-alternative-south-africa',
   },
 }
 

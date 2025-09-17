@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: 'App Development South Africa | iOS Android App Developers',
     description: 'Professional mobile app development in South Africa. iOS and Android apps from R35,000 with guaranteed app store approval.',
-    url: 'https://yoursite.com/app-development-south-africa',
+    url: 'https://www.superstack.co.za/app-development-south-africa',
     type: 'website',
     locale: 'en_ZA',
   },
@@ -23,7 +23,7 @@ export const metadata = {
     description: 'Professional mobile app development in South Africa. iOS and Android apps from R35,000 with guaranteed app store approval.',
   },
   alternates: {
-    canonical: 'https://yoursite.com/app-development-south-africa',
+    canonical: 'https://www.superstack.co.za/app-development-south-africa',
   },
 }
 

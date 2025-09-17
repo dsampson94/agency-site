@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: 'SuperStack vs Competitors | Web Development Company Comparison South Africa',
     description: 'Compare SuperStack with other web development companies in South Africa. See why we deliver better results, faster timelines, and superior value.',
-    url: 'https://yoursite.com/superstack-vs-competitors',
+    url: 'https://www.superstack.co.za/superstack-vs-competitors',
     type: 'website',
     locale: 'en_ZA',
   },
@@ -23,7 +23,7 @@ export const metadata = {
     description: 'Compare SuperStack with other web development companies in South Africa. See why we deliver better results, faster timelines, and superior value.',
   },
   alternates: {
-    canonical: 'https://yoursite.com/superstack-vs-competitors',
+    canonical: 'https://www.superstack.co.za/superstack-vs-competitors',
   },
 }
 

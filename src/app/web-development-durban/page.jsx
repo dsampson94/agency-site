@@ -17,7 +17,7 @@ export const metadata = {
   openGraph: {
     title: 'Web Development Durban | Custom Software Solutions KZN',
     description: 'Leading web development company in Durban, KwaZulu-Natal. Custom software, e-commerce, and digital solutions for KZN businesses.',
-    url: 'https://yoursite.com/web-development-durban',
+    url: 'https://www.superstack.co.za/web-development-durban',
     type: 'website',
     locale: 'en_ZA',
   },
@@ -27,7 +27,7 @@ export const metadata = {
     description: 'Leading web development company in Durban, KwaZulu-Natal. Custom software, e-commerce, and digital solutions for KZN businesses.',
   },
   alternates: {
-    canonical: 'https://yoursite.com/web-development-durban',
+    canonical: 'https://www.superstack.co.za/web-development-durban',
   },
 }
 

@@ -12,7 +12,7 @@ export const metadata = {
   openGraph: {
     title: 'Mining Software Solutions South Africa | Custom Mining Technology',
     description: 'Specialized software development for South African mining companies. Safety systems, asset management, compliance tracking, and operational efficiency solutions.',
-    url: 'https://yoursite.com/mining-software-solutions',
+    url: 'https://www.superstack.co.za/mining-software-solutions',
     type: 'website',
     locale: 'en_ZA',
   },
@@ -22,7 +22,7 @@ export const metadata = {
     description: 'Specialized software development for South African mining companies. Safety systems, asset management, compliance tracking, and operational efficiency solutions.',
   },
   alternates: {
-    canonical: 'https://yoursite.com/mining-software-solutions',
+    canonical: 'https://www.superstack.co.za/mining-software-solutions',
   },
 }
 

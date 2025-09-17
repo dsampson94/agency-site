@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: 'Ecommerce Website Development South Africa | Online Store Solutions',
     description: 'Professional ecommerce website development in South Africa. Custom online stores, Shopify development, WooCommerce solutions.',
-    url: 'https://yoursite.com/ecommerce-website-development-south-africa',
+    url: 'https://www.superstack.co.za/ecommerce-website-development-south-africa',
     type: 'website',
     locale: 'en_ZA',
   },
@@ -23,7 +23,7 @@ export const metadata = {
     description: 'Professional ecommerce website development in South Africa. Custom online stores, Shopify development, WooCommerce solutions.',
   },
   alternates: {
-    canonical: 'https://yoursite.com/ecommerce-website-development-south-africa',
+    canonical: 'https://www.superstack.co.za/ecommerce-website-development-south-africa',
   },
 }
 

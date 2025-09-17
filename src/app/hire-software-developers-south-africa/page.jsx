@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: 'Hire Software Developers South Africa | Expert Development Team',
     description: 'Looking to hire software developers in South Africa? Get expert React, Node.js, Python developers and full development teams.',
-    url: 'https://yoursite.com/hire-software-developers-south-africa',
+    url: 'https://www.superstack.co.za/hire-software-developers-south-africa',
     type: 'website',
     locale: 'en_ZA',
   },
@@ -23,7 +23,7 @@ export const metadata = {
     description: 'Looking to hire software developers in South Africa? Get expert React, Node.js, Python developers and full development teams.',
   },
   alternates: {
-    canonical: 'https://yoursite.com/hire-software-developers-south-africa',
+    canonical: 'https://www.superstack.co.za/hire-software-developers-south-africa',
   },
 }
 

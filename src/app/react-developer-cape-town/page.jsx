@@ -17,7 +17,7 @@ export const metadata = {
   openGraph: {
     title: 'React Developer Cape Town | Hire Expert React JS Developers South Africa',
     description: 'Hire expert React developers in Cape Town. Top-rated React JS development services with 20+ years experience. Custom React applications, migration services, and full-stack development.',
-    url: 'https://yoursite.com/react-developer-cape-town',
+    url: 'https://www.superstack.co.za/react-developer-cape-town',
     type: 'website',
     locale: 'en_ZA',
   },
@@ -27,7 +27,7 @@ export const metadata = {
     description: 'Hire expert React developers in Cape Town. Top-rated React JS development services with 20+ years experience.',
   },
   alternates: {
-    canonical: 'https://yoursite.com/react-developer-cape-town',
+    canonical: 'https://www.superstack.co.za/react-developer-cape-town',
   },
 }
 

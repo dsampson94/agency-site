@@ -80,12 +80,12 @@ export const metadata = {
   openGraph: {
     title: 'Shopify Alternative South Africa 2025 | Save R67,800 vs Shopify Plans',
     description: 'Stop wasting money on Shopify! Our Shopify alternative saves SA businesses R67,800 over 3 years with native PayFast integration.',
-    url: 'https://yoursite.com/shopify-alternative-south-africa',
+    url: 'https://www.superstack.co.za/shopify-alternative-south-africa',
     type: 'website',
     locale: 'en_ZA',
     images: [
       {
-        url: 'https://yoursite.com/images/shopify-alternative-comparison.jpg',
+        url: '/images/shopify-alternative-comparison.jpg',
         width: 1200,
         height: 630,
         alt: 'Shopify vs Custom Ecommerce Cost Comparison South Africa',
@@ -98,7 +98,7 @@ export const metadata = {
     description: 'Stop wasting money on Shopify! Our Shopify alternative saves SA businesses R67,800 over 3 years.',
   },
   alternates: {
-    canonical: 'https://yoursite.com/shopify-alternative-south-africa',
+    canonical: 'https://www.superstack.co.za/shopify-alternative-south-africa',
   },
   other: {
     'article:author': 'Expert Ecommerce Developers',
@@ -731,7 +731,7 @@ export default function ShopifyAlternativePage() {
     "provider": {
       "@type": "Organization",
       "name": "SuperStack",
-      "url": "https://superstack.dev",
+      "url": "https://www.superstack.co.za",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "ZA",

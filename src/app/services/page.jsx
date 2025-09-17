@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: 'Web Development & Software Services South Africa | Custom Solutions',
     description: 'Comprehensive web development, custom software, and digital solutions for South African businesses. Your trusted technology partner across South Africa.',
-    url: 'https://yoursite.com/services',
+    url: 'https://www.superstack.co.za/services',
     type: 'website',
     locale: 'en_ZA',
   },
@@ -23,7 +23,7 @@ export const metadata = {
     description: 'Comprehensive web development, custom software, and digital solutions for South African businesses.',
   },
   alternates: {
-    canonical: 'https://yoursite.com/services',
+    canonical: 'https://www.superstack.co.za/services',
   },
 }
 

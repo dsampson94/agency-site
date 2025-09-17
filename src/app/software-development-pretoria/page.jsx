@@ -17,7 +17,7 @@ export const metadata = {
   openGraph: {
     title: 'Software Development Pretoria | Enterprise Solutions Gauteng',
     description: 'Leading software development company in Pretoria, Gauteng. Enterprise software, custom applications, and government solutions.',
-    url: 'https://yoursite.com/software-development-pretoria',
+    url: 'https://www.superstack.co.za/software-development-pretoria',
     type: 'website',
     locale: 'en_ZA',
   },
@@ -27,7 +27,7 @@ export const metadata = {
     description: 'Leading software development company in Pretoria, Gauteng. Enterprise software, custom applications, and government solutions.',
   },
   alternates: {
-    canonical: 'https://yoursite.com/software-development-pretoria',
+    canonical: 'https://www.superstack.co.za/software-development-pretoria',
   },
 }
 

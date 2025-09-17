@@ -14,7 +14,7 @@ export const metadata = {
   openGraph: {
     title: 'AI App Development South Africa 2025 | Custom Business Intelligence Solutions',
     description: 'Build custom AI applications with complete data ownership and South African business intelligence.',
-    url: 'https://yoursite.com/ai-app-development-south-africa',
+    url: 'https://www.superstack.co.za/ai-app-development-south-africa',
     type: 'website',
     locale: 'en_ZA',
   },
@@ -24,7 +24,7 @@ export const metadata = {
     description: 'Build custom AI applications with complete data ownership and South African business intelligence.',
   },
   alternates: {
-    canonical: 'https://yoursite.com/ai-app-development-south-africa',
+    canonical: 'https://www.superstack.co.za/ai-app-development-south-africa',
   },
 }
 
@@ -1344,12 +1344,12 @@ function RelatedAIServices() {
               Mobile applications with integrated AI capabilities. Voice assistants, 
               image recognition, predictive analytics, and intelligent automation in native iOS/Android apps.
             </p>
-            <a 
+            <Link 
               href="/app-development-south-africa" 
               className="inline-flex items-center text-purple-600 font-semibold hover:text-purple-700 transition-colors"
             >
               Explore AI Mobile App Development →
-            </a>
+            </Link>
           </div>
 
           <div className="bg-gradient-to-br from-amber-50 to-orange-100 rounded-2xl p-8 border border-amber-200 hover:shadow-lg transition-shadow">
