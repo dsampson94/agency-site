@@ -42,6 +42,278 @@ export const metadata = {
   },
 }
 
+function WhyLeaveShopify() {
+  return (
+    <Container className="mt-24">
+      <FadeIn>
+        <SectionIntro
+          title="🚨 Why South African Businesses Are Abandoning Shopify"
+          className="mt-24"
+        >
+          <p>
+            Rising costs, poor rand exchange rates, and lack of local payment integration 
+            are forcing SA businesses to seek better alternatives. Here's what's driving the exodus.
+          </p>
+        </SectionIntro>
+
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="bg-red-50 rounded-2xl p-8 border border-red-200">
+            <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mb-6">
+              <span className="text-2xl">💸</span>
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Crushing Monthly Costs</h3>
+            <p className="text-gray-700 mb-4">
+              Shopify Plus costs R5,600+/month, Basic R850/month, plus 2.9% transaction fees. 
+              That's R67,800+ per year minimum before you sell anything.
+            </p>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• Exchange rate fluctuations increase costs</li>
+              <li>• Hidden app fees add up quickly</li>
+              <li>• Transaction fees eat into margins</li>
+            </ul>
+          </div>
+
+          <div className="bg-orange-50 rounded-2xl p-8 border border-orange-200">
+            <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center mb-6">
+              <span className="text-2xl">🏦</span>
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Payment Integration Nightmare</h3>
+            <p className="text-gray-700 mb-4">
+              Poor PayFast integration, limited EFT options, and complicated setup 
+              for South African payment gateways.
+            </p>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• PayFast requires third-party apps</li>
+              <li>• No direct bank transfer options</li>
+              <li>• Currency conversion complications</li>
+            </ul>
+          </div>
+
+          <div className="bg-yellow-50 rounded-2xl p-8 border border-yellow-200">
+            <div className="w-12 h-12 bg-yellow-600 rounded-xl flex items-center justify-center mb-6">
+              <span className="text-2xl">🚛</span>
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Shipping & Tax Headaches</h3>
+            <p className="text-gray-700 mb-4">
+              Generic shipping rates, no CourierGuy/FastWay integration, 
+              and VAT complications for SA businesses.
+            </p>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• No local courier integration</li>
+              <li>• VAT calculation issues</li>
+              <li>• Expensive international hosting</li>
+            </ul>
+          </div>
+        </div>
+      </FadeIn>
+    </Container>
+  )
+}
+
+function CustomSolutionBenefits() {
+  return (
+    <Container className="mt-24">
+      <FadeIn>
+        <SectionIntro
+          title="🏆 Why Custom Ecommerce Dominates Shopify for SA Businesses"
+          className="mt-24"
+        >
+          <p>
+            Build once, own forever. Custom ecommerce solutions designed specifically 
+            for South African businesses deliver better performance, integration, and ROI.
+          </p>
+        </SectionIntro>
+
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="space-y-8">
+            <div className="bg-green-50 rounded-2xl p-8 border border-green-200">
+              <h3 className="text-2xl font-bold text-green-800 mb-6">💰 Financial Benefits</h3>
+              <ul className="space-y-4 text-green-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-green-600 mt-1">✓</span>
+                  <span><strong>Zero monthly fees</strong> - Pay once, own forever</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-600 mt-1">✓</span>
+                  <span><strong>No transaction fees</strong> - Keep 100% of your profits</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-600 mt-1">✓</span>
+                  <span><strong>Predictable costs</strong> - No surprise fee increases</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-600 mt-1">✓</span>
+                  <span><strong>Local hosting</strong> - Cheaper than international platforms</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-blue-50 rounded-2xl p-8 border border-blue-200">
+              <h3 className="text-2xl font-bold text-blue-800 mb-6">🇿🇦 SA-Specific Features</h3>
+              <ul className="space-y-4 text-blue-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-600 mt-1">✓</span>
+                  <span><strong>Native PayFast integration</strong> - Seamless SA payments</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-600 mt-1">✓</span>
+                  <span><strong>Local courier APIs</strong> - CourierGuy, FastWay, PostNet</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-600 mt-1">✓</span>
+                  <span><strong>VAT compliance</strong> - Automatic SA tax calculations</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-600 mt-1">✓</span>
+                  <span><strong>Multiple languages</strong> - English, Afrikaans, isiZulu</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="space-y-8">
+            <div className="bg-purple-50 rounded-2xl p-8 border border-purple-200">
+              <h3 className="text-2xl font-bold text-purple-800 mb-6">⚡ Performance Advantages</h3>
+              <ul className="space-y-4 text-purple-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-purple-600 mt-1">✓</span>
+                  <span><strong>Faster loading</strong> - Optimized for SA internet speeds</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-purple-600 mt-1">✓</span>
+                  <span><strong>Better SEO</strong> - Custom optimization for SA searches</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-purple-600 mt-1">✓</span>
+                  <span><strong>Mobile-first</strong> - Designed for SA mobile usage patterns</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-purple-600 mt-1">✓</span>
+                  <span><strong>Unlimited customization</strong> - No theme restrictions</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-orange-50 rounded-2xl p-8 border border-orange-200">
+              <h3 className="text-2xl font-bold text-orange-800 mb-6">🔧 Business Control</h3>
+              <ul className="space-y-4 text-orange-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-orange-600 mt-1">✓</span>
+                  <span><strong>Complete ownership</strong> - Your code, your data</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-orange-600 mt-1">✓</span>
+                  <span><strong>No platform dependency</strong> - Never locked in</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-orange-600 mt-1">✓</span>
+                  <span><strong>Custom integrations</strong> - Connect to any SA system</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-orange-600 mt-1">✓</span>
+                  <span><strong>Scalable architecture</strong> - Grow without limits</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </FadeIn>
+    </Container>
+  )
+}
+
+function TechnicalAdvantages() {
+  return (
+    <Container className="mt-24">
+      <FadeIn>
+        <SectionIntro
+          title="⚡ Technical Superiority Over Shopify"
+          className="mt-24"
+        >
+          <p>
+            Modern web technologies and SA-optimized infrastructure deliver 
+            superior performance, security, and user experience.
+          </p>
+        </SectionIntro>
+
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-8 border border-indigo-200">
+            <h3 className="text-2xl font-bold text-indigo-800 mb-6">🚀 Modern Technology Stack</h3>
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-bold text-indigo-700 mb-2">Frontend Technology</h4>
+                <ul className="text-indigo-600 space-y-1">
+                  <li>• Next.js 14 with App Router</li>
+                  <li>• React 18 with Server Components</li>
+                  <li>• TypeScript for type safety</li>
+                  <li>• Tailwind CSS for responsive design</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold text-indigo-700 mb-2">Backend Infrastructure</h4>
+                <ul className="text-indigo-600 space-y-1">
+                  <li>• Node.js with Prisma ORM</li>
+                  <li>• PostgreSQL for reliable data</li>
+                  <li>• Redis for session management</li>
+                  <li>• AWS/Azure SA data centers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-200">
+            <h3 className="text-2xl font-bold text-green-800 mb-6">🏎️ Performance Metrics</h3>
+            <div className="space-y-6">
+              <div className="bg-white rounded-lg p-4 border border-green-100">
+                <div className="text-3xl font-bold text-green-600 mb-1">2.3s</div>
+                <div className="text-green-700 text-sm">Average page load time</div>
+                <div className="text-gray-600 text-xs mt-1">vs 4.7s Shopify average</div>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-green-100">
+                <div className="text-3xl font-bold text-green-600 mb-1">98%</div>
+                <div className="text-green-700 text-sm">Mobile performance score</div>
+                <div className="text-gray-600 text-xs mt-1">vs 76% Shopify average</div>
+              </div>
+              <div className="bg-white rounded-lg p-4 border border-green-100">
+                <div className="text-3xl font-bold text-green-600 mb-1">99.9%</div>
+                <div className="text-green-700 text-sm">Uptime guarantee</div>
+                <div className="text-gray-600 text-xs mt-1">Local hosting advantage</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8 border border-gray-200">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">🔒 Security & Compliance</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🛡️</span>
+              </div>
+              <h4 className="font-bold text-gray-900 mb-2">PCI DSS Compliant</h4>
+              <p className="text-gray-600 text-sm">Bank-grade security for payment processing</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🇿🇦</span>
+              </div>
+              <h4 className="font-bold text-gray-900 mb-2">POPIA Compliant</h4>
+              <p className="text-gray-600 text-sm">Full SA data protection compliance</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🔐</span>
+              </div>
+              <h4 className="font-bold text-gray-900 mb-2">SSL & Encryption</h4>
+              <p className="text-gray-600 text-sm">End-to-end data encryption</p>
+            </div>
+          </div>
+        </div>
+      </FadeIn>
+    </Container>
+  )
+}
+
 function ShopifyLimitations() {
   return (
     <Container className="mt-24">
