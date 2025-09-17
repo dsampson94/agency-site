@@ -554,12 +554,12 @@ export default function GovernmentDigitalPage() {
       
       <PageIntro 
         eyebrow="Government Digital Transformation South Africa" 
-        title="eGovernment Solutions | R47M+ Projects Delivered"
+        title="Simple eGovernment Web Solutions"
       >
         <p>
-          Transform government service delivery with cutting-edge digital solutions. From 
-          municipal systems to national platforms, we digitize government operations to 
-          improve efficiency, transparency, and citizen satisfaction.
+          We create straightforward web-based solutions for government departments using 
+          modern technologies like Next.js, React, and Python. Our focus is on practical, 
+          user-friendly applications that improve citizen services without unnecessary complexity.
         </p>
       </PageIntro>
 

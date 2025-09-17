@@ -41,12 +41,12 @@ const featuredProjects = [
     id: 'absa-lms',
     title: 'ABSA ReadyToWork LMS',
     client: 'ABSA',
-    description: 'Enterprise Learning Management System enabling skills development and training for thousands of employees across mobile and web platforms.',
-    services: ['Full-Stack Development', 'Mobile App', 'Cloud Infrastructure'],
-    technologies: ['React.js', 'Django', 'AWS', 'React Native'],
-    results: ['10,000+ active users', 'Cross-platform access', 'Scalable architecture'],
+    description: 'Simple Learning Management System for employee training using React and Python backend.',
+    services: ['React Development', 'Python Backend', 'Basic Database'],
+    technologies: ['React.js', 'Python', 'PostgreSQL'],
+    results: ['Functional training system', 'User-friendly interface', 'Reliable performance'],
     image: '/images/work/absa-preview.jpg',
-    category: 'Enterprise Solutions'
+    category: 'Web Applications'
   },
   {
     id: 'zkteco-platform',

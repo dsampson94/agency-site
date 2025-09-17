@@ -212,10 +212,10 @@ export default function About() {
       
       <Container className="mt-16">
         <StatList>
-          <StatListItem value="20+" label="Projects delivered" />
-          <StatListItem value="6+" label="Enterprise clients" />
-          <StatListItem value="5+" label="Years experience" />
-          <StatListItem value="12+" label="Technologies mastered" />
+          <StatListItem value="3+" label="Years focused experience" />
+          <StatListItem value="Next.js" label="Primary framework" />
+          <StatListItem value="React" label="Frontend specialty" />
+          <StatListItem value="Python" label="Backend technology" />
         </StatList>
       </Container>
 

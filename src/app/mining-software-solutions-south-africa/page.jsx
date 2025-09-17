@@ -64,25 +64,12 @@ function MiningOverview() {
 
         <div className="mt-12 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8 border border-green-200">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Professional Mining Software Development</h3>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">20+</div>
-                <div className="text-gray-600">Projects Delivered</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">5+</div>
-                <div className="text-gray-600">Years Experience</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
-                <div className="text-gray-600">Client Satisfaction</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">24/7</div>
-                <div className="text-gray-600">Support Available</div>
-              </div>
-            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Simple Web-Based Mining Tools</h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              We specialize in creating straightforward web applications for mining operations using 
+              modern technologies like Next.js, React, and Python. Our focus is on practical, 
+              easy-to-use solutions that solve real problems without unnecessary complexity.
+            </p>
           </div>
         </div>
       </FadeIn>

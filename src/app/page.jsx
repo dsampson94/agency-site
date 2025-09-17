@@ -115,27 +115,27 @@ function Services() {
                                 <span className="ml-2 text-sm bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded-full">Popular</span>
                             </h3>
                             <p className="text-gray-300 leading-relaxed mb-8">
-                                Transform your ideas into powerful applications. We build native iOS & Android apps, 
-                                cross-platform solutions, desktop software, and enterprise SaaS platforms.
+                                Transform your ideas into straightforward web applications using React and Next.js. 
+                                We focus on practical, user-friendly solutions that solve real business problems.
                             </p>
 
                             {/* Features List */}
                             <ul className="space-y-3 mb-8">
                                 <li className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">📱 iOS & Android Native Apps</span>
+                                    <span className="text-sm font-medium text-gray-300">⚛️ React Web Applications</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">💻 Cross-Platform Solutions</span>
+                                    <span className="text-sm font-medium text-gray-300">� Next.js Websites</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">🖥️ Desktop Software</span>
+                                    <span className="text-sm font-medium text-gray-300">� Python Backend APIs</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">☁️ SaaS Platform Development</span>
+                                    <span className="text-sm font-medium text-gray-300">📊 Simple Dashboard Tools</span>
                                 </li>
                             </ul>
 
@@ -448,7 +448,7 @@ function WhatIsSuperStackSection() {
                                     <h3 className="text-xl font-bold text-gray-900">What We Do</h3>
                                 </div>
                                 <p className="text-gray-600 leading-relaxed">
-                                    We build AI systems, web applications, mobile apps, and automation tools. From MVP to enterprise scale - we deliver solutions that actually work.
+                                    We build simple web applications using Next.js, React, and Python. From small business websites to straightforward automation tools - we deliver practical solutions that work.
                                 </p>
                             </div>
                         </FadeIn>
@@ -772,10 +772,10 @@ function MobileWebSection() {
                                 Mobile & Web Apps
                             </div>
                             <h2 className="font-display text-4xl font-bold text-gray-900 mb-6">
-                                Powerful <span className="text-gray-700">Mobile & Web Applications</span> that scale
+                                Simple <span className="text-gray-700">Web Applications</span> that work
                             </h2>
                             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                                From simple business tools to complex enterprise applications, we build scalable solutions that grow with your business. Our applications are designed for performance, usability, and long-term success.
+                                From basic business websites to straightforward automation tools, we build practical solutions using Next.js, React, and Python. Our applications are designed for simplicity, usability, and reliability.
                             </p>
                         </FadeIn>
                         
