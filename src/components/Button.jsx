@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import clsx from 'clsx'
 
-export function Button({ invert = false, className, children, ...props }) {
+export function Button({ invert = false, className, children, onClick, ...props }) {
   className = clsx(
     className,
     'inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition',
@@ -14,9 +14,18 @@ export function Button({ invert = false, className, children, ...props }) {
 
   if (typeof props.href === 'undefined') {
     return (
-      <button className={className} {...props}>
+      <button className={className} onClick={onClick} {...props}>
         {inner}
       </button>
+    )
+  }
+
+  // For external links with onClick handlers, use regular anchor tag
+  if (props.target === '_blank' && onClick) {
+    return (
+      <a className={className} onClick={onClick} {...props}>
+        {inner}
+      </a>
     )
   }
 

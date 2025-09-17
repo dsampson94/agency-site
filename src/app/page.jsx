@@ -9,10 +9,24 @@ import {Testimonial} from '@/components/Testimonial';
 import imageLaptop from '@/images/laptop.jpg';
 import {loadCaseStudies} from '@/lib/mdx';
 import TellTheTeam from "@/components/TellTheTeam";
+import { conversions } from '@/lib/googleAds';
 
 // Hero CTA Buttons Component
 function HeroCTAs() {
     const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL || "https://cal.com/superstack/consultation";
+    
+    const handleBookingClick = () => {
+        // Track Google Ads conversion
+        conversions.consultation();
+        
+        // Track custom event for analytics
+        if (typeof window !== 'undefined' && window.gtag) {
+            window.gtag('event', 'booking_click', {
+                event_category: 'engagement',
+                event_label: 'hero_consultation_booking'
+            });
+        }
+    };
     
     return (
         <FadeIn className="mt-10 flex flex-row gap-3">
@@ -20,6 +34,7 @@ function HeroCTAs() {
                 href={bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleBookingClick}
                 className="group relative inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-indigo-600 to-blue-700 px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-[0_20px_40px_rgba(79,70,229,0.3)] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 overflow-hidden"
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-700 to-blue-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -70,7 +85,7 @@ function Services() {
                             </span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                            We build reliable web applications and business tools that help companies operate more efficiently and grow sustainably.
+                            We build reliable web applications, intelligent automation tools, and business solutions specifically for South African companies and their unique challenges.
                         </p>
                     </FadeIn>
                 </div>
@@ -185,49 +200,50 @@ function Services() {
                         </div>
                     </FadeIn>
 
-                    {/* Website Development */}
+                    {/* Python Automation */}
                     <FadeIn>
                         <div className="group relative bg-gray-900 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-gray-800 hover:shadow-[0_20px_60px_rgba(168,85,247,0.3)] transition-all duration-500 hover:-translate-y-2">
                             {/* Icon */}
                             <div className="relative mb-8">
                                 <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/25 group-hover:shadow-indigo-500/40 transition-all duration-300">
                                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9-9a9 9 0 00-9 9m9 9v-9" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                                     </svg>
                                 </div>
                                 <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-indigo-400 to-indigo-500 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity"></div>
                             </div>
 
                             <h3 className="font-display text-2xl font-bold text-white mb-4">
-                                Website Development
+                                Python Automation
+                                <span className="ml-2 text-sm bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded-full">New</span>
                             </h3>
                             <p className="text-gray-300 leading-relaxed mb-8">
-                                Modern, responsive websites and web applications built with cutting-edge
-                                technologies. From sleek landing pages to complex business management platforms.
+                                Advanced Python scripting and automation solutions that streamline business processes,
+                                eliminate repetitive tasks, and integrate systems seamlessly.
                             </p>
 
                             {/* Features List */}
                             <ul className="space-y-3 mb-8">
                                 <li className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">Responsive Web Design</span>
+                                    <span className="text-sm font-medium text-gray-300">Data Processing & ETL</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">WordPress Development</span>
+                                    <span className="text-sm font-medium text-gray-300">API Integration & Automation</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">E-commerce Solutions</span>
+                                    <span className="text-sm font-medium text-gray-300">Workflow Automation</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">Business Dashboards</span>
+                                    <span className="text-sm font-medium text-gray-300">Custom Python Scripts</span>
                                 </li>
                             </ul>
 
                             <a
-                                href="/services/web-development"
+                                href="/services/python-automation"
                                 className="inline-flex items-center gap-2 text-indigo-400 font-semibold hover:text-indigo-300 transition-colors group/link"
                             >
                                 Learn More
@@ -400,8 +416,32 @@ function SuperStackJourney() {
 }
 
 export const metadata = {
+    title: 'Web Development Company South Africa | SuperStack Technology Partner',
     description:
-        'SuperStack Development Studio - AI-powered solutions, web development, and automation that transforms your business. From idea to deployment in weeks, not months.',
+        'Leading web development company in South Africa. Custom React applications, business automation, and software solutions for South African businesses. Your trusted technology partner across SA.',
+    keywords: [
+        'web development company South Africa',
+        'React developer Cape Town',
+        'software development South Africa',
+        'business automation SA',
+        'custom software development Johannesburg',
+        'web developer Durban',
+        'technology partner South Africa',
+        'South African web development'
+    ],
+    openGraph: {
+        title: 'Web Development Company South Africa | SuperStack Technology Partner',
+        description: 'Leading web development company in South Africa. Custom React applications and business solutions for South African businesses.',
+        type: 'website',
+        images: [
+            {
+                url: 'https://www.superstack.co.za/og-image.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'SuperStack - Web Development Company South Africa',
+            },
+        ],
+    },
 };
 
 // What is SuperStack Section
@@ -440,7 +480,7 @@ function WhatIsSuperStackSection() {
                                     <h3 className="text-xl font-bold text-gray-900">Who We Are</h3>
                                 </div>
                                 <p className="text-gray-600 leading-relaxed">
-                                    A team of developers, designers, and strategists who build custom software solutions. We turn complex business problems into simple, powerful digital tools.
+                                    A team of developers, designers, and strategists who build custom software solutions that include modern web applications, intelligent automation, and AI-powered tools when needed.
                                 </p>
                             </div>
                         </FadeIn>
@@ -967,9 +1007,9 @@ export default async function Home() {
                                 </div>
                                 
                                 <p className="mt-8 text-xl text-gray-600 leading-relaxed max-w-2xl">
-                                    We create reliable web applications and business automation tools that help companies grow. 
+                                    We create reliable web applications and intelligent business tools for South African companies. 
                                     <span className="block mt-2 font-semibold text-indigo-600">
-                                        Professional development. Real results.
+                                        Your trusted technology partner across South Africa.
                                     </span>
                                 </p>
                             </FadeIn>

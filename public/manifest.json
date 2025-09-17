@@ -1,0 +1,31 @@
+{
+  "name": "SuperStack Development Studio",
+  "short_name": "SuperStack",
+  "description": "Leading React & Next.js development studio in South Africa",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/nextpad/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/nextpad/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "productivity", "developer"],
+  "lang": "en-ZA",
+  "dir": "ltr"
+}
