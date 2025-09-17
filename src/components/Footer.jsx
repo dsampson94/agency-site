@@ -17,10 +17,10 @@ export default function Footer() {
                         {/* Contact Info */}
                         {/* <div className="flex flex-col gap-3">
                             <a 
-                                href="mailto:hello@superstack.dev" 
+                                href="mailto:david.sampson@superstack.co.za" 
                                 className="text-gray-900 hover:text-blue-600 transition-colors font-semibold text-lg"
                             >
-                                hello@superstack.dev
+                                david.sampson@superstack.co.za
                             </a>
                             <span className="text-gray-600 text-sm font-medium">Cape Town, South Africa</span>
                         </div> */}

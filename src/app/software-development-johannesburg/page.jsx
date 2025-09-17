@@ -154,10 +154,10 @@ export default function SoftwareDevelopmentJohannesburg() {
                 Book Enterprise Consultation
               </a>
               <a 
-                href="mailto:hello@superstack.co.za"
+                href="mailto:david.sampson@superstack.co.za"
                 className="border border-indigo-600 text-indigo-600 px-6 py-3 rounded-lg inline-block hover:bg-indigo-50 text-center"
               >
-                Email: hello@superstack.co.za
+                Email: david.sampson@superstack.co.za
               </a>
             </div>
           </div>
