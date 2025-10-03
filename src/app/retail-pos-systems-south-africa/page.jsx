@@ -63,29 +63,7 @@ function RetailPOSOverview() {
           </div>
         </div>
 
-        <div className="mt-12 bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-200">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Trusted by South Africa's Leading Retailers</h3>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">156+</div>
-                <div className="text-gray-600">Retail Implementations</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">R3.7M</div>
-                <div className="text-gray-600">Average Annual ROI</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">45%</div>
-                <div className="text-gray-600">Inventory Accuracy Improvement</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">99.8%</div>
-                <div className="text-gray-600">System Uptime</div>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </FadeIn>
     </Container>
   )
@@ -201,17 +179,17 @@ function PosFeatures() {
   )
 }
 
-function RetailSuccess() {
+function RetailCapabilities() {
   return (
     <Container className="mt-24">
       <FadeIn>
         <SectionIntro
-          title="🎯 Real Retail Success Stories"
+          title="🎯 Retail POS Capabilities"
           className="mt-24"
         >
           <p>
-            From small family businesses to major retail chains, our POS solutions have 
-            transformed operations and driven growth across all retail segments in South Africa.
+            Our POS solutions are designed to handle the diverse needs of South African retailers, 
+            from small family businesses to growing retail chains across all sectors.
           </p>
         </SectionIntro>
 
@@ -221,23 +199,23 @@ function RetailSuccess() {
               <div className="w-16 h-16 bg-blue-600 rounded-xl mx-auto flex items-center justify-center mb-4">
                 <span className="text-2xl">🛍️</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Fashion Retail Chain</h3>
-              <div className="text-sm text-gray-600 mt-2">27 stores across SA</div>
+              <h3 className="text-xl font-bold text-gray-900">Fashion & Apparel</h3>
             </div>
             <div className="space-y-4">
               <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                <div className="text-2xl font-bold text-blue-600">67%</div>
-                <div className="text-blue-700">Increase in inventory accuracy</div>
+                <div className="text-sm font-semibold text-blue-700">Size & Color Variants</div>
+                <div className="text-blue-600 text-xs">Complete inventory tracking by size, color, and style</div>
               </div>
               <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-                <div className="text-2xl font-bold text-green-600">R4.2M</div>
-                <div className="text-green-700">Annual cost savings</div>
+                <div className="text-sm font-semibold text-green-700">Multi-Store Management</div>
+                <div className="text-green-600 text-xs">Real-time stock transfers between locations</div>
               </div>
-              <p className="text-gray-600 text-sm">
-                "The multi-store inventory management transformed our operations. We can now 
-                transfer stock between stores in real-time and avoid stockouts completely."
-              </p>
-              <div className="text-xs text-gray-500">- Operations Director, Fashion Chain</div>
+              <ul className="text-gray-600 text-sm space-y-2">
+                <li>• Barcode scanning for quick processing</li>
+                <li>• Customer loyalty program integration</li>
+                <li>• Seasonal discount management</li>
+                <li>• Staff commission tracking</li>
+              </ul>
             </div>
           </div>
 
@@ -246,48 +224,48 @@ function RetailSuccess() {
               <div className="w-16 h-16 bg-green-600 rounded-xl mx-auto flex items-center justify-center mb-4">
                 <span className="text-2xl">🍕</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Restaurant Group</h3>
-              <div className="text-sm text-gray-600 mt-2">14 locations</div>
+              <h3 className="text-xl font-bold text-gray-900">Food & Restaurants</h3>
             </div>
             <div className="space-y-4">
               <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-                <div className="text-2xl font-bold text-green-600">43%</div>
-                <div className="text-green-700">Faster order processing</div>
+                <div className="text-sm font-semibold text-green-700">Kitchen Display System</div>
+                <div className="text-green-600 text-xs">Digital order management for kitchen staff</div>
               </div>
               <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
-                <div className="text-2xl font-bold text-purple-600">R2.8M</div>
-                <div className="text-purple-700">Additional annual revenue</div>
+                <div className="text-sm font-semibold text-purple-700">Table Management</div>
+                <div className="text-purple-600 text-xs">Track orders by table and split bills easily</div>
               </div>
-              <p className="text-gray-600 text-sm">
-                "Kitchen display system and table management revolutionized our service. 
-                Customer satisfaction scores increased from 3.2 to 4.7 stars."
-              </p>
-              <div className="text-xs text-gray-500">- Owner, Restaurant Group</div>
+              <ul className="text-gray-600 text-sm space-y-2">
+                <li>• Menu modification handling</li>
+                <li>• Split payment processing</li>
+                <li>• Ingredient inventory tracking</li>
+                <li>• Delivery integration ready</li>
+              </ul>
             </div>
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
             <div className="text-center mb-6">
               <div className="w-16 h-16 bg-orange-600 rounded-xl mx-auto flex items-center justify-center mb-4">
-                <span className="text-2xl">🏪</span>
+                <span className="text-2xl">🛒</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Grocery Chain</h3>
-              <div className="text-sm text-gray-600 mt-2">8 supermarkets</div>
+              <h3 className="text-xl font-bold text-gray-900">Grocery & Convenience</h3>
             </div>
             <div className="space-y-4">
               <div className="bg-orange-50 rounded-lg p-4 border border-orange-200">
-                <div className="text-2xl font-bold text-orange-600">89%</div>
-                <div className="text-orange-700">Reduction in checkout time</div>
+                <div className="text-sm font-semibold text-orange-700">Fast Checkout Process</div>
+                <div className="text-orange-600 text-xs">Optimized for high-volume transactions</div>
               </div>
               <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                <div className="text-2xl font-bold text-blue-600">156K</div>
-                <div className="text-blue-700">Loyalty program members</div>
+                <div className="text-sm font-semibold text-blue-700">Loyalty Programs</div>
+                <div className="text-blue-600 text-xs">Points, discounts, and member management</div>
               </div>
-              <p className="text-gray-600 text-sm">
-                "The loyalty program and faster checkout process significantly improved customer 
-                retention. We're processing 40% more transactions with the same staff."
-              </p>
-              <div className="text-xs text-gray-500">- Store Manager, Grocery Chain</div>
+              <ul className="text-gray-600 text-sm space-y-2">
+                <li>• Age verification for restricted items</li> 
+                <li>• EFT and card payment support</li>
+                <li>• Promotions and special offers</li>
+                <li>• Real-time stock level alerts</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -417,97 +395,6 @@ function POSTechStack() {
   )
 }
 
-function POSInvestment() {
-  return (
-    <Container className="mt-24">
-      <FadeIn>
-        <SectionIntro
-          title="💰 Retail POS Investment & ROI"
-          className="mt-24"
-        >
-          <p>
-            Our POS systems typically pay for themselves within 8-14 months through improved 
-            efficiency, reduced theft, better inventory management, and increased sales. 
-            No monthly fees - just a one-time investment that keeps delivering value.
-          </p>
-        </SectionIntro>
-
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Single Store POS</h3>
-              <div className="text-3xl font-bold text-blue-600 mb-2">R85K - R180K</div>
-              <div className="text-gray-600">4-6 weeks implementation</div>
-            </div>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Complete POS terminal setup</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Inventory management system</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Payment gateway integration</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Basic loyalty program</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Staff training & support</li>
-            </ul>
-          </div>
-
-          <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 shadow-lg border-2 border-green-300 relative">
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-bold">BEST VALUE</span>
-            </div>
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Multi-Store Chain</h3>
-              <div className="text-3xl font-bold text-green-600 mb-2">R450K - R850K</div>
-              <div className="text-gray-600">8-12 weeks implementation</div>
-            </div>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Multi-location POS network</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Centralized inventory management</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Advanced analytics dashboard</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Customer loyalty program</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Staff management system</li>
-            </ul>
-          </div>
-
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Enterprise Solution</h3>
-              <div className="text-3xl font-bold text-purple-600 mb-2">R1.2M+</div>
-              <div className="text-gray-600">12+ weeks implementation</div>
-            </div>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Full retail management suite</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Advanced reporting & BI</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>ERP system integration</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Custom feature development</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Dedicated support team</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-12 bg-gradient-to-r from-yellow-50 to-green-50 rounded-2xl p-8 border border-yellow-200">
-          <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">📈 Typical ROI Breakdown</h3>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-600 mb-2">15-25%</div>
-              <div className="text-gray-600">Inventory accuracy improvement</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-600 mb-2">30-45%</div>
-              <div className="text-gray-600">Faster transaction processing</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-600 mb-2">65-80%</div>
-              <div className="text-gray-600">Reduction in cash discrepancies</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-600 mb-2">8-14</div>
-              <div className="text-gray-600">Months to full ROI</div>
-            </div>
-          </div>
-        </div>
-      </FadeIn>
-    </Container>
-  )
-}
-
 export default function RetailPOSPage() {
   const structuredData = {
     "@context": "https://schema.org",
@@ -566,9 +453,9 @@ export default function RetailPOSPage() {
 
       <RetailPOSOverview />
       <PosFeatures />
-      <RetailSuccess />
+      <RetailCapabilities />
       <POSTechStack />
-      <POSInvestment />
+
       <ContactSection />
     </>
   )

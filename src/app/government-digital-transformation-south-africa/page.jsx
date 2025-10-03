@@ -62,29 +62,7 @@ function GovernmentOverview() {
           </div>
         </div>
 
-        <div className="mt-12 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-8 border border-yellow-200">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Trusted by Government at Every Level</h3>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">34+</div>
-                <div className="text-gray-600">Government Projects</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">R47M+</div>
-                <div className="text-gray-600">Total Project Value</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">2.8M</div>
-                <div className="text-gray-600">Citizens Served</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">67%</div>
-                <div className="text-gray-600">Efficiency Improvement</div>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </FadeIn>
     </Container>
   )
@@ -200,18 +178,18 @@ function DigitalGovernmentSolutions() {
   )
 }
 
-function GovernmentSuccess() {
+function GovernmentCapabilities() {
   return (
     <Container className="mt-24">
       <FadeIn>
         <SectionIntro
-          title="🏆 Government Digital Success Stories"
+          title="🏆 Government Digital Capabilities"
           className="mt-24"
         >
           <p>
-            Real transformations across South African government entities. Our solutions 
-            have improved service delivery, reduced costs, and increased citizen satisfaction 
-            from metro municipalities to national departments.
+            We specialize in government digital transformation across all levels of South African 
+            government. Our solutions are designed to improve service delivery, reduce operational 
+            costs, and increase citizen satisfaction.
           </p>
         </SectionIntro>
 
@@ -221,23 +199,23 @@ function GovernmentSuccess() {
               <div className="w-16 h-16 bg-blue-600 rounded-xl mx-auto flex items-center justify-center mb-4">
                 <span className="text-2xl">🏛️</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Metro Municipality</h3>
-              <div className="text-sm text-gray-600 mt-2">Western Cape</div>
+              <h3 className="text-xl font-bold text-gray-900">Municipal Systems</h3>
             </div>
             <div className="space-y-4">
               <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                <div className="text-2xl font-bold text-blue-600">78%</div>
-                <div className="text-blue-700">Reduction in service requests</div>
+                <div className="text-sm font-semibold text-blue-700">Citizen Service Portals</div>
+                <div className="text-blue-600 text-xs">Online applications, payments, and service requests</div>
               </div>
               <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-                <div className="text-2xl font-bold text-green-600">R12.4M</div>
-                <div className="text-green-700">Annual operational savings</div>
+                <div className="text-sm font-semibold text-green-700">Municipal Billing Systems</div>
+                <div className="text-green-600 text-xs">Rates, utilities, and revenue management</div>
               </div>
-              <p className="text-gray-600 text-sm">
-                "The integrated citizen portal transformed how we deliver services. Citizens can 
-                now complete most transactions online, reducing queues and improving satisfaction."
-              </p>
-              <div className="text-xs text-gray-500">- IT Director, Metro Municipality</div>
+              <ul className="text-gray-600 text-sm space-y-2">
+                <li>• Property management and valuations</li>
+                <li>• Prepaid utility token systems</li>
+                <li>• Service request management</li>
+                <li>• Municipal asset tracking</li>
+              </ul>
             </div>
           </div>
 
@@ -246,23 +224,23 @@ function GovernmentSuccess() {
               <div className="w-16 h-16 bg-green-600 rounded-xl mx-auto flex items-center justify-center mb-4">
                 <span className="text-2xl">🏥</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Provincial Health Dept</h3>
-              <div className="text-sm text-gray-600 mt-2">Gauteng Province</div>
+              <h3 className="text-xl font-bold text-gray-900">Provincial Health Systems</h3>
             </div>
             <div className="space-y-4">
               <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-                <div className="text-2xl font-bold text-green-600">1.2M</div>
-                <div className="text-green-700">Patient records digitized</div>
+                <div className="text-sm font-semibold text-green-700">Patient Management</div>
+                <div className="text-green-600 text-xs">Electronic health records and patient tracking</div>
               </div>
               <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
-                <div className="text-2xl font-bold text-purple-600">45%</div>
-                <div className="text-purple-700">Faster patient processing</div>
+                <div className="text-sm font-semibold text-purple-700">Hospital Information Systems</div>
+                <div className="text-purple-600 text-xs">Integrated healthcare facility management</div>
               </div>
-              <p className="text-gray-600 text-sm">
-                "The patient management system revolutionized our healthcare delivery. 
-                Real-time access to patient data across facilities improved care quality significantly."
-              </p>
-              <div className="text-xs text-gray-500">- CIO, Provincial Health Department</div>
+              <ul className="text-gray-600 text-sm space-y-2">
+                <li>• Medical appointment scheduling</li>
+                <li>• Pharmaceutical inventory management</li>
+                <li>• Medical equipment tracking</li>
+                <li>• Health data analytics</li>
+              </ul>
             </div>
           </div>
 
@@ -271,23 +249,23 @@ function GovernmentSuccess() {
               <div className="w-16 h-16 bg-orange-600 rounded-xl mx-auto flex items-center justify-center mb-4">
                 <span className="text-2xl">🎓</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Education Department</h3>
-              <div className="text-sm text-gray-600 mt-2">KwaZulu-Natal</div>
+              <h3 className="text-xl font-bold text-gray-900">Education Management</h3>
             </div>
             <div className="space-y-4">
               <div className="bg-orange-50 rounded-lg p-4 border border-orange-200">
-                <div className="text-2xl font-bold text-orange-600">890K</div>
-                <div className="text-orange-700">Learners on platform</div>
+                <div className="text-sm font-semibold text-orange-700">Student Information Systems</div>
+                <div className="text-orange-600 text-xs">Enrollment, grades, and academic records</div>
               </div>
               <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                <div className="text-2xl font-bold text-blue-600">R23M</div>
-                <div className="text-blue-700">Cost savings over 3 years</div>
+                <div className="text-sm font-semibold text-blue-700">Learning Management</div>
+                <div className="text-blue-600 text-xs">Digital classrooms and online assessments</div>
               </div>
-              <p className="text-gray-600 text-sm">
-                "The education management system streamlined everything from admissions to 
-                assessments. Teacher productivity increased and administrative burden decreased dramatically."
-              </p>
-              <div className="text-xs text-gray-500">- Deputy Director, Education Department</div>
+              <ul className="text-gray-600 text-sm space-y-2">
+                <li>• Teacher resource management</li>
+                <li>• Parent-teacher communication portals</li>
+                <li>• School administration systems</li>
+                <li>• Educational analytics and reporting</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -417,102 +395,12 @@ function GovTechStack() {
   )
 }
 
-function GovInvestment() {
-  return (
-    <Container className="mt-24">
-      <FadeIn>
-        <SectionIntro
-          title="💰 Government Digital Investment & Funding"
-          className="mt-24"
-        >
-          <p>
-            Government digital transformation projects typically range from R2M to R50M+ 
-            depending on scope and scale. We work with all levels of government budgets 
-            and procurement processes, ensuring compliance with all SCM regulations.
-          </p>
-        </SectionIntro>
-
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Municipal System</h3>
-              <div className="text-3xl font-bold text-blue-600 mb-2">R2.5M - R8M</div>
-              <div className="text-gray-600">9-15 months development</div>
-            </div>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Citizen service portal</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Municipal billing system</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Service request management</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Payment gateway integration</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Staff training & support</li>
-            </ul>
-          </div>
-
-          <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 shadow-lg border-2 border-green-300 relative">
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-bold">PROVINCIAL</span>
-            </div>
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Provincial Platform</h3>
-              <div className="text-3xl font-bold text-green-600 mb-2">R12M - R35M</div>
-              <div className="text-gray-600">18-30 months development</div>
-            </div>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Multi-department integration</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Citizen data management</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Cross-system data sharing</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Advanced analytics & reporting</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Change management program</li>
-            </ul>
-          </div>
-
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">National System</h3>
-              <div className="text-3xl font-bold text-purple-600 mb-2">R50M+</div>
-              <div className="text-gray-600">24+ months development</div>
-            </div>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>National citizen platform</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Inter-departmental systems</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Big data analytics platform</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>AI-powered insights</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Enterprise-wide transformation</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-12 bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-8 border border-blue-200">
-          <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">🏛️ Government Procurement Compliance</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="text-2xl mb-2">📋</div>
-              <h4 className="font-semibold text-gray-900 mb-2">SCM Compliance</h4>
-              <p className="text-gray-600 text-sm">Full National Treasury SCM regulation compliance, tender process management</p>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl mb-2">🏅</div>
-              <h4 className="font-semibold text-gray-900 mb-2">B-BBEE Level 2</h4>
-              <p className="text-gray-600 text-sm">Verified B-BBEE Level 2 supplier with strong transformation credentials</p>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl mb-2">🛡️</div>
-              <h4 className="font-semibold text-gray-900 mb-2">Security Clearance</h4>
-              <p className="text-gray-600 text-sm">Team members with government security clearance for sensitive projects</p>
-            </div>
-          </div>
-        </div>
-      </FadeIn>
-    </Container>
-  )
-}
-
 export default function GovernmentDigitalPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Government Digital Transformation South Africa",
-    "description": "Leading government digitization in SA. Municipal systems, citizen services, eGovernment platforms. 34+ successful government projects. POPI Act compliant.",
+    "description": "Leading government digitization specialists in SA. Municipal systems, citizen services, eGovernment platforms. Expert solutions for digital transformation. POPI Act compliant.",
     "provider": {
       "@type": "Organization",
       "name": "SuperStack",
@@ -565,9 +453,9 @@ export default function GovernmentDigitalPage() {
 
       <GovernmentOverview />
       <DigitalGovernmentSolutions />
-      <GovernmentSuccess />
+      <GovernmentCapabilities />
       <GovTechStack />
-      <GovInvestment />
+
       <ContactSection />
     </>
   )
