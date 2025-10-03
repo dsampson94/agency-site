@@ -51,14 +51,14 @@ export default function Terms() {
               <li>Use our services only for lawful purposes</li>
               <li>Respect intellectual property rights</li>
               <li>Communicate professionally and respectfully</li>
-              <li>Pay all fees and charges promptly</li>
+              <li>Fulfill all agreed obligations promptly</li>
             </ul>
 
             <h2>Project Terms</h2>
             
             <h3>Project Scope</h3>
             <p>
-              All development projects will be governed by a separate project agreement that outlines specific deliverables, timelines, and costs.
+              All development projects will be governed by a separate project agreement that outlines specific deliverables and timelines.
             </p>
 
             <h3>Payment Terms</h3>

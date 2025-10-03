@@ -115,7 +115,7 @@ function Build() {
       <GridList className="mt-4">
         <GridListItem>Government portal serving 2M+ citizens</GridListItem>
         <GridListItem>University systems designed for large-scale student management</GridListItem>
-        <GridListItem>Corporate ERP handling R500M+ transactions</GridListItem>
+        <GridListItem>Corporate ERP handling high-volume transactions</GridListItem>
         <GridListItem>Healthcare systems designed for multi-facility connectivity</GridListItem>
       </GridList>
     </Section>

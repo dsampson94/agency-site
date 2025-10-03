@@ -33,7 +33,7 @@ function Values() {
             We work closely with our clients as trusted partners, understanding their business goals and challenges to deliver solutions that truly make a difference.
           </GridListItem>
           <GridListItem title="Excellence" invert>
-            We&apos;re committed to delivering exceptional results on time and within budget, backed by our extensive experience across multiple industries and technologies.
+            We&apos;re committed to delivering exceptional results on time, backed by our extensive experience across multiple industries and technologies.
           </GridListItem>
         </GridList>
       </Container>

@@ -12,12 +12,12 @@ function WhyLeaveShopify() {
     <Container className="mt-24">
       <FadeIn>
         <SectionIntro
-          title="🚨 Why South African Businesses Are Abandoning Shopify"
+          title="🚨 Why South African Businesses Need Shopify Alternatives"
           className="mt-24"
         >
           <p>
-            Rising costs, poor rand exchange rates, and lack of local payment integration 
-            are forcing SA businesses to seek better alternatives. Here's what's driving the exodus.
+            Platform limitations, poor rand support, and lack of local payment integration 
+            are driving SA businesses to seek better alternatives. Here's what's driving the need for change.
           </p>
         </SectionIntro>
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -25,10 +25,10 @@ function WhyLeaveShopify() {
             <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mb-6">
               <span className="text-2xl">💸</span>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Crushing Monthly Costs</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Recurring Platform Fees</h3>
             <p className="text-gray-700 mb-4">
-              Shopify Plus costs R5,600+/month, Basic R850/month, plus 2.9% transaction fees. 
-              That's R67,800+ per year minimum before you sell anything.
+              Platform subscriptions create ongoing operational expenses that limit 
+              business flexibility and growth potential over time.
             </p>
           </div>
         </div>
@@ -74,12 +74,12 @@ function TechnicalAdvantages() {
 }
 
 export const metadata = {
-  title: 'Shopify Alternative South Africa 2025 | Save R67,800 vs Shopify Plans',
-  description: 'Stop wasting money on Shopify! Our Shopify alternative saves SA businesses R67,800 over 3 years. Native PayFast integration, no monthly fees, complete ownership. Shopify vs custom ecommerce comparison.',
-  keywords: 'shopify alternative south africa, shopify too expensive, shopify limitations south africa, custom ecommerce development, shopify vs custom solution, ecommerce platform alternative, payfast integration shopify, shopify monthly fees too high, shopify replacement',
+  title: 'Shopify Alternative South Africa 2025 | Custom E-commerce Solutions',
+  description: 'Professional Shopify alternative for South African businesses. Custom e-commerce solutions with native PayFast integration, complete ownership, and local optimization.',
+  keywords: 'shopify alternative south africa, shopify limitations south africa, custom ecommerce development, shopify vs custom solution, ecommerce platform alternative, payfast integration shopify, shopify replacement',
   openGraph: {
-    title: 'Shopify Alternative South Africa 2025 | Save R67,800 vs Shopify Plans',
-    description: 'Stop wasting money on Shopify! Our Shopify alternative saves SA businesses R67,800 over 3 years with native PayFast integration.',
+    title: 'Shopify Alternative South Africa 2025 | Custom E-commerce Solutions',
+    description: 'Professional Shopify alternative for South African businesses with native PayFast integration and complete customization.',
     url: 'https://www.superstack.co.za/shopify-alternative-south-africa',
     type: 'website',
     locale: 'en_ZA',
@@ -94,8 +94,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shopify Alternative South Africa 2025 | Save R67,800 vs Shopify Plans',
-    description: 'Stop wasting money on Shopify! Our Shopify alternative saves SA businesses R67,800 over 3 years.',
+    title: 'Shopify Alternative South Africa 2025 | Custom E-commerce Solutions',
+    description: 'Professional Shopify alternative for South African businesses with custom features and local optimization.',
   },
   alternates: {
     canonical: 'https://www.superstack.co.za/shopify-alternative-south-africa',
@@ -139,7 +139,7 @@ function ShopifyLimitations() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">💸 ZERO South African Payment Gateway Support</h4>
-                  <p className="text-gray-600">Shopify STILL doesn't support PayFast, Ozow, Peach Payments, or any SA gateways properly. You're FORCED to use expensive international options with 3.5%+ fees instead of PayFast's 2.9%. That's an extra R6,000 in fees for every R100,000 in sales!</p>
+                  <p className="text-gray-600">Shopify doesn't support PayFast, Ozow, Peach Payments, or other SA payment gateways properly. You're forced to use international payment options, creating unnecessary complexity for your South African customers.</p>
                 </div>
               </div>
 
@@ -230,8 +230,8 @@ function ShopifyLimitations() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">💵 ZERO Monthly Fees Forever</h4>
-                  <p className="text-gray-600">Pay once, own forever. No R2,000/month bleeding. No transaction fees. No "surprise" price increases. Just R200-400/month hosting vs Shopify's R2,000+/month subscription. Save R67,800 over 3 years - that's a new car!</p>
+                  <h4 className="font-semibold text-gray-900 mb-2">💵 Complete Ownership</h4>
+                  <p className="text-gray-600">Own your platform completely. No recurring subscription fees. No transaction fees on your sales. Full control over your business operations and customer data.</p>
                 </div>
               </div>
 
@@ -290,178 +290,7 @@ function ShopifyLimitations() {
   )
 }
 
-function CostComparison() {
-  return (
-    <Container className="mt-24">
-      <FadeIn>
-        <SectionIntro
-          title="SHOCKING: Shopify vs Custom Solution - Real 3-Year Cost Breakdown"
-          className="mt-24"
-        >
-          <p>
-            This is the exact cost breakdown that's making 73% of SA businesses switch 
-            from Shopify to custom solutions. The numbers will shock you - Shopify is 
-            literally stealing R67,800+ from your business over 3 years!
-          </p>
-        </SectionIntro>
 
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="bg-red-50 rounded-2xl p-8 border-2 border-red-300 relative">
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold">EXPENSIVE!</span>
-            </div>
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-red-800 mb-2">Shopify Plus Total Scam</h3>
-              <p className="text-red-600">What You ACTUALLY Pay (2025 Rates)</p>
-            </div>
-            
-            <div className="space-y-4">
-              <div className="flex justify-between items-center py-2 border-b border-red-200">
-                <span className="text-red-700">💸 Monthly subscription (Plus)</span>
-                <span className="font-semibold text-red-800">R4,500/month</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-red-200">
-                <span className="text-red-700">💳 Transaction fees (2.4% on R50k/month sales)</span>
-                <span className="font-semibold text-red-800">R14,400/year</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-red-200">
-                <span className="text-red-700">📱 Essential apps (abandoned cart, reviews, etc)</span>
-                <span className="font-semibold text-red-800">R1,200/month</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-red-200">
-                <span className="text-red-700">🎨 Custom theme development</span>
-                <span className="font-semibold text-red-800">R25,000</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-red-200">
-                <span className="text-red-700">💰 PayFast integration (third-party)</span>
-                <span className="font-semibold text-red-800">R15,000</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-red-200">
-                <span className="text-red-700">📈 Marketing apps (email, analytics)</span>
-                <span className="font-semibold text-red-800">R800/month</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-red-200">
-                <span className="text-red-700">🔧 Developer customizations</span>
-                <span className="font-semibold text-red-800">R12,000/year</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-red-200">
-                <span className="text-red-700">📋 Compliance & security audits</span>
-                <span className="font-semibold text-red-800">R8,000/year</span>
-              </div>
-            </div>
-            
-            <div className="mt-8 pt-6 border-t-2 border-red-400 bg-red-100 rounded-lg p-4">
-              <div className="text-center">
-                <p className="text-4xl font-bold text-red-800 mb-2">R318,600</p>
-                <p className="text-red-600 font-semibold">Total 3-Year Cost</p>
-                <p className="text-xs text-red-500 mt-2">*Plus hidden fees, price increases, and vendor lock-in!</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-green-50 rounded-2xl p-8 border-2 border-green-300 relative">
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-bold">SMART CHOICE!</span>
-            </div>
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-green-800 mb-2">Custom Solution Investment</h3>
-              <p className="text-green-600">What You ACTUALLY Pay (One-Time + Hosting)</p>
-            </div>
-            
-            <div className="space-y-4">
-              <div className="flex justify-between items-center py-2 border-b border-green-200">
-                <span className="text-green-700">🚀 Complete custom development</span>
-                <span className="font-semibold text-green-800">R85,000</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-green-200">
-                <span className="text-green-700">☁️ Premium hosting & CDN</span>
-                <span className="font-semibold text-green-800">R400/month</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-green-200">
-                <span className="text-green-700">💳 Payment gateway fees (PayFast 2.9%)</span>
-                <span className="font-semibold text-green-800">R10,440/year</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-green-200">
-                <span className="text-green-700">🔧 Maintenance & updates</span>
-                <span className="font-semibold text-green-800">R3,000/year</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-green-200">
-                <span className="text-green-700">📊 Analytics & monitoring</span>
-                <span className="font-semibold text-green-800">R200/month</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-green-200">
-                <span className="text-green-700">🔒 SSL & security</span>
-                <span className="font-semibold text-green-800">R0 (included)</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-green-200">
-                <span className="text-green-700">✅ Feature additions (2 per year)</span>
-                <span className="font-semibold text-green-800">R8,000/year</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-green-200">
-                <span className="text-green-700">📞 Priority support</span>
-                <span className="font-semibold text-green-800">R0 (included)</span>
-              </div>
-            </div>
-            
-            <div className="mt-8 pt-6 border-t-2 border-green-400 bg-green-100 rounded-lg p-4">
-              <div className="text-center">
-                <p className="text-4xl font-bold text-green-800 mb-2">R150,720</p>
-                <p className="text-green-600 font-semibold">Total 3-Year Cost</p>
-                <p className="text-xs text-green-500 mt-2">*Complete ownership, unlimited scaling, no vendor lock-in!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-6 bg-gradient-to-r from-green-100 to-blue-100 rounded-2xl p-8 border-2 border-green-300">
-            <div className="text-6xl">💰</div>
-            <div className="text-left">
-              <p className="text-3xl font-bold text-green-800 mb-2">SAVE R167,880 over 3 years!</p>
-              <p className="text-green-600 text-lg">That's enough for a luxury car, house deposit, or massive business expansion!</p>
-              <p className="text-sm text-gray-600 mt-2">Plus you own everything and can scale infinitely without additional fees</p>
-            </div>
-            <div className="text-6xl">🚗</div>
-          </div>
-        </div>
-
-        <div className="mt-12 bg-yellow-50 rounded-2xl p-8 border-2 border-yellow-300">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">⚠️ HIDDEN SHOPIFY COSTS THEY DON'T TELL YOU ABOUT</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <span className="text-red-500 text-xl">💸</span>
-                <span className="text-gray-700"><strong>Currency conversion fees:</strong> 2.5% on every USD payment</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-red-500 text-xl">📈</span>
-                <span className="text-gray-700"><strong>Annual price increases:</strong> 8-15% every year</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-red-500 text-xl">🔒</span>
-                <span className="text-gray-700"><strong>Data export fees:</strong> R15,000+ to get YOUR data out</span>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <span className="text-red-500 text-xl">🚀</span>
-                <span className="text-gray-700"><strong>Premium features:</strong> R500-2000/month extra for basics</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-red-500 text-xl">🎨</span>
-                <span className="text-gray-700"><strong>Theme modifications:</strong> R200-500/hour for tiny changes</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-red-500 text-xl">⚡</span>
-                <span className="text-gray-700"><strong>Performance optimization:</strong> Not available at any price</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </FadeIn>
-    </Container>
-  )
-}
 
 function MigrationProcess() {
   return (
@@ -674,13 +503,12 @@ function FAQSection() {
 
           <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
             <h3 className="text-xl font-bold text-gray-900 mb-4">
-              Can I really save R67,800+ by switching from Shopify?
+              What are the main benefits of switching from Shopify?
             </h3>
             <p className="text-gray-700">
-              Absolutely! Based on current Shopify pricing, Shopify Plus costs R4,500+/month plus transaction fees, 
-              apps, and development costs. Our custom solutions have a one-time development cost then just hosting 
-              (~R400/month). Over 3 years, the potential savings are significant - often enough to buy a new car or put a deposit 
-              on a house!
+              Custom solutions offer complete ownership, no recurring subscription fees, 
+              native South African payment integration, unlimited customization, and full control over your data and business operations. 
+              You're not locked into any platform limitations or ongoing fees.
             </p>
           </div>
 
@@ -727,7 +555,7 @@ export default function ShopifyAlternativePage() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Shopify Alternative Custom Ecommerce Development South Africa",
-    "description": "Save R67,800+ per year with custom ecommerce solutions for South African businesses. No monthly fees, PayFast integration, local shipping rates.",
+    "description": "Custom ecommerce solutions for South African businesses with PayFast integration, complete ownership, and local optimization.",
     "provider": {
       "@type": "Organization",
       "name": "SuperStack",
@@ -800,10 +628,10 @@ export default function ShopifyAlternativePage() {
       },
       {
         "@type": "Question",
-        "name": "Can I really save R67,800+ by switching from Shopify?",
+        "name": "What are the main benefits of switching from Shopify?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely! Based on current Shopify pricing, Shopify Plus costs R4,500+/month plus transaction fees, apps, and development costs. Our custom solutions have a one-time development cost then just hosting (~R400/month). Over 3 years, the potential savings are significant - often enough to buy a new car or put a deposit on a house!"
+          "text": "Custom solutions offer complete ownership, no recurring subscription fees, native South African payment integration, unlimited customization, and full control over your data and business operations. You're not locked into any platform limitations or ongoing fees."
         }
       },
       {
@@ -834,10 +662,10 @@ export default function ShopifyAlternativePage() {
       
       <PageIntro 
         eyebrow="Shopify Alternative South Africa" 
-        title="Save R67,800+ Per Year vs Shopify Plans"
+        title="Custom E-commerce Solutions vs Shopify"
       >
         <p>
-          Stop paying expensive monthly fees and transaction costs. Get a custom 
+          Break free from recurring subscription fees and platform limitations. Get a custom 
           ecommerce solution built specifically for South African businesses with 
           PayFast integration, local shipping rates, and zero ongoing fees.
         </p>
@@ -846,7 +674,7 @@ export default function ShopifyAlternativePage() {
       <WhyLeaveShopify />
       <ShopifyLimitations />
       <CustomSolutionBenefits />
-      <CostComparison />
+
       <TechnicalAdvantages />
       <TestimonialsSection />
       <MigrationProcess />

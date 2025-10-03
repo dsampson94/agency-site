@@ -44,7 +44,7 @@ export default function WebDevelopmentServices() {
                 <li>Cape Town-based development team</li>
                 <li>Local business understanding</li>
                 <li>Timezone-friendly communication</li>
-                <li>Rand-friendly pricing</li>
+                <li>Local business understanding</li>
               </ul>
             </div>
           </div>

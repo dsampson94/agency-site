@@ -139,15 +139,15 @@ function ComparisonTable() {
               </tr>
               
               <tr className="bg-gray-50">
-                <td className="border border-gray-200 p-4 font-medium text-gray-900">Pricing Transparency</td>
+                <td className="border border-gray-200 p-4 font-medium text-gray-900">Project Transparency</td>
                 <td className="border border-gray-200 p-4 text-center bg-green-50">
                   <span className="inline-flex items-center px-2 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
-                    Fixed Price Quotes
+                    Clear Project Scope
                   </span>
                 </td>
                 <td className="border border-gray-200 p-4 text-center text-gray-600">Estimates</td>
                 <td className="border border-gray-200 p-4 text-center text-gray-600">Hourly Variable</td>
-                <td className="border border-gray-200 p-4 text-center text-gray-600">Hidden Costs</td>
+                <td className="border border-gray-200 p-4 text-center text-gray-600">Unclear Scope</td>
               </tr>
             </tbody>
           </table>
@@ -191,7 +191,7 @@ function WhyChooseSuperStack() {
             
             <GridListItem title="Transparent Communication" invert>
               Regular updates, clear timelines, and honest feedback. No surprises, 
-              no scope creep, no hidden costs in your project.
+              no scope creep, transparent project management throughout.
             </GridListItem>
             
             <GridListItem title="Fast Delivery" invert>
@@ -307,7 +307,7 @@ function ClientTestimonials() {
             </div>
             <p className="text-gray-600 mb-6">
               "SuperStack's expertise in AI and automation is unmatched in South Africa. 
-              They built us tools that save 20 hours per week and our competitors 
+              They built us tools that improved our efficiency by 20 hours per week and our competitors 
               can't figure out how we're so efficient."
             </p>
             <div className="flex items-center gap-3">

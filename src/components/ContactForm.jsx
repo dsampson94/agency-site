@@ -47,7 +47,7 @@ export function ContactForm() {
         company: '',
         phone: '',
         message: '',
-        budget: '',
+
         website: '',
         nickname: '',
     });
@@ -81,7 +81,7 @@ export function ContactForm() {
 
             if (data.success) {
                 setStatus({ type: 'success', message: 'Thanks! We’ve received your message.' });
-                setForm({ name: '', email: '', company: '', phone: '', message: '', budget: '', website: '', nickname: '' }); // Reset form
+                setForm({ name: '', email: '', company: '', phone: '', message: '', website: '', nickname: '' }); // Reset form
             } else {
                 setStatus({ type: 'error', message: data.error || 'Something went wrong. Please try again.' });
             }

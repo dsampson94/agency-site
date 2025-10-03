@@ -147,7 +147,7 @@ function CaseStudies({caseStudies}) {
                     <br/>
                     <p className="text-xl text-neutral-600 leading-relaxed">
                         We harness AI-driven automation — integrating generative AI, advanced cloud services, and
-                        productivity tools designed to reduce work hours, boost accuracy, and eliminate delays. <span className="font-semibold text-indigo-600">Built to save businesses money.</span>
+                        productivity tools designed to reduce work hours, boost accuracy, and eliminate delays. <span className="font-semibold text-indigo-600">Built to improve business efficiency.</span>
                     </p>
                 </SectionIntro>
             </Container>

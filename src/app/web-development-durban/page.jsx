@@ -102,7 +102,7 @@ function Build() {
           your specific needs and growth ambitions.
         </p>
         <p>
-          Our development process is designed to keep your project on track, on budget, and 
+          Our development process is designed to keep your project on track and 
           deliver real value to your KZN operations. We specialize in helping businesses across 
           the greater Durban area transform their digital presence.
         </p>

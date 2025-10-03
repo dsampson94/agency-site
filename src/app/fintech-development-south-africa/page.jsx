@@ -356,97 +356,7 @@ function TechnologyStack() {
   )
 }
 
-function PricingAndTimeline() {
-  return (
-    <Container className="mt-24">
-      <FadeIn>
-        <SectionIntro
-          title="💰 FinTech Development Investment & Timeline"
-          className="mt-24"
-        >
-          <p>
-            Transparent pricing for different scales of FinTech projects. Every project 
-            includes SARB compliance, security audits, and 12 months of support.
-          </p>
-        </SectionIntro>
 
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Digital Wallet MVP</h3>
-              <div className="text-3xl font-bold text-blue-600 mb-2">R850K - R1.2M</div>
-              <div className="text-gray-600">4-6 months development</div>
-            </div>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Mobile app (iOS & Android)</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Basic P2P transfers</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>PayFast integration</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>KYC verification</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>SARB compliance</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Admin dashboard</li>
-            </ul>
-          </div>
-
-          <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 shadow-lg border-2 border-purple-300 relative">
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-bold">MOST POPULAR</span>
-            </div>
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Banking Platform</h3>
-              <div className="text-3xl font-bold text-purple-600 mb-2">R2.1M - R3.8M</div>
-              <div className="text-gray-600">8-12 months development</div>
-            </div>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Full mobile & web platform</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Core banking features</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Multi-payment gateway</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Investment products</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Advanced analytics</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>24/7 support system</li>
-            </ul>
-          </div>
-
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Enterprise Solution</h3>
-              <div className="text-3xl font-bold text-green-600 mb-2">R5M+</div>
-              <div className="text-gray-600">12+ months development</div>
-            </div>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Multi-tenant architecture</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>White-label solutions</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>API marketplace</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>AI fraud detection</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Regulatory reporting</li>
-              <li className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Dedicated support team</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-12 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-200">
-          <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">🚀 What's Included in Every FinTech Project</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="text-2xl mb-2">🔒</div>
-              <h4 className="font-semibold text-gray-900 mb-2">Security First</h4>
-              <p className="text-gray-600 text-sm">Bank-grade security, penetration testing, SARB compliance validation</p>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl mb-2">📱</div>
-              <h4 className="font-semibold text-gray-900 mb-2">Native Mobile Apps</h4>
-              <p className="text-gray-600 text-sm">iOS and Android apps with biometric authentication and offline capabilities</p>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl mb-2">🛠️</div>
-              <h4 className="font-semibold text-gray-900 mb-2">12 Months Support</h4>
-              <p className="text-gray-600 text-sm">Free bug fixes, security updates, and technical support for one year</p>
-            </div>
-          </div>
-        </div>
-      </FadeIn>
-    </Container>
-  )
-}
 
 export default function FinTechDevelopmentPage() {
   const structuredData = {
@@ -471,9 +381,6 @@ export default function FinTechDevelopmentPage() {
     },
     "offers": {
       "@type": "Offer",
-      "priceCurrency": "ZAR",
-      "price": "2400000",
-      "priceValidUntil": "2025-12-31",
       "availability": "https://schema.org/InStock"
     },
     "aggregateRating": {
@@ -508,7 +415,7 @@ export default function FinTechDevelopmentPage() {
       <ComplianceAndSecurity />
       <SuccessStories />
       <TechnologyStack />
-      <PricingAndTimeline />
+
       <RelatedTechSolutions />
       <ContactSection />
     </>
@@ -597,7 +504,7 @@ function RelatedTechSolutions() {
             <h3 className="text-xl font-bold text-gray-900 mb-4">E-commerce Development</h3>
             <p className="text-gray-700 mb-6">
               Custom e-commerce platforms that outperform Shopify. Built for South African businesses 
-              with local payment integration and no monthly fees.
+              with local payment integration.
             </p>
             <a 
               href="/shopify-alternative-south-africa" 

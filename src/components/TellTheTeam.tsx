@@ -21,9 +21,21 @@ export default function TellTheTeam() {
     const [recordingPhase, setRecordingPhase] = useState<'ready' | 'recorded' | 'submitted'>('ready')
     const [errorMessage, setErrorMessage] = useState('')
     const [cooldownSeconds, setCooldownSeconds] = useState(0)
+    const [browserSupported, setBrowserSupported] = useState(true)
 
     const mediaRecorderRef = useRef<MediaRecorder | null>(null)
     const audioChunksRef = useRef<Blob[]>([])
+
+    // Check browser support on mount
+    React.useEffect(() => {
+        const checkBrowserSupport = () => {
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || !MediaRecorder) {
+                setBrowserSupported(false)
+                setErrorMessage('Voice recording is not supported in your browser. Please use Chrome, Firefox, or Safari.')
+            }
+        }
+        checkBrowserSupport()
+    }, [])
 
     // Email validation
     const isValidEmail = (email: string) => {
@@ -33,16 +45,34 @@ export default function TellTheTeam() {
 
     // Start or stop recording
     const handleRecord = async () => {
+        console.log('handleRecord called, isRecording:', isRecording)
+        
+        // Clear any previous error messages
+        setErrorMessage('')
+        setSubmissionStatus('idle')
+        
         if (isRecording) {
             // Stop recording
             mediaRecorderRef.current?.stop()
             setIsRecording(false)
         } else {
-            // Start recording
-            const stream = await navigator.mediaDevices.getUserMedia({audio: true})
-            const mediaRecorder = new MediaRecorder(stream)
-            mediaRecorderRef.current = mediaRecorder
-            audioChunksRef.current = []
+            try {
+                // Check if MediaRecorder is supported
+                if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                    throw new Error('Media recording not supported in this browser')
+                }
+                
+                if (!MediaRecorder) {
+                    throw new Error('MediaRecorder not supported in this browser')
+                }
+                
+                console.log('Requesting microphone access...')
+                // Start recording
+                const stream = await navigator.mediaDevices.getUserMedia({audio: true})
+                console.log('Microphone access granted')
+                const mediaRecorder = new MediaRecorder(stream)
+                mediaRecorderRef.current = mediaRecorder
+                audioChunksRef.current = []
 
             mediaRecorder.ondataavailable = (event) => {
                 audioChunksRef.current.push(event.data)
@@ -86,8 +116,13 @@ export default function TellTheTeam() {
                 }
             }
 
-            mediaRecorder.start()
-            setIsRecording(true)
+                mediaRecorder.start()
+                setIsRecording(true)
+            } catch (error) {
+                console.error('Error accessing microphone:', error)
+                setErrorMessage('Unable to access microphone. Please check your browser permissions and try again.')
+                setSubmissionStatus('error')
+            }
         }
     }
 
@@ -269,16 +304,23 @@ export default function TellTheTeam() {
                             )}
                         </div>
 
+                        {/* Error Message Display */}
+                        {errorMessage && (
+                            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm">
+                                {errorMessage}
+                            </div>
+                        )}
+
                         {/* Voice Recording Section */}
                         {recordingPhase === 'ready' && (
                             <div className="text-center">
                                 <button
                                     onClick={handleRecord}
-                                    disabled={submissionStatus === 'submitting' || !userEmail.trim() || !isValidEmail(userEmail)}
+                                    disabled={!browserSupported || submissionStatus === 'submitting' || !userEmail.trim() || !isValidEmail(userEmail)}
                                     className={`relative group w-full rounded-xl py-2.5 sm:py-3 px-3 sm:px-4 text-sm font-semibold transition-all duration-300 ${
                                         isRecording 
                                             ? 'bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff]' 
-                                            : !userEmail.trim() || !isValidEmail(userEmail)
+                                            : !browserSupported || !userEmail.trim() || !isValidEmail(userEmail)
                                             ? 'bg-gradient-to-br from-gray-200 to-gray-300 text-gray-400 cursor-not-allowed shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff]'
                                             : 'bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] active:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff]'
                                     }`}
