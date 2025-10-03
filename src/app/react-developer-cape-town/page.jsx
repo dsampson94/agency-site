@@ -12,11 +12,11 @@ import imageMeeting from '@/images/meeting.jpg'
 
 export const metadata = {
   title: 'React Developer Cape Town | Hire Expert React JS Developers South Africa',
-  description: 'Hire expert React developers in Cape Town. Top-rated React JS development services with 20+ years experience. Custom React applications, migration services, and full-stack development for South African businesses.',
+  description: 'Hire expert React developers in Cape Town. Professional React JS development services specializing in modern applications. Custom React applications, migration services, and full-stack development for South African businesses.',
   keywords: 'react developer cape town, hire react developer south africa, react js developer cape town, react development services, react native developer, react consultant cape town, full stack react developer',
   openGraph: {
     title: 'React Developer Cape Town | Hire Expert React JS Developers South Africa',
-    description: 'Hire expert React developers in Cape Town. Top-rated React JS development services with 20+ years experience. Custom React applications, migration services, and full-stack development.',
+    description: 'Hire expert React developers in Cape Town. Professional React JS development services specializing in modern applications. Custom React applications, migration services, and full-stack development.',
     url: 'https://www.superstack.co.za/react-developer-cape-town',
     type: 'website',
     locale: 'en_ZA',
@@ -24,7 +24,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'React Developer Cape Town | Hire Expert React JS Developers South Africa',
-    description: 'Hire expert React developers in Cape Town. Top-rated React JS development services with 20+ years experience.',
+    description: 'Hire expert React developers in Cape Town. Professional React JS development services specializing in modern applications.',
   },
   alternates: {
     canonical: 'https://www.superstack.co.za/react-developer-cape-town',
@@ -172,7 +172,7 @@ function WhyChooseUs() {
               time zones, and market requirements. Available for in-person meetings.
             </GridListItem>
             
-            <GridListItem title="20+ Years Experience" invert>
+            <GridListItem title="Modern React Expertise" invert>
               Senior React developers with extensive experience in modern JavaScript, 
               TypeScript, Next.js, and full-stack development.
             </GridListItem>

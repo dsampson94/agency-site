@@ -167,16 +167,16 @@ function WhyChooseSuperStack() {
         >
           <p>
             We're not just another web development company. We're three founding 
-            engineers with 20+ years of combined experience who understand what 
+            engineers with specialized experience who understand what 
             it takes to build successful businesses in South Africa.
           </p>
         </SectionIntro>
 
         <div className="mt-16">
           <GridList>
-            <GridListItem title="Proven Track Record" invert>
-              Successfully delivered 50+ projects for South African businesses 
-              from startups to enterprise clients. Real results, not just promises.
+            <GridListItem title="Proven Expertise" invert>
+              Specialized in building modern applications for South African businesses 
+              from startups to enterprise clients. Real expertise, not just promises.
             </GridListItem>
             
             <GridListItem title="Local Market Expertise" invert>
@@ -234,9 +234,9 @@ function ClientTestimonials() {
               ))}
             </div>
             <p className="text-gray-600 mb-6">
-              "After trying three different development companies, SuperStack delivered 
-              what others couldn't. Our React application was completed in 3 weeks 
-              versus the 3 months the previous company quoted. Outstanding work!"
+              "SuperStack's technical expertise and understanding of modern development 
+              practices impressed us from day one. Their approach to React development 
+              and clear communication made them stand out from other companies."
             </p>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
@@ -258,9 +258,9 @@ function ClientTestimonials() {
               ))}
             </div>
             <p className="text-gray-600 mb-6">
-              "The difference between SuperStack and our previous developer is night 
-              and day. They understand South African business needs and delivered 
-              exactly what we needed for our Johannesburg operations."
+              "SuperStack's approach to understanding South African business needs 
+              and their technical expertise in modern development makes them an 
+              ideal partner for serious software projects."
             </p>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">

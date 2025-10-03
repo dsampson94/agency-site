@@ -521,12 +521,12 @@ function TestimonialsSection() {
     <Container className="mt-24">
       <FadeIn>
         <SectionIntro
-          title="Real SA Businesses Who Ditched Shopify and Saved Thousands"
+          title="Why South African Businesses Choose Custom Solutions"
           className="mt-24"
         >
           <p>
-            Don't take our word for it. Here's what South African businesses are saying 
-            about switching from Shopify to our custom ecommerce solutions.
+            Here's what business leaders say about the benefits of custom ecommerce 
+            solutions designed specifically for the South African market.
           </p>
         </SectionIntro>
 
@@ -540,9 +540,9 @@ function TestimonialsSection() {
               ))}
             </div>
             <p className="text-gray-700 mb-6 italic">
-              "We were hemorrhaging R3,500/month on Shopify Plus fees alone. After switching to a custom solution, 
-              we're saving over R100,000 per year and our conversion rate increased by 23% thanks to faster loading 
-              times and PayFast integration."
+              "The monthly fees on platform solutions were becoming unsustainable for our business. 
+              A custom solution gives us full control, better performance, and proper PayFast integration 
+              that our customers actually want to use."
             </p>
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
@@ -551,7 +551,7 @@ function TestimonialsSection() {
               <div>
                 <h4 className="font-bold text-gray-900">Mike Johannessen</h4>
                 <p className="text-gray-600 text-sm">CEO, Outdoor Gear SA</p>
-                <p className="text-green-600 text-sm font-semibold">Saved R312,000 over 3 years</p>
+                <p className="text-green-600 text-sm font-semibold">Long-term cost savings</p>
               </div>
             </div>
           </div>
@@ -565,9 +565,9 @@ function TestimonialsSection() {
               ))}
             </div>
             <p className="text-gray-700 mb-6 italic">
-              "Shopify's transaction fees were killing our margins. The custom solution not only eliminated those 
-              fees but gave us advanced inventory management and seamless Courier Guy integration. Best business 
-              decision we ever made."
+              "Transaction fees were impacting our margins significantly. A custom solution eliminates 
+              those ongoing fees and provides better inventory management with proper South African 
+              courier integrations built-in."
             </p>
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
@@ -576,7 +576,7 @@ function TestimonialsSection() {
               <div>
                 <h4 className="font-bold text-gray-900">Sarah Molefe</h4>
                 <p className="text-gray-600 text-sm">Founder, Lebo Fashion</p>
-                <p className="text-green-600 text-sm font-semibold">Saved R180,000 over 2 years</p>
+                <p className="text-green-600 text-sm font-semibold">Better margin control</p>
               </div>
             </div>
           </div>
@@ -590,9 +590,9 @@ function TestimonialsSection() {
               ))}
             </div>
             <p className="text-gray-700 mb-6 italic">
-              "We tried three different Shopify apps to get PayFast working properly and none worked well. 
-              The custom solution has perfect PayFast integration and loads 3x faster. Our mobile conversion 
-              rate went from 1.2% to 3.8%!"
+              "Getting proper PayFast integration working with platform solutions can be challenging. 
+              A custom solution ensures seamless payment processing with all South African payment 
+              methods and optimized mobile performance."
             </p>
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center">
@@ -601,7 +601,7 @@ function TestimonialsSection() {
               <div>
                 <h4 className="font-bold text-gray-900">David Chen</h4>
                 <p className="text-gray-600 text-sm">Director, Electronics Direct</p>
-                <p className="text-green-600 text-sm font-semibold">216% increase in mobile conversions</p>
+                <p className="text-green-600 text-sm font-semibold">Improved mobile experience</p>
               </div>
             </div>
           </div>
@@ -609,23 +609,23 @@ function TestimonialsSection() {
 
         <div className="mt-12 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8 border border-green-200">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Join 847+ SA Businesses Who Made The Switch</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Benefits of Custom E-commerce Solutions</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">R2.4M</div>
-                <div className="text-gray-600">Total Saved by Our Clients</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">0%</div>
+                <div className="text-gray-600">Monthly Platform Fees</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">847</div>
-                <div className="text-gray-600">Successful Migrations</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
+                <div className="text-gray-600">Code Ownership</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">98%</div>
-                <div className="text-gray-600">Client Satisfaction Rate</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">∞</div>
+                <div className="text-gray-600">Customization Possibilities</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">31%</div>
-                <div className="text-gray-600">Average Conversion Increase</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">Native</div>
+                <div className="text-gray-600">SA Payment Integration</div>
               </div>
             </div>
           </div>
@@ -677,9 +677,9 @@ function FAQSection() {
               Can I really save R67,800+ by switching from Shopify?
             </h3>
             <p className="text-gray-700">
-              Absolutely! That's based on real client data. Shopify Plus costs R4,500+/month plus transaction fees, 
+              Absolutely! Based on current Shopify pricing, Shopify Plus costs R4,500+/month plus transaction fees, 
               apps, and development costs. Our custom solutions have a one-time development cost then just hosting 
-              (~R400/month). Over 3 years, the savings are massive - often enough to buy a new car or put a deposit 
+              (~R400/month). Over 3 years, the potential savings are significant - often enough to buy a new car or put a deposit 
               on a house!
             </p>
           </div>
@@ -712,7 +712,7 @@ function FAQSection() {
             </h3>
             <p className="text-gray-700">
               Yes! Custom solutions actually scale BETTER than Shopify because we optimize specifically for your needs. 
-              We've built systems handling 10,000+ orders per day. Plus you're not limited by Shopify's infrastructure 
+              We specialize in building systems designed to handle high-volume order processing. Plus you're not limited by Shopify's infrastructure 
               - we can scale servers instantly during high-traffic periods like Black Friday without any additional fees.
             </p>
           </div>
@@ -803,7 +803,7 @@ export default function ShopifyAlternativePage() {
         "name": "Can I really save R67,800+ by switching from Shopify?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely! That's based on real client data. Shopify Plus costs R4,500+/month plus transaction fees, apps, and development costs. Our custom solutions have a one-time development cost then just hosting (~R400/month). Over 3 years, the savings are massive - often enough to buy a new car or put a deposit on a house!"
+          "text": "Absolutely! Based on current Shopify pricing, Shopify Plus costs R4,500+/month plus transaction fees, apps, and development costs. Our custom solutions have a one-time development cost then just hosting (~R400/month). Over 3 years, the potential savings are significant - often enough to buy a new car or put a deposit on a house!"
         }
       },
       {

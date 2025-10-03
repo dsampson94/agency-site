@@ -13,71 +13,71 @@ export const metadata = {
   description: 'Discover our portfolio of successful projects across AI development, web applications, and enterprise solutions.',
 }
 
-// Client logos (you'll need to add these to your public/images/clients folder)
-const clients = [
-  { name: 'MultiChoice', logo: '/images/clients/multichoice-logo.svg', sector: 'Media & Entertainment' },
-  { name: 'ABSA', logo: '/images/clients/absa-logo.svg', sector: 'Financial Services' },
-  { name: 'ZKTeco', logo: '/images/clients/zkteco-logo.svg', sector: 'Security Solutions' },
-  { name: 'AVIS', logo: '/images/clients/avis-logo.svg', sector: 'Car Rental' },
-  { name: 'Italtile', logo: '/images/clients/italtile-logo.svg', sector: 'Retail' },
-  { name: 'Mediacom', logo: '/images/clients/mediacom-logo.svg', sector: 'Technology' },
-  { name: '123Tutors', logo: '/images/clients/123tutors-logo.svg', sector: 'Education' },
-  { name: 'ConvoFreaks', logo: '/images/clients/convofreaks-logo.svg', sector: 'Education SaaS' },
+// Technology sectors we specialize in
+const sectors = [
+  { name: 'Agricultural Technology', focus: 'IoT Dashboards & Data Visualization' },
+  { name: 'Financial Services', focus: 'Secure Fintech Applications' },
+  { name: 'Security Solutions', focus: 'Corporate Digital Platforms' },
+  { name: 'Logistics & Transportation', focus: 'Workforce Management Systems' },
+  { name: 'Retail & E-commerce', focus: 'Custom Shopping Platforms' },
+  { name: 'Data & Analytics', focus: 'Survey & Visualization Tools' },
+  { name: 'Education Technology', focus: 'AI-Powered Learning Platforms' },
+  { name: 'Enterprise Software', focus: 'Business Management Solutions' },
 ]
 
 const featuredProjects = [
   {
-    id: 'multichoice-ai',
-    title: 'MultiChoice AI Automation',
-    client: 'MultiChoice',
-    description: 'AI-powered subtitle automation system delivering real-time content processing and multi-language subtitle generation for South Africa\'s largest media company.',
-    services: ['AI Development', 'Process Automation', 'API Integration'],
-    technologies: ['Python', 'Machine Learning', 'Real-time APIs'],
-    results: ['Automated subtitle workflow', 'Multi-language support', 'Reduced processing time'],
-    image: '/images/work/multichoice-preview.jpg',
-    category: 'AI & Automation'
+    id: 'agricultural-platform-demo',
+    title: 'Agricultural Irrigation Platform',
+    client: 'Demo Project',
+    description: 'Frontend development concept for agricultural irrigation scheduling platforms. Designed responsive dashboards for real-time soil moisture monitoring and forecasted irrigation recommendations using modern data visualization.',
+    services: ['Frontend Development', 'Dashboard Design', 'Data Visualization', 'Responsive Web Design'],
+    technologies: ['React.js', 'Chart.js', 'Responsive CSS', 'REST APIs'],
+    results: ['Intuitive dashboard design', 'Real-time data visualization', 'Mobile-responsive layout', 'Modern user experience'],
+    image: '/images/work/irricheck-preview.jpg',
+    category: 'Agricultural Technology'
   },
   {
-    id: 'absa-lms',
-    title: 'ABSA ReadyToWork LMS',
-    client: 'ABSA',
-    description: 'Simple Learning Management System for employee training using React and Python backend.',
-    services: ['React Development', 'Python Backend', 'Basic Database'],
+    id: 'lms-demo-project',
+    title: 'Learning Management System',
+    client: 'Demo Project',
+    description: 'Learning Management System concept for employee training using React and Python backend architecture.',
+    services: ['React Development', 'Python Backend', 'Database Design'],
     technologies: ['React.js', 'Python', 'PostgreSQL'],
-    results: ['Functional training system', 'User-friendly interface', 'Reliable performance'],
+    results: ['Modern training interface', 'User-friendly design', 'Scalable architecture'],
     image: '/images/work/absa-preview.jpg',
     category: 'Web Applications'
   },
   {
-    id: 'zkteco-platform',
-    title: 'ZKTeco Digital Platform',
-    client: 'ZKTeco',
-    description: 'Modern corporate website with dynamic product catalog and AI-powered WhatsApp support bot for enhanced customer experience.',
-    services: ['Web Development', 'AI Chatbot', 'CMS Integration'],
-    technologies: ['WordPress', 'WhatsApp API', 'AI Integration'],
-    results: ['24/7 automated support', 'Dynamic product showcase', 'Improved user engagement'],
+    id: 'corporate-platform-demo',
+    title: 'Corporate Digital Platform',
+    client: 'Demo Project',
+    description: 'Modern corporate website concept with dynamic product catalog and AI-powered customer support integration.',
+    services: ['Web Development', 'AI Integration', 'CMS Setup'],
+    technologies: ['WordPress', 'API Integration', 'AI Tools'],
+    results: ['Automated support concept', 'Dynamic product display', 'Enhanced user experience'],
     image: '/images/work/zkteco-preview.jpg',
     category: 'Web Development'
   },
   {
-    id: 'labourteq-system',
-    title: 'LabourTeq Workforce Management',
-    client: 'AVIS & Partners',
-    description: 'Enterprise workforce management system handling complex employee operations for major South African companies including AVIS car rentals.',
-    services: ['System Development', 'Mobile App', 'Integration'],
+    id: 'workforce-management-demo',
+    title: 'Workforce Management System',
+    client: 'Demo Project',
+    description: 'Enterprise workforce management system concept designed for complex employee operations and multi-company environments.',
+    services: ['System Architecture', 'Mobile Development', 'Integration Planning'],
     technologies: ['React.js', 'React Native', 'Django', 'AWS'],
-    results: ['Enterprise deployment', 'Multi-company support', 'High system availability'],
+    results: ['Scalable architecture', 'Multi-platform support', 'Enterprise-ready design'],
     image: '/images/work/labourteq-preview.jpg',
     category: 'Enterprise Solutions'
   },
   {
-    id: '123tutors-platform',
-    title: '123Tutors AI Platform',
-    client: '123Tutors',
-    description: 'AI-powered educational platform with intelligent tutor matching, automated scheduling, and progress tracking for personalized learning experiences.',
-    services: ['AI Development', 'Platform Build', 'Payment Systems'],
-    technologies: ['Machine Learning', 'React.js', 'Payment APIs'],
-    results: ['Smart tutor matching', 'Automated scheduling', 'Learning analytics'],
+    id: 'ai-education-demo',
+    title: 'AI Education Platform Concept',
+    client: 'Demo Project',
+    description: 'AI-powered educational platform concept featuring intelligent matching algorithms, automated scheduling, and progress tracking for personalized learning.',
+    services: ['AI Development', 'Platform Architecture', 'System Design'],
+    technologies: ['Machine Learning', 'React.js', 'API Design'],
+    results: ['Smart matching algorithms', 'Automated scheduling system', 'Learning analytics dashboard'],
     image: '/images/work/123tutors-preview.jpg',
     category: 'AI & Education'
   },
@@ -85,10 +85,10 @@ const featuredProjects = [
     id: 'mediacom-survey',
     title: 'Mediacom Survey Platform',
     client: 'Mediacom Data & Tech',
-    description: 'Complex survey and data visualization platform delivered on tight deadline using modern React architecture and real-time analytics.',
+    description: 'Complex survey and data visualization platform designed with modern React architecture and real-time analytics capabilities.',
     services: ['Project Rescue', 'System Architecture', 'Data Analytics'],
     technologies: ['React.js', 'GraphQL', 'AWS', 'Node.js'],
-    results: ['On-time delivery', 'Modern architecture', 'Real-time analytics'],
+    results: ['Scalable architecture', 'Modern development', 'Real-time capabilities'],
     image: '/images/work/mediacom-preview.jpg',
     category: 'Data & Analytics'
   }
@@ -109,23 +109,23 @@ const technologies = [
 
 
 
-function ClientShowcase() {
+function SectorShowcase() {
   return (
     <div className="mt-24 sm:mt-32">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-neutral-950 text-center mb-16">
-          Trusted by Leading Companies
+          Industries We Specialize In
         </h2>
       </FadeIn>
       <FadeInStagger>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-          {clients.map((client) => (
-            <FadeIn key={client.name} className="text-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {sectors.map((sector) => (
+            <FadeIn key={sector.name} className="text-center">
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
-                <div className="h-12 flex items-center justify-center mb-4">
-                  <span className="text-neutral-600 font-semibold">{client.name}</span>
+                <div className="mb-4">
+                  <h3 className="text-neutral-900 font-semibold text-lg">{sector.name}</h3>
                 </div>
-                <p className="text-xs text-neutral-500">{client.sector}</p>
+                <p className="text-sm text-neutral-600">{sector.focus}</p>
               </div>
             </FadeIn>
           ))}
@@ -236,13 +236,13 @@ export default function Work() {
     <>
       <PageIntro eyebrow="Portfolio" title="Our Work">
         <p>
-          We partner with industry leaders to deliver cutting-edge solutions that drive real results. 
-          From AI automation to enterprise platforms, our track record speaks for itself.
+          We specialize in building cutting-edge solutions designed to drive real results. 
+          From AI automation to enterprise platforms, our expertise covers the full spectrum.
         </p>
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32">
-        <ClientShowcase />
+        <SectorShowcase />
         
         <div className="mt-24 sm:mt-32">
           <FadeIn>

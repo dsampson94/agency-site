@@ -98,11 +98,11 @@ export default function SoftwareDevelopmentJohannesburg() {
             </div>
           </div>
 
-          <h2>Johannesburg Client Success Story</h2>
+          <h2>Why Johannesburg Enterprises Choose SuperStack</h2>
           <blockquote className="border-l-4 border-indigo-500 pl-6 italic text-gray-700">
-            "SuperStack delivered our enterprise inventory management system on time and 
-            under budget. Their understanding of Johannesburg's business environment and 
-            technical expertise made them the perfect partner for our digital transformation."
+            "SuperStack's approach to enterprise software development impressed us. 
+            Their understanding of Johannesburg's business environment and modern 
+            technical expertise makes them an ideal partner for digital transformation."
             <footer className="mt-2 text-sm text-gray-500">
               - Operations Director, Manufacturing Company, Midrand
             </footer>

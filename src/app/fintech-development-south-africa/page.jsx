@@ -64,19 +64,19 @@ function FinTechOverview() {
 
         <div className="mt-12 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-8 border border-yellow-200">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Why South African Banks Choose Us</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Our FinTech Development Expertise</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">20+</div>
-                <div className="text-gray-600">FinTech Projects</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">SARB</div>
+                <div className="text-gray-600">Compliance Ready</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">5+</div>
-                <div className="text-gray-600">Years Experience</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
+                <div className="text-gray-600">Secure by Design</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">99.9%</div>
-                <div className="text-gray-600">Uptime Achievement</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">Native</div>
+                <div className="text-gray-600">SA Payment Methods</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-green-600 mb-2">6-12</div>
@@ -453,7 +453,7 @@ export default function FinTechDevelopmentPage() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "FinTech Development South Africa",
-    "description": "Leading FinTech development in South Africa. Build banking apps, payment systems, digital wallets with SARB compliance. 127+ successful financial apps delivered.",
+    "description": "Leading FinTech development in South Africa. Build banking apps, payment systems, digital wallets with SARB compliance. Specialized in secure financial applications.",
     "provider": {
       "@type": "Organization",
       "name": "SuperStack",

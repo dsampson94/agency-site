@@ -88,7 +88,7 @@ function Clients() {
             <Container>
                 <FadeIn className="flex items-center gap-x-8">
                     <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
-                        We've worked with hundreds of amazing people
+                        Ready to work with amazing people
                     </h2>
                     <div className="h-px flex-auto bg-neutral-800"/>
                 </FadeIn>
@@ -147,7 +147,7 @@ function CaseStudies({caseStudies}) {
                     <br/>
                     <p className="text-xl text-neutral-600 leading-relaxed">
                         We harness AI-driven automation — integrating generative AI, advanced cloud services, and
-                        productivity tools to slash work hours, boost accuracy, and eliminate delays. <span className="font-semibold text-indigo-600">Saving our clients money.</span>
+                        productivity tools designed to reduce work hours, boost accuracy, and eliminate delays. <span className="font-semibold text-indigo-600">Built to save businesses money.</span>
                     </p>
                 </SectionIntro>
             </Container>

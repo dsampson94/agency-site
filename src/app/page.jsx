@@ -214,15 +214,15 @@ function Services() {
 function FeaturedProjects() {
     const featuredProjects = [
         {
-            id: 'multichoice-ai',
-            title: 'MultiChoice',
-            subtitle: 'AI Subtitle Automation',
-            description: 'Advanced AI-powered subtitle automation system with open-source model implementation for real-time content processing and multi-language subtitle generation.',
-            features: ['AI Subtitle Automation', 'Open Source ML Models', 'Multi-Language Support', 'Real-time Processing'],
-            link: '/work/multichoice',
-            bgColor: 'bg-red-500',
+            id: 'irricheck-platform',
+            title: 'IrriCheck',
+            subtitle: 'Agricultural Irrigation Management',
+            description: 'Frontend development for South Africa\'s leading agricultural irrigation scheduling platform, featuring real-time data visualization and 7-day forecasted irrigation recommendations.',
+            features: ['React Frontend Development', 'Real-time Data Visualization', 'Irrigation Scheduling Dashboard', 'Agricultural IoT Integration'],
+            link: '/work/irricheck',
+            bgColor: 'bg-green-600',
             textColor: 'text-white',
-            image: '/images/work/multichoice-hero.jpg'
+            image: '/images/work/irricheck-hero.jpg'
         },
         {
             id: 'absa-lms',
@@ -253,7 +253,7 @@ function FeaturedProjects() {
             description: 'Enterprise workforce management system handling complex employee operations for major South African companies including AVIS car rentals.',
             features: ['Workforce Management', 'Enterprise Integration', 'Mobile Solutions', 'Multi-Company Support'],
             link: '/work/labourteq',
-            bgColor: 'bg-green-600',
+            bgColor: 'bg-purple-600',
             textColor: 'text-white',
             image: '/images/work/labourteq-hero.jpg'
         },

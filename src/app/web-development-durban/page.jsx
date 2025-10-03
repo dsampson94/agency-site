@@ -102,18 +102,18 @@ function Build() {
           your specific needs and growth ambitions.
         </p>
         <p>
-          Our development process ensures your project stays on track, on budget, and 
-          delivers real value to your KZN operations. We've helped businesses across 
+          Our development process is designed to keep your project on track, on budget, and 
+          deliver real value to your KZN operations. We specialize in helping businesses across 
           the greater Durban area transform their digital presence.
         </p>
       </div>
 
       <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
-        Durban Success Stories
+        Durban Development Capabilities
       </h3>
       <GridList className="mt-4">
-        <GridListItem>Port logistics system increasing efficiency by 40%</GridListItem>
-        <GridListItem>Tourism booking platform serving 50+ KZN operators</GridListItem>
+        <GridListItem>Port logistics systems designed for operational efficiency</GridListItem>
+        <GridListItem>Tourism booking platforms designed for KZN operators</GridListItem>
         <GridListItem>Manufacturing ERP system streamlining operations</GridListItem>
         <GridListItem>Healthcare portal connecting patients across Durban</GridListItem>
       </GridList>

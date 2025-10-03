@@ -202,10 +202,10 @@ export default function About() {
         </p>
         <div className="mt-10 max-w-2xl space-y-6 text-base">
           <p>
-            Founded with a vision to bridge the gap between advanced technology and practical business solutions, we combine deep technical expertise with a genuine understanding of business challenges. Our team has successfully delivered complex projects for industry leaders across multiple sectors.
+            Founded with a vision to bridge the gap between advanced technology and practical business solutions, we combine deep technical expertise with a genuine understanding of business challenges. Our team specializes in developing complex solutions for businesses across multiple sectors.
           </p>
           <p>
-            What sets us apart is our ability to take cutting-edge technologies like AI and machine learning and implement them in ways that create immediate, measurable business value. From automating complex processes to building scalable platforms that serve thousands of users, we focus on solutions that truly make a difference.
+            What sets us apart is our ability to take cutting-edge technologies like AI and machine learning and implement them in ways designed to create immediate, measurable business value. We specialize in automating complex processes and building scalable platforms, focusing on solutions that truly make a difference.
           </p>
         </div>
       </PageIntro>

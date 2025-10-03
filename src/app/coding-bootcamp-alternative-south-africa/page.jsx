@@ -149,7 +149,7 @@ function BootcampProblems() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">Guaranteed Job Placement</h4>
-                  <p className="text-gray-600">Work on real client projects during training. Build portfolio with actual business applications. Direct path to employment or freelance work.</p>
+                  <p className="text-gray-600">Work on realistic business projects during training. Build portfolio with practical applications. Direct path to employment or freelance work.</p>
                 </div>
               </div>
 
@@ -160,8 +160,8 @@ function BootcampProblems() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Real Client Project Experience</h4>
-                  <p className="text-gray-600">Work on actual business projects from day one. Learn to handle real deadlines, client requirements, and production deployments.</p>
+                  <h4 className="font-semibold text-gray-900 mb-2">Realistic Project Experience</h4>
+                  <p className="text-gray-600">Work on business-like projects from day one. Learn to handle realistic deadlines, client-style requirements, and production-ready deployments.</p>
                 </div>
               </div>
 
@@ -234,7 +234,7 @@ function LearningPaths() {
                 <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
-                <span className="text-gray-700">3 real client projects</span>
+                <span className="text-gray-700">3 realistic business projects</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
