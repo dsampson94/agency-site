@@ -32,6 +32,9 @@ export default function TellTheTeam() {
             if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || !MediaRecorder) {
                 setBrowserSupported(false)
                 setErrorMessage('Voice recording is not supported in your browser. Please use Chrome, Firefox, or Safari.')
+            } else if (window.location.protocol !== 'https:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+                setBrowserSupported(false)
+                setErrorMessage('Voice recording requires HTTPS or localhost for security reasons.')
             }
         }
         checkBrowserSupport()
@@ -66,10 +69,8 @@ export default function TellTheTeam() {
                     throw new Error('MediaRecorder not supported in this browser')
                 }
                 
-                console.log('Requesting microphone access...')
                 // Start recording
                 const stream = await navigator.mediaDevices.getUserMedia({audio: true})
-                console.log('Microphone access granted')
                 const mediaRecorder = new MediaRecorder(stream)
                 mediaRecorderRef.current = mediaRecorder
                 audioChunksRef.current = []
@@ -120,7 +121,23 @@ export default function TellTheTeam() {
                 setIsRecording(true)
             } catch (error) {
                 console.error('Error accessing microphone:', error)
-                setErrorMessage('Unable to access microphone. Please check your browser permissions and try again.')
+                
+                // More specific error handling
+                if (error instanceof Error) {
+                    if (error.name === 'NotAllowedError') {
+                        setErrorMessage('🎤 Microphone access was blocked. Please click the microphone icon in your browser\'s address bar and allow access, then try again.')
+                    } else if (error.name === 'NotFoundError') {
+                        setErrorMessage('🎤 No microphone detected. Please connect a microphone and try again.')
+                    } else if (error.name === 'NotSupportedError' || error.name === 'TypeError') {
+                        setErrorMessage('⚠️ Voice recording is not supported in your browser. Please use Chrome, Firefox, or Safari.')
+                    } else if (error.name === 'SecurityError') {
+                        setErrorMessage('🔒 Recording blocked due to security restrictions. Please use HTTPS or localhost.')
+                    } else {
+                        setErrorMessage(`⚠️ Recording error: ${error.message}`)
+                    }
+                } else {
+                    setErrorMessage('🎤 Unable to access microphone. Please check your browser permissions and try again.')
+                }
                 setSubmissionStatus('error')
             }
         }
@@ -303,6 +320,8 @@ export default function TellTheTeam() {
                                 <p className="text-red-500 text-xs mt-1">Please enter a valid email address</p>
                             )}
                         </div>
+
+
 
                         {/* Error Message Display */}
                         {errorMessage && (

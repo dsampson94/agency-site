@@ -127,11 +127,11 @@ function Services() {
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">� Next.js Websites</span>
+                                    <span className="text-sm font-medium text-gray-300">⚡ Next.js Websites</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-                                    <span className="text-sm font-medium text-gray-300">� Python Backend APIs</span>
+                                    <span className="text-sm font-medium text-gray-300">🐍 Python Backend APIs</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
