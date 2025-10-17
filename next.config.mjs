@@ -31,7 +31,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: \"frame-ancestors 'self' https://*.vercel.app http://localhost:*\",
+            value: "frame-ancestors 'self' https://*.vercel.app http://localhost:*",
           },
         ],
       },
