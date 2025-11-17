@@ -44,9 +44,16 @@ function Header({
     const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
-        // Check if admin is logged in
+        // Check if admin is logged in as davesampson15@gmail.com
         const token = localStorage.getItem('adminToken');
-        setIsAdmin(!!token);
+        if (token) {
+            try {
+                const payload = JSON.parse(atob(token.split('.')[1]));
+                setIsAdmin(payload.email === 'davesampson15@gmail.com');
+            } catch {
+                setIsAdmin(false);
+            }
+        }
     }, []);
 
     return (
@@ -175,8 +182,20 @@ function RootLayoutInner({children}) {
     let closeRef = useRef(null)
     let navRef = useRef(null)
     let shouldReduceMotion = useReducedMotion()
+    const [isAdmin, setIsAdmin] = useState(false)
 
     useEffect(() => {
+        // Check if admin is logged in as davesampson15@gmail.com
+        const token = localStorage.getItem('adminToken')
+        if (token) {
+            try {
+                const payload = JSON.parse(atob(token.split('.')[1]));
+                setIsAdmin(payload.email === 'davesampson15@gmail.com');
+            } catch {
+                setIsAdmin(false);
+            }
+        }
+
         function onClick(event) {
             if (
                 event.target instanceof HTMLElement &&
@@ -259,17 +278,29 @@ function RootLayoutInner({children}) {
                                         </h2>
                                         <SocialMedia className="mt-6" invert/>
                                         
-                                        {/* Admin Login Link */}
+                                        {/* Admin Button - Only show if logged in or not logged in */}
                                         <div className="mt-8 pt-8 border-t border-neutral-800">
-                                            <Link
-                                                href="/admin"
-                                                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors"
-                                            >
-                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                                </svg>
-                                                Admin Login
-                                            </Link>
+                                            {isAdmin ? (
+                                                <Link
+                                                    href="/admin/dashboard"
+                                                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors"
+                                                >
+                                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                                    </svg>
+                                                    Admin Dashboard
+                                                </Link>
+                                            ) : (
+                                                <Link
+                                                    href="/admin"
+                                                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-700 text-white text-sm font-semibold hover:bg-gray-600 transition-colors"
+                                                >
+                                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                                    </svg>
+                                                    Admin Login
+                                                </Link>
+                                            )}
                                         </div>
                                     </div>
                                 </div>

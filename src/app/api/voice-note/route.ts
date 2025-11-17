@@ -63,8 +63,8 @@ export async function POST(req: NextRequest) {
                 )
 
                 transcript = whisperResponse.data.text || 'Transcription unavailable'
-            } catch (whisperError) {
-                console.log('Whisper transcription failed, continuing without transcript')
+            } catch (whisperError: any) {
+                console.error('Whisper transcription error:', whisperError.response?.data || whisperError.message)
                 transcript = 'Audio submitted successfully (transcription unavailable)'
             }
         } else {
