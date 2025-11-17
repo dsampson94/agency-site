@@ -9,7 +9,7 @@ export function middleware(request: NextRequest) {
   response.headers.set('X-Frame-Options', 'DENY')
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('Referrer-Policy', 'origin-when-cross-origin')
-  response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()')
+  response.headers.set('Permissions-Policy', 'camera=(), microphone=(self), geolocation=()')
   
   // Cache headers for static assets
   if (request.nextUrl.pathname.startsWith('/_next/static/')) {

@@ -41,11 +41,11 @@ export const metadata: Metadata = {
         type: 'website',
         images: [
             {
-                url: 'https://www.superstack.co.za/og-image.jpg',
+                url: 'https://www.superstack.co.za/ss.png',
                 width: 1200,
                 height: 630,
                 alt: 'SuperStack Development Studio - Your Technology Partner',
-                type: 'image/jpeg',
+                type: 'image/png',
             },
         ],
     },
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
             'Your technology partner in South Africa. Expert web development, Python automation, and business solutions that scale.',
         site: '@superstacksa',
         creator: '@davidsampson94',
-        images: ['https://www.superstack.co.za/og-image.jpg'],
+        images: ['https://www.superstack.co.za/ss.png'],
     },
     authors: [
         {

@@ -2,6 +2,7 @@ import {NextRequest, NextResponse} from 'next/server'
 import axios from 'axios'
 import FormData from 'form-data'
 import {Buffer} from 'buffer'
+import {prisma} from '@/lib/prisma'
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY
 
@@ -70,12 +71,51 @@ export async function POST(req: NextRequest) {
             transcript = 'Audio submitted successfully'
         }
 
-        // Always return success - we got the audio and email
-        return NextResponse.json({
-            success: true,
-            transcript: transcript,
-            message: 'Voice note received successfully'
-        })
+        // Save to database with Prisma
+        try {
+            // Find or create user
+            const user = await prisma.user.upsert({
+                where: {email: email},
+                update: {},
+                create: {
+                    email: email,
+                }
+            })
+
+            // Create enquiry with voice note
+            const enquiry = await prisma.enquiry.create({
+                data: {
+                    userId: user.id,
+                    message: transcript,
+                    hasVoiceNote: true,
+                    transcript: transcript,
+                    status: 'new',
+                }
+            })
+
+            console.log('✅ Vision saved to database:', {
+                userId: user.id,
+                enquiryId: enquiry.id,
+                email: email
+            })
+
+            // Return success with enquiry ID
+            return NextResponse.json({
+                success: true,
+                transcript: transcript,
+                message: 'Vision recorded and saved successfully',
+                enquiryId: enquiry.id
+            })
+        } catch (dbError: any) {
+            console.error('Database save error:', dbError.message)
+            
+            // Still return success to user but log the error
+            return NextResponse.json({
+                success: true,
+                transcript: transcript,
+                message: 'Voice note received successfully'
+            })
+        }
 
     } catch (error: any) {
         console.error('Voice note API error:', error.message)

@@ -397,7 +397,7 @@ export const metadata = {
         type: 'website',
         images: [
             {
-                url: 'https://www.superstack.co.za/og-image.jpg',
+                url: 'https://www.superstack.co.za/ss.png',
                 width: 1200,
                 height: 630,
                 alt: 'SuperStack - Web Development Company South Africa',

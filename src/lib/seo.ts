@@ -22,7 +22,7 @@ export function generateCaseStudyMetadata({
   const fullTitle = `${title} - ${client} Case Study | SuperStack`
   const seoDescription = `${description} Read our detailed case study on ${service} for ${client}.`
   const canonicalUrl = `https://www.superstack.co.za/work/${slug}`
-  const imageUrl = image || 'https://www.superstack.co.za/og-image.jpg'
+  const imageUrl = image || 'https://www.superstack.co.za/ss.png'
 
   return {
     title: fullTitle,
@@ -77,7 +77,7 @@ export function generateCaseStudyStructuredData({
     '@type': 'Article',
     headline: title,
     description: description,
-    image: image || 'https://www.superstack.co.za/og-image.jpg',
+    image: image || 'https://www.superstack.co.za/ss.png',
     datePublished: date,
     dateModified: date,
     author: {
