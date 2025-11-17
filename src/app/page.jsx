@@ -15,23 +15,28 @@ import HeroCTAs from "@/components/HeroCTAs";
 
 function Services() {
     return (
-        <div className="mt-16 sm:mt-24 lg:mt-40 relative">
-            {/* Smooth transition background */}
-            <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-indigo-50/20 to-transparent"></div>
+        <div className="relative pt-24 pb-0">
+            {/* Smooth transition background with new gradient */}
+            <div className="absolute inset-0 -z-10">
+                <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/20 to-blue-50/40"></div>
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:24px_24px] bg-[position:0_0]"></div>
+            </div>
             
             <Container>
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-24">
                     <FadeIn>
-                        <span className="inline-flex items-center gap-2 rounded-full bg-gray-900 px-5 py-2 text-sm font-medium text-gray-400 border border-gray-800 mb-6">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-teal-500/10 via-blue-500/10 to-purple-500/10 border border-blue-300/30 px-5 py-2 text-sm font-semibold mb-6 backdrop-blur-sm">
+                            <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                             </svg>
-                            What We Do
+                            <span className="bg-gradient-to-r from-teal-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+                                What We Do
+                            </span>
                         </span>
                         <h2 className="font-display text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6">
                             Our{" "}
-                            <span className="text-indigo-600">
+                            <span className="bg-gradient-to-r from-teal-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
                                 Services
                             </span>
                         </h2>
@@ -42,13 +47,13 @@ function Services() {
                 </div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {/* AI Agent Development */}
                     <FadeIn>
-                        <div className="group relative bg-gray-900 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-gray-800 hover:shadow-[0_20px_60px_rgba(79,70,229,0.3)] transition-all duration-500 hover:-translate-y-2">
+                        <div className="group relative bg-gradient-to-br from-gray-900 via-gray-900 to-teal-900/20 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-teal-500/20 hover:shadow-[0_20px_60px_rgba(20,184,166,0.4)] hover:border-teal-500/40 transition-all duration-500 hover:-translate-y-2">
                             {/* Icon */}
                             <div className="relative mb-8">
-                                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/25 group-hover:shadow-indigo-500/40 transition-all duration-300">
+                                <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-teal-500/25 group-hover:shadow-teal-500/50 transition-all duration-300">
                                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
@@ -67,26 +72,26 @@ function Services() {
                             {/* Features List */}
                             <ul className="space-y-3 mb-8">
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-teal-400"></div>
                                     <span className="text-sm font-medium text-gray-300">Custom AI Chatbots</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-teal-400"></div>
                                     <span className="text-sm font-medium text-gray-300">Intelligent Automation</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-teal-400"></div>
                                     <span className="text-sm font-medium text-gray-300">Customer Support Bots</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-teal-400"></div>
                                     <span className="text-sm font-medium text-gray-300">Workflow Automation</span>
                                 </li>
                             </ul>
 
                             <a
                                 href="/services/ai-development"
-                                className="inline-flex items-center gap-2 text-indigo-400 font-semibold hover:text-indigo-300 transition-colors group/link"
+                                className="inline-flex items-center gap-2 text-teal-400 font-semibold hover:text-teal-300 transition-colors group/link"
                             >
                                 Learn More
                                 <svg className="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,10 +103,10 @@ function Services() {
 
                     {/* App Development - Now in the middle */}
                     <FadeIn>
-                        <div className="group relative bg-gray-900 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-gray-800 hover:shadow-[0_20px_60px_rgba(79,70,229,0.3)] transition-all duration-500 hover:-translate-y-2">
+                        <div className="group relative bg-gradient-to-br from-gray-900 via-gray-900 to-blue-900/20 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-blue-500/20 hover:shadow-[0_20px_60px_rgba(59,130,246,0.4)] hover:border-blue-500/40 transition-all duration-500 hover:-translate-y-2">
                             {/* Icon */}
                             <div className="relative mb-8">
-                                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/25 group-hover:shadow-indigo-500/40 transition-all duration-300">
+                                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/50 transition-all duration-300">
                                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z M16 4h3a2 2 0 012 2v3" />
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 4H5a2 2 0 00-2 2v3" />
@@ -112,7 +117,7 @@ function Services() {
 
                             <h3 className="font-display text-2xl font-bold text-white mb-4">
                                 App Development
-                                <span className="ml-2 text-sm bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded-full">Popular</span>
+                                <span className="ml-2 text-sm bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full">Popular</span>
                             </h3>
                             <p className="text-gray-300 leading-relaxed mb-8">
                                 Transform your ideas into straightforward web applications using React and Next.js. 
@@ -122,26 +127,26 @@ function Services() {
                             {/* Features List */}
                             <ul className="space-y-3 mb-8">
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-blue-400"></div>
                                     <span className="text-sm font-medium text-gray-300">⚛️ React Web Applications</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-blue-400"></div>
                                     <span className="text-sm font-medium text-gray-300">⚡ Next.js Applications</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-blue-400"></div>
                                     <span className="text-sm font-medium text-gray-300">🐍 Python Backend APIs</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-blue-400"></div>
                                     <span className="text-sm font-medium text-gray-300">📊 Simple Dashboard Tools</span>
                                 </li>
                             </ul>
 
                             <a
                                 href="/services/app-development"
-                                className="inline-flex items-center gap-2 text-indigo-400 font-semibold hover:text-indigo-300 transition-colors group/link"
+                                className="inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 transition-colors group/link"
                             >
                                 Learn More
                                 <svg className="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -153,10 +158,10 @@ function Services() {
 
                     {/* Python Automation */}
                     <FadeIn>
-                        <div className="group relative bg-gray-900 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-gray-800 hover:shadow-[0_20px_60px_rgba(168,85,247,0.3)] transition-all duration-500 hover:-translate-y-2">
+                        <div className="group relative bg-gradient-to-br from-gray-900 via-gray-900 to-purple-900/20 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-purple-500/20 hover:shadow-[0_20px_60px_rgba(168,85,247,0.4)] hover:border-purple-500/40 transition-all duration-500 hover:-translate-y-2">
                             {/* Icon */}
                             <div className="relative mb-8">
-                                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/25 group-hover:shadow-indigo-500/40 transition-all duration-300">
+                                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:shadow-purple-500/50 transition-all duration-300">
                                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                                     </svg>
@@ -176,26 +181,26 @@ function Services() {
                             {/* Features List */}
                             <ul className="space-y-3 mb-8">
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-purple-400"></div>
                                     <span className="text-sm font-medium text-gray-300">Data Processing & ETL</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-purple-400"></div>
                                     <span className="text-sm font-medium text-gray-300">API Integration & Automation</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-purple-400"></div>
                                     <span className="text-sm font-medium text-gray-300">Workflow Automation</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+                                    <div className="w-2 h-2 rounded-full bg-purple-400"></div>
                                     <span className="text-sm font-medium text-gray-300">Custom Python Scripts</span>
                                 </li>
                             </ul>
 
                             <a
                                 href="/services/python-automation"
-                                className="inline-flex items-center gap-2 text-indigo-400 font-semibold hover:text-indigo-300 transition-colors group/link"
+                                className="inline-flex items-center gap-2 text-purple-400 font-semibold hover:text-purple-300 transition-colors group/link"
                             >
                                 Learn More
                                 <svg className="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -282,19 +287,25 @@ function FeaturedProjects() {
     ];
 
     return (
-        <div className="bg-white py-20 sm:py-24">
+        <div className="relative py-20 sm:py-24">
+            <div className="absolute inset-0 -z-10">
+                <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/30 to-purple-50/20"></div>
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:24px_24px] bg-[position:0_0]"></div>
+            </div>
             <Container>
                 {/* Header */}
                 <div className="text-center mb-16">
                     <FadeIn>
-                        <span className="inline-flex items-center gap-2 rounded-full bg-indigo-100 px-4 py-2 text-sm font-semibold text-indigo-700 mb-6">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-teal-500/10 via-blue-500/10 to-purple-500/10 border border-blue-300/30 px-4 py-2 text-sm font-semibold mb-6 backdrop-blur-sm">
+                            <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                             </svg>
-                            Our Work
+                            <span className="bg-gradient-to-r from-teal-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+                                Our Work
+                            </span>
                         </span>
                         <h2 className="font-display text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6">
-                            Featured <span className="bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">Projects</span>
+                            Featured <span className="bg-gradient-to-r from-teal-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
                         </h2>
                         <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
                             Take a look at some of our recent AI and software development projects that have{" "}
@@ -398,13 +409,20 @@ export const metadata = {
 // What is SuperStack Section
 function WhatIsSuperStackSection() {
     return (
-        <div className="relative">
-            {/* Seamless background transition */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-50/50 to-gray-50"></div>
+        <div className="relative pt-24 pb-48">
+            {/* Smooth background without grid - appears grid is below */}
+            <div className="absolute inset-0 -z-10">
+                {/* Solid background base */}
+                <div className="absolute inset-0 bg-gradient-to-b from-blue-50/40 via-blue-50/60 to-purple-50/40"></div>
+                {/* Grid pattern that will be faded in at top and bottom */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:24px_24px] bg-[position:0_0]"></div>
+                {/* Gradient overlay to show grid only at top and bottom */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/95 to-transparent"></div>
+            </div>
             
             <Container className="relative">
                 {/* Main Header */}
-                <div className="text-center mb-16 pt-16 sm:pt-20">
+                <div className="text-center mb-24">
                     <FadeIn>
                         <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                             What is <span className="text-indigo-600">SuperStack</span>?
@@ -417,7 +435,7 @@ function WhatIsSuperStackSection() {
 
                 {/* Main Content Grid */}
                 <div className="max-w-6xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         
                         {/* Who We Are */}
                         <FadeIn>
@@ -490,9 +508,6 @@ function WhatIsSuperStackSection() {
                     </div>
                 </div>
             </Container>
-            
-            {/* Bottom gradient blend */}
-            <div className="h-24 bg-gradient-to-b from-gray-50 to-transparent"></div>
         </div>
     );
 }
@@ -926,50 +941,89 @@ export default async function Home() {
     return (
         <>
             {/* Hero Section */}
-            <div className="relative overflow-hidden pb-16 sm:pb-20 lg:pb-8">
-                {/* Background Elements */}
+            <div className="relative overflow-hidden pb-16 sm:pb-20 lg:pb-8 -mt-32">
+                {/* Enhanced Background Elements with new gradient colors */}
                 <div className="absolute inset-0 -z-10">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-to-r from-gray-200/40 via-gray-100/40 to-gray-200/40 rounded-full blur-3xl"></div>
-                    <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-indigo-200/30 to-indigo-300/30 rounded-full blur-2xl"></div>
-                    <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-indigo-300/20 to-indigo-400/20 rounded-full blur-2xl"></div>
-                    {/* Additional mobile background extension */}
-                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-indigo-100/20 to-transparent sm:hidden"></div>
+                    {/* Main gradient backdrop - Teal to Purple */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-teal-50/50 via-blue-50/30 to-purple-50/50"></div>
+                    
+                    {/* Animated gradient orbs */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] bg-gradient-to-r from-teal-200/30 via-blue-200/30 to-purple-200/30 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-blue-300/40 to-purple-400/40 rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-20 left-10 w-[500px] h-[500px] bg-gradient-to-br from-teal-300/30 to-blue-400/30 rounded-full blur-3xl"></div>
+                    
+                    {/* Grid pattern overlay for tech feel */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:24px_24px] bg-[position:0_0]"></div>
                 </div>
                 
-                <Container className="relative mt-20 sm:mt-24 lg:mt-24">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh]">
-                        <div className="flex flex-col justify-center px-4 lg:px-8 pb-8 sm:pb-12 lg:pb-0">
-                            <FadeIn className="mt-4 sm:mt-0 lg:-mt-8">
-                                <h1 className="font-display text-5xl font-bold tracking-tight text-gray-900 [text-wrap:balance] sm:text-6xl lg:text-7xl xl:text-8xl">
-                                    <span className="block">Build</span>
-                                    <span className="block">
-                                        <span className="text-indigo-600">&</span>
-                                        {" "}Scale
+                <Container className="relative mt-20 sm:mt-24 lg:mt-28">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh]">
+                        <div className="flex flex-col justify-center px-4 lg:px-8 pb-8 sm:pb-12 lg:pb-0 pt-32 sm:pt-20">
+                            <FadeIn className="mt-4 sm:mt-0 lg:mt-0">
+                                <h1 className="font-display text-5xl font-bold tracking-tight text-gray-900 [text-wrap:balance] sm:text-6xl lg:text-7xl xl:text-8xl leading-tight">
+                                    <span className="block bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
+                                        Build The
                                     </span>
-                                    <span className="block text-gray-600 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium">
-                                        Your Business
+                                    <span className="block bg-gradient-to-r from-teal-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+                                        Future
+                                    </span>
+                                    <span className="block text-gray-700 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium mt-2">
+                                        Of Your Business
                                     </span>
                                 </h1>
                                 
-                                <div className="mt-6 mb-2">
-                                    <span className="inline-block text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 tracking-wide">
-                                        With SuperStack
-                                    </span>
-                                </div>
-                                
                                 <p className="mt-8 text-xl text-gray-600 leading-relaxed max-w-2xl">
-                                    We create reliable web applications and intelligent business tools for South African companies. 
-                                    <span className="block mt-2 font-semibold text-indigo-600">
-                                        Your trusted technology partner across South Africa.
-                                    </span>
+                                    SuperStack Development Studio crafts{" "}
+                                    <span className="font-semibold text-gray-900">cutting-edge web applications</span>,{" "}
+                                    <span className="font-semibold text-gray-900">AI-powered solutions</span>, and{" "}
+                                    <span className="font-semibold text-gray-900">intelligent business tools</span>{" "}
+                                    for South African companies ready to scale.
                                 </p>
+                                
+                                {/* Key stats/features inline */}
+                                <div className="mt-8 flex flex-wrap gap-6">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-blue-600 flex items-center justify-center shadow-lg shadow-teal-500/25">
+                                            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div className="text-sm font-bold text-gray-900">Premium Quality</div>
+                                            <div className="text-xs text-gray-600">Service & support</div>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/25">
+                                            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div className="text-sm font-bold text-gray-900">Custom Design</div>
+                                            <div className="text-xs text-gray-600">Project management</div>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center shadow-lg shadow-purple-500/25">
+                                            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div className="text-sm font-bold text-gray-900">Local Team</div>
+                                            <div className="text-xs text-gray-600">Based in SA</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </FadeIn>
                             <HeroCTAs />
                         </div>
                         <div className="relative flex justify-center lg:justify-end pt-4 sm:pt-8 lg:pt-0">
-                            {/* Additional decorative elements */}
-                            <div className="absolute -top-8 -right-8 w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-500 rounded-full blur-xl opacity-60"></div>
-                            <div className="absolute -bottom-8 -left-8 w-20 h-20 bg-gradient-to-br from-indigo-300 to-indigo-400 rounded-full blur-xl opacity-60"></div>
+                            {/* Enhanced decorative elements with new colors */}
+                            <div className="absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full blur-2xl opacity-60 animate-pulse"></div>
+                            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full blur-2xl opacity-60 animate-pulse" style={{animationDelay: '1s'}}></div>
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-br from-purple-300 to-pink-400 rounded-full blur-3xl opacity-40"></div>
                             <TellTheTeam />
                         </div>
                     </div>
@@ -1001,7 +1055,11 @@ export default async function Home() {
 // Industry Expertise Section with Internal Linking
 function IndustryExpertiseSection() {
     return (
-        <div className="bg-gradient-to-b from-gray-50 to-white py-24 sm:py-32">
+        <div className="relative py-24 sm:py-32">
+            <div className="absolute inset-0 -z-10">
+                <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white"></div>
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:24px_24px] bg-[position:0_0]"></div>
+            </div>
             <Container>
                 <FadeIn>
                     <div className="text-center mb-16">

@@ -7,101 +7,67 @@ export function Logomark({ invert = false, filled = false, ...props }) {
   return (
     <svg viewBox="0 0 48 48" aria-hidden="true" {...props}>
       <defs>
-        <clipPath id={`${id}-shield`}>
-          <path d="M 24 4 C 18 4 12 6 8 10 C 8 20 12 32 24 44 C 36 32 40 20 40 10 C 36 6 30 4 24 4 Z" />
-        </clipPath>
-        <linearGradient id={`${id}-gradient`} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#DE3831" />
-          <stop offset="25%" stopColor="#002395" />
-          <stop offset="50%" stopColor="#007A3D" />
-          <stop offset="75%" stopColor="#FFB612" />
-          <stop offset="100%" stopColor="#DE3831" />
+        {/* Horizontal gradient for the stacked bars - matching the image exactly */}
+        <linearGradient id={`${id}-gradient-top`} x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#00d9ff" />
+          <stop offset="100%" stopColor="#3b82f6" />
         </linearGradient>
-        <linearGradient id={`${id}-shield-bg`} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#1e40af" />
-          <stop offset="100%" stopColor="#1e3a8a" />
+        <linearGradient id={`${id}-gradient-middle`} x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#3b82f6" />
+          <stop offset="100%" stopColor="#8b5cf6" />
+        </linearGradient>
+        <linearGradient id={`${id}-gradient-bottom`} x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#a855f7" />
+          <stop offset="100%" stopColor="#d946ef" />
         </linearGradient>
       </defs>
       
-      {/* Superman-style shield shape with SA colors */}
-      <path 
-        d="M 24 4 C 18 4 12 6 8 10 C 8 20 12 32 24 44 C 36 32 40 20 40 10 C 36 6 30 4 24 4 Z" 
-        fill={`url(#${id}-shield-bg)`}
-        stroke="rgba(255,255,255,0.3)"
-        strokeWidth="1"
+      {/* Rounded square background - dark navy blue */}
+      <rect 
+        x="2" 
+        y="2" 
+        width="44" 
+        height="44" 
+        rx="12"
+        fill="#1a2332"
+        className="transition-all duration-300"
       />
       
-      {/* South African flag inspired pattern within shield */}
-      <g clipPath={`url(#${id}-shield)`}>
-        {/* Blue section (top) */}
-        <path
-          d="M 8 10 L 40 10 L 24 20 Z"
-          fill="#002395"
-          opacity="0.8"
+      {/* Three centered pill-shaped bars with vibrant gradients */}
+      <g className="transition-all duration-300">
+        {/* Top bar - Cyan to Blue gradient - longest */}
+        <rect 
+          x="11" 
+          y="13" 
+          width="26" 
+          height="5.5" 
+          rx="2.75"
+          fill={`url(#${id}-gradient-top)`}
+          className="transition-all duration-300"
         />
         
-        {/* Red section (right) */}
-        <path
-          d="M 40 10 L 40 28 L 24 20 Z"
-          fill="#DE3831"
-          opacity="0.8"
+        {/* Middle bar - Blue to Purple gradient - medium */}
+        <rect 
+          x="11" 
+          y="21.25" 
+          width="22" 
+          height="5.5" 
+          rx="2.75"
+          fill={`url(#${id}-gradient-middle)`}
+          className="transition-all duration-300"
         />
         
-        {/* Green section (bottom-right) */}
-        <path
-          d="M 40 28 L 24 36 L 24 20 Z"
-          fill="#007A3D"
-          opacity="0.8"
-        />
-        
-        {/* Yellow section (bottom-left) */}
-        <path
-          d="M 24 36 L 8 28 L 24 20 Z"
-          fill="#FFB612"
-          opacity="0.8"
-        />
-        
-        {/* Black section (left) */}
-        <path
-          d="M 8 28 L 8 10 L 24 20 Z"
-          fill="#000000"
-          opacity="0.7"
-        />
-        
-        {/* White dividing lines */}
-        <path
-          d="M 8 10 L 24 20 L 8 28"
-          fill="none"
-          stroke="white"
-          strokeWidth="1"
-          opacity="0.6"
-        />
-        <path
-          d="M 24 10 L 24 20 L 40 28"
-          fill="none"
-          stroke="white"
-          strokeWidth="1"
-          opacity="0.6"
+        {/* Bottom bar - Purple to Pink gradient - shortest */}
+        <rect 
+          x="11" 
+          y="29.5" 
+          width="18" 
+          height="5.5" 
+          rx="2.75"
+          fill={`url(#${id}-gradient-bottom)`}
+          className="transition-all duration-300"
         />
       </g>
-      
-      {/* Superman-style diamond/shield background for S */}
-      <path
-        d="M 24 12 L 32 18 L 32 26 L 24 32 L 16 26 L 16 18 Z"
-        fill="white"
-        stroke="rgba(0,0,0,0.1)"
-        strokeWidth="0.5"
-        opacity="0.95"
-      />
-      
-      {/* Stylized Superman-inspired S */}
-      <path
-        d="M 28 17 C 28 16 27 15 26 15 L 20 15 C 19 15 18 16 18 17 C 18 18 19 19 20 19 L 24 19 C 25 19 26 20 26 21 C 26 22 25 23 24 23 L 22 23 C 21 23 20 24 20 25 C 20 26 21 27 22 27 L 28 27 C 29 27 30 26 30 25 C 30 24 29 23 28 23 L 24 23 C 23 23 22 22 22 21 C 22 20 23 19 24 19 L 26 19 C 27 19 28 18 28 17 Z"
-        className="fill-neutral-900"
-        style={{
-          filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))'
-        }}
-      />
     </svg>
   )
 }
@@ -115,7 +81,7 @@ export function Logo({
 }) {
   return (
     <svg
-      viewBox="0 0 220 48"
+      viewBox="0 0 280 48"
       aria-hidden="true"
       className={clsx(fillOnHover && 'group/logo', className)}
       {...props}
@@ -125,33 +91,42 @@ export function Logo({
         invert={invert}
         filled={filled}
       />
+      
+      {/* SuperStack text - darker, bold */}
       <text
         x="60"
-        y="32"
+        y="28"
         className={clsx(
           'transition-all duration-300',
-          invert ? 'fill-white' : 'fill-neutral-950'
+          invert ? 'fill-white' : 'fill-gray-900'
         )}
         style={{
-          fontSize: '22px',
+          fontSize: '24px',
           fontFamily: 'Inter, system-ui, sans-serif',
-          fontWeight: '800',
-          letterSpacing: '-0.8px',
-          filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))'
+          fontWeight: '700',
+          letterSpacing: '-0.5px',
         }}
       >
         SuperStack
       </text>
       
-      {/* Subtle superhero-style underline accent */}
-      <path
-        d="M 60 36 Q 140 34 160 36"
-        fill="none"
-        stroke={invert ? "rgba(255,255,255,0.3)" : "rgba(59,130,246,0.4)"}
-        strokeWidth="2"
-        strokeLinecap="round"
-        className="transition-all duration-300"
-      />
+      {/* Subtitle text - "Development Studio" in gray */}
+      <text
+        x="60"
+        y="40"
+        className={clsx(
+          'transition-all duration-300',
+          invert ? 'fill-white/80' : 'fill-gray-500'
+        )}
+        style={{
+          fontSize: '11px',
+          fontFamily: 'Inter, system-ui, sans-serif',
+          fontWeight: '500',
+          letterSpacing: '0.5px',
+        }}
+      >
+        Development Studio
+      </text>
     </svg>
   )
 }

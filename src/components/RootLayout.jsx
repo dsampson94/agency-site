@@ -11,6 +11,7 @@ import {Container} from '@/components/Container'
 import Footer from '@/components/Footer'
 import {GridPattern} from '@/components/GridPattern'
 import {SocialMedia} from '@/components/SocialMedia'
+import {Logomark} from '@/components/Logo'
 
 const RootLayoutContext = createContext(null)
 
@@ -52,11 +53,9 @@ function Header({
                     className="group"
                 >
                     <div className="flex items-center gap-3">
-                        {/* Logo Icon */}
-                        <div className="relative">
-                            <div className="w-10 h-10 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl flex items-center justify-center shadow-lg border border-gray-700 group-hover:border-gray-600 transition-all duration-300">
-                                <span className="text-white font-bold text-lg">S</span>
-                            </div>
+                        {/* Logo Icon - with colorful stacked bars */}
+                        <div className="relative w-10 h-10">
+                            <Logomark className="w-full h-full" />
                         </div>
                         
                         {/* Logo Text */}
@@ -77,15 +76,10 @@ function Header({
                     </div>
                 </Link>
                 <div className="flex items-center gap-x-8">
-                    <Button 
-                        href="https://cal.com/superstack/consultation" 
-                        invert={invert} 
-                        className="hidden sm:block"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Book Consultation
-                    </Button>
+                    <div className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-600 to-emerald-600 text-white text-sm font-semibold shadow-sm">
+                        <img src="/saflagbadge.png" alt="South African Flag" className="w-6 h-6 rounded-full object-cover" />
+                        <span>Proudly South African</span>
+                    </div>
                     <button
                         ref={toggleRef}
                         type="button"
@@ -180,7 +174,7 @@ function RootLayoutInner({children}) {
         <MotionConfig transition={shouldReduceMotion ? {duration: 0} : undefined}>
             <header>
                 <div
-                    className="absolute left-0 right-0 top-2 z-40 pt-14"
+                    className="absolute left-0 right-0 top-2 z-40 pt-14 bg-transparent"
                     aria-hidden={expanded ? 'true' : undefined}
                     inert={false}
                 >
@@ -202,7 +196,7 @@ function RootLayoutInner({children}) {
                     layout
                     id={panelId}
                     style={{height: expanded ? 'auto' : '0.5rem'}}
-                    className="relative z-50 overflow-hidden bg-neutral-950 pt-2"
+                    className="relative z-50 overflow-hidden bg-transparent pt-2"
                     aria-hidden={expanded ? undefined : 'true'}
                     inert={false}
                 >
@@ -252,7 +246,7 @@ function RootLayoutInner({children}) {
             <motion.div
                 layout
                 style={{borderTopLeftRadius: 40, borderTopRightRadius: 40}}
-                className="relative flex flex-auto overflow-hidden bg-gray-200 pt-14"
+                className="relative flex flex-auto overflow-hidden bg-white pt-14"
             >
                 <motion.div
                     layout
