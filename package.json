@@ -29,7 +29,7 @@
     "acorn-jsx": "^5.3.2",
     "autoprefixer": "^10.4.7",
     "axios": "^1.8.4",
-    "bcryptjs": "^3.0.2",
+    "bcryptjs": "^3.0.3",
     "clsx": "^2.1.0",
     "contxt": "^1.4.4",
     "escape-string-regexp": "^5.0.0",
