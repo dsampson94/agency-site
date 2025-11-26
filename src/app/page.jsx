@@ -397,7 +397,7 @@ export const metadata = {
         type: 'website',
         images: [
             {
-                url: 'https://www.superstack.co.za/ss.png',
+                url: 'https://www.superstack.co.za/ss-logo.png',
                 width: 1200,
                 height: 630,
                 alt: 'SuperStack Dev Studio - South Africa',
@@ -980,10 +980,7 @@ export default async function Home() {
                             <FadeIn className="mt-4 sm:mt-0 lg:mt-0">
                                 <h1 className="font-display text-5xl font-bold tracking-tight text-gray-900 [text-wrap:balance] sm:text-6xl lg:text-7xl xl:text-8xl leading-tight">
                                     <span className="block bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
-                                        Build The
-                                    </span>
-                                    <span className="block bg-gradient-to-r from-teal-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
-                                        Future
+                                        Build The Future
                                     </span>
                                     <span className="block text-gray-700 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium mt-2">
                                         Of Your Business
