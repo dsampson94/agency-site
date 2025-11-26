@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Cover - SuperStack</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f0f0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        }
+        
+        .cover-container {
+            width: 1584px;
+            height: 396px;d
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        }
+        
+        /* Animated gradient overlay */
+        .gradient-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, 
+                rgba(14, 165, 233, 0.3) 0%, 
+                rgba(99, 102, 241, 0.4) 25%,
+                rgba(168, 85, 247, 0.4) 50%,
+                rgba(236, 72, 153, 0.3) 75%,
+                rgba(249, 115, 22, 0.2) 100%
+            );
+            opacity: 0.6;
+        }
+        
+        /* Tech grid pattern */
+        .grid-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.4;
+        }
+        
+        /* Floating geometric shapes */
+        .shapes {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+        
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            border: 2px solid white;
+        }
+        
+        .shape-1 {
+            width: 150px;
+            height: 150px;
+            border-radius: 30px;
+            top: -50px;
+            left: 10%;
+            transform: rotate(45deg);
+        }
+        
+        .shape-2 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            bottom: -30px;
+            right: 15%;
+        }
+        
+        .shape-3 {
+            width: 200px;
+            height: 200px;
+            border-radius: 40px;
+            top: 50%;
+            right: -80px;
+            transform: translateY(-50%) rotate(30deg);
+        }
+        
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 80px;
+        }
+        
+        .left-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo-container {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo {
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+        }
+        
+        .brand-name {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .brand-name h1 {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -2px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .brand-name .tagline {
+            font-size: 20px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.95);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .features {
+            display: flex;
+            gap: 40px;
+            margin-top: 10px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .feature-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        
+        .feature-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .right-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 16px;
+        }
+        
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta {
+            background: white;
+            color: #5b21b6;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s;
+        }
+        
+        .cta:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Glow effects */
+        .glow-1 {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+            top: -100px;
+            left: -100px;
+            border-radius: 50%;
+        }
+        
+        .glow-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, transparent 70%);
+            bottom: -150px;
+            right: -150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="cover-container">
+        <!-- Background effects -->
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+        <div class="gradient-overlay"></div>
+        <div class="grid-pattern"></div>
+        
+        <!-- Geometric shapes -->
+        <div class="shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        
+        <!-- Main content -->
+        <div class="content">
+            <div class="left-section">
+                <div class="logo-section">
+                    <div class="logo-container">
+                        <img src="/ss-logo.png" alt="SuperStack Logo" class="logo">
+                    </div>
+                    <div class="brand-name">
+                        <h1>SuperStack</h1>
+                        <span class="tagline">Development Studio</span>
+                    </div>
+                </div>
+                
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <span class="feature-text">AI-Powered</span>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🚀</div>
+                        <span class="feature-text">Next.js & React</span>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🇿🇦</div>
+                        <span class="feature-text">Built in SA</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-section">
+                <div class="tech-badge">Full Stack Solutions</div>
+                <div class="tech-badge">Web • Mobile • AI</div>
+                <a href="https://www.superstack.co.za" class="cta">superstack.co.za</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Instructions for saving
+        console.log('To save this as an image:');
+        console.log('1. Right-click the cover and "Inspect Element"');
+        console.log('2. Take a screenshot of the exact 1584x396px area');
+        console.log('Or use browser extensions like "Full Page Screen Capture"');
+    </script>
+</body>
+</html>
