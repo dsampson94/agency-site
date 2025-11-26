@@ -22,6 +22,7 @@ export default function TellTheTeam() {
     const [errorMessage, setErrorMessage] = useState('')
     const [cooldownSeconds, setCooldownSeconds] = useState(0)
     const [browserSupported, setBrowserSupported] = useState(true)
+    const [emailCopied, setEmailCopied] = useState(false)
 
     const mediaRecorderRef = useRef<MediaRecorder | null>(null)
     const audioChunksRef = useRef<Blob[]>([])
@@ -149,6 +150,26 @@ export default function TellTheTeam() {
         setRecordingPhase('ready')
     }
 
+    // Copy email to clipboard
+    const handleCopyEmail = async () => {
+        const email = 'david.sampson@superstack.co.za'
+        try {
+            await navigator.clipboard.writeText(email)
+            setEmailCopied(true)
+            setTimeout(() => setEmailCopied(false), 2000)
+        } catch (err) {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea')
+            textArea.value = email
+            document.body.appendChild(textArea)
+            textArea.select()
+            document.execCommand('copy')
+            document.body.removeChild(textArea)
+            setEmailCopied(true)
+            setTimeout(() => setEmailCopied(false), 2000)
+        }
+    }
+
     // Start cooldown after successful submission
     const startCooldown = () => {
         setSubmissionStatus('cooldown')
@@ -258,14 +279,14 @@ export default function TellTheTeam() {
     }
 
     return (
-        <div className="relative w-full max-w-md mt-4 sm:mt-2 md:mt-0 lg:-mt-16 mx-auto px-4 lg:px-8 mb-4 sm:mb-2 md:mb-0 lg:mb-0">
+        <div className="relative w-full max-w-2xl mt-4 sm:mt-2 md:mt-0 lg:-mt-16 mx-auto px-4 lg:px-8 mb-4 sm:mb-2 md:mb-0 lg:mb-0">
             {/* Soft background extension for mobile */}
             <div className="absolute -inset-x-8 -inset-y-8 bg-gradient-to-b from-indigo-50/30 via-white/40 to-transparent rounded-3xl blur-xl sm:hidden"></div>
             
             {/* Neumorphic Container */}
-            <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-4 sm:p-6 shadow-[16px_16px_40px_#d1d9e6,-16px_-16px_40px_#ffffff] border border-white/20 backdrop-blur-sm">
+            <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[16px_16px_40px_#d1d9e6,-16px_-16px_40px_#ffffff] border border-white/20 backdrop-blur-sm">
                 {/* Header Section */}
-                <div className="text-center mb-4 sm:mb-6">
+                <div className="text-center mb-6 sm:mb-8">
                     <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-xl shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff] mb-2 sm:mb-3">
                         <svg className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
@@ -332,32 +353,7 @@ export default function TellTheTeam() {
 
                         {/* Voice Recording Section */}
                         {recordingPhase === 'ready' && (
-                            <div className="text-center">
-                                <button
-                                    onClick={handleRecord}
-                                    disabled={!browserSupported || submissionStatus === 'submitting' || !userEmail.trim() || !isValidEmail(userEmail)}
-                                    className={`relative group w-full rounded-xl py-2.5 sm:py-3 px-3 sm:px-4 text-sm font-semibold transition-all duration-300 ${
-                                        isRecording 
-                                            ? 'bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff]' 
-                                            : !browserSupported || !userEmail.trim() || !isValidEmail(userEmail)
-                                            ? 'bg-gradient-to-br from-gray-200 to-gray-300 text-gray-400 cursor-not-allowed shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff]'
-                                            : 'bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] active:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff]'
-                                    }`}
-                                >
-                                    <div className="flex items-center justify-center gap-2">
-                                        {isRecording ? (
-                                            <>
-                                                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                                                <span>Recording... Click to Stop</span>
-                                            </>
-                                        ) : (
-                                            <>
-                                                <span>🎤 Record Your Vision</span>
-                                            </>
-                                        )}
-                                    </div>
-                                </button>
-                            </div>
+                            <div className="hidden"></div>
                         )}
 
                         {/* Recorded Audio Controls */}
@@ -393,12 +389,37 @@ export default function TellTheTeam() {
                         )}
 
                         {/* Submit Buttons */}
-                        <div className="flex justify-center">
-                            <div className="grid grid-cols-2 gap-3 max-w-sm w-full px-4">
+                        <div className="space-y-3">
+                            <div className="grid grid-cols-2 gap-3">
+                                <button
+                                    onClick={handleRecord}
+                                    disabled={!browserSupported || submissionStatus === 'submitting' || !userEmail.trim() || !isValidEmail(userEmail)}
+                                    className={`relative group rounded-xl py-3 px-4 text-sm font-semibold transition-all duration-300 ${
+                                        isRecording 
+                                            ? 'bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff]' 
+                                            : !browserSupported || !userEmail.trim() || !isValidEmail(userEmail)
+                                            ? 'bg-gradient-to-br from-gray-200 to-gray-300 text-gray-400 cursor-not-allowed shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff]'
+                                            : 'bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] active:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff]'
+                                    }`}
+                                >
+                                    <div className="flex items-center justify-center gap-2">
+                                        {isRecording ? (
+                                            <>
+                                                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                                                <span>Recording...</span>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <span>🎤 Record</span>
+                                            </>
+                                        )}
+                                    </div>
+                                </button>
+
                                 <button
                                     onClick={handleSubmit}
                                     disabled={submissionStatus === 'submitting' || (!transcript && !audioURL)}
-                                    className={`rounded-xl py-2 px-4 text-sm font-semibold transition-all duration-300 ${
+                                    className={`rounded-xl py-3 px-4 text-sm font-semibold transition-all duration-300 ${
                                         submissionStatus === 'submitting' || submissionStatus === 'cooldown' || (!transcript && !audioURL)
                                             ? 'bg-gradient-to-br from-gray-200 to-gray-300 text-gray-400 cursor-not-allowed shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff]'
                                             : 'bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] active:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff]'
@@ -413,17 +434,24 @@ export default function TellTheTeam() {
                                     ) : submissionStatus === 'cooldown' ? (
                                         `Wait ${cooldownSeconds}s`
                                     ) : (
-                                        '🚀 Send Vision'
+                                        '🚀 Send'
                                     )}
                                 </button>
-                                
-                                <a
-                                    href="mailto:david.sampson@superstack.co.za?subject=Project Vision Discussion&body=Hi SuperStack team,%0A%0AI'd like to discuss my project vision with you.%0A%0AProject Details:%0A-%20%0A-%20%0A-%20%0A%0AThanks!"
-                                    className="rounded-xl py-2 px-4 text-sm font-semibold transition-all duration-300 bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-700 text-center flex items-center justify-center shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff]"
-                                >
-                                    📧 Just Email Us
-                                </a>
                             </div>
+                            
+                            <button
+                                onClick={handleCopyEmail}
+                                className="w-full bg-gradient-to-br from-gray-50 to-white rounded-xl p-3 shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff] border border-gray-200/50 hover:shadow-[inset_8px_8px_16px_#e3e9f0,inset_-8px_-8px_16px_#ffffff] transition-all duration-300 flex items-center justify-center gap-2"
+                            >
+                                <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                {emailCopied ? (
+                                    <span className="text-sm text-emerald-600 font-medium">✓ Copied!</span>
+                                ) : (
+                                    <span className="text-sm text-gray-700 font-medium">EMAIL US - david.sampson@superstack.co.za</span>
+                                )}
+                            </button>
                         </div>
                     </div>
                 )}

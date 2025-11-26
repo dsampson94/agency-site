@@ -111,7 +111,7 @@ export default function WebDevelopmentCapeTown() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
-                href="https://cal.com/superstack/consultation"
+                href="https://calendly.com/davesampson15/30min"
                 className="bg-indigo-600 text-white px-6 py-3 rounded-lg inline-block hover:bg-indigo-700 text-center"
               >
                 Book Free Consultation

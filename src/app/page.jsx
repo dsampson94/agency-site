@@ -580,7 +580,7 @@ function AIAssistantsSection() {
                         
                         <FadeIn className="mt-8">
                             <a
-                                href="https://cal.com/superstack/consultation"
+                                href="https://calendly.com/davesampson15/30min"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
@@ -840,7 +840,7 @@ function MobileWebSection() {
                         
                         <FadeIn className="mt-8">
                             <a
-                                href="https://cal.com/superstack/consultation"
+                                href="https://calendly.com/davesampson15/30min"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"

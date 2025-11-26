@@ -5,7 +5,7 @@ import { conversions } from '@/lib/googleAds';
 
 // Hero CTA Buttons Component
 export default function HeroCTAs() {
-    const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL || "https://cal.com/superstack/consultation";
+    const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL || "https://calendly.com/davesampson15/30min";
     
     const handleBookingClick = () => {
         // Track Google Ads conversion

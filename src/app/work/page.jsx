@@ -205,7 +205,7 @@ function TechStack() {
     <div className="mt-24 sm:mt-32">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-neutral-950 text-center mb-16">
-          Our Technology Stack
+          Some of Our Favorite Tech Choices
         </h2>
       </FadeIn>
       <FadeInStagger>

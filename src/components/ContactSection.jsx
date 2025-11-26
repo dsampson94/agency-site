@@ -30,7 +30,7 @@ export function ContactSection() {
             </h2>
             <div className="mt-6 flex">
               <Button 
-                href="https://cal.com/superstack/consultation" 
+                href="https://calendly.com/davesampson15/30min" 
                 invert
                 target="_blank"
                 rel="noopener noreferrer"
