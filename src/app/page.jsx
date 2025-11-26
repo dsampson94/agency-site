@@ -378,7 +378,7 @@ function SuperStackJourney() {
 }
 
 export const metadata = {
-    title: 'Web Development Company South Africa | SuperStack Technology Partner',
+    title: 'SuperStack Development Studio - Software Partner in South Africa',
     description:
         'Leading web development company in South Africa. Custom React applications, business automation, and software solutions for South African businesses. Your trusted technology partner across SA.',
     keywords: [
@@ -392,7 +392,7 @@ export const metadata = {
         'South African web development'
     ],
     openGraph: {
-        title: 'Web Development Company South Africa | SuperStack Technology Partner',
+        title: 'SuperStack Dev Studio - Your Technology Partner in South Africa',
         description: 'Leading web development company in South Africa. Custom React applications and business solutions for South African businesses.',
         type: 'website',
         images: [
@@ -400,7 +400,7 @@ export const metadata = {
                 url: 'https://www.superstack.co.za/ss.png',
                 width: 1200,
                 height: 630,
-                alt: 'SuperStack - Web Development Company South Africa',
+                alt: 'SuperStack Dev Studio - South Africa',
             },
         ],
     },
@@ -595,40 +595,58 @@ function AIAssistantsSection() {
                     
                     <div className="relative lg:pl-8">
                         <FadeIn>
-                            <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
-                                <div className="space-y-4">
-                                    <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
-                                        <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <p className="font-medium text-gray-900">Hi! I'm here to help you find the perfect solution.</p>
-                                            <p className="text-sm text-gray-500">How can we boost your sales today?</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                                        <div className="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center">
-                                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <p className="text-gray-700">I need an AI system to handle customer inquiries and generate more leads</p>
+                            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 max-w-xl">
+                                <div className="space-y-3">
+                                    {/* Assistant Message - Stacked on top */}
+                                    <div className="relative">
+                                        <div className="absolute -left-2 top-0 bottom-0 w-1 bg-blue-500 rounded-full"></div>
+                                        <div className="ml-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl rounded-tl-sm p-4 shadow-sm border border-blue-100">
+                                            <div className="flex items-start gap-3">
+                                                <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                                                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                                    </svg>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <p className="font-semibold text-gray-900 mb-1">Hi! I'm here to help you find the perfect solution.</p>
+                                                    <p className="text-sm text-gray-600">How can we boost your sales today?</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     
-                                    <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
-                                        <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>
+                                    {/* User Message - Stacked in middle */}
+                                    <div className="relative -mt-1">
+                                        <div className="absolute -left-2 top-0 bottom-0 w-1 bg-gray-400 rounded-full"></div>
+                                        <div className="ml-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl rounded-tl-sm p-4 shadow-sm border border-gray-200">
+                                            <div className="flex items-start gap-3">
+                                                <div className="w-10 h-10 bg-gray-400 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                                                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                                    </svg>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <p className="text-gray-800">I need an AI system to handle customer inquiries and generate more leads</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <p className="font-medium text-gray-900">Perfect! Our AI solutions can increase lead conversion by up to 40%.</p>
-                                            <p className="text-sm text-gray-500">Let's schedule a demo to show you exactly how.</p>
+                                    </div>
+                                    
+                                    {/* Success Message - Stacked at bottom */}
+                                    <div className="relative -mt-1">
+                                        <div className="absolute -left-2 top-0 bottom-0 w-1 bg-green-500 rounded-full"></div>
+                                        <div className="ml-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl rounded-tl-sm p-4 shadow-sm border border-green-200">
+                                            <div className="flex items-start gap-3">
+                                                <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                                                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <p className="font-semibold text-gray-900 mb-1">Perfect! Our AI solutions can increase lead conversion by up to 40%.</p>
+                                                    <p className="text-sm text-gray-600">Let's schedule a demo to show you exactly how.</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

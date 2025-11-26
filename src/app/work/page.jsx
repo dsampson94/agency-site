@@ -208,16 +208,17 @@ function TechStack() {
           Some of Our Favorite Tech Choices
         </h2>
       </FadeIn>
+      
       <FadeInStagger>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {Object.entries(groupedTech).map(([category, techs]) => (
             <FadeIn key={category}>
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100">
+              <div className="bg-white rounded-xl p-6 border border-neutral-200">
                 <h3 className="font-semibold text-neutral-950 mb-4">{category}</h3>
                 <div className="space-y-2">
                   {techs.map((tech) => (
-                    <div key={tech} className="flex items-center">
-                      <div className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
+                    <div key={tech} className="flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 bg-neutral-950 rounded-full"></div>
                       <span className="text-neutral-600">{tech}</span>
                     </div>
                   ))}
