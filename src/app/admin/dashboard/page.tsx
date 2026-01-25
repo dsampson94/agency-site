@@ -245,7 +245,7 @@ export default function AdminDashboard() {
                                 </div>
                                 <div className="flex items-center gap-2">
                                   <button
-                                    onClick={() => copyTranscript(enquiry.transcript)}
+                                    onClick={() => copyTranscript(enquiry.transcript || '')}
                                     className="text-blue-600 hover:text-blue-800 text-xs font-medium flex items-center"
                                     title="Copy transcript"
                                   >

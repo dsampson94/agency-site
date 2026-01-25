@@ -279,40 +279,40 @@ export default function TellTheTeam() {
     }
 
     return (
-        <div className="relative w-full max-w-2xl mt-4 sm:mt-2 md:mt-0 lg:-mt-16 mx-auto px-4 lg:px-8 mb-4 sm:mb-2 md:mb-0 lg:mb-0">
+        <div className="relative w-full max-w-2xl mt-6 sm:mt-4 md:mt-2 lg:-mt-16 mx-auto px-2 sm:px-4 lg:px-8 mb-6 sm:mb-4 md:mb-2 lg:mb-0">
             {/* Soft background extension for mobile */}
-            <div className="absolute -inset-x-8 -inset-y-8 bg-gradient-to-b from-indigo-50/30 via-white/40 to-transparent rounded-3xl blur-xl sm:hidden"></div>
+            <div className="absolute -inset-x-4 sm:-inset-x-8 -inset-y-6 sm:-inset-y-8 bg-gradient-to-b from-indigo-50/30 via-white/40 to-transparent rounded-3xl blur-xl sm:blur-xl"></div>
             
             {/* Neumorphic Container */}
-            <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[16px_16px_40px_#d1d9e6,-16px_-16px_40px_#ffffff] border border-white/20 backdrop-blur-sm">
+            <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-[12px_12px_32px_#d1d9e6,-12px_-12px_32px_#ffffff] sm:shadow-[16px_16px_40px_#d1d9e6,-16px_-16px_40px_#ffffff] border border-white/20 backdrop-blur-sm">
                 {/* Header Section */}
-                <div className="text-center mb-6 sm:mb-8">
-                    <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-xl shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff] mb-2 sm:mb-3">
-                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="text-center mb-4 sm:mb-6 md:mb-8">
+                    <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-xl shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff] mb-2 sm:mb-3">
+                        <svg className="w-6 h-6 sm:w-7 sm:h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                         </svg>
                     </div>
-                    <h2 className="font-display text-lg sm:text-xl font-bold text-gray-800 mb-1 sm:mb-2">Share Your Vision</h2>
-                    <p className="text-gray-600 text-xs leading-relaxed px-2 sm:px-0">
-                        Record a quick voice note to share your project vision.<br/>
-                        <span className="text-indigo-600 font-medium">We&apos;ll turn your ideas into reality.</span>
+                    <h2 className="font-display text-xl sm:text-2xl md:text-xl font-bold text-gray-800 mb-1 sm:mb-2">Share Your Vision</h2>
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed px-0 sm:px-2">
+                        Record a quick voice note to share your project vision.<br className="hidden sm:block"/>
+                        <span className="block sm:inline"><span className="text-indigo-600 font-medium">We&apos;ll turn your ideas into reality.</span></span>
                     </p>
                 </div>
 
                 {recordingPhase === 'submitted' && submissionStatus === 'success' ? (
                     <div className="text-center">
-                        <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-xl p-4 shadow-[inset_6px_6px_12px_#e8f5e8,inset_-6px_-6px_12px_#ffffff] border border-green-200/50">
-                            <div className="inline-flex items-center justify-center w-10 h-10 bg-green-500 rounded-full mb-3">
-                                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-xl p-4 sm:p-5 shadow-[inset_6px_6px_12px_#e8f5e8,inset_-6px_-6px_12px_#ffffff] border border-green-200/50">
+                            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-green-500 rounded-full mb-3">
+                                <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                 </svg>
                             </div>
-                            <h3 className="font-bold text-green-800 mb-1 text-sm">Vision Received! 🚀</h3>
-                            <p className="text-green-700 text-xs">We&apos;ll analyze your vision and get back to you within 24 hours.</p>
+                            <h3 className="font-bold text-green-800 mb-1 text-base sm:text-lg">Vision Received! 🚀</h3>
+                            <p className="text-green-700 text-sm sm:text-base">We&apos;ll analyze your vision and get back to you within 24 hours.</p>
                         </div>
                     </div>
                 ) : (
-                    <div className="space-y-3 sm:space-y-4">
+                    <div className="space-y-4 sm:space-y-5">
                         {/* Honeypot field - hidden from users but visible to bots */}
                         <input
                             type="text"
@@ -326,19 +326,19 @@ export default function TellTheTeam() {
 
                         {/* Email Input - Neumorphic */}
                         <div className="relative">
-                            <label className="block text-xs font-medium text-gray-700 mb-1.5">Email Address</label>
+                            <label className="block text-sm sm:text-base font-medium text-gray-700 mb-2">Email Address</label>
                             <input
                                 type="email"
                                 placeholder="your@email.com"
                                 value={userEmail}
                                 onChange={(e) => setUserEmail(e.target.value)}
-                                className={`w-full rounded-xl bg-gradient-to-br from-gray-50 to-white py-2.5 sm:py-3 px-3 sm:px-4 text-sm text-gray-800 placeholder:text-gray-400 shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff] border border-gray-200/50 focus:outline-none focus:ring-2 focus:ring-indigo-400/30 focus:border-indigo-300 transition-all duration-300 ${
+                                className={`w-full rounded-xl bg-gradient-to-br from-gray-50 to-white py-3 sm:py-3.5 px-4 sm:px-5 text-base sm:text-lg text-gray-800 placeholder:text-gray-400 shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff] border border-gray-200/50 focus:outline-none focus:ring-2 focus:ring-indigo-400/30 focus:border-indigo-300 transition-all duration-300 ${
                                     userEmail && !isValidEmail(userEmail) ? 'border-red-300 ring-red-200/50' : ''
                                 }`}
                                 disabled={submissionStatus === 'submitting'}
                             />
                             {userEmail && !isValidEmail(userEmail) && (
-                                <p className="text-red-500 text-xs mt-1">Please enter a valid email address</p>
+                                <p className="text-red-500 text-sm sm:text-base mt-2">Please enter a valid email address</p>
                             )}
                         </div>
 
@@ -358,15 +358,15 @@ export default function TellTheTeam() {
 
                         {/* Recorded Audio Controls */}
                         {recordingPhase === 'recorded' && audioURL && (
-                            <div className="space-y-4">
-                                <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-4 shadow-[inset_8px_8px_16px_#e3e9f0,inset_-8px_-8px_16px_#ffffff] border border-gray-200/50">
-                                    <div className="flex items-center gap-3 mb-3">
-                                        <div className="flex-1">
-                                            <audio controls src={audioURL} className="w-full rounded-lg" style={{filter: 'sepia(0.2) contrast(1.1)'}}/>
+                            <div className="space-y-4 sm:space-y-5">
+                                <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-4 sm:p-5 shadow-[inset_8px_8px_16px_#e3e9f0,inset_-8px_-8px_16px_#ffffff] border border-gray-200/50">
+                                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-3">
+                                        <div className="flex-1 w-full">
+                                            <audio controls src={audioURL} className="w-full rounded-lg" style={{filter: 'sepia(0.2) contrast(1.1)'}} preload="metadata"/>
                                         </div>
                                         <button
                                             onClick={handleReRecord}
-                                            className="py-2 px-4 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-700 transition-all duration-300 text-sm whitespace-nowrap shadow-[4px_4px_8px_#d1d9e6,-4px_-4px_8px_#ffffff] hover:shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff]"
+                                            className="w-full sm:w-auto py-2.5 sm:py-2 px-4 sm:px-4 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-700 transition-all duration-300 text-sm sm:text-base whitespace-nowrap shadow-[4px_4px_8px_#d1d9e6,-4px_-4px_8px_#ffffff] hover:shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff]"
                                             disabled={submissionStatus === 'submitting'}
                                         >
                                             🔄 Re-record
@@ -389,12 +389,12 @@ export default function TellTheTeam() {
                         )}
 
                         {/* Submit Buttons */}
-                        <div className="space-y-3">
-                            <div className="grid grid-cols-2 gap-3">
+                        <div className="space-y-3 sm:space-y-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                                 <button
                                     onClick={handleRecord}
                                     disabled={!browserSupported || submissionStatus === 'submitting' || !userEmail.trim() || !isValidEmail(userEmail)}
-                                    className={`relative group rounded-xl py-3 px-4 text-sm font-semibold transition-all duration-300 ${
+                                    className={`relative group rounded-xl py-3.5 sm:py-3 px-4 sm:px-5 text-base sm:text-sm font-semibold transition-all duration-300 ${
                                         isRecording 
                                             ? 'bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff]' 
                                             : !browserSupported || !userEmail.trim() || !isValidEmail(userEmail)
@@ -419,7 +419,7 @@ export default function TellTheTeam() {
                                 <button
                                     onClick={handleSubmit}
                                     disabled={submissionStatus === 'submitting' || (!transcript && !audioURL)}
-                                    className={`rounded-xl py-3 px-4 text-sm font-semibold transition-all duration-300 ${
+                                    className={`rounded-xl py-3.5 sm:py-3 px-4 sm:px-5 text-base sm:text-sm font-semibold transition-all duration-300 ${
                                         submissionStatus === 'submitting' || submissionStatus === 'cooldown' || (!transcript && !audioURL)
                                             ? 'bg-gradient-to-br from-gray-200 to-gray-300 text-gray-400 cursor-not-allowed shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff]'
                                             : 'bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] active:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff]'
@@ -427,9 +427,9 @@ export default function TellTheTeam() {
                                     title={(!transcript && !audioURL) ? 'Please record a voice note first' : submissionStatus === 'cooldown' ? `Please wait ${cooldownSeconds} seconds` : ''}
                                 >
                                     {submissionStatus === 'submitting' ? (
-                                        <div className="flex items-center justify-center gap-1">
-                                            <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                                            <span className="text-xs">Sending...</span>
+                                        <div className="flex items-center justify-center gap-2">
+                                            <div className="w-4 h-4 sm:w-3 sm:h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                            <span className="text-sm sm:text-xs">Sending...</span>
                                         </div>
                                     ) : submissionStatus === 'cooldown' ? (
                                         `Wait ${cooldownSeconds}s`
@@ -441,15 +441,18 @@ export default function TellTheTeam() {
                             
                             <button
                                 onClick={handleCopyEmail}
-                                className="w-full bg-gradient-to-br from-gray-50 to-white rounded-xl p-3 shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff] border border-gray-200/50 hover:shadow-[inset_8px_8px_16px_#e3e9f0,inset_-8px_-8px_16px_#ffffff] transition-all duration-300 flex items-center justify-center gap-2"
+                                className="w-full bg-gradient-to-br from-gray-50 to-white rounded-xl p-3 sm:p-4 shadow-[inset_6px_6px_12px_#e3e9f0,inset_-6px_-6px_12px_#ffffff] border border-gray-200/50 hover:shadow-[inset_8px_8px_16px_#e3e9f0,inset_-8px_-8px_16px_#ffffff] transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3"
                             >
-                                <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
                                 {emailCopied ? (
-                                    <span className="text-sm text-emerald-600 font-medium">✓ Copied!</span>
+                                    <span className="text-sm sm:text-base text-emerald-600 font-medium">✓ Copied!</span>
                                 ) : (
-                                    <span className="text-sm text-gray-700 font-medium">EMAIL US - david.sampson@superstack.co.za</span>
+                                    <span className="text-xs sm:text-sm text-gray-700 font-medium text-center">
+                                        <span className="block sm:inline">EMAIL US - </span>
+                                        <span className="block sm:inline font-mono text-xs sm:text-sm">david.sampson@superstack.co.za</span>
+                                    </span>
                                 )}
                             </button>
                         </div>

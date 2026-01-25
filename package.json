@@ -5,12 +5,22 @@
   "scripts": {
     "dev": "prisma generate && next dev",
     "dev:clean": "rimraf .next && prisma generate && next dev",
+    "dev:turbo": "prisma generate && next dev --turbo",
     "build": "prisma generate && next build",
     "build:clean": "rimraf .next && prisma generate && next build",
+    "build:analyze": "ANALYZE=true prisma generate && next build",
     "start": "prisma generate && next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
     "clean": "rimraf .next .turbo node_modules/.cache",
-    "reset": "npm run clean && npm install && npm run dev"
+    "reset": "npm run clean && npm install && npm run dev",
+    "db:push": "prisma db push",
+    "db:seed": "prisma db seed",
+    "db:studio": "prisma studio",
+    "preinstall": "npx only-allow npm"
   },
   "type": "module",
   "browserslist": "defaults, not ie <= 11",
@@ -43,8 +53,8 @@
     "next": "15.1.11",
     "openai": "^5.20.1",
     "prisma": "^6.15.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "recma-import-images": "0.0.3",
     "remark-gfm": "^4.0.0",
     "remark-rehype-wrap": "0.0.3",
@@ -56,12 +66,22 @@
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.0.4",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "rimraf": "^6.0.1",
-    "sharp": "0.33.1"
+    "sharp": "0.33.1",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.17.0"
   },
   "prisma": {
     "seed": "node prisma/seed.cjs"

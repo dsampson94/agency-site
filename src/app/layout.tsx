@@ -6,6 +6,7 @@ import {Analytics} from '@vercel/analytics/react'
 import {SpeedInsights} from "@vercel/speed-insights/next";
 
 import {RootLayout} from '../components/RootLayout'
+import { ErrorBoundary } from '../components/ErrorBoundary'
 
 export const metadata: Metadata = {
     title: {
@@ -229,7 +230,9 @@ export default function Layout({children}: { children: React.ReactNode }) {
             />
         </head>
         <body className="flex min-h-full flex-col">
-        <RootLayout>{children}</RootLayout>
+        <ErrorBoundary>
+            <RootLayout>{children}</RootLayout>
+        </ErrorBoundary>
         <Analytics/>
         <SpeedInsights/>
         </body>

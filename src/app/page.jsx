@@ -216,163 +216,6 @@ function Services() {
 }
 
 // Featured Projects Section
-function FeaturedProjects() {
-    const featuredProjects = [
-        {
-            id: 'irricheck-platform',
-            title: 'IrriCheck',
-            subtitle: 'Agricultural Irrigation Management',
-            description: 'Frontend development for South Africa\'s leading agricultural irrigation scheduling platform, featuring real-time data visualization and 7-day forecasted irrigation recommendations.',
-            features: ['React Frontend Development', 'Real-time Data Visualization', 'Irrigation Scheduling Dashboard', 'Agricultural IoT Integration'],
-            link: '/work/irricheck',
-            bgColor: 'bg-green-600',
-            textColor: 'text-white',
-            image: '/images/work/irricheck-hero.jpg'
-        },
-        {
-            id: 'absa-lms',
-            title: 'ABSA',
-            subtitle: 'ReadyToWork LMS Platform',
-            description: 'Enterprise Learning Management System enabling skills development and training for thousands of employees across mobile and web platforms.',
-            features: ['Enterprise LMS', 'Mobile App Development', 'Cloud Infrastructure', 'User Management'],
-            link: '/work/absa',
-            bgColor: 'bg-blue-600',
-            textColor: 'text-white',
-            image: '/images/work/absa-hero.jpg'
-        },
-        {
-            id: 'zkteco-platform',
-            title: 'ZKTeco',
-            subtitle: 'Corporate Digital Platform',
-            description: 'Modern WordPress website with dynamic product catalog, integrated customer support, and optimized performance for enterprise security solutions.',
-            features: ['WhatsApp AI Support Bot', 'Dynamic Product Catalog', 'Customer Support Portal', 'Performance Optimization'],
-            link: '/work/zkteco',
-            bgColor: 'bg-gray-900',
-            textColor: 'text-white',
-            image: '/images/work/zkteco-hero.jpg'
-        },
-        {
-            id: 'labourteq-system',
-            title: 'LabourTeq',
-            subtitle: 'Workforce Management',
-            description: 'Enterprise workforce management system handling complex employee operations for major South African companies including AVIS car rentals.',
-            features: ['Workforce Management', 'Enterprise Integration', 'Mobile Solutions', 'Multi-Company Support'],
-            link: '/work/labourteq',
-            bgColor: 'bg-purple-600',
-            textColor: 'text-white',
-            image: '/images/work/labourteq-hero.jpg'
-        },
-        {
-            id: '123tutors-platform',
-            title: '123Tutors',
-            subtitle: 'AI-Powered Education Platform',
-            description: 'Comprehensive AI-powered tutoring platform with intelligent matching algorithms and automated scheduling systems for enhanced learning experiences.',
-            features: ['AI Matching Algorithms', 'Automated Scheduling', 'Progress Tracking', 'Payment Integration'],
-            link: '/work/123tutors',
-            bgColor: 'bg-indigo-600',
-            textColor: 'text-white',
-            image: '/images/work/123tutors-hero.jpg'
-        },
-        {
-            id: 'nora-tattoo-platform',
-            title: 'NORA Platform',
-            subtitle: 'AI-Powered Tattoo Studio Revolution',
-            description: 'Full-stack Next.js application that transforms tattoo studios through AI-assisted tattoo generation, role-based dashboards, and comprehensive workflow management with JWT auth and cloud integration.',
-            features: ['AI Tattoo Generation', 'Role-Based Dashboards', 'Zoomable Canvas UI', 'AWS S3 Integration'],
-            link: '/work/nora-tattoo',
-            bgColor: 'bg-pink-600',
-            textColor: 'text-white',
-            image: '/images/work/nora-tattoo-hero.jpg'
-        }
-    ];
-
-    return (
-        <div className="relative py-20 sm:py-24">
-            <div className="absolute inset-0 -z-10">
-                <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/30 to-purple-50/20"></div>
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:24px_24px] bg-[position:0_0]"></div>
-            </div>
-            <Container>
-                {/* Header */}
-                <div className="text-center mb-16">
-                    <FadeIn>
-                        <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-teal-500/10 via-blue-500/10 to-purple-500/10 border border-blue-300/30 px-4 py-2 text-sm font-semibold mb-6 backdrop-blur-sm">
-                            <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                            </svg>
-                            <span className="bg-gradient-to-r from-teal-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
-                                Our Work
-                            </span>
-                        </span>
-                        <h2 className="font-display text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6">
-                            Featured <span className="bg-gradient-to-r from-teal-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
-                        </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                            Take a look at some of our recent AI and software development projects that have{" "}
-                            <span className="font-semibold text-indigo-600">transformed businesses</span> and{" "}
-                            <span className="font-semibold text-blue-600">delivered real results.</span>
-                        </p>
-                    </FadeIn>
-                </div>
-
-                {/* Projects Grid */}
-                <div className="flex flex-wrap -mx-4">
-                    {featuredProjects.map((project) => (
-                        <div key={project.id} className="w-full md:w-1/3 px-4 mb-8">
-                            <div className="w-full h-full group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 overflow-hidden">
-                                {/* Project Image/Header */}
-                                <div className={`${project.bgColor} h-32 relative overflow-hidden`}>
-                                    <div className="absolute inset-0 bg-black/10"></div>
-                                    <div className="relative z-10 p-6 h-full flex flex-col justify-end">
-                                        <h3 className="font-bold text-2xl text-white mb-1">{project.title}</h3>
-                                        <p className="text-white/90 font-medium text-sm">{project.subtitle}</p>
-                                    </div>
-                                    {/* Decorative elements */}
-                                    <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -translate-y-12 translate-x-12"></div>
-                                    <div className="absolute bottom-0 left-0 w-16 h-16 bg-white/5 rounded-full translate-y-8 -translate-x-8"></div>
-                                </div>
-
-                                {/* Content */}
-                                <div className="p-6">
-                                    {/* Description */}
-                                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                                        {project.description}
-                                    </p>
-
-                                    {/* Features */}
-                                    <div className="space-y-2 mb-6">
-                                        {project.features.map((feature, index) => (
-                                            <div key={index} className="flex items-center gap-3">
-                                                <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full flex-shrink-0"></div>
-                                                <span className="text-gray-700 text-sm font-medium">{feature}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* View All Work CTA */}
-                <div className="text-center mt-16">
-                    <FadeIn>
-                        <a
-                            href="/work"
-                            className="inline-flex items-center gap-3 bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl group"
-                        >
-                            <span>View All Our Work</span>
-                            <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </a>
-                    </FadeIn>
-                </div>
-            </Container>
-        </div>
-    );
-}
-
 function SuperStackJourney() {
     return null;
 }
@@ -974,20 +817,20 @@ export default async function Home() {
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:24px_24px] bg-[position:0_0]"></div>
                 </div>
                 
-                <Container className="relative mt-20 sm:mt-24 lg:mt-28">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh]">
-                        <div className="flex flex-col justify-center px-4 lg:px-8 pb-8 sm:pb-12 lg:pb-0 pt-32 sm:pt-20">
+                <Container className="relative mt-16 sm:mt-20 lg:mt-28">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-start lg:items-center min-h-[80vh] sm:min-h-[85vh] lg:min-h-[85vh]">
+                        <div className="flex flex-col justify-center px-2 sm:px-4 lg:px-8 pb-4 sm:pb-8 lg:pb-0 pt-24 sm:pt-20">
                             <FadeIn className="mt-4 sm:mt-0 lg:mt-0">
-                                <h1 className="font-display text-5xl font-bold tracking-tight text-gray-900 [text-wrap:balance] sm:text-6xl lg:text-7xl xl:text-8xl leading-tight">
+                                <h1 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 [text-wrap:balance] sm:text-6xl lg:text-7xl xl:text-8xl leading-tight">
                                     <span className="block bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
                                         Build The Future
                                     </span>
-                                    <span className="block text-gray-700 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium mt-2">
+                                    <span className="block text-gray-700 text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-medium mt-1 sm:mt-2">
                                         Of Your Business
                                     </span>
                                 </h1>
                                 
-                                <p className="mt-8 text-xl text-gray-600 leading-relaxed max-w-2xl">
+                                <p className="mt-6 sm:mt-8 text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl">
                                     SuperStack Development Studio crafts{" "}
                                     <span className="font-semibold text-gray-900">cutting-edge web applications</span>,{" "}
                                     <span className="font-semibold text-gray-900">AI-powered solutions</span>, and{" "}
@@ -997,7 +840,7 @@ export default async function Home() {
                             </FadeIn>
                             <HeroCTAs />
                         </div>
-                        <div className="relative flex justify-center lg:justify-end pt-4 sm:pt-8 lg:pt-0">
+                        <div className="relative flex justify-center lg:justify-end pt-2 sm:pt-4 lg:pt-0 px-2 sm:px-0">
                             {/* Enhanced decorative elements with new colors */}
                             <div className="absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full blur-2xl opacity-60 animate-pulse"></div>
                             <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full blur-2xl opacity-60 animate-pulse" style={{animationDelay: '1s'}}></div>
@@ -1019,9 +862,6 @@ export default async function Home() {
             <ModernWebSection />
             <MobileWebSection />
 
-            {/* Featured Projects */}
-            <FeaturedProjects />
-
             {/* Specialized Industry Solutions */}
             <IndustryExpertiseSection />
 
@@ -1040,7 +880,7 @@ function IndustryExpertiseSection() {
             </div>
             <Container>
                 <FadeIn>
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-16 sr-only">
                         <h2 className="font-display text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                             Specialized Solutions Across Industries
                         </h2>
@@ -1050,7 +890,7 @@ function IndustryExpertiseSection() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 sr-only">
                         <div className="group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-200 hover:shadow-lg hover:border-indigo-300 transition-all duration-300">
                             <div className="absolute -top-4 left-8">
                                 <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
@@ -1191,7 +1031,7 @@ function IndustryExpertiseSection() {
                     </div>
 
                     {/* Regional Services CTA */}
-                    <div className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl p-8 border border-indigo-200">
+                    <div className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl p-8 border border-indigo-200 sr-only">
                         <div className="text-center">
                             <h3 className="text-2xl font-bold text-gray-900 mb-4">
                                 Professional Development Services Across South Africa

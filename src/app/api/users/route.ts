@@ -9,7 +9,10 @@ export async function GET(req: NextRequest) {
         await connectToDatabase()
 
         const token = req.headers.get('Authorization')?.replace('Bearer ', '')
-        const payload = await verifyToken(token)
+        if (!token) {
+            return NextResponse.json({error: 'No token provided'}, {status: 401})
+        }
+        const payload = await verifyToken(token as string)
         if (!payload || payload.role !== 'ADMIN') {
             return NextResponse.json({error: 'Unauthorized'}, {status: 401})
         }
