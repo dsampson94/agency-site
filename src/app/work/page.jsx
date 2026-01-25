@@ -13,82 +13,100 @@ export const metadata = {
   description: 'Discover our portfolio of successful projects across AI development, web applications, and enterprise solutions.',
 }
 
-// Technology sectors we specialize in
-const sectors = [
-  { name: 'Agricultural Technology', focus: 'IoT Dashboards & Data Visualization' },
-  { name: 'Financial Services', focus: 'Secure Fintech Applications' },
-  { name: 'Security Solutions', focus: 'Corporate Digital Platforms' },
-  { name: 'Logistics & Transportation', focus: 'Workforce Management Systems' },
-  { name: 'Retail & E-commerce', focus: 'Custom Shopping Platforms' },
-  { name: 'Data & Analytics', focus: 'Survey & Visualization Tools' },
-  { name: 'Education Technology', focus: 'AI-Powered Learning Platforms' },
-  { name: 'Enterprise Software', focus: 'Business Management Solutions' },
+// Industries and their transformation stories
+const industries = [
+  { 
+    name: 'Agricultural Technology', 
+    story: 'Building modern dashboards and tools for agricultural businesses to better manage their operations'
+  },
+  { 
+    name: 'Financial Services', 
+    story: 'Creating secure fintech applications and payment processing solutions'
+  },
+  { 
+    name: 'Security Solutions', 
+    story: 'Developing digital platforms for security companies to showcase their services and manage operations'
+  },
+  { 
+    name: 'Logistics & Transportation', 
+    story: 'Building workforce management systems to help transportation companies organize their operations'
+  },
+  { 
+    name: 'Retail & E-commerce', 
+    story: 'Creating custom shopping platforms and e-commerce solutions for retail businesses'
+  },
+  { 
+    name: 'Data & Analytics', 
+    story: 'Building survey platforms and data visualization tools to help companies understand their data'
+  },
+  { 
+    name: 'Education Technology', 
+    story: 'Developing learning platforms and educational tools with modern web technologies'
+  },
+  { 
+    name: 'Enterprise Software', 
+    story: 'Building custom business management solutions and enterprise applications'
+  },
 ]
 
 const featuredProjects = [
   {
     id: 'agricultural-platform-demo',
-    title: 'Agricultural Irrigation Platform',
-    client: 'Demo Project',
-    description: 'Frontend development concept for agricultural irrigation scheduling platforms. Designed responsive dashboards for real-time soil moisture monitoring and forecasted irrigation recommendations using modern data visualization.',
-    services: ['Frontend Development', 'Dashboard Design', 'Data Visualization', 'Responsive Web Design'],
-    technologies: ['React.js', 'Chart.js', 'Responsive CSS', 'REST APIs'],
-    results: ['Intuitive dashboard design', 'Real-time data visualization', 'Mobile-responsive layout', 'Modern user experience'],
+    title: 'Agricultural Dashboard Concept',
+    client: 'Agricultural Technology',
+    description: 'We designed and built a frontend concept for agricultural irrigation management. The dashboard shows soil moisture data and irrigation scheduling in a clean, modern interface that farmers can actually use.',
+    impact: 'Modern web interface for agricultural data visualization',
+    outcome: 'Responsive dashboard with real-time monitoring capabilities',
     image: '/images/work/irricheck-preview.jpg',
     category: 'Agricultural Technology'
   },
   {
     id: 'lms-demo-project',
-    title: 'Learning Management System',
-    client: 'Demo Project',
-    description: 'Learning Management System concept for employee training using React and Python backend architecture.',
-    services: ['React Development', 'Python Backend', 'Database Design'],
-    technologies: ['React.js', 'Python', 'PostgreSQL'],
-    results: ['Modern training interface', 'User-friendly design', 'Scalable architecture'],
+    title: 'Learning Management Platform',
+    client: 'Education Technology',
+    description: 'We built a learning management system concept using React and Python. The platform handles course management, user progress tracking, and has a clean interface that makes online learning more engaging.',
+    impact: 'Modern learning platform with intuitive user experience',
+    outcome: 'Full-stack LMS with course management and progress tracking',
     image: '/images/work/absa-preview.jpg',
-    category: 'Web Applications'
+    category: 'Education Technology'
   },
   {
     id: 'corporate-platform-demo',
-    title: 'Corporate Digital Platform',
-    client: 'Demo Project',
-    description: 'Modern corporate website concept with dynamic product catalog and AI-powered customer support integration.',
-    services: ['Web Development', 'AI Integration', 'CMS Setup'],
-    technologies: ['WordPress', 'API Integration', 'AI Tools'],
-    results: ['Automated support concept', 'Dynamic product display', 'Enhanced user experience'],
+    title: 'Corporate Website Platform',
+    client: 'Security Solutions',
+    description: 'We built a modern corporate website for a security solutions company. The site features a clean design, dynamic product catalog, and integrated customer support chat to help visitors learn about their services.',
+    impact: 'Professional digital presence with modern web technologies',
+    outcome: 'Responsive website with integrated support and product showcase',
     image: '/images/work/zkteco-preview.jpg',
-    category: 'Web Development'
+    category: 'Digital Transformation'
   },
   {
     id: 'workforce-management-demo',
     title: 'Workforce Management System',
-    client: 'Demo Project',
-    description: 'Enterprise workforce management system concept designed for complex employee operations and multi-company environments.',
-    services: ['System Architecture', 'Mobile Development', 'Integration Planning'],
-    technologies: ['React.js', 'React Native', 'Django', 'AWS'],
-    results: ['Scalable architecture', 'Multi-platform support', 'Enterprise-ready design'],
+    client: 'Logistics & Transportation',
+    description: 'We designed and prototyped a workforce management system for transportation companies. The system helps with employee scheduling, route assignment, and compliance tracking through a web and mobile interface.',
+    impact: 'Streamlined workforce operations with digital tools',
+    outcome: 'Multi-platform system for employee and route management',
     image: '/images/work/labourteq-preview.jpg',
-    category: 'Enterprise Solutions'
+    category: 'Logistics & Transportation'
   },
   {
     id: 'ai-education-demo',
-    title: 'AI Education Platform Concept',
-    client: 'Demo Project',
-    description: 'AI-powered educational platform concept featuring intelligent matching algorithms, automated scheduling, and progress tracking for personalized learning.',
-    services: ['AI Development', 'Platform Architecture', 'System Design'],
-    technologies: ['Machine Learning', 'React.js', 'API Design'],
-    results: ['Smart matching algorithms', 'Automated scheduling system', 'Learning analytics dashboard'],
+    title: 'Educational Matching Platform',
+    client: 'Education Technology',
+    description: 'We built a tutoring platform that connects students with tutors based on their learning needs. The system includes smart matching, scheduling tools, and progress tracking to make online tutoring more organized and effective.',
+    impact: 'Modern platform connecting students with the right tutors',
+    outcome: 'AI-powered matching system with scheduling and progress tracking',
     image: '/images/work/123tutors-preview.jpg',
-    category: 'AI & Education'
+    category: 'Education Technology'
   },
   {
     id: 'mediacom-survey',
-    title: 'Mediacom Survey Platform',
+    title: 'Survey & Analytics Platform',
     client: 'Mediacom Data & Tech',
-    description: 'Complex survey and data visualization platform designed with modern React architecture and real-time analytics capabilities.',
-    services: ['Project Rescue', 'System Architecture', 'Data Analytics'],
-    technologies: ['React.js', 'GraphQL', 'AWS', 'Node.js'],
-    results: ['Scalable architecture', 'Modern development', 'Real-time capabilities'],
+    description: 'We worked with Mediacom to build a comprehensive survey and data visualization platform. The system handles complex surveys, processes responses, and presents the data through interactive dashboards and real-time analytics.',
+    impact: 'Robust platform for survey management and data analysis',
+    outcome: 'Real-time survey processing with modern analytics dashboard',
     image: '/images/work/mediacom-preview.jpg',
     category: 'Data & Analytics'
   }
@@ -109,23 +127,23 @@ const technologies = [
 
 
 
-function SectorShowcase() {
+function IndustryShowcase() {
   return (
     <div className="mt-24 sm:mt-32">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-neutral-950 text-center mb-16">
-          Industries We Specialize In
+          Industries We've Transformed
         </h2>
       </FadeIn>
       <FadeInStagger>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {sectors.map((sector) => (
-            <FadeIn key={sector.name} className="text-center">
+          {industries.map((industry) => (
+            <FadeIn key={industry.name} className="text-center">
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
                 <div className="mb-4">
-                  <h3 className="text-neutral-900 font-semibold text-lg">{sector.name}</h3>
+                  <h3 className="text-neutral-900 font-semibold text-lg">{industry.name}</h3>
                 </div>
-                <p className="text-sm text-neutral-600">{sector.focus}</p>
+                <p className="text-sm text-neutral-600">{industry.story}</p>
               </div>
             </FadeIn>
           ))}
@@ -164,26 +182,13 @@ function ProjectCard({ project }) {
           
           <div className="space-y-4">
             <div>
-              <h4 className="text-sm font-semibold text-neutral-950 mb-2">Services</h4>
-              <div className="flex flex-wrap gap-2">
-                {project.services.map((service) => (
-                  <span key={service} className="text-xs bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full">
-                    {service}
-                  </span>
-                ))}
-              </div>
+              <h4 className="text-sm font-semibold text-neutral-950 mb-2">Impact</h4>
+              <p className="text-sm text-neutral-600">{project.impact}</p>
             </div>
             
             <div>
-              <h4 className="text-sm font-semibold text-neutral-950 mb-2">Key Results</h4>
-              <ul className="text-sm text-neutral-600 space-y-1">
-                {project.results.map((result, index) => (
-                  <li key={index} className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-3"></div>
-                    {result}
-                  </li>
-                ))}
-              </ul>
+              <h4 className="text-sm font-semibold text-neutral-950 mb-2">Results</h4>
+              <p className="text-sm text-neutral-600">{project.outcome}</p>
             </div>
           </div>
         </div>
@@ -235,20 +240,20 @@ function TechStack() {
 export default function Work() {
   return (
     <>
-      <PageIntro eyebrow="Portfolio" title="Our Work">
+      <PageIntro eyebrow="Portfolio" title="Stories of Transformation">
         <p>
-          We specialize in building cutting-edge solutions designed to drive real results. 
-          From AI automation to enterprise platforms, our expertise covers the full spectrum.
+          Every business has challenges. Here are the stories of how we've helped companies 
+          across different industries overcome theirs and achieve remarkable results.
         </p>
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32">
-        <SectorShowcase />
+        <IndustryShowcase />
         
         <div className="mt-24 sm:mt-32">
           <FadeIn>
             <h2 className="font-display text-2xl font-semibold text-neutral-950 mb-16">
-              Featured Projects
+              Success Stories
             </h2>
           </FadeIn>
           <FadeInStagger>
@@ -266,11 +271,11 @@ export default function Work() {
           <FadeIn>
             <div className="bg-gray-50 rounded-3xl p-12 text-center">
               <h2 className="font-display text-2xl font-semibold text-neutral-950 mb-4">
-                Ready to Start Your Project?
+                Ready to Start Your Transformation?
               </h2>
               <p className="text-neutral-600 mb-8 max-w-2xl mx-auto">
-                From startups to enterprise clients, we deliver exceptional results. 
-                Let&apos;s discuss how we can help transform your business with modern technology.
+                Every success story starts with a conversation. Let&apos;s discuss how we can 
+                help write your company&apos;s next chapter of growth and success.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -279,7 +284,7 @@ export default function Work() {
                 >
                   Book Free Consultation
                 </Button>
-                <Button href="/work" variant="outline">
+                <Button href="/services" variant="outline">
                   View All Services
                 </Button>
               </div>
