@@ -1,7 +1,6 @@
 import {NextResponse} from 'next/server';
 import {SendEmailCommand, SESClient} from '@aws-sdk/client-ses';
-import connectToDatabase from '@/lib/mongoose';
-import Enquiry from '@/lib/models/Enquiry';
+import { prisma, connectToNeon } from '@/lib/neon';
 
 const AWS_REGION = process.env.AWS_REGION;
 const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
@@ -20,9 +19,11 @@ export async function POST(req) {
             );
         }
 
-        await connectToDatabase();
+        await connectToNeon();
 
-        const existingInquiry = await Enquiry.findOne({email});
+        const existingInquiry = await prisma.enquiry.findFirst({
+            where: { email }
+        });
         if (existingInquiry) {
             return NextResponse.json(
                 {success: false, error: 'Email already exists'},
@@ -31,7 +32,16 @@ export async function POST(req) {
         }
 
         // Save inquiry to the database
-        await Enquiry.create({name, email, company, phone, message, budget});
+        await prisma.enquiry.create({
+            data: {
+                name, 
+                email, 
+                company, 
+                phone, 
+                message, 
+                budget
+            }
+        });
 
         // Set up SES client
         const sesClient = new SESClient({

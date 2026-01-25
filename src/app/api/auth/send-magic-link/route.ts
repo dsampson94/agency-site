@@ -2,8 +2,7 @@ import {NextRequest, NextResponse} from "next/server";
 import {SendEmailCommand, SESClient} from "@aws-sdk/client-ses";
 import {fromEnv} from "@aws-sdk/credential-providers";
 import jwt from "jsonwebtoken";
-import connectToDatabase from "../../../../lib/mongoose";
-import User from "../../../../lib/models/User";
+import { prisma, connectToNeon } from "../../../../lib/neon";
 
 // Configure the v3 SES client
 const ses = new SESClient({
@@ -13,7 +12,7 @@ const ses = new SESClient({
 
 export async function POST(req: NextRequest) {
     try {
-        await connectToDatabase();
+        await connectToNeon();
 
         const {email} = await req.json();
         if (!email) {
@@ -21,13 +20,14 @@ export async function POST(req: NextRequest) {
         }
 
         // Check if user exists
-        let user = await User.findOne({email});
+        let user = await prisma.user.findUnique({ where: { email } });
 
         // If user doesn't exist, create and assign the admin role if it's your admin email
         if (!user) {
             const isAdmin = email.toLowerCase() === "davesampson15@gmail.com";
-            user = await User.create({
-                email,
+            user = await prisma.user.create({
+                data: {
+                    email,
                 role: isAdmin ? "ADMIN" : "USER",
             });
         }

@@ -1,12 +1,11 @@
 import {NextRequest, NextResponse} from 'next/server'
-import connectToDatabase from "../../../lib/mongoose";
-import User from "../../../lib/models/User";
+import { prisma, connectToNeon } from "../../../lib/neon";
 import {verifyToken} from "../../../lib/auth";
 
-// GET /api/users -> Return all users (admin only, for example)
+// GET /api/users -> Return all users (admin only)
 export async function GET(req: NextRequest) {
     try {
-        await connectToDatabase()
+        await connectToNeon()
 
         const token = req.headers.get('Authorization')?.replace('Bearer ', '')
         if (!token) {
@@ -17,7 +16,15 @@ export async function GET(req: NextRequest) {
             return NextResponse.json({error: 'Unauthorized'}, {status: 401})
         }
 
-        const users = await User.find({})
+        const users = await prisma.user.findMany({
+            select: {
+                id: true,
+                email: true,
+                name: true,
+                createdAt: true,
+                updatedAt: true
+            }
+        })
         return NextResponse.json(users)
     } catch (err: any) {
         console.error('GET /api/users error:', err.message)

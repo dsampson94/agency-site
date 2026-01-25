@@ -1,12 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
-import connectToDatabase from "../../../../lib/mongoose";
-import User from "../../../../lib/models/User";
+import { prisma, connectToNeon } from "../../../../lib/neon";
 
 const JWT_SECRET = process.env.JWT_SECRET!;
 
 export async function GET(req: NextRequest) {
-    await connectToDatabase();
+    await connectToNeon();
 
     // Get token from URL query parameters
     const url = new URL(req.url);
@@ -23,7 +22,9 @@ export async function GET(req: NextRequest) {
             return NextResponse.json({ error: "Invalid token" }, { status: 401 });
         }
 
-        const user = await User.findOne({ email: decoded.email });
+        const user = await prisma.user.findUnique({ 
+            where: { email: decoded.email } 
+        });
         if (!user) {
             return NextResponse.json({ error: "User does not exist" }, { status: 404 });
         }
