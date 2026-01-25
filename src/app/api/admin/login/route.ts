@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
-import { prisma } from '../../../../lib/prisma'
+import { connectToNeon, prisma } from '@/lib/neon'
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key'
 
 export async function POST(request: NextRequest) {
   try {
+    await connectToNeon()
+    
     const { email, password } = await request.json()
 
     if (!email || !password) {

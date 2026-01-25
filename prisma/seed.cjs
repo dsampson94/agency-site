@@ -41,6 +41,8 @@ async function main() {
   // Create a test enquiry
   const enquiry = await prisma.enquiry.create({
     data: {
+      name: 'Test User',
+      email: 'test@example.com',
       userId: user.id,
       message: 'This is a test enquiry from seed data',
       hasVoiceNote: false,
