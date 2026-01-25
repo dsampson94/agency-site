@@ -28,7 +28,8 @@ export async function POST(req: NextRequest) {
             user = await prisma.user.create({
                 data: {
                     email,
-                role: isAdmin ? "ADMIN" : "USER",
+                    role: isAdmin ? "ADMIN" : "USER",
+                }
             });
         }
 

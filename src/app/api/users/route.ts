@@ -35,25 +35,26 @@ export async function GET(req: NextRequest) {
 // POST /api/users -> Create user (manual or if not using magic link)
 export async function POST(req: NextRequest) {
     try {
-        await connectToDatabase()
+        await connectToNeon()
 
         const body = await req.json()
-        const {email, username, password, role} = body
+        const {email, name, role} = body
 
         if (!email) {
             return NextResponse.json({error: 'Email is required'}, {status: 400})
         }
 
-        let user = await User.findOne({email})
+        let user = await prisma.user.findUnique({ where: { email } })
         if (user) {
             return NextResponse.json({error: 'User already exists'}, {status: 409})
         }
 
-        user = await User.create({
-            email,
-            username: username || email.split('@')[0],
-            password: password || undefined,
-            role: role === 'ADMIN' ? 'ADMIN' : 'USER',
+        user = await prisma.user.create({
+            data: {
+                email,
+                name: name || null,
+                role: role === 'ADMIN' ? 'ADMIN' : 'USER',
+            }
         })
 
         return NextResponse.json({success: true, user})

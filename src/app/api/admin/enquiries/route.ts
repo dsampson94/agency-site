@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import jwt from 'jsonwebtoken'
-import { prisma } from '../../../../lib/prisma'
+import { prisma } from '../../../../lib/neon'
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key'
 
@@ -43,7 +43,11 @@ export async function GET(request: NextRequest) {
       success: true,
       enquiries: enquiries.map(enquiry => ({
         _id: enquiry.id.toString(),
-        email: enquiry.user.email,
+        email: enquiry.email, // Use enquiry.email directly since it's now part of the enquiry model
+        name: enquiry.name,
+        company: enquiry.company,
+        phone: enquiry.phone,
+        budget: enquiry.budget,
         message: enquiry.message,
         hasVoiceNote: enquiry.hasVoiceNote,
         transcript: enquiry.transcript,

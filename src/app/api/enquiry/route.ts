@@ -1,30 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { prisma } from '../../../lib/prisma'
+import { prisma } from '../../../lib/neon'
 
 export async function POST(request: NextRequest) {
     try {
-        const { email, message, hasVoiceNote, transcript } = await request.json()
+        const { email, name, message, hasVoiceNote, transcript } = await request.json()
 
-        if (!email || !message) {
+        if (!email || !message || !name) {
             return NextResponse.json(
-                { success: false, error: 'Email and message are required' },
+                { success: false, error: 'Email, name and message are required' },
                 { status: 400 }
             )
         }
 
-        // Find or create user with upsert
-        const user = await prisma.user.upsert({
-            where: { email: email.toLowerCase() },
-            update: {},
-            create: {
-                email: email.toLowerCase(),
-            }
-        })
-
-        // Create new enquiry
+        // Create new enquiry directly with all required fields
         const newEnquiry = await prisma.enquiry.create({
             data: {
-                userId: user.id,
+                name,
+                email: email.toLowerCase(),
                 message,
                 hasVoiceNote: hasVoiceNote || false,
                 transcript: transcript || null,

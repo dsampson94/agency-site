@@ -85,6 +85,8 @@ export async function POST(req: NextRequest) {
             // Create enquiry with voice note
             const enquiry = await prisma.enquiry.create({
                 data: {
+                    name: user.name || email.split('@')[0], // Use name or fallback to email prefix
+                    email: email,
                     userId: user.id,
                     message: transcript,
                     hasVoiceNote: true,

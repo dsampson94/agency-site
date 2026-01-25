@@ -1,14 +1,16 @@
 import { NextResponse } from 'next/server';
-import connectToDatabase from '@/lib/mongoose';
-import NewsletterSubscriber from '@/lib/models/NewsletterSubscriber';
+import { connectToNeon, prisma } from '@/lib/neon';
 
 export async function POST(req) {
     try {
         const { email } = await req.json();
 
         // Check if the email is already in the database
-        await connectToDatabase();
-        const existingSubscriber = await NewsletterSubscriber.findOne({ email });
+        await connectToNeon();
+        const existingSubscriber = await prisma.newsletterSubscriber.findUnique({ 
+            where: { email } 
+        });
+        
         if (existingSubscriber) {
             return NextResponse.json(
                 { success: false, error: 'You are already subscribed to the newsletter.' },
@@ -17,7 +19,9 @@ export async function POST(req) {
         }
 
         // Save the email to the database
-        await NewsletterSubscriber.create({ email });
+        await prisma.newsletterSubscriber.create({ 
+            data: { email } 
+        });
 
         return NextResponse.json(
             { success: true, message: 'Thank you for subscribing to our newsletter!' },
